@@ -1201,8 +1201,8 @@ function Navbar() {
   const filteredResults = searchResults.slice(0, 5);
 
   const Announcement = [
-    { name: "Welcome to the beautiful world of Art Search" },
-    { name: "Free Shipping on orders above ₹1,999" },
+    { name: "Watercolors, Brushes & Sketchbooks - Shop Now" },
+    { name: "Luxury Pens & Premium Journals - Quiret" },
     { name: "Buy more, Save more- Unlock exclusive discounts" },
   ];
 
@@ -1296,7 +1296,7 @@ function Navbar() {
   return (
     <div className="fixed top-0 left-0 w-full z-50">
       {/* Top Announcement Bar */}
-      <div className="w-full bg-[#F0EEFF] text-[#1C1C1C] text-center text-sm py-2">
+      <div className="w-full bg-[#d4f1f2] text-[black] text-center text-sm py-2">
         <Swiper
           modules={[Autoplay]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -1333,7 +1333,7 @@ function Navbar() {
             {/* Logo */}
             <Link to="/home" className="lg:flex items-center">
               <img
-                className="h-10 sm:h-11 w-auto object-contain"
+                className="h-[80px] sm:h-[70px] w-auto object-contain"
                 src={MainLog}
                 alt="logo"
               />
@@ -1350,7 +1350,7 @@ function Navbar() {
               className="hidden lg:flex items-center gap-2"
             >
               <MapPin size={16} />
-              <span className="text-sm lg:text-xs md:text-sm text-[#4C5562]">
+              <span className="text-sm lg:text-xs md:text-sm text-[#617c7d]">
                 {isAuthenticated && defaultAddress ? (
                   <div className="flex-col items-start justify-start">
                     <p>Delivering to</p>
@@ -1368,8 +1368,8 @@ function Navbar() {
             {/* Search Section */}
             <div className="relative">
               {/* Desktop Search Input */}
-              <div className="hidden lg:flex items-center bg-gray-50 overflow-hidden w-64 lg:w-80 xl:w-96 border-[1.5px] border-[#686868] rounded-md">
-                <Search size={18} className="mx-2 text-gray-500" />
+              <div className="hidden lg:flex items-center bg-[#e7f1f1] overflow-hidden w-64 lg:w-80 xl:w-96   rounded-md">
+                <Search size={18} className="mx-2 text-[#617c7d]" />
                 <input
                   type="text"
                   placeholder="Search for products..."
@@ -1388,11 +1388,11 @@ function Navbar() {
                 {isOpen && (
                   <div className="absolute top-full left-0 w-64 lg:w-80 xl:w-96 bg-white border border-gray-200 shadow-md mt-2.5 z-50">
                     {query.trim() === "" ? (
-                      <p className="p-3 text-sm text-gray-400 italic">
+                      <p className="p-3 text-sm text-[#617c7d] italic">
                         Type to search...
                       </p>
                     ) : loading ? (
-                      <p className="p-3 text-sm text-gray-500">Loading...</p>
+                      <p className="p-3 text-sm text-[#617c7d]">Loading...</p>
                     ) : filteredResults.length > 0 ? (
                       <ul className="divide-y divide-gray-100">
                         {filteredResults.map((item, index) => (
@@ -1454,7 +1454,7 @@ function Navbar() {
                         setIsOpen(false);
                         setSearchParams({}, { replace: true });
                       }}
-                      className="p-2 rounded-full hover:bg-gray-100"
+                      className="p-2 rounded-full hover:bg-[#d4f1f2]"
                     >
                       <X size={20} />
                     </button>
@@ -1501,7 +1501,7 @@ function Navbar() {
                               <p className="text-sm font-medium">
                                 {item.productTittle}
                               </p>
-                              <p className="text-xs text-[#1800AC]">
+                              <p className="text-xs text-[#106c6e]">
                                 in {item.categoryName || "Uncategorized"}
                               </p>
                             </div>
@@ -1509,7 +1509,7 @@ function Navbar() {
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-gray-500 text-sm">No results found.</p>
+                      <p className="text-[#106c6e] text-sm">No results found.</p>
                     )}
                   </div>
                 </div>
@@ -1524,7 +1524,7 @@ function Navbar() {
               >
                 <LayoutDashboard
                   size={20}
-                  className="text-gray-600 group-hover:text-[#1C3753]"
+                  className="text-[#106c6e] group-hover:text-[#0f6668]"
                 />
               </button>
             )}
@@ -1532,7 +1532,7 @@ function Navbar() {
             {/* User dropdown */}
             <div className="relative group cursor-pointer">
               <button
-                className="p-2 rounded-lg hover:bg-[#F0EEFF] transition-colors"
+                className="p-2 rounded-lg hover:bg-[#f5dccc] transition-colors"
                 onClick={() => {
                   setIsProfileOpen(!isProfileOpen);
                   setDropdown(false);
@@ -1541,7 +1541,7 @@ function Navbar() {
               >
                 <UserRound
                   size={20}
-                  className="text-gray-600 group-hover:text-[#1C3753]"
+                  className="text-[#106c6e] group-hover:text-[#0f6668]"
                 />
               </button>
 
@@ -1554,8 +1554,8 @@ function Navbar() {
                         className="flex items-center gap-4 px-7 pb-5 rounded-lg cursor-pointer transition-colors duration-200 group"
                         onClick={() => setShowLogoutModal(true)}
                       >
-                        <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#F0EEFF] transition-colors duration-200">
-                          <LogOut className="w-5 h-5 text-gray-600 group-hover:text-[#1C3753]" />
+                        <div className="p-2 rounded-lg bg-[#f5dccc] group-hover:bg-[#f5dccc] transition-colors duration-200">
+                          <LogOut className="w-5 h-5 text-gray-600 group-hover:text-[#0f6668]" />
                         </div>
                         <div className="flex-1">
                           <h2 className="text-gray-800 font-medium text-[16px]">
@@ -1568,11 +1568,11 @@ function Navbar() {
                         to="/login"
                         className="flex items-center gap-4 px-7 pb-6 rounded-lg cursor-pointer transition-colors duration-200 group"
                       >
-                        <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#F0EEFF] transition-colors duration-200">
-                          <LogIn className="w-5 h-5 text-gray-600 group-hover:text-[#1C3753]" />
+                        <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#f5dccc] transition-colors duration-200">
+                          <LogIn className="w-5 h-5 text-gray-600 group-hover:text-[#0f6668]" />
                         </div>
                         <div className="flex-1">
-                          <h2 className="text-gray-800 font-medium text-sm">
+                          <h2 className="text-[#0f6668] font-medium text-sm">
                             Log In
                           </h2>
                         </div>
@@ -1595,11 +1595,11 @@ function Navbar() {
 
                 navigate("/accounts/wishlist");
               }}
-              className="relative p-2 rounded-lg group hover:bg-[#F0EEFF] transition-colors"
+              className="relative p-2 rounded-lg group hover:bg-[#f5dccc] transition-colors"
             >
               <Heart
                 size={20}
-                className="text-gray-600 group-hover:text-[#1C3753]"
+                className="text-[#106c6e] group-hover:text-[#0f6668]"
               />
 
               {wishlistCount > 0 && (
@@ -1619,11 +1619,11 @@ function Navbar() {
 
                 navigate("/bag");
               }}
-              className="relative p-2 group rounded-lg hover:bg-[#F0EEFF] transition-colors"
+              className="relative p-2 group rounded-lg hover:bg-[#f5dccc] transition-colors"
             >
               <ShoppingCart
                 size={20}
-                className="text-gray-600 group-hover:text-[#1C3753]"
+                className="text-[#106c6e] group-hover:text-[#0f6668]"
               />
 
               {cartCount > 0 && (

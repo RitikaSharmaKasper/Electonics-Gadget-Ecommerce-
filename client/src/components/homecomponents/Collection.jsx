@@ -338,11 +338,11 @@ function Collection() {
   return (
     <section className="relative group bg-[#F6F8F9]">
       {!featuresLoading && features.length === 3 && (
-        <div className="flex flex-wrap justify-center sm:justify-between items-center gap-4 px-4 sm:px-6 lg:px-48 py-3 bg-[#E6FFD9] rounded-lg">
+        <div className="flex flex-wrap justify-center sm:justify-between items-center gap-4 px-4 sm:px-6 lg:px-48 py-3 bg-[#d4f1f2] rounded-lg">
           {features.map((feature, index) => (
             <div
               key={feature._id || index}
-              className="flex items-center gap-2 text-[12px] sm:text-[14px] text-[#1B4C00]"
+              className="flex items-center gap-2 text-[12px] sm:text-[14px] text-[#607c7d]"
             >
               <span>{feature.text}</span>
             </div>
@@ -355,8 +355,8 @@ function Collection() {
           <div className="flex justify-center mb-4">
             {/* <div className="w-12 h-1 bg-[#1C3753]"></div> */}
           </div>
-          <span className="lg:text-[24px] md:text-[20px] text-[16px] font-marcellus text-[#1800AC] mb-3">
-            Shop By Category
+          <span className="lg:text-[30px] md:text-[30px] text-[30px]  font-playpen-sans text-[#106c6e] mb-3">
+           Explore the Shop
             {/* <span className="font-serif italic text-[#1C3753]"> 
               Masterpieces
              </span> */}

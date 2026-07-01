@@ -13,10 +13,12 @@ export default {
 
   theme: {
     extend: {
-      fontFamily: {
-        montez: ["Montez", "cursive"],
-        inter: ["Inter", "sans-serif"],
-        marcellus: ["'Marcellus SC'", "cursive"],
+ fontFamily: {
+        'playpen-sans': ['"Playpen Sans"', 'cursive', 'sans-serif'],
+        'lavishly': ['"Lavishly Yours"', 'cursive', 'serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'montez': ['Montez', 'cursive'],
+        'marcellus': ['"Marcellus SC"', 'serif'],
       },
       screens: {
         xs: "393px",
