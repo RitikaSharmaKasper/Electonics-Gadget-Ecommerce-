@@ -15,13 +15,13 @@ function Breadcrumbs({ category, subcategory, title }) {
   // console.log("Breadcrumbs received:", { category, subcategory, title });
   return (
     <nav
-      className="hidden lg:flex md:flex lg:px-20 md:px-[60px] px-3 py-3 bg-[#f9fafb] border-b border-gray-200 mt-5 pt-24"
+      className="hidden lg:flex md:flex lg:px-20 md:px-[60px] px-3 py-3  border-b border-[#F0EEFF] mt-5 pt-24"
       aria-label="Breadcrumb"
     >
       <ol className="inline-flex items-center text-sm space-x-2">
         {/* Home */}
         <li className="inline-flex items-center flex-shrink-0">
-          <Link to="/home" className="inline-flex items-center text-gray-600">
+          <Link to="/home" className="inline-flex items-center text-[#747877] hover:text-[#126B6D]">
             Home
           </Link>
         </li>
@@ -37,7 +37,7 @@ function Breadcrumbs({ category, subcategory, title }) {
                   category: categoryName,
                   slug: categorySlug,
                 }}
-                className="ms-1 text-gray-800 truncate max-w-[120px] sm:max-w-none"
+                className="ms-1 text-[#126B6D] truncate max-w-[120px] sm:max-w-none"
               >
                 {categoryName}
               </Link>
@@ -58,7 +58,7 @@ function Breadcrumbs({ category, subcategory, title }) {
                   slug: categorySlug,
                   subcategorySlug,
                 }}
-                className="ms-1 text-gray-800 truncate max-w-[120px] sm:max-w-none"
+                className="ms-1 text-[#126B6D] truncate max-w-[120px] sm:max-w-none"
               >
                 {subcategoryName}
               </Link>
@@ -71,7 +71,7 @@ function Breadcrumbs({ category, subcategory, title }) {
           <li className="flex-shrink-0">
             <div className="flex items-center">
               <SeparatorIcon />
-              <span className="ms-1 text-gray-900 truncate max-w-[150px] sm:max-w-none">
+              <span className="ms-1 text-[#192324] truncate max-w-[150px] sm:max-w-none">
                 {title}
               </span>
             </div>
@@ -86,7 +86,7 @@ function Breadcrumbs({ category, subcategory, title }) {
 function SeparatorIcon() {
   return (
     <svg
-      className="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+      className="rtl:rotate-180 w-3 h-3 text-[#FF7F66] mx-1"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

@@ -123,7 +123,7 @@ function Design() {
   //   return () => clearInterval(interval);
   // }, [product1.image.length, controls]);
   return (
-    <section className="lg:px-0 md:px-0 px-0 py-0">
+    <section className="lg:px-0 md:px-0 px-0 pb-8 bg-[#ececf1]">
       {/* <div className="flex flex-col lg:flex-row gap-2.5 lg:h-[600px]">
         <div className="relative group overflow-hidden w-full lg:w-1/2 rounded-md">
           <motion.div
@@ -222,35 +222,101 @@ function Design() {
       {/* </div>
         </div>
       </div> */}
-      <div className="relative w-full min-h-[220px] sm:min-h-[300px] md:min-h-[350px] overflow-hidden">
-        <Swiper
-          modules={[Autoplay]}
-          slidesPerView="auto"
-          spaceBetween={12}
-          loop={true}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-          }}
-          speed={6000}
-          allowTouchMove={false}
-          onSwiper={(swiper) => {
-            swiper.wrapperEl.style.transitionTimingFunction = "linear";
-          }}
-        >
-          {[...images, ...images].map((img, i) => (
-            <SwiperSlide key={i} className="!w-[80%] sm:!w-[60%] md:!w-[680px]">
-              <div className="h-[200px] sm:h-[260px] md:h-[358px] rounded-md overflow-hidden">
+  <div className="relative w-full ">
+  {/* Heading with Theme Colors */}
+  <div className="relative mb-4 md:mb-4">
+    <div className="text-center ">
+      {/* Small badge */}
+      <span className="inline-flex items-center mt-5 gap-1 text-[30px] font-normal leading-6 text-[#126B6D] px-14 py-3 rounded-full border-2 border-[#126B6D]/20 font-playpen-sans">
+        <span className="text-[#FF7F66]">✦</span>
+       Explore Some Lavish Stationery Collection
+        <span className="text-[#FF7F66]">✦</span>
+      </span>
+      
+     
+      
+      {/* Decorative divider */}
+      <div className="flex items-center justify-center gap-3 mt-0">
+        <div className="h-px w-9 bg-gradient-to-r from-transparent to-[#126B6D]/30" />
+        <span className="text-[#FF7F66] text-lg">✧</span>
+        <div className="h-px w-9 bg-gradient-to-l from-transparent to-[#126B6D]/30" />
+      </div>
+    </div>
+  </div>
+
+  {/* Swiper Container - Theme Colors */}
+  <div className="relative w-full min-h-[220px] sm:min-h-[300px] md:min-h-[350px] overflow-hidden px-4 sm:px-0 mt-0">
+    {/* Decorative background elements - Theme colors */}
+    <div className="absolute inset-0 bg-gradient-to-r from-[#F0EEFF]/50 via-transparent to-[#F0EEFF]/50 pointer-events-none z-0 rounded-xl" />
+    <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#126B6D]/5 rounded-full blur-3xl pointer-events-none" />
+    <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#FF7F66]/5 rounded-full blur-3xl pointer-events-none" />
+    
+    {/* Theme borders */}
+    <div className="absolute inset-1 border border-[#126B6D]/10 rounded-xl pointer-events-none z-0" />
+    <div className="absolute inset-2 border border-[#FF7F66]/10 rounded-xl pointer-events-none z-0" />
+    
+    {/* Corner accents - Theme colors */}
+    <div className="absolute top-3 left-3 w-6 h-6 border-l-2 border-t-2 border-[#126B6D]/20 rounded-tl-lg pointer-events-none z-10" />
+    <div className="absolute top-3 right-3 w-6 h-6 border-r-2 border-t-2 border-[#126B6D]/20 rounded-tr-lg pointer-events-none z-10" />
+    <div className="absolute bottom-3 left-3 w-6 h-6 border-l-2 border-b-2 border-[#126B6D]/20 rounded-bl-lg pointer-events-none z-10" />
+    <div className="absolute bottom-3 right-3 w-6 h-6 border-r-2 border-b-2 border-[#126B6D]/20 rounded-br-lg pointer-events-none z-10" />
+    
+    <Swiper
+      modules={[Autoplay]}
+      slidesPerView="auto"
+      spaceBetween={16}
+      loop={true}
+      autoplay={{
+        delay: 0,
+        disableOnInteraction: false,
+      }}
+      speed={6000}
+      allowTouchMove={false}
+      onSwiper={(swiper) => {
+        swiper.wrapperEl.style.transitionTimingFunction = "linear";
+      }}
+      className="relative z-10"
+    >
+      {[...images, ...images].map((img, i) => (
+        <SwiperSlide key={i} className="!w-[80%] sm:!w-[60%] md:!w-[680px]">
+          <div className="relative group">
+            {/* Outer glow - Theme colors with zoom effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#126B6D]/20 via-[#FF7F66]/20 to-[#126B6D]/20 rounded-xl blur-md opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+            
+            <div className="relative h-[200px] sm:h-[260px] md:h-[358px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white p-1 border-2 border-[#126B6D]/10 group-hover:border-[#126B6D]/40">
+              {/* Image with zoom on hover */}
+              <div className="w-full h-full overflow-hidden rounded-lg">
                 <img
                   src={img}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   alt="banner"
                 />
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+              
+              {/* Theme gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#126B6D]/30 via-transparent to-[#FF7F66]/10 pointer-events-none rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Bottom decorative line */}
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#FF7F66]/40 to-transparent" />
+              
+              {/* Hover overlay with text */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    
+    {/* Scroll indicators - Theme colors */}
+    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+      <span className="w-1.5 h-1.5 rounded-full bg-[#126B6D]/30" />
+      <span className="w-6 h-1.5 rounded-full bg-gradient-to-r from-[#126B6D] to-[#FF7F66] animate-pulse" />
+      <span className="w-1.5 h-1.5 rounded-full bg-[#FF7F66]/30" />
+    </div>
+  </div>
+</div>
     </section>
   );
 }

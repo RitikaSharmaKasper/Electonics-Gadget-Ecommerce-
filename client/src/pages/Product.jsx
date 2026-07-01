@@ -232,10 +232,10 @@ function Product() {
         />
       </div>
 
-      <div className="flex flex-col lg:px-20 md:px-[60px] px-4 pb-[23px] gap-4 bg-gray-50 mt-14 sm:mt-0">
+      <div className="flex flex-col lg:px-20 md:px-[60px] px-4 pb-[23px] gap-4  mt-14 sm:mt-0">
         {/* Heading */}
         <div className="mt-14 sm:mt-0">
-          <span className="text-lg md:text-xl font-semibold capitalize font-marcellus text-[#1800AC]">
+          <span className="text-lg md:text-xl font-semibold capitalize font-marcellus text-[#126B6D]">
             {state?.category || displayCategory || "All Products"}
           </span>
         </div>
@@ -258,7 +258,7 @@ function Product() {
           {/* Products */}
           <div className="flex-1">
             {loading ? (
-              <p>Loading products...</p>
+              <p className="text-[#747877]">Loading products...</p>
             ) : error ? (
               <p className="text-red-500">{error}</p>
             ) : filteredArts.length === 0 ? (

@@ -801,7 +801,7 @@ function TopProducts() {
     };
 
     return (
-      <div className="bg-white p-2 group rounded-lg block transition-shadow duration-300 hover:shadow-lg">
+      <div className="bg-white p-2 group rounded-lg block border border-[#F0EEFF] transition-shadow duration-300 hover:shadow-lg">
         <Link
           to={`/product/${product.slug || product._id}`}
           onClick={(e) => e.stopPropagation()}
@@ -840,14 +840,14 @@ function TopProducts() {
                 ₹{sellingPrice || mrp || "--"}
               </span>
               {mrp > 0 && sellingPrice > 0 && mrp !== sellingPrice && (
-                <span className="text-gray-400 text-xs line-through font-light">
+                <span className="text-[#747877] text-xs line-through font-light">
                   ₹{mrp}
                 </span>
               )}
               {discountPercent > 0 && (
                 <>
                   <div className="border-l border-[#DBDBDB] h-3"></div>
-                  <span className="text-[#168408] text-xs">
+                  <span className="text-[#126B6D] text-xs">
                     {discountPercent}% Off
                   </span>
                 </>
@@ -860,8 +860,8 @@ function TopProducts() {
         <button
           className={`w-full rounded-md flex justify-center items-center gap-4 p-2 mt-2 transition-all duration-300 cursor-pointer ${
             inCart
-              ? "bg-white border border-[#252525] text-black"
-              : "bg-[#252525] border border-[#252525] text-white"
+              ? "bg-white border border-[#126B6D] text-[#126B6D]"
+              : "bg-[#126B6D] border border-[#126B6D] text-white hover:bg-[#0f5c5e]"
           }`}
           onClick={inCart ? handleGoToCart : handleAddToCartClick}
         >
@@ -883,10 +883,10 @@ function TopProducts() {
 
   if (loading) {
     return (
-      <div className="lg:px-20 md:px-[60px] px-4 py-[23px] bg-white shadow-sm rounded-lg">
+      <div className="lg:px-20 md:px-[60px] px-4 py-[23px] bg-white shadow-sm rounded-lg border border-[#F0EEFF]">
         <div className="flex justify-center items-center h-64">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1C3753] mx-auto"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#126B6D] mx-auto"></div>
             <p className="mt-4 text-gray-600">Loading products...</p>
           </div>
         </div>
@@ -895,18 +895,18 @@ function TopProducts() {
   }
 
   return (
-    <div className="lg:px-20 md:px-[60px] px-4 py-[23px] bg-white shadow-sm rounded-lg">
+    <div className="lg:px-20 md:px-[60px] px-4 py-[23px] bg-white shadow-sm rounded-lg border border-[#F0EEFF]">
       {/* Main Header */}
       <div
         className="flex items-center mb-6"
         style={{
-          color: "rgb(24, 0, 172)",
+          color: "#126B6D",
           fontFamily: "'Marcellus SC', cursive",
         }}
       >
         <Title className="md:items-start px-2">Featured Collection</Title>
         <Link
-          className="whitespace-nowrap text-[#2C87E2] hover:text-blue-950 px-2 text-sm underline cursor-pointer"
+          className="whitespace-nowrap text-[#FF7F66] hover:text-[#126B6D] px-2 text-sm underline cursor-pointer"
           to="/products/top-products"
         >
           explore more
@@ -932,7 +932,7 @@ function TopProducts() {
             <h2
               className="text-lg"
               style={{
-                color: "rgb(24, 0, 172)",
+                color: "#126B6D",
                 fontFamily: "'Marcellus SC', cursive",
               }}
             >

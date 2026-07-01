@@ -278,7 +278,7 @@ function Card({
             <div
               key={productId || index}
               onClick={() => navigate(`/product/${item.slug || productId}`)}
-              className="relative group flex flex-col lg:justify-between items-center bg-white rounded-lg sm:h-[333px] lg:h-[333px] max-sm:h-max overflow-hidden group lg:hover:drop-shadow-md aspect-4/3 object-top cursor-pointer border border-gray-200"
+              className="relative group flex flex-col lg:justify-between items-center bg-white rounded-lg sm:h-[333px] lg:h-[333px] max-sm:h-max overflow-hidden group lg:hover:drop-shadow-md aspect-4/3 object-top cursor-pointer border border-[#F0EEFF] shadow-sm transition-shadow duration-300 hover:shadow-md"
             >
               <button
                 className="absolute bg-white shadow-md md:shadow-lg md:bg-white active:scale-110 transition-all duration-300 md:p-2 p-2 rounded-full text-xs top-1 right-1 z-20"
@@ -294,31 +294,31 @@ function Card({
               >
                 <Heart
                   className="w-5 h-5 cursor-pointer"
-                  fill={inWishlist ? "red" : "white"}
-                  stroke={inWishlist ? "red" : "black"}
+                  fill={inWishlist ? "#FF7F66" : "white"}
+                  stroke={inWishlist ? "#FF7F66" : "#126B6D"}
                   strokeWidth={1}
                 />
               </button>
 
               <img
-                className="lg:min-h-[202px] pt-2 sm:min-w-[207px] sm:min-h-[160px] max-w-40 max-h-40 object-contain lg:group-hover:scale-110 transition duration-300 bg-white"
+                className="lg:min-h-[202px] pt-2 sm:min-w-[207px] sm:min-h-[160px] max-w-40 max-h-40 object-contain lg:group-hover:scale-110 transition duration-300 bg-[#F6F8F9]"
                 src={productImage}
                 alt={productName}
                 crossOrigin="anonymous"
                 referrerPolicy="no-referrer"
               />
 
-              <div className="p-2 flex flex-col gap-1.5 w-full bg-white min-h-[150px] md:min-h-[113px] lg:justify-between transition-transform duration-300">
+              <div className="p-2 flex flex-col gap-1.5 w-full bg-white min-h-[150px] md:min-h-[113px] lg:justify-between transition-transform duration-300 border-t border-[#F0EEFF]">
                 <div className="flex items-center flex-wrap gap-2">
                   <p className="text-sm w-full line-clamp-1 overflow-hidden text-ellipsis">
                     {productName || "Untitled Product"}
                   </p>
-                  <span className="text-gray-900 font-medium text-lg tracking-tight">
+                  <span className="text-[#192324] font-medium text-lg tracking-tight">
                     {formatPrice(effectivePrice)}
                   </span>
                   {basePrice > effectivePrice && (
                     <>
-                      <span className="text-gray-400 text-xs line-through font-light">
+                      <span className="text-[#747877] text-xs line-through font-light">
                         {formatPrice(basePrice)}
                       </span>
                       <div className="border-l border-[#DBDBDB] h-3"></div>
@@ -327,7 +327,7 @@ function Card({
 
                   {discountPercent > 0 && (
                     <div>
-                      <span className="text-[#168408] text-sm">
+                      <span className="text-[#126B6D] text-sm">
                         {Math.round(discountPercent)}% Off
                       </span>
                     </div>
@@ -338,7 +338,7 @@ function Card({
                   {outOfStock ? (
                     <button
                       disabled
-                      className="px-4 py-2 bg-gray-300 text-xs w-full text-center text-gray-600 rounded-full cursor-not-allowed"
+                      className="px-4 py-2 bg-[#F0EEFF] text-xs w-full text-center text-[#747877] rounded-full cursor-not-allowed"
                     >
                       Out of Stock
                     </button>
@@ -348,7 +348,7 @@ function Card({
                         e.stopPropagation();
                         navigate("/bag");
                       }}
-                      className="flex items-center w-full text-xs justify-center gap-2 px-2 ring-2 ring-[#1C3753]/50 p-2 rounded-md"
+                      className="flex items-center w-full text-xs justify-center gap-2 px-2 border border-[#126B6D] text-[#126B6D] bg-white p-2 rounded-md"
                     >
                       <ShoppingCart className="w-4 h-4" />
                       <span>Go to Cart</span>
@@ -360,7 +360,7 @@ function Card({
                         handleAddToCart(item);
                       }}
                       disabled={isLoading}
-                      className="px-4 py-2 bg-[#252525] text-xs w-full text-center rounded text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="px-4 py-2 bg-[#126B6D] text-xs w-full text-center rounded text-white hover:bg-[#0f5c5e] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoading ? (
                         <div className="flex items-center gap-2">
@@ -383,7 +383,7 @@ function Card({
           );
         })
       ) : (
-        <h1 className="text-lg sm:text-xl font-semibold text-gray-800 col-span-full text-center">
+        <h1 className="text-lg sm:text-xl font-semibold text-[#126B6D] col-span-full text-center">
           No Products Available
         </h1>
       )}

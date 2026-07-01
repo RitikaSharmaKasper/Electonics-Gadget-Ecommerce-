@@ -1201,9 +1201,9 @@ function Navbar() {
   const filteredResults = searchResults.slice(0, 5);
 
   const Announcement = [
-    { name: "Watercolors, Brushes & Sketchbooks - Shop Now" },
-    { name: "Luxury Pens & Premium Journals - Quiret" },
-    { name: "Buy more, Save more- Unlock exclusive discounts" },
+    { name: "Notebook, Pencil, Chalk & Classroom Essentials - Shop Now" },
+    { name: "Maps, Slates, Globes & Learning Charts - New Stationery Range" },
+    { name: "Buy more, Save more - Unlock exclusive school supplies discounts" },
   ];
 
   // Fetch products for search
@@ -1296,7 +1296,7 @@ function Navbar() {
   return (
     <div className="fixed top-0 left-0 w-full z-50">
       {/* Top Announcement Bar */}
-      <div className="w-full bg-[#d4f1f2] text-[black] text-center text-sm py-2">
+      <div className="w-full bg-[#126B6D] text-white text-center text-sm py-2">
         <Swiper
           modules={[Autoplay]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -1311,7 +1311,7 @@ function Navbar() {
       </div>
 
       {/* Fixed Navbar */}
-      <div className="w-full h-16 bg-white shadow-sm border-b border-gray-200 sticky top-0 left-0">
+      <div className="w-full h-16 bg-white shadow-sm border-b border-[#F0EEFF] sticky top-0 left-0">
         <div className="h-full flex justify-between items-center px-4 md:px-16 lg:px-20">
           {/* Left Section */}
           <div className="flex items-center gap-4 md:gap-8">
@@ -1324,16 +1324,16 @@ function Navbar() {
               }}
             >
               {isMobileMenuOpen ? (
-                <X size={24} className="text-gray-700" />
+                <X size={24} className="text-[#126B6D]" />
               ) : (
-                <Menu size={24} className="text-gray-700" />
+                <Menu size={24} className="text-[#126B6D]" />
               )}
             </div>
 
             {/* Logo */}
             <Link to="/home" className="lg:flex items-center">
               <img
-                className="h-[80px] sm:h-[70px] w-auto object-contain"
+                className="h-[70px] sm:h-[60px] w-auto object-contain"
                 src={MainLog}
                 alt="logo"
               />
@@ -1349,8 +1349,8 @@ function Navbar() {
               }}
               className="hidden lg:flex items-center gap-2"
             >
-              <MapPin size={16} />
-              <span className="text-sm lg:text-xs md:text-sm text-[#617c7d]">
+              <MapPin size={16} className="text-[#FF7F66]" />
+              <span className="text-sm lg:text-xs md:text-sm text-[#747877]">
                 {isAuthenticated && defaultAddress ? (
                   <div className="flex-col items-start justify-start">
                     <p>Delivering to</p>
@@ -1368,8 +1368,8 @@ function Navbar() {
             {/* Search Section */}
             <div className="relative">
               {/* Desktop Search Input */}
-              <div className="hidden lg:flex items-center bg-[#e7f1f1] overflow-hidden w-64 lg:w-80 xl:w-96   rounded-md">
-                <Search size={18} className="mx-2 text-[#617c7d]" />
+              <div className="hidden lg:flex items-center bg-[#e7f1f1] overflow-hidden w-64 lg:w-80 xl:w-96 rounded-md /10">
+                <Search size={18} className="mx-2 text-[#126B6D]" />
                 <input
                   type="text"
                   placeholder="Search for products..."
@@ -1379,7 +1379,7 @@ function Navbar() {
                     setIsOpen(true);
                   }}
                   onFocus={() => setIsOpen(true)}
-                  className="flex-1 py-2 px-2 outline-none text-sm bg-transparent placeholder:text-[#686868]"
+                  className="flex-1 py-2 px-2 outline-none text-sm bg-transparent text-[#192324] placeholder:text-[#747877]"
                 />
               </div>
 
@@ -1388,11 +1388,11 @@ function Navbar() {
                 {isOpen && (
                   <div className="absolute top-full left-0 w-64 lg:w-80 xl:w-96 bg-white border border-gray-200 shadow-md mt-2.5 z-50">
                     {query.trim() === "" ? (
-                      <p className="p-3 text-sm text-[#617c7d] italic">
+                      <p className="p-3 text-sm text-[#747877] italic">
                         Type to search...
                       </p>
                     ) : loading ? (
-                      <p className="p-3 text-sm text-[#617c7d]">Loading...</p>
+                      <p className="p-3 text-sm text-[#747877]">Loading...</p>
                     ) : filteredResults.length > 0 ? (
                       <ul className="divide-y divide-gray-100">
                         {filteredResults.map((item, index) => (
@@ -1417,7 +1417,7 @@ function Navbar() {
                               <p className="text-sm font-medium">
                                 {item.productTittle}
                               </p>
-                              <p className="text-xs text-[#1C3753]">
+                              <p className="text-xs text-[#126B6D]">
                                 in {item.categoryName || "Uncategorized"}
                               </p>
                             </div>
@@ -1454,7 +1454,7 @@ function Navbar() {
                         setIsOpen(false);
                         setSearchParams({}, { replace: true });
                       }}
-                      className="p-2 rounded-full hover:bg-[#d4f1f2]"
+                      className="p-2 rounded-full hover:bg-[#F0EEFF]"
                     >
                       <X size={20} />
                     </button>
@@ -1501,7 +1501,7 @@ function Navbar() {
                               <p className="text-sm font-medium">
                                 {item.productTittle}
                               </p>
-                              <p className="text-xs text-[#106c6e]">
+                              <p className="text-xs text-[#126B6D]">
                                 in {item.categoryName || "Uncategorized"}
                               </p>
                             </div>
@@ -1509,7 +1509,7 @@ function Navbar() {
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-[#106c6e] text-sm">No results found.</p>
+                      <p className="text-[#126B6D] text-sm">No results found.</p>
                     )}
                   </div>
                 </div>
@@ -1524,7 +1524,7 @@ function Navbar() {
               >
                 <LayoutDashboard
                   size={20}
-                  className="text-[#106c6e] group-hover:text-[#0f6668]"
+                  className="text-[#126B6D] group-hover:text-[#FF7F66]"
                 />
               </button>
             )}
@@ -1532,7 +1532,7 @@ function Navbar() {
             {/* User dropdown */}
             <div className="relative group cursor-pointer">
               <button
-                className="p-2 rounded-lg hover:bg-[#f5dccc] transition-colors"
+                className="p-2 rounded-lg hover:bg-[#F0EEFF] transition-colors"
                 onClick={() => {
                   setIsProfileOpen(!isProfileOpen);
                   setDropdown(false);
@@ -1541,7 +1541,7 @@ function Navbar() {
               >
                 <UserRound
                   size={20}
-                  className="text-[#106c6e] group-hover:text-[#0f6668]"
+                  className="text-[#126B6D] group-hover:text-[#FF7F66]"
                 />
               </button>
 
@@ -1554,8 +1554,8 @@ function Navbar() {
                         className="flex items-center gap-4 px-7 pb-5 rounded-lg cursor-pointer transition-colors duration-200 group"
                         onClick={() => setShowLogoutModal(true)}
                       >
-                        <div className="p-2 rounded-lg bg-[#f5dccc] group-hover:bg-[#f5dccc] transition-colors duration-200">
-                          <LogOut className="w-5 h-5 text-gray-600 group-hover:text-[#0f6668]" />
+                        <div className="p-2 rounded-lg bg-[#F0EEFF] group-hover:bg-[#F0EEFF] transition-colors duration-200">
+                          <LogOut className="w-5 h-5 text-gray-600 group-hover:text-[#126B6D]" />
                         </div>
                         <div className="flex-1">
                           <h2 className="text-gray-800 font-medium text-[16px]">
@@ -1572,7 +1572,7 @@ function Navbar() {
                           <LogIn className="w-5 h-5 text-gray-600 group-hover:text-[#0f6668]" />
                         </div>
                         <div className="flex-1">
-                          <h2 className="text-[#0f6668] font-medium text-sm">
+                          <h2 className="text-[#126B6D] font-medium text-sm">
                             Log In
                           </h2>
                         </div>
@@ -1595,15 +1595,15 @@ function Navbar() {
 
                 navigate("/accounts/wishlist");
               }}
-              className="relative p-2 rounded-lg group hover:bg-[#f5dccc] transition-colors"
+              className="relative p-2 rounded-lg group hover:bg-[#F0EEFF] transition-colors"
             >
               <Heart
                 size={20}
-                className="text-[#106c6e] group-hover:text-[#0f6668]"
+                className="text-[#126B6D] group-hover:text-[#FF7F66]"
               />
 
               {wishlistCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#1C3753] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-[#FF7F66] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
                   {wishlistCount}
                 </span>
               )}
@@ -1619,15 +1619,15 @@ function Navbar() {
 
                 navigate("/bag");
               }}
-              className="relative p-2 group rounded-lg hover:bg-[#f5dccc] transition-colors"
+              className="relative p-2 group rounded-lg hover:bg-[#F0EEFF] transition-colors"
             >
               <ShoppingCart
                 size={20}
-                className="text-[#106c6e] group-hover:text-[#0f6668]"
+                className="text-[#126B6D] group-hover:text-[#FF7F66]"
               />
 
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#1C3753] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-[#FF7F66] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
@@ -1657,7 +1657,7 @@ function Navbar() {
             >
               <div className="p-5 border-b border-gray-200">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-[#F0EEFF] flex items-center justify-center">
                     {user?.user?.profileImage?.url ? (
                       <img
                         src={user.user.profileImage.url}
@@ -1667,7 +1667,7 @@ function Navbar() {
                         className="w-full h-full object-cover rounded-full"
                       />
                     ) : (
-                      <UserRound size={20} className="text-amber-600" />
+                      <UserRound size={20} className="text-[#126B6D]" />
                     )}
                   </div>
                   <div>
@@ -1682,7 +1682,7 @@ function Navbar() {
                 <Link
                   to="/home"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 py-3 text-gray-800 font-medium hover:text-[#1C3753] transition-colors"
+                  className="flex items-center gap-3 py-3 text-gray-800 font-medium hover:text-[#126B6D] transition-colors"
                 >
                   Home
                 </Link>
@@ -1721,7 +1721,7 @@ function Navbar() {
                   return (
                     <div key={item._id || item.name || index} className="py-2">
                       <div
-                        className="flex items-center justify-between py-3 px-3 text-gray-700 font-medium rounded-lg hover:bg-[#D5E5F5] hover:text-[#1C3753] cursor-pointer"
+                        className="flex items-center justify-between py-3 px-3 text-gray-700 font-medium rounded-lg hover:bg-[#F0EEFF] hover:text-[#126B6D] cursor-pointer"
                         onClick={() => {
                           if (subcategories.length > 0) {
                             setSubDropdown(
@@ -1751,7 +1751,7 @@ function Navbar() {
                           }`}
                         >
                           <div
-                            className="py-2 px-3 text-sm rounded-md text-gray-600 hover:bg-[#D5E5F5] hover:text-[#1C3753] cursor-pointer"
+                            className="py-2 px-3 text-sm rounded-md text-gray-600 hover:bg-[#F0EEFF] hover:text-[#126B6D] cursor-pointer"
                             onClick={() => {
                               navigate(
                                 `/products/${encodeURIComponent(item.slug || item.name)}`,
@@ -1775,7 +1775,7 @@ function Navbar() {
                             .map((sub, i) => (
                               <div
                                 key={sub._id || sub.name || i}
-                                className="py-2 px-3 text-sm text-gray-600 rounded-md hover:bg-[#D5E5F5] hover:text-[#1C3753] cursor-pointer"
+                                className="py-2 px-3 text-sm text-gray-600 rounded-md hover:bg-[#F0EEFF] hover:text-[#126B6D] cursor-pointer"
                                 onClick={() => {
                                   navigate(
                                     `/products/${encodeURIComponent(item.slug || item.name)}/${encodeURIComponent(sub.slug || sub.name)}`,
@@ -1804,7 +1804,7 @@ function Navbar() {
                 {/* <Link
                   to="/faqs"
                   onClick={() => setDropdown(false)}
-                  className="flex items-center gap-3 py-3 text-gray-800 font-medium hover:text-[#1C3753] transition-colors"
+                  className="flex items-center gap-3 py-3 text-gray-800 font-medium hover:text-[#126B6D] transition-colors"
                 >
                   FAQs
                 </Link> */}
@@ -1855,11 +1855,11 @@ function Navbar() {
                     to="/login"
                     className="flex items-center gap-4 px-7 pb-6 rounded-lg cursor-pointer transition-colors duration-200 group"
                   >
-                    <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-yellow-100 transition-colors duration-200">
-                      <LogIn className="w-5 h-5 text-gray-600 group-hover:text-yellow-600" />
+                    <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#F0EEFF] transition-colors duration-200">
+                      <LogIn className="w-5 h-5 text-gray-600 group-hover:text-[#126B6D]" />
                     </div>
                     <div className="flex-1">
-                      <h2 className="text-yellow-600 font-medium text-sm">
+                      <h2 className="text-[#126B6D] font-medium text-sm">
                         Log In
                       </h2>
                     </div>

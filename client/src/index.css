@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Manrope:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,7 +18,16 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  background-color: #f6f8f9;
+  color: #192324;
+  font-family: "Manrope", "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-marcellus {
+  font-family: "Literata", "Ibarra Real Nova", serif;
 }
 
 .hero-subtitle,
