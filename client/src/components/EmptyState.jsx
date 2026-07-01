@@ -9,25 +9,25 @@ const EmptyState = ({
   onClick, // optional
 }) => {
   const buttonClasses =
-    "inline-block bg-[#1800AC] hover:from-[#1C3753] hover:to-[#1C3753] \
+    "inline-block bg-[#126B6D] hover:bg-[#0f5c5e] \
      text-white rounded-lg md:px-8 md:py-3 px-4 py-2 text-sm md:text-base font-medium transition-all shadow-md hover:shadow-lg";
 
   return (
-    <div className="flex flex-col justify-center items-center text-center px-4 bg-white mb-5 py-10">
+    <div className="flex flex-col justify-center items-center text-center px-4 bg-white border border-[#F0EEFF] rounded-lg mb-5 py-10">
       {/* Icon Circle */}
       {Icon && (
-        <div className="mx-auto md:w-28 md:h-28 w-16 h-16 bg-[#CFC7FF] rounded-full flex items-center justify-center mb-6 shadow-inner mt-28">
-          <Icon className="md:w-14 md:h-14 w-8 h-8 text-[#1800AC]" />
+        <div className="mx-auto md:w-28 md:h-28 w-16 h-16 bg-[#F0EEFF] rounded-full flex items-center justify-center mb-6 shadow-inner mt-28">
+          <Icon className="md:w-14 md:h-14 w-8 h-8 text-[#126B6D]" />
         </div>
       )}
 
       {/* Heading */}
-      <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mb-3">
+      <h3 className="text-lg md:text-2xl font-semibold text-[#126B6D] mb-3">
         {heading}
       </h3>
 
       {/* Subtext */}
-      <p className="text-sm md:text-base text-gray-500 max-w-sm mb-4 md:mb-8">
+      <p className="text-sm md:text-base text-[#747877] max-w-sm mb-4 md:mb-8">
         {description}
       </p>
 

@@ -31,7 +31,7 @@ function FilterProducts({ text = "Best Selling Products", sort }) {
     <div className="relative z-[100px] flex flex-col md:flex-row md:justify-between md:items-center w-full mb-5 gap-3 mt-24 md:mt-0">
       {/* Heading */}
       <div className="block md:block">
-        <p className="text-lg md:text-xl font-marcellus font-medium text-[#1800AC]">
+        <p className="text-lg md:text-xl font-marcellus font-medium text-[#126B6D]">
           {text}
         </p>
       </div>
@@ -39,16 +39,16 @@ function FilterProducts({ text = "Best Selling Products", sort }) {
       {/* Sort */}
       <div
         ref={dropdownRef}
-        className="relative flex justify-between md:justify-start items-center gap-2 w-full md:w-auto border border-[#DEDEDE] rounded-[5px] bg-[#FFFFFF]  px-3 py-2"
+        className="relative flex justify-between md:justify-start items-center gap-2 w-full md:w-auto border border-[#F0EEFF] rounded-[5px] bg-[#FFFFFF] px-3 py-2 shadow-sm"
       >
-        <span className="text-[#686868] text-xs md:text-base">Sort by:</span>
+        <span className="text-[#747877] text-xs md:text-base">Sort by:</span>
 
         <button
           type="button"
           className="flex justify-between items-center w-full md:w-[200px]"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          <span className="text-[#3A3A3A] text-sm md:text-base">
+          <span className="text-[#126B6D] text-sm md:text-base">
             {selected.label}
           </span>
 
@@ -60,12 +60,12 @@ function FilterProducts({ text = "Best Selling Products", sort }) {
         </button>
 
         {isOpen && (
-          <div className="absolute top-full left-0 mt-1 w-full md:right-0 md:left-auto md:w-[280px] bg-white border border-[#DEDEDE] rounded-[5px] overflow-hidden shadow-md z-[99999] max-h-[280px] overflow-y-auto">
+          <div className="absolute top-full left-0 mt-1 w-full md:right-0 md:left-auto md:w-[280px] bg-white border border-[#F0EEFF] rounded-[5px] overflow-hidden shadow-md z-[99999] max-h-[280px] overflow-y-auto">
             {options.map((opt) => (
               <button
                 type="button"
                 key={opt.value}
-                className="w-full text-left hover:bg-[#F0EEFF] px-4 py-2 text-sm"
+                className="w-full text-left hover:bg-[#F0EEFF] px-4 py-2 text-sm text-[#747877] hover:text-[#126B6D]"
                 onClick={() => {
                   setSelected(opt);
                   sort?.(opt.value);

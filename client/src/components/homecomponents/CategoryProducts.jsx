@@ -208,6 +208,18 @@ function CategoryProducts() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [visibleCount, setVisibleCount] = useState(4);
+  // const stationeryCategories = [
+  //   "Notebook",
+  //   "Pencil",
+  //   "Colour Chalk",
+  //   "Sharpener",
+  //   "Eraser",
+  //   "Charts",
+  //   "Pen",
+  //   "Maps",
+  //   "Slates",
+  //   "Globes",
+  // ];
 
   // Fetch products
   useEffect(() => {
@@ -248,9 +260,9 @@ function CategoryProducts() {
 
   useEffect(() => {
     const updateCount = () => {
-      if (window.innerWidth >= 1024) setVisibleCount(8);
-      else if (window.innerWidth >= 640) setVisibleCount(9);
-      else setVisibleCount(9);
+      if (window.innerWidth >= 1024) setVisibleCount(10);
+      else if (window.innerWidth >= 640) setVisibleCount(10);
+      else setVisibleCount(10);
     };
 
     updateCount();
@@ -297,6 +309,7 @@ function CategoryProducts() {
     acc[categoryName].push(product);
     return acc;
   }, {});
+  // const groupedEntries = Object.entries(groupedProducts);
 
   if (allProducts.length === 0) {
     return (
@@ -314,15 +327,17 @@ function CategoryProducts() {
         gap-2 md:gap-5 lg:gap-4 grid-flow-row
         place-items-start lg:px-20 md:px-[60px] px-4 py-[23px]"
       >
-        {Object.entries(groupedProducts)
+    {Object.entries(groupedProducts)
           .slice(0, visibleCount)
           .map(([category, items]) => (
+
+           
             <div
               key={category}
-              className="bg-gradient-to-b shadow-sm rounded-lg bg-white py-2 px-3 w-full"
+              className="bg-white shadow-sm rounded-lg border border-[#F0EEFF] py-3 px-3 w-full"
             >
               <div className="flex items-center justify-between">
-                <h2 className="md:text-2xl text-[20px] py-[9px] font-light font-marcellus text-[#1800AC]">
+                <h2 className="md:text-2xl text-[20px] py-[9px] font-light font-marcellus text-[#126B6D]">
                   {category}
                 </h2>
 
@@ -331,7 +346,7 @@ function CategoryProducts() {
                   state={{
                     category,
                   }}
-                  className="underline text-[#2C87E2] hover:text-blue-950 py-2 text-sm"
+                  className="underline text-[#FF7F66] hover:text-[#126B6D] py-2 text-sm"
                 >
                   view all
                 </Link>
@@ -345,7 +360,7 @@ function CategoryProducts() {
                     className="cursor-pointer flex flex-col items-center transition-all duration-300 hover:shadow-sm"
                   >
                     <div className="flex flex-col w-full h-full overflow-hidden">
-                      <div className="relative w-full aspect-square rounded-md overflow-hidden">
+                      <div className="relative w-full aspect-square rounded-md overflow-hidden ">
                         <img
                           className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                           src={getProductImage(product)}
@@ -363,7 +378,7 @@ function CategoryProducts() {
                         )} */}
                       </div>
 
-                      <h3 className="text-xs py-2 bg-transparent line-clamp-1 h-6">
+                      <h3 className="text-xs py-2 bg-transparent text-[#747877] line-clamp-1 h-6">
                         {product.name || product.title || "United Product"}
                       </h3>
                     </div>
@@ -371,6 +386,7 @@ function CategoryProducts() {
                 ))}
               </div>
             </div>
+          // );
           ))}
       </div>
     </div>

@@ -1089,7 +1089,7 @@ function LatestProducts() {
     };
 
     return (
-      <div className="bg-white p-2 rounded-lg group block transition-shadow duration-300 hover:shadow-lg">
+      <div className="bg-white p-2 rounded-lg group block border border-[#F0EEFF] transition-shadow duration-300 hover:shadow-lg">
         <Link
           to={`/product/${product.slug || product._id}`}
           onClick={(e) => e.stopPropagation()}
@@ -1128,14 +1128,14 @@ function LatestProducts() {
                 ₹{sellingPrice || "--"}
               </span>
               {mrp > 0 && sellingPrice > 0 && mrp !== sellingPrice && (
-                <span className="text-gray-400 text-xs line-through font-light">
+                <span className="text-[#747877] text-xs line-through font-light">
                   ₹{mrp}
                 </span>
               )}
               {discountPercent > 0 && (
                 <>
                   <div className="border-l border-[#DBDBDB] h-3"></div>
-                  <span className="text-[#35C772] text-xs">
+                  <span className="text-[#126B6D] text-xs">
                     {Math.round(discountPercent)}% Off
                   </span>
                 </>
@@ -1148,8 +1148,8 @@ function LatestProducts() {
         <button
           className={`w-full rounded-md flex justify-center items-center gap-4 p-2 mt-2 transition-all duration-300 cursor-pointer ${
             inCart
-              ? "bg-white border border-[#252525] text-black"
-              : "bg-[#252525] border border-[#252525] text-white"
+              ? "bg-white border border-[#126B6D] text-[#126B6D]"
+              : "bg-[#126B6D] border border-[#126B6D] text-white hover:bg-[#0f5c5e]"
           }`}
           onClick={inCart ? handleGoToCart : handleAddToCartClick}
         >
@@ -1171,24 +1171,24 @@ function LatestProducts() {
 
   if (loading) {
     return (
-      <div className="lg:px-20 md:px-[60px] px-4 py-[23px] bg-[#EEFDFF] shadow-sm rounded-lg">
+      <div className="lg:px-20 md:px-[60px] px-4 py-[23px] bg-[#F0EEFF] shadow-sm rounded-lg">
         <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1C3753] mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#126B6D] mx-auto"></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="lg:px-20 md:px-[60px] px-4 py-[23px] relative bg-[#EEFDFF] shadow-sm rounded-lg">
+    <div className="lg:px-20 md:px-[60px] px-4 py-[23px] relative bg-[#F0EEFF] shadow-sm rounded-lg">
       <div className="flex items-center">
-        <Title className="md:items-start px-2 font-marcellus text-[#1800AC]">
+        <Title className="md:items-start px-2 font-marcellus text-[#126B6D]">
           Best Selling Products
         </Title>
         <Link
           to="/products"
           onClick={(e) => e.stopPropagation()}
-          className="whitespace-nowrap text-[#2C87E2] hover:text-blue-950 px-2 text-sm underline cursor-pointer"
+          className="whitespace-nowrap text-[#FF7F66] hover:text-[#126B6D] px-2 text-sm underline cursor-pointer"
         >
           explore more
         </Link>

@@ -59,11 +59,11 @@ function Categories({
 
 
   return (
-    <div className="min-w-[223px] bg-white lg:block hidden border border-gray-200 p-2 pb-6">
+    <div className="min-w-[223px] bg-white lg:block hidden border border-[#F0EEFF] p-2 pb-6 rounded-md shadow-sm">
       {filter.length > 0 && (
-        <div className="w-[195px] flex justify-between border-b border-black py-2">
-          <h1 className="text-[15px] font-[500] px-2">Categories</h1>
-          <ChevronRight />
+        <div className="w-[195px] flex justify-between border-b border-[#F0EEFF] py-2">
+          <h1 className="text-[15px] font-[500] px-2 text-[#126B6D]">Categories</h1>
+          <ChevronRight className="text-[#FF7F66]" />
         </div>
       )}
 
@@ -88,26 +88,25 @@ function Categories({
                 <div
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background:
-                      "linear-gradient(to bottom, #CBA11A, #C8A112, #E2CF47, #EECD4E, #D6AD1D, #DFBA30)",
+                    background: "#126B6D",
                   }}
                 ></div>
                 {/* Inner Circle */}
                 <div className="top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-3 h-3 absolute border-2 border-white rounded-full"></div>
               </div>
             ) : (
-              <div className="min-w-4 min-h-4 rounded-full border border-[#989898]"></div>
+              <div className="min-w-4 min-h-4 rounded-full border border-[#F0EEFF]"></div>
             )}
-            <p className="text-sm text-[#6d6d6d]">{subcat}</p>
+            <p className="text-sm text-[#747877]">{subcat}</p>
           </div>
         ))}
       </div>
 
       {/* Colors */}
       <div className="w-[195px] flex flex-col gap-6">
-        <div className="flex justify-between border-b border-black py-2">
-          <h1 className="text-[15px] font-[500] px-2">Colors</h1>
-          <ChevronRight />
+        <div className="flex justify-between border-b border-[#F0EEFF] py-2">
+          <h1 className="text-[15px] font-[500] px-2 text-[#126B6D]">Colors</h1>
+          <ChevronRight className="text-[#FF7F66]" />
         </div>
         <div className="flex gap-4 px-3">
           {colors.map(({ colorName, colorCode }) => (
