@@ -1,0 +1,2304 @@
+import React, { useState, useMemo, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Breadcrumbs from "../components/Breadcrumbs";
+import Footer from "../sections/Footer";
+import Ratings from "../components/Ratings";
+import Reviews from "../components/Reviews";
+import CustomerReview from "../components/CustomerReview";
+import Card from "../components/Card";
+import {
+  ChevronDown,
+  ChevronUp,
+  Heart,
+  Minus,
+  PackageOpen,
+  Plus,
+  Trash2,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { useSelector } from "react-redux";
+import { getPrices } from "../utils/homePageUtils";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Thumbs } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import EmptyState from "../components/EmptyState";
+import axiosInstance from "../api/axiosInstance";
+import AddReviewsModel from "../components/AddReviewsModel";
+import { toast } from "react-toastify";
+import ProductInfoPincode from "./ProductInfoPincode";
+import {
+  getCart,
+  addToCart,
+  updateCart,
+  deleteFromCart,
+  clearCart,
+  getWishlist,
+  addToWishlist,
+  removeFromWishlist,
+} from "../services/CartService";
+
+function ProductDetails() {
+  const { slugOrId } = useParams();
+  const { isAuthenticated } = useSelector((s) => s.user);
+  const navigate = useNavigate();
+  const [product, setProduct] = useState(null);
+  const [similarProducts, setSimilarProducts] = useState([]);
+  const [selectedVariant, setSelectedVariant] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [pageLoading, setPageLoading] = useState(true);
+  const [cartUpdating, setCartUpdating] = useState(false);
+  const [mainImageIndex, setMainImageIndex] = useState(0);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [inWishlist, setInWishlist] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+  const [wishlistItems, setWishlistItems] = useState([]);
+  const [openAddReviewModal, setOpenAddReviewModal] = useState(false);
+  const [selectedReview, setSelectedReview] = useState(null);
+  const [localQty, setLocalQty] = useState(0);
+  const [Loding, setLoading] = useState(false);
+  const [FetchedReviews, setFetchedReviews] = useState(null);
+  const [showMagnifier, setShowMagnifier] = useState(false);
+  const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
+
+  // ////////////section combination
+  const [selectedWeight, setSelectedWeight] = useState(null);
+  const [selectedStyle, setSelectedStyle] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
+
+  ///////////////////gust user
+  const [guestCartItems, setGuestCartItems] = useState([]);
+  const [guestWishlistItems, setGuestWishlistItems] = useState([]);
+
+  const syncGuestState = () => {
+    setGuestCartItems(JSON.parse(localStorage.getItem("cart") || "[]"));
+    setGuestWishlistItems(JSON.parse(localStorage.getItem("wishlist") || "[]"));
+  };
+
+  useEffect(() => {
+    syncGuestState();
+
+    window.addEventListener("cartUpdated", syncGuestState);
+    window.addEventListener("wishlistUpdated", syncGuestState);
+
+    return () => {
+      window.removeEventListener("cartUpdated", syncGuestState);
+      window.removeEventListener("wishlistUpdated", syncGuestState);
+    };
+  }, []);
+
+  // Sync cart from backend
+  const syncCartFromBackend = async () => {
+    if (!isAuthenticated) return;
+    try {
+      const response = await getCart();
+      const cartData = response?.data || response;
+      setCartItems(cartData?.items || []);
+    } catch (err) {
+      console.error("Cart sync failed:", err);
+    }
+  };
+
+  // Sync wishlist from backend
+  const syncWishlistFromBackend = async () => {
+    if (!isAuthenticated) return;
+
+    try {
+      const response = await getWishlist();
+
+      const wishlistItemsData =
+        response?.data?.data?.items ||
+        response?.data?.items ||
+        response?.data?.wishlist?.items ||
+        response?.data ||
+        [];
+
+      setWishlistItems(
+        Array.isArray(wishlistItemsData) ? wishlistItemsData : [],
+      );
+    } catch (err) {
+      console.error("Wishlist sync failed:", err);
+    }
+  };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      syncCartFromBackend();
+      syncWishlistFromBackend();
+    }
+  }, [isAuthenticated]);
+
+  const getSimilarProducts = (all, found, uuid) => {
+    if (!found) return [];
+
+    const normalize = (str) => {
+      if (!str) return "";
+      if (typeof str !== "string") return "";
+      return str
+        .toLowerCase()
+        .replace(/[^a-z0-9 ]/g, " ")
+        .trim();
+    };
+
+    const foundTitleWords = normalize(found.productTittle).split(" ");
+
+    const sameCategoryList = all.filter(
+      (p) =>
+        p._id !== uuid &&
+        normalize(p.category?.name) === normalize(found.category?.name),
+    );
+
+    const sameSub = sameCategoryList.filter(
+      (p) =>
+        normalize(p.subcategory?.name) === normalize(found.subcategory?.name),
+    );
+
+    if (sameSub.length > 0) return sameSub.slice(0, 10);
+
+    const similarByTitle = sameCategoryList.filter((p) => {
+      const title = normalize(p.productTittle);
+      return foundTitleWords.some((w) => title.includes(w));
+    });
+
+    if (similarByTitle.length > 0) return similarByTitle.slice(0, 10);
+
+    return sameCategoryList.slice(0, 10);
+  };
+
+  // FETCH PRODUCT + SIMILAR PRODUCTS
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        setPageLoading(true);
+        const res = await axiosInstance.get(`/product/${slugOrId}`);
+        const found = res.data.data;
+        setProduct(found);
+
+        // console.log(res);
+
+        if (found?.variants?.length > 0) {
+          const v0 = found.variants[0];
+
+          setSelectedVariant(v0);
+          setSelectedWeight(v0.variantWeight);
+          setSelectedStyle(v0.variantName);
+          setSelectedColor(v0.variantColor);
+        }
+
+        const allRes = await axiosInstance.get("/product/all");
+        const allProducts = allRes?.data?.data || allRes?.data?.products || [];
+        const similar = getSimilarProducts(allProducts, found, found._id);
+        setSimilarProducts(similar);
+      } catch (err) {
+        console.error(err);
+        setProduct(null);
+      } finally {
+        setPageLoading(false);
+      }
+    };
+
+    if (slugOrId) fetchProduct();
+  }, [slugOrId]);
+
+  const getImageUrl = (img) => {
+    if (!img) return "/placeholder.png";
+    const imagePath = typeof img === "string" ? img : img?.url;
+    if (!imagePath) return "/placeholder.png";
+    if (imagePath.startsWith("http")) return imagePath;
+    if (imagePath.startsWith("/")) return `http://localhost:5000${imagePath}`;
+    return `http://localhost:5000/${imagePath}`;
+  };
+
+  const normalizeSize = (v) =>
+    `${v?.variantLength}x${v?.variantBreadth} ${v?.variantDimensionunit || ""}`.trim();
+
+  const findVariant = ({ weight, style, color }) => {
+    return (product?.variants || []).find((v) => {
+      const matchWeight = weight ? v.variantWeight === weight : true;
+      const matchStyle = style ? v.variantName === style : true;
+      const matchColor = color ? v.variantColor === color : true;
+
+      return matchWeight && matchStyle && matchColor;
+    });
+  };
+
+  const variantId = selectedVariant?.variantId || selectedVariant?._id;
+
+  const inCart = useMemo(() => {
+    if (!selectedVariant || !product) return false;
+
+    if (isAuthenticated) {
+      return cartItems.some(
+        (i) =>
+          String(i.productId || i.product) === String(product._id) &&
+          String(i.variantId) === String(variantId),
+      );
+    }
+
+    return guestCartItems.some(
+      (i) =>
+        String(i.productId) === String(product._id) &&
+        String(i.variantId) === String(variantId),
+    );
+  }, [
+    cartItems,
+    guestCartItems,
+    isAuthenticated,
+    product?._id,
+    selectedVariant,
+    variantId,
+  ]);
+
+  const qtyInCart =
+    cartItems.find(
+      (i) =>
+        String(i.productId || i.product) === String(product?._id) &&
+        String(i.variantId) === String(variantId),
+    )?.quantity || 0;
+
+  useEffect(() => {
+    setLocalQty(qtyInCart);
+  }, [qtyInCart]);
+
+  const handleSeeReviews = async () => {
+    try {
+      setLoading(true);
+      const res = await axiosInstance.get(
+        `/review/all-product-reviews/${product?._id}`,
+      );
+      const allProductReviews = res?.data?.data || [];
+      setFetchedReviews(allProductReviews);
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (product?._id) {
+      handleSeeReviews();
+    }
+  }, [product?._id]);
+
+  const weightOptions = [
+    ...new Set(
+      (product?.variants || []).map((v) => v?.variantWeight).filter(Boolean),
+    ),
+  ];
+
+  const sizeOptions = [
+    ...new Set(
+      (product?.variants || [])
+        .map((v) => `${v.variantName} `.trim())
+        .filter(Boolean),
+    ),
+  ];
+
+  const colorOptions = [
+    ...new Set(
+      (product?.variants || []).map((v) => v.variantColor).filter(Boolean),
+    ),
+  ];
+
+  const onSelectWeight = (weight) => {
+    const match =
+      findVariant({
+        weight,
+        style: selectedStyle,
+        color: selectedColor,
+      }) ||
+      findVariant({
+        weight,
+        style: selectedStyle,
+        color: null,
+      }) ||
+      findVariant({
+        weight,
+        style: null,
+        color: null,
+      });
+
+    if (match) {
+      setSelectedWeight(match.variantWeight);
+      setSelectedStyle(match.variantName);
+      setSelectedColor(match.variantColor);
+      setSelectedVariant(match);
+      setMainImageIndex(0);
+      thumbsSwiper?.slideTo?.(0);
+    }
+  };
+
+  const onSelectStyle = (style) => {
+    const match =
+      findVariant({
+        weight: selectedWeight,
+        style,
+        color: selectedColor,
+      }) ||
+      findVariant({
+        weight: null,
+        style,
+        color: selectedColor,
+      }) ||
+      findVariant({
+        weight: null,
+        style,
+        color: null,
+      });
+
+    if (match) {
+      setSelectedWeight(match.variantWeight);
+      setSelectedStyle(match.variantName);
+      setSelectedColor(match.variantColor);
+      setSelectedVariant(match);
+      setMainImageIndex(0);
+      thumbsSwiper?.slideTo?.(0);
+    }
+  };
+
+  const onSelectColor = (color) => {
+    const match =
+      findVariant({
+        weight: selectedWeight,
+        style: selectedStyle,
+        color,
+      }) ||
+      findVariant({
+        weight: null,
+        style: selectedStyle,
+        color,
+      }) ||
+      findVariant({
+        weight: null,
+        style: null,
+        color,
+      });
+
+    if (match) {
+      setSelectedWeight(match.variantWeight);
+      setSelectedStyle(match.variantName);
+      setSelectedColor(match.variantColor);
+      setSelectedVariant(match);
+      setMainImageIndex(0);
+      thumbsSwiper?.slideTo?.(0);
+    }
+  };
+
+  const handleOpenAddReview = () => {
+    if (!isAuthenticated) {
+      toast.error("Please login first to add reviews");
+      return;
+    }
+    setSelectedReview(null);
+    setOpenAddReviewModal(true);
+  };
+
+  const handleCloseReview = () => {
+    setOpenAddReviewModal(false);
+    setSelectedReview(null);
+  };
+
+  const images = selectedVariant?.variantImage || [];
+  const mrp = Number(selectedVariant?.variantMrp || 0);
+  const sp = Number(selectedVariant?.variantSellingPrice || 0);
+  const discount = Number(selectedVariant?.variantDiscount || 0);
+  const effectivePrice =
+    sp > 0 ? sp : discount > 0 ? Math.round(mrp * (1 - discount / 100)) : mrp;
+  const stock = Number(selectedVariant?.variantAvailableStock || 0);
+  const outOfStock = stock <= 0;
+
+  useEffect(() => {
+    if (!product?.variants?.length) return;
+    if (selectedVariant) return;
+    const v0 = product.variants[0];
+    setSelectedVariant(v0);
+    setSelectedSize(normalizeSize(v0));
+    setMainImageIndex(0);
+    thumbsSwiper?.slideTo?.(0);
+  }, [product, thumbsSwiper, selectedVariant]);
+
+  // Handle Add to Cart with authentication check
+  const handleAddToCart = async () => {
+    if (!checkDeliveryBeforeAction()) return;
+
+    if (!selectedVariant?._id && !selectedVariant?.variantId) {
+      toast.error("Please select a variant");
+      return;
+    }
+
+    if (!isAuthenticated) {
+      const guestCart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+      const exists = guestCart.find(
+        (i) =>
+          String(i.productId) === String(product._id) &&
+          String(i.variantId) === String(variantId),
+      );
+
+      const updatedCart = exists
+        ? guestCart.map((i) =>
+            String(i.productId) === String(product._id) &&
+            String(i.variantId) === String(variantId)
+              ? { ...i, quantity: (i.quantity || 1) + 1 }
+              : i,
+          )
+        : [
+            ...guestCart,
+            {
+              productId: product._id,
+              variantId,
+              quantity: 1,
+              title: product.productTittle,
+              image:
+                selectedVariant?.variantImage?.[0]?.url || "/placeholder.png",
+              price: effectivePrice,
+            },
+          ];
+
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      setGuestCartItems(updatedCart);
+
+      window.dispatchEvent(new Event("cartUpdated"));
+      toast.success("Added to cart. Login to view cart.");
+      return;
+    }
+
+    setCartUpdating(true);
+
+    try {
+      const response = await addToCart({
+        productId: product._id,
+        variantId,
+        quantity: 1,
+      });
+
+      const cartData = response?.data?.data || response?.data || response;
+      setCartItems(cartData?.items || []);
+
+      window.dispatchEvent(new Event("cartUpdated"));
+      toast.success("Added to cart!");
+    } catch (err) {
+      toast.error(err?.response?.data?.message || "Failed to add to cart");
+    } finally {
+      setCartUpdating(false);
+    }
+  };
+
+  // Handle Buy Now with authentication check
+  // const handleBuyNow = async () => {
+  //   if (!isAuthenticated) {
+  //     toast.error("Please login to buy products");
+  //     return;
+  //   }
+
+  //   if (!checkDeliveryBeforeAction()) return;
+
+  //   if (!selectedVariant?._id && !selectedVariant?.variantId) {
+  //     toast.error("Please select a variant");
+  //     return;
+  //   }
+
+  //   try {
+  //     const buyNowItem = {
+  //       productId: product._id,
+  //       variantId: variantId,
+  //       quantity: 1,
+  //       title: product.productTittle,
+  //       image: selectedVariant?.variantImage?.[0]?.url || "/placeholder.png",
+  //       sellingPrice: Number(selectedVariant?.variantSellingPrice || 0),
+  //       mrp: Number(selectedVariant?.variantMrp || 0),
+  //       discount: Number(selectedVariant?.variantDiscount || 0),
+  //       variantName: selectedVariant?.variantName,
+  //       variantWeight: selectedVariant?.variantWeight,
+  //       variantWeightUnit: selectedVariant?.variantWeightUnit,
+  //     };
+
+  //     localStorage.setItem("buyNowItem", JSON.stringify(buyNowItem));
+
+  //     navigate("/checkout/payment?type=buy-now");
+  //   } catch (error) {
+  //     console.error("Buy now error:", error);
+
+  //     toast.error(
+  //       error?.response?.data?.message || "Failed to process Buy Now",
+  //     );
+  //   }
+  // };
+
+  const handleBuyNow = async () => {
+    if (!isAuthenticated) {
+      toast.error("Please login to buy products");
+      navigate("/login");
+      return;
+    }
+
+    if (!checkDeliveryBeforeAction()) return;
+
+    if (!selectedVariant?._id && !selectedVariant?.variantId) {
+      toast.error("Please select a variant");
+      return;
+    }
+
+    // OUT OF STOCK
+    if (Number(selectedVariant?.variantAvailableStock || 0) <= 0) {
+      toast.error("Product out of stock");
+      return;
+    }
+
+    try {
+      navigate("/checkout/delivery", {
+        state: {
+          mode: "buy-now",
+          buyNowItem: {
+            productId: product._id,
+            variantId: selectedVariant._id,
+            quantity: 1,
+          },
+        },
+      });
+    } catch (error) {
+      console.error(error);
+
+      toast.error("Failed to process Buy Now");
+    }
+  };
+
+  // Handle Wishlist Toggle with authentication check
+  const handleWishlistToggle = async (e) => {
+    e.stopPropagation();
+
+    if (!selectedVariant?._id && !selectedVariant?.variantId) {
+      toast.error("Please select a variant");
+      return;
+    }
+
+    if (!isAuthenticated) {
+      const guestWishlist = JSON.parse(
+        localStorage.getItem("wishlist") || "[]",
+      );
+
+      const exists = guestWishlist.some(
+        (i) =>
+          String(i.productId) === String(product._id) &&
+          String(i.variantId) === String(variantId),
+      );
+
+      const updatedWishlist = exists
+        ? guestWishlist.filter(
+            (i) =>
+              !(
+                String(i.productId) === String(product._id) &&
+                String(i.variantId) === String(variantId)
+              ),
+          )
+        : [
+            ...guestWishlist,
+            {
+              productId: product._id,
+              variantId,
+              title: product.productTittle,
+              image:
+                selectedVariant?.variantImage?.[0]?.url || "/placeholder.png",
+              price: effectivePrice,
+            },
+          ];
+
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+      setGuestWishlistItems(updatedWishlist);
+
+      window.dispatchEvent(new Event("wishlistUpdated"));
+      toast.success(exists ? "Removed from wishlist" : "Added to wishlist");
+      return;
+    }
+
+    const isItemInWishlist = wishlistItems.some(
+      (i) =>
+        String(i.productId || i.product) === String(product._id) &&
+        String(i.variantId) === String(variantId),
+    );
+
+    try {
+      if (isItemInWishlist) {
+        await removeFromWishlist({
+          productId: product._id,
+          variantId,
+        });
+
+        setWishlistItems((prev) =>
+          prev.filter(
+            (i) =>
+              !(
+                String(i.productId || i.product) === String(product._id) &&
+                String(i.variantId) === String(variantId)
+              ),
+          ),
+        );
+
+        toast.success("Removed from wishlist");
+      } else {
+        await addToWishlist({
+          productId: product._id,
+          variantId,
+        });
+
+        await syncWishlistFromBackend();
+        toast.success("Added to wishlist");
+      }
+
+      window.dispatchEvent(new Event("wishlistUpdated"));
+    } catch (err) {
+      toast.error(err?.response?.data?.message || "Failed to update wishlist");
+    }
+  };
+
+  const handleGoToCart = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigate("/bag");
+  };
+
+  const checkDeliveryBeforeAction = () => {
+    const deliveryInfo = localStorage.getItem("deliveryInfo");
+    if (!deliveryInfo) {
+      toast.error("Please check delivery availability first");
+      return false;
+    }
+    const parsed = JSON.parse(deliveryInfo);
+    if (!parsed.isServiceable) {
+      toast.error("Sorry, delivery is not available in this area");
+      return false;
+    }
+    return true;
+  };
+
+  const avgRating = Number(product?.stats?.averageRating || 0);
+
+  const isWishlisted = isAuthenticated
+    ? wishlistItems.some(
+        (i) =>
+          String(i.productId || i.product?._id || i.product) ===
+            String(product?._id) &&
+          String(i.variantId || i.variant?._id || i.variant) ===
+            String(variantId),
+      )
+    : guestWishlistItems.some(
+        (i) =>
+          String(i.productId) === String(product?._id) &&
+          String(i.variantId) === String(variantId),
+      );
+
+  if (pageLoading) {
+    return (
+      <>
+        <Navbar />
+        <EmptyState heading="Loading..." description="Fetching product..." />
+        <Footer />
+      </>
+    );
+  }
+
+  if (!product || !selectedVariant) {
+    return (
+      <>
+        <Navbar />
+        <Breadcrumbs
+          category={product?.category}
+          subcategory={product?.subcategory}
+          title={product?.productTittle}
+        />
+        <EmptyState
+          heading="Not Found"
+          description="The product you're looking for may have been removed, is out of stock, or the link is broken."
+          icon={PackageOpen}
+          ctaLabel="Go Home"
+          ctaLink={"/"}
+        />
+        <Footer />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <Navbar />
+      <Breadcrumbs
+        category={product?.category}
+        subcategory={product?.subcategory}
+        title={product?.productTittle}
+      />
+      <section className="2xl:px-40 xl:px-20 lg:px-10 md:px-6 px-3 py-4 md:py-6 bg-[#F6F8F9]">
+        <AddReviewsModel
+          open={openAddReviewModal}
+          review={selectedReview}
+          product={{
+            _id: product?._id,
+            uuid: product?.uuid,
+            title: product?.productTittle,
+            image:
+              selectedVariant?.variantImage?.[0]?.url || "/placeholder.png",
+            selectedVariant,
+          }}
+          onClose={handleCloseReview}
+          onSave={(savedReview) => {
+            setProduct((prev) => ({
+              ...prev,
+              reviews: [savedReview, ...(prev.reviews || [])],
+              stats: {
+                ...prev.stats,
+                totalReviews: (prev.stats?.totalReviews || 0) + 1,
+              },
+            }));
+            handleCloseReview();
+          }}
+        />
+        <div className="flex lg:flex-row flex-col gap-8 items-start max-lg:items-center lg:mt-0.5 mt-12 py-8">
+          {/* Thumbnails */}
+          <div className="lg:sticky top-20 flex md:gap-8 gap-4 max-md:flex-col-reverse max-lg:w-full">
+            <div className="flex flex-col max-md:flex-row md:gap-4 max-md:justify-between rounded-lg">
+              <Swiper
+                modules={[Navigation]}
+                navigation={{
+                  nextEl: ".thumb-next",
+                  prevEl: ".thumb-prev",
+                }}
+                onSwiper={setThumbsSwiper}
+                spaceBetween={10}
+                slidesPerView="auto"
+                watchSlidesProgress
+                direction="vertical"
+                breakpoints={{
+                  0: { direction: "horizontal", slidesPerView: 4 },
+                  768: { direction: "vertical" },
+                }}
+                className="!w-full !h-auto md:!h-[460px] relative"
+              >
+                {/* Desktop Top Button */}
+                <button className="thumb-prev hidden md:flex absolute top-0 left-1/2 -translate-x-1/2 z-10 bg-white shadow-md p-1 rounded-full">
+                  <ChevronUp size={18} />
+                </button>
+
+                {/* Mobile Left Button */}
+                <button className="thumb-prev md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md p-1 rounded-full">
+                  <ChevronLeft size={18} />
+                </button>
+
+                {images.map((img, idx) => (
+                  <SwiperSlide key={idx} className="!w-auto !h-auto">
+                    <div
+                      className={`relative w-20 h-20 cursor-pointer transform transition duration-300 flex items-center justify-center
+        ${
+          mainImageIndex === idx
+            ? "border-2 border-[#977c2d] shadow-md rounded-md"
+            : "border-2 border-transparent hover:border-gray-200 rounded-md"
+        }`}
+                      onClick={() => {
+                        setMainImageIndex(idx);
+                        thumbsSwiper?.slideTo?.(idx);
+                      }}
+                    >
+                      <div className="w-full h-full overflow-hidden rounded-md">
+                        <img
+                          src={getImageUrl(img?.url)}
+                          alt={`${product.title} ${idx}`}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                        />
+                      </div>
+
+                      {mainImageIndex === idx && (
+                        <div className="absolute inset-0 bg-[#D49A06]/10 pointer-events-none transition-opacity duration-300 rounded-md" />
+                      )}
+                    </div>
+                  </SwiperSlide>
+                ))}
+
+                {/* Desktop Bottom Button */}
+                <button className="thumb-next hidden md:flex absolute bottom-0 left-1/2 -translate-x-1/2 z-10 bg-white shadow-md p-1 rounded-full">
+                  <ChevronDown size={18} />
+                </button>
+
+                {/* Mobile Right Button */}
+                <button className="thumb-next md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md p-1 rounded-full">
+                  <ChevronRight size={18} />
+                </button>
+              </Swiper>
+            </div>
+
+            {/* Main Image Swiper */}
+            <div className="relative">
+              <Swiper
+                modules={[Navigation, Thumbs]}
+                thumbs={{
+                  swiper:
+                    thumbsSwiper && !thumbsSwiper.destroyed
+                      ? thumbsSwiper
+                      : null,
+                }}
+                spaceBetween={10}
+                loop={false}
+                onSlideChange={(swiper) =>
+                  setMainImageIndex(swiper.activeIndex)
+                }
+                initialSlide={mainImageIndex}
+                className="xl:min-w-[600px] xl:h-[600px] md:!w-[500px] w-full"
+              >
+                {images.map((img, idx) => (
+                  <SwiperSlide key={idx}>
+                    <div
+                      className="relative w-full h-full overflow-hidden cursor-zoom-in"
+                      onMouseEnter={() => setShowMagnifier(true)}
+                      onMouseLeave={() => setShowMagnifier(false)}
+                      onMouseMove={(e) => {
+                        const { left, top, width, height } =
+                          e.currentTarget.getBoundingClientRect();
+                        const x = ((e.clientX - left) / width) * 100;
+                        const y = ((e.clientY - top) / height) * 100;
+                        setZoomPosition({ x, y });
+                      }}
+                    >
+                      <img
+                        src={getImageUrl(img?.url)}
+                        alt={`${product.title} ${idx}`}
+                        className="w-full h-full object-cover"
+                      />
+                      {showMagnifier && (
+                        <div
+                          className="absolute inset-0 pointer-events-none"
+                          style={{
+                            backgroundImage: `url(${getImageUrl(img?.url)})`,
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "250%",
+                            backgroundPosition: `${zoomPosition.x}% ${zoomPosition.y}%`,
+                          }}
+                        />
+                      )}
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              {/* Wishlist Button */}
+              <button
+                type="button"
+                className="absolute bg-white shadow-md md:shadow-lg md:bg-white group-hover:block active:scale-110 transition-all ease-in-out duration-300 md:p-2 p-2 rounded-full text-xs top-1 right-1 z-20 cursor-default"
+                onClick={handleWishlistToggle}
+              >
+                <Heart
+                  className="w-8 h-8 p-1 cursor-pointer"
+                  fill={
+                    wishlistItems.some(
+                      (i) =>
+                        String(i.productId || i.product) ===
+                          String(product._id) &&
+                        String(i.variantId) === String(variantId),
+                    )
+                      ? "red"
+                      : "white"
+                  }
+                  stroke={
+                    wishlistItems.some(
+                      (i) =>
+                        String(i.productId || i.product) ===
+                          String(product._id) &&
+                        String(i.variantId) === String(variantId),
+                    )
+                      ? "red"
+                      : "black"
+                  }
+                  strokeWidth={1}
+                />
+              </button>
+            </div>
+          </div>
+
+          {/* Details */}
+          <div className="w-full">
+            <h1 className="lg:text-2xl md:text-xl text-lg font-medium md:font-semibold text-gray-900 py-2 leading-7">
+              {product.productTittle}
+            </h1>
+
+            {product?.reviews?.length > 0 && (
+              <div className="border-gray-200 pb-2 flex items-center gap-4">
+                <div className="flex items-center gap-1">
+                  <span className="text-2xl font-semibold text-gray-900">
+                    {avgRating > 0 ? avgRating.toFixed(1) : "—"}
+                  </span>
+                  <span className="text-gray-500 text-sm">/5</span>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <Ratings size={20} avgRating={avgRating} />
+                  <span className="text-sm text-gray-500">
+                    <span>Based on </span>
+                    {product?.stats?.totalReviews ?? 0}{" "}
+                    {product?.stats?.totalReviews === 1 ? "review" : "reviews"}
+                  </span>
+                </div>
+              </div>
+            )}
+
+            {/* Product Price & details */}
+            <div className="py-2 border-b">
+              <div className="text-neural-700 font-medium">
+                <span className="mr-2 text-[28px]">₹{effectivePrice}</span>
+                {mrp > effectivePrice ? (
+                  <span className="line-through text-[#787878] font-normal text-[16px]">
+                    ₹{mrp}
+                  </span>
+                ) : null}
+                {discount > 0 ? (
+                  <span className="ml-2 text-[#168408] text-sm">
+                    {Math.round(discount)}% Off
+                  </span>
+                ) : null}
+              </div>
+              <span className="text-[#686868] text-xs">
+                inclusive of all taxes
+              </span>
+            </div>
+
+            {/* Weight Options */}
+            {weightOptions.length > 0 && (
+              <div className="mt-2">
+                <h3 className="font-medium">
+                  Weight:{" "}
+                  <span className="text-[#1C1C1C] font-medium">
+                    {selectedVariant?.variantWeight || "-"}
+                  </span>
+                  <span className="text-[#1C1C1C] font-medium">
+                    {selectedVariant?.variantWeightUnit || "-"}
+                  </span>
+                </h3>
+                <div className="flex gap-2 mt-2 flex-wrap">
+                  {weightOptions.map((c) => (
+                    <button
+                      type="button"
+                      key={c}
+                      className={`px-3 py-1 rounded-md border border-[#B6AAFF] text-sm
+                        ${
+                          selectedVariant?.variantWeight === c
+                            ? "border-2 border-[#1C3753] bg-[#F7F5FF] text-[#1800AC]"
+                            : "bg-white hover:bg-[#B6AAFF]"
+                        }`}
+                      onClick={() => onSelectWeight(c)}
+                    >
+                      {c}
+                      {selectedVariant?.variantWeightUnit || ""}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Style Options */}
+            {sizeOptions.length > 0 && (
+              <div className="mt-3 border-b pb-3">
+                <h3 className="font-medium">
+                  Style Name :{" "}
+                  <span className="text-[#1C1C1C] font-medium">
+                    {`${selectedVariant?.variantName || "-"}`}
+                  </span>
+                </h3>
+                <div className="flex gap-2 mt-2 flex-wrap">
+                  {sizeOptions.map((s) => (
+                    <button
+                      type="button"
+                      key={s}
+                      className={`px-3 py-1 rounded-md border border-[#B6AAFF] text-sm
+                        ${
+                          s === selectedVariant?.variantName
+                            ? "border-2 border-[#1C3753] bg-[#fffff] text-[#1C1C1C]"
+                            : "bg-white hover:bg-[#B6AAFF]"
+                        }`}
+                      onClick={() => onSelectStyle(s)}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+            {/* Style Options */}
+            {colorOptions.length > 0 && (
+              <div className="mt-3 border-b pb-3">
+                <h3 className="font-medium">
+                  Color :{" "}
+                  <span className="text-[#1C1C1C] font-medium">
+                    {selectedVariant?.variantColor || "-"}
+                  </span>
+                </h3>
+
+                <div className="flex gap-2 mt-2 flex-wrap">
+                  {colorOptions.map((color) => (
+                    <button
+                      type="button"
+                      key={color}
+                      className={`px-3 py-1 rounded-md border border-[#B6AAFF] text-sm
+            ${
+              color === selectedVariant?.variantColor
+                ? "border-2 border-[#1C3753] bg-[#F7F5FF] text-[#1C1C1C]"
+                : "bg-white hover:bg-[#B6AAFF]"
+            }`}
+                      onClick={() => onSelectColor(color)}
+                    >
+                      {color}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Add to cart */}
+            <div className="flex gap-3 py-4">
+              {outOfStock ? (
+                <button
+                  type="button"
+                  disabled
+                  className="px-6 py-2 bg-gray-300 text-gray-600 rounded-full cursor-not-allowed"
+                >
+                  Out of Stock
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={inCart ? handleGoToCart : handleAddToCart}
+                  disabled={cartUpdating}
+                  className={`px-6 py-2 border rounded-md ${
+                    inCart
+                      ? "bg-[#0C0057] text-white border-[#0C0057]"
+                      : "bg-[#F6F8F9] hover:bg-[#0C0057] hover:text-white text-[#0C0057] border-[#0C0057]"
+                  }`}
+                >
+                  {cartUpdating
+                    ? "Adding..."
+                    : inCart
+                      ? "Go to Cart"
+                      : "Add to Cart"}
+                </button>
+              )}
+
+              <button
+                type="button"
+                className="px-6 py-2 bg-[#0C0057] text-white border border-[#1C3753] rounded-md"
+                onClick={handleBuyNow}
+                disabled={outOfStock || cartUpdating}
+              >
+                Buy now
+              </button>
+            </div>
+
+            <div className="flex-col py-4 border-b">
+              <ProductInfoPincode />
+            </div>
+
+            {/* Specifications */}
+            <div className="py-4 border-b">
+              <h3 className="font-medium">Product Specifications</h3>
+              <div className="text-[14px] mt-2">
+                <p className="text-[14px] text-[#1C1C1C]">
+                  Item Weight -{" "}
+                  <span className="text-[#686868] capitalize">
+                    {selectedVariant?.variantWeight || "-"}
+                    {selectedVariant?.variantWeightUnit || "-"}
+                  </span>
+                </p>
+                <p className="capitalize">
+                  <span className="text-[#1C1C1C]">Category:</span> -{" "}
+                  <span className="text-[#686868]">
+                    {product.category?.name || "-"}
+                  </span>
+                </p>
+                <p className="capitalize">
+                  <span className="text-[#1C1C1C]">Sub-Category:</span> -{" "}
+                  <span className="text-[#686868]">
+                    {product.subcategory?.name || "-"}
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            {/* About */}
+            <div className="py-4 w-full max-w-full min-w-0 overflow-hidden">
+              <h3 className="font-medium text-base sm:text-lg text-[#1C1C1C]">
+                Product Description
+              </h3>
+
+              {product?.bulletPoints?.length > 0 ? (
+                <ul className="list-disc pl-5 mt-2 space-y-1 text-sm sm:text-base text-[#6C6B6B] break-words">
+                  {product.bulletPoints.map((point, idx) => (
+                    <li key={idx} className="leading-6 break-words break-all">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-2 text-sm sm:text-base text-[#1C1C1C] leading-6 whitespace-pre-line break-words break-all max-w-full">
+                  {product?.description || "-"}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Reviews */}
+        <div className="p-4 bg-[#fcfbfb] rounded-lg mt-4" id="reviews-section">
+          <h3 className="text-[24px] font-medium text-[#1C3753] uppercase font-marcellus">
+            Rating & Reviews
+          </h3>
+
+          {(!FetchedReviews || FetchedReviews.length === 0) && (
+            <div className="flex flex-col items-center justify-center py-10 text-center">
+              <p className="text-gray-500 mb-4">
+                No reviews yet. Be the first to review this product!
+              </p>
+              <button
+                onClick={handleOpenAddReview}
+                className="px-5 py-2 bg-[#0C0057] text-white rounded-md"
+              >
+                Write a Review
+              </button>
+            </div>
+          )}
+
+          {FetchedReviews?.length > 0 && (
+            <div className="mt-4 grid grid-cols-1 lg:grid-cols-[580px_minmax(0,1fr)] gap-6 items-start">
+              <div className="w-full">
+                <Reviews
+                  onAddReview={handleOpenAddReview}
+                  reviews={FetchedReviews || product?.reviews}
+                />
+              </div>
+              <div className="w-full">
+                <CustomerReview
+                  reviews={FetchedReviews || product?.reviews}
+                  id={product?._id}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Similar Products */}
+        {similarProducts.length > 0 && (
+          <div className="mt-8">
+            <h2 className="py-2">Similar Products</h2>
+            <Card
+              cardData={similarProducts}
+              cartItems={cartItems}
+              wishlistItems={wishlistItems}
+              onCartUpdate={syncCartFromBackend}
+              onWishlistUpdate={syncWishlistFromBackend}
+            />
+          </div>
+        )}
+      </section>
+      <Footer />
+    </>
+  );
+}
+
+export default ProductDetails;
+
+// import React, { useState, useMemo, useEffect } from "react";
+// import { useParams, useNavigate } from "react-router-dom";
+// import Navbar from "../components/Navbar";
+// import Breadcrumbs from "../components/Breadcrumbs";
+// import Footer from "../sections/Footer";
+// import Ratings from "../components/Ratings";
+// import Reviews from "../components/Reviews";
+// import CustomerReview from "../components/CustomerReview";
+// import Card from "../components/Card";
+// import {
+//   ChevronDown,
+//   ChevronUp,
+//   Heart,
+//   Minus,
+//   PackageOpen,
+//   Plus,
+//   Trash2,
+// } from "lucide-react";
+
+// import { useDispatch, useSelector } from "react-redux";
+
+// import {
+//   addToCart,
+//   buyNow,
+//   decreaseQty,
+//   increaseQty,
+//   setCartFromAPI,
+// } from "../redux/cart/cartSlice";
+// // import { addToWishlist, removeFromWishlist } from "../redux/cart/wishlistSlice";
+// import { getPrices } from "../utils/homePageUtils";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation, Thumbs } from "swiper/modules";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/thumbs";
+// import EmptyState from "../components/EmptyState";
+// import axiosInstance from "../api/axiosInstance";
+// import AddReviewsModel from "../components/AddReviewsModel";
+// import { toast } from "react-toastify";
+// import ProductInfoPincode from "./ProductInfoPincode";
+
+// function ProductDetails() {
+//   const { slugOrId } = useParams();
+//   const { isAuthenticated } = useSelector((s) => s.user);
+//   const navigate = useNavigate();
+//   const dispatch = useDispatch();
+//   const [product, setProduct] = useState(null);
+//   const [similarProducts, setSimilarProducts] = useState([]);
+//   const [selectedVariant, setSelectedVariant] = useState(null);
+
+//   const [selectedWeight, setSelectedWeight] = useState(null);
+//   const [selectedStyle, setSelectedStyle] = useState(null);
+
+//   const [selectedSize, setSelectedSize] = useState(null);
+//   // const [isLoading, setIsLoading] = useState(true);
+
+//   const [pageLoading, setPageLoading] = useState(true);
+//   const [cartUpdating, setCartUpdating] = useState(false);
+
+//   const [mainImageIndex, setMainImageIndex] = useState(0);
+//   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+//   const [totalCartItems, setTotalCartItems] = useState(0);
+//   const [inWishlist, setInWishlist] = useState(false);
+
+//   const { cartItems } = useSelector((s) => s.cart);
+//   const { wishlistItems } = useSelector((s) => s.wishlist);
+
+//   const [openAddReviewModal, setOpenAddReviewModal] = useState(false);
+//   const [selectedReview, setSelectedReview] = useState(null);
+//   const [localQty, setLocalQty] = useState(0);
+//   const [Loding, setLoading] = useState(false);
+//   const [FetchedReviews, setFetchedReviews] = useState(null);
+//   const [showMagnifier, setShowMagnifier] = useState(false);
+//   const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
+
+//   const syncCartFromBackend = async () => {
+//     try {
+//       const res = await axiosInstance.get("/cart");
+//       dispatch(setCartFromAPI(res.data.data));
+//     } catch (err) {
+//       console.error("Cart sync failed:", err);
+//     }
+//   };
+
+//   useEffect(() => {
+//     if (isAuthenticated) {
+//       syncCartFromBackend();
+//     }
+//   }, [isAuthenticated]);
+
+//   const getSimilarProducts = (all, found, uuid) => {
+//     if (!found) return [];
+
+//     const normalize = (str) => {
+//       if (!str) return "";
+//       if (typeof str !== "string") return "";
+//       return str
+//         .toLowerCase()
+//         .replace(/[^a-z0-9 ]/g, " ")
+//         .trim();
+//     };
+
+//     const foundTitleWords = normalize(found.productTittle).split(" ");
+
+//     const sameCategoryList = all.filter(
+//       (p) =>
+//         p._id !== uuid &&
+//         normalize(p.category?.name) === normalize(found.category?.name),
+//     );
+
+//     const sameSub = sameCategoryList.filter(
+//       (p) =>
+//         normalize(p.subcategory?.name) === normalize(found.subcategory?.name),
+//     );
+
+//     if (sameSub.length > 0) return sameSub.slice(0, 10);
+
+//     const similarByTitle = sameCategoryList.filter((p) => {
+//       const title = normalize(p.productTittle);
+//       return foundTitleWords.some((w) => title.includes(w));
+//     });
+
+//     if (similarByTitle.length > 0) return similarByTitle.slice(0, 10);
+
+//     return sameCategoryList.slice(0, 10);
+//   };
+
+//   // FETCH PRODUCT + SIMILAR PRODUCTS
+//   useEffect(() => {
+//     const fetchProduct = async () => {
+//       try {
+//         setPageLoading(true);
+
+//         // 1️⃣ Fetch current product
+//         const res = await axiosInstance.get(`/product/${slugOrId}`);
+//         const found = res.data.data;
+
+//         setProduct(found);
+
+//         if (found?.variants?.length > 0) {
+//           const v0 = found.variants[0];
+//           setSelectedVariant(v0);
+//           setSelectedSize(normalizeSize(v0));
+//         }
+
+//         // 2️⃣ Fetch ALL products
+//         const allRes = await axiosInstance.get("/product/all");
+//         const allProducts = allRes?.data?.data || allRes?.data?.products || [];
+
+//         // 3️⃣ Filter similar
+//         const similar = getSimilarProducts(allProducts, found, found._id);
+
+//         setSimilarProducts(similar);
+//       } catch (err) {
+//         console.error(err);
+//         setProduct(null);
+//       } finally {
+//         setPageLoading(false);
+//       }
+//     };
+
+//     if (slugOrId) fetchProduct();
+//   }, [slugOrId]);
+
+//   const getImageUrl = (img) => {
+//     if (!img) return "/placeholder.png";
+
+//     // handle object
+//     const imagePath = typeof img === "string" ? img : img?.url;
+
+//     if (!imagePath) return "/placeholder.png";
+
+//     if (imagePath.startsWith("http")) return imagePath;
+//     if (imagePath.startsWith("/")) return `http://localhost:5000${imagePath}`;
+
+//     return `http://localhost:5000/${imagePath}`;
+//   };
+
+//   const normalizeSize = (v) =>
+//     `${v?.variantLength}x${v?.variantBreadth} ${v?.variantDimensionunit || ""}`.trim();
+
+//   const findVariant = (weight, style) => {
+//     return (product?.variants || []).find((v) => {
+//       const matchWeight = weight ? v.variantWeight === weight : true;
+//       const matchStyle = style ? v.variantName === style : true;
+//       return matchWeight && matchStyle;
+//     });
+//   };
+
+//   // SINGLE SOURCE OF TRUTH FOR VARIANT ID
+//   const variantId = selectedVariant?.variantId || selectedVariant?._id;
+
+//   const inCart = useMemo(() => {
+//     if (!selectedVariant || !product) return false;
+
+//     return cartItems.some(
+//       (i) =>
+//         String(i.productId || i.uuid) === String(product._id) &&
+//         String(i.variantId) === String(variantId),
+//     );
+//   }, [cartItems, product?._id, selectedVariant, variantId]);
+
+//   const qtyInCart =
+//     cartItems.find(
+//       (i) =>
+//         String(i.productId || i.uuid) === String(product?._id) &&
+//         String(i.variantId) === String(variantId),
+//     )?.quantity || 0;
+
+//   useEffect(() => {
+//     setLocalQty(qtyInCart);
+//   }, [qtyInCart]);
+
+//   const currentCartItem = cartItems.find(
+//     (i) =>
+//       String(i.productId || i.uuid) === String(product?._id) &&
+//       String(i.variantId) === String(variantId),
+//   );
+
+//   const handleSeeReviews = async () => {
+//     try {
+//       setLoading(true);
+
+//       const res = await axiosInstance.get(
+//         `/review/all-product-reviews/${product?._id}`,
+//       );
+//       const allProductReviews = res?.data?.data || [];
+
+//       console.log("Fetched reviews:", allProductReviews);
+
+//       setFetchedReviews(allProductReviews);
+//       // setFetchedAll(true);
+//     } catch (error) {
+//       console.error("Error fetching reviews:", error);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+//   useEffect(() => {
+//     if (product?._id) {
+//       handleSeeReviews();
+//     }
+//   }, [product?._id]);
+
+//   // console.log(FetchedReviews);
+
+//   const cartItemId = currentCartItem?._id;
+
+//   const weightOptions = [
+//     ...new Set(
+//       (product?.variants || []).map((v) => v?.variantWeight).filter(Boolean),
+//     ),
+//   ];
+
+//   const sizeOptions = [
+//     ...new Set(
+//       (product?.variants || [])
+//         .map((v) => `${v.variantName} `.trim())
+//         .filter(Boolean),
+//     ),
+//   ];
+
+//   const onSelectStyle = (style) => {
+//     setSelectedStyle(style);
+
+//     const match =
+//       findVariant(selectedWeight, style) || findVariant(null, style);
+
+//     if (match) {
+//       setSelectedVariant(match);
+//       setMainImageIndex(0);
+//       thumbsSwiper?.slideTo?.(0);
+//     }
+//   };
+
+//   const onSelectWeight = (weight) => {
+//     setSelectedWeight(weight);
+
+//     const match =
+//       findVariant(weight, selectedStyle) || findVariant(weight, null);
+//     if (match) {
+//       setSelectedVariant(match);
+//       setMainImageIndex(0);
+//       thumbsSwiper?.slideTo?.(0);
+//     }
+//   };
+
+//   const isDemo = true;
+
+//   const handleOpenAddReview = () => {
+//     setSelectedReview(null);
+//     setOpenAddReviewModal(true);
+//   };
+
+//   const handleCloseReview = () => {
+//     setOpenAddReviewModal(false);
+//     setSelectedReview(null);
+//   };
+
+//   const images = selectedVariant?.variantImage || [];
+
+//   const mrp = Number(selectedVariant?.variantMrp || 0);
+//   const sp = Number(selectedVariant?.variantSellingPrice || 0);
+//   const discount = Number(selectedVariant?.variantDiscount || 0);
+
+//   const effectivePrice =
+//     sp > 0 ? sp : discount > 0 ? Math.round(mrp * (1 - discount / 100)) : mrp;
+
+//   const stock = Number(selectedVariant?.variantAvailableStock || 0);
+//   const outOfStock = stock <= 0;
+
+//   // IMPORTANT: this useEffect MUST be before any "return"
+//   useEffect(() => {
+//     if (!product?.variants?.length) return;
+
+//     // don't overwrite if already selected from fetch or user action
+//     if (selectedVariant) return;
+
+//     const v0 = product.variants[0];
+//     setSelectedVariant(v0);
+
+//     // setSelectedColor(v0?.variantColor || null);
+
+//     setSelectedSize(normalizeSize(v0));
+
+//     setMainImageIndex(0);
+//     thumbsSwiper?.slideTo?.(0);
+//   }, [product, thumbsSwiper, selectedVariant]);
+
+//   // IF LOADING
+//   if (pageLoading) {
+//     return (
+//       <>
+//         <Navbar />
+//         <EmptyState heading="Loading..." description="Fetching product..." />
+//         <Footer />
+//       </>
+//     );
+//   }
+
+//   if (!product || !selectedVariant) {
+//     return (
+//       <>
+//         <Navbar />
+//         <Breadcrumbs
+//           category={product?.category}
+//           subcategory={product?.subcategory}
+//           title={product?.productTittle}
+//         />
+//         <EmptyState
+//           heading="Not Found"
+//           description="The product you’re looking for may have been removed, is out of stock, or the link is broken. Try browsing our categories or return to the home page.."
+//           icon={PackageOpen}
+//           ctaLabel="Go Home"
+//           ctaLink={"/"}
+//         />
+//         <Footer />
+//       </>
+//     );
+//   }
+
+//   const avgRating = Number(product?.stats?.averageRating || 0);
+//   // console.log(avgRating)
+
+//   const handleBuyNow = async (product, selectedVariant) => {
+//     if (!checkDeliveryBeforeAction()) return;
+//     try {
+//       if (!selectedVariant?._id && !selectedVariant?.variantId) {
+//         toast.error("Please select a variant");
+//         return;
+//       }
+
+//       const payload = {
+//         productId: product._id,
+//         variantId: selectedVariant._id || selectedVariant.variantId,
+//         qty: 1,
+//       };
+
+//       await axiosInstance.post("/cart/add-to-cart", payload);
+
+//       dispatch(
+//         buyNow({
+//           ...product,
+//           selectedVariant,
+//           qty: 1,
+//         }),
+//       );
+
+//       navigate("/checkout/payment");
+//     } catch (error) {
+//       console.error("Buy now error:", error);
+//       toast.error(
+//         error?.response?.data?.message || "Failed to process Buy Now",
+//       );
+//     }
+//   };
+
+//   const handleWishlistToggle = async (e) => {
+//     e.stopPropagation();
+
+//     const isInWishlist = wishlistItems.some(
+//       (i) =>
+//         String(i.uuid || i.product || i.productId) === String(product._id) &&
+//         String(i.variantId) === String(variantId),
+//     );
+
+//     if (!isAuthenticated) {
+//       if (isInWishlist) {
+//         dispatch(removeFromWishlist({ uuid: product._id, variantId }));
+//         toast.success("Removed from wishlist");
+//       } else {
+//         dispatch(
+//           addToWishlist({
+//             uuid: product._id,
+//             product: product._id,
+//             productId: product._id,
+//             variantId,
+//             title: product.productTittle,
+//             image:
+//               selectedVariant?.variantImage?.[0]?.url || "/placeholder.png",
+//             basePrice: Number(selectedVariant?.variantMrp || 0),
+//             discountPercent: Number(selectedVariant?.variantDiscount || 0),
+//             stockQuantity: Number(selectedVariant?.variantAvailableStock || 0),
+//             variantName: selectedVariant?.variantName,
+//             variantColor: selectedVariant?.variantColor,
+//             variantAttributes: {
+//               weight: `${selectedVariant?.variantWeight || ""}${selectedVariant?.variantWeightUnit || ""}`,
+//               mrp: Number(selectedVariant?.variantMrp || 0),
+//               sellingPrice: Number(selectedVariant?.variantSellingPrice || 0),
+//               discount: Number(selectedVariant?.variantDiscount || 0),
+//             },
+//           }),
+//         );
+//         toast.success("Added to wishlist");
+//       }
+//       return;
+//     }
+
+//     try {
+//       if (isInWishlist) {
+//         await toast.promise(
+//           axiosInstance.delete("/wishlist/remove-item", {
+//             data: {
+//               productId: product._id,
+//               variantId,
+//             },
+//           }),
+//           {
+//             pending: "Removing from wishlist...",
+//             success: "Removed from wishlist",
+//             error: {
+//               render({ data }) {
+//                 return (
+//                   data?.response?.data?.message ||
+//                   "Failed to remove from wishlist"
+//                 );
+//               },
+//             },
+//           },
+//         );
+
+//         dispatch(removeFromWishlist({ uuid: product._id, variantId }));
+//       } else {
+//         await toast.promise(
+//           axiosInstance.post("/wishlist/add-to-wishlist", {
+//             productId: product._id,
+//             variantId,
+//           }),
+//           {
+//             pending: "Adding to wishlist...",
+//             success: "Added to wishlist",
+//             error: {
+//               render({ data }) {
+//                 return (
+//                   data?.response?.data?.message || "Failed to add to wishlist"
+//                 );
+//               },
+//             },
+//           },
+//         );
+
+//         dispatch(
+//           addToWishlist({
+//             uuid: product._id,
+//             product: product._id,
+//             productId: product._id,
+//             variantId,
+//             title: product.productTittle,
+//             image:
+//               selectedVariant?.variantImage?.[0]?.url || "/placeholder.png",
+//             basePrice: Number(selectedVariant?.variantMrp || 0),
+//             discountPercent: Number(selectedVariant?.variantDiscount || 0),
+//             stockQuantity: Number(selectedVariant?.variantAvailableStock || 0),
+//             variantName: selectedVariant?.variantName,
+//             variantColor: selectedVariant?.variantColor,
+//             variantAttributes: {
+//               weight: `${selectedVariant?.variantWeight || ""}${selectedVariant?.variantWeightUnit || ""}`,
+//               mrp: Number(selectedVariant?.variantMrp || 0),
+//               sellingPrice: Number(selectedVariant?.variantSellingPrice || 0),
+//               discount: Number(selectedVariant?.variantDiscount || 0),
+//             },
+//           }),
+//         );
+//       }
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   };
+
+//   const handleGoToCart = (e) => {
+//     e.preventDefault();
+//     e.stopPropagation();
+//     navigate("/bag");
+//   };
+
+//   const checkDeliveryBeforeAction = () => {
+//     const deliveryInfo = localStorage.getItem("deliveryInfo");
+
+//     if (!deliveryInfo) {
+//       toast.error("Please check delivery availability first");
+//       return false;
+//     }
+
+//     const parsed = JSON.parse(deliveryInfo);
+
+//     if (!parsed.isServiceable) {
+//       toast.error("Sorry, delivery is not available in this area");
+//       return false;
+//     }
+
+//     return true;
+//   };
+
+//   return (
+//     <>
+//       <Navbar />
+//       <Breadcrumbs
+//         category={product?.category}
+//         subcategory={product?.subcategory}
+//         title={product?.productTittle}
+//       />
+//       <section className="lg:px-40 md:px-[60px] px-4 py-6 bg-[#F6F8F9]">
+//         <AddReviewsModel
+//           open={openAddReviewModal}
+//           review={selectedReview}
+//           product={{
+//             _id: product?._id,
+//             uuid: product?.uuid,
+//             title: product?.productTittle,
+//             image:
+//               selectedVariant?.variantImage?.[0]?.url || "/placeholder.png",
+//             selectedVariant,
+//           }}
+//           onClose={handleCloseReview}
+//           onSave={(savedReview) => {
+//             setProduct((prev) => ({
+//               ...prev,
+//               reviews: [savedReview, ...(prev.reviews || [])],
+//               stats: {
+//                 ...prev.stats,
+//                 totalReviews: (prev.stats?.totalReviews || 0) + 1,
+//               },
+//             }));
+//             handleCloseReview();
+//           }}
+//         />
+//         <div className="flex lg:flex-row flex-col gap-8 items-start max-lg:items-center lg:mt-0.5 mt-12 p-8">
+//           {/* Thumbnails */}
+//           <div className="lg:sticky top-20 flex md:gap-8 gap-4 max-md:flex-col-reverse max-lg:w-full">
+//             {/* Thumbnails Swiper */}
+//             <div className="flex flex-col max-md:flex-row md:gap-4 max-md:justify-between rounded-lg">
+//               <Swiper
+//                 modules={[Navigation]}
+//                 navigation={{
+//                   nextEl: ".thumb-next",
+//                   prevEl: ".thumb-prev",
+//                 }}
+//                 onSwiper={setThumbsSwiper}
+//                 spaceBetween={10}
+//                 slidesPerView="auto"
+//                 watchSlidesProgress
+//                 direction="vertical"
+//                 breakpoints={{
+//                   0: { direction: "horizontal", slidesPerView: 4 },
+//                   768: { direction: "vertical" },
+//                 }}
+//                 className="!w-full !h-auto md:!h-[460px]"
+//               >
+//                 <button className="thumb-next absolute bottom-0 left-1/2 -translate-x-1/2 z-10 bg-white shadow-md p-1 rounded-full">
+//                   <ChevronDown size={18} />
+//                 </button>
+//                 {images.map((img, idx) => (
+//                   <SwiperSlide key={idx} className="!w-auto !h-auto">
+//                     <div
+//                       className={`relative w-20 h-20 cursor-pointer transform transition duration-300 flex items-center justify-center
+//                           ${
+//                             mainImageIndex === idx
+//                               ? "border-2 border-[#977c2d] shadow-md rounded-md"
+//                               : "border-2 border-transparent hover:border-gray-200 rounded-md"
+//                           }`}
+//                       onClick={() => {
+//                         setMainImageIndex(idx);
+//                         thumbsSwiper?.slideTo?.(idx);
+//                       }}
+//                     >
+//                       <div className="w-full h-full overflow-hidden rounded-md">
+//                         <img
+//                           src={getImageUrl(img?.url)}
+//                           alt={`${product.title} ${idx}`}
+//                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+//                         />
+//                       </div>
+
+//                       {mainImageIndex === idx && (
+//                         <div className="absolute inset-0 bg-[#D49A06]/10 pointer-events-none transition-opacity duration-300 rounded-md" />
+//                       )}
+//                     </div>
+//                   </SwiperSlide>
+//                 ))}
+//                 <button className="thumb-prev absolute top-0 left-1/2 -translate-x-1/2 z-10 bg-white shadow-md p-1 rounded-full">
+//                   <ChevronUp size={18} />
+//                 </button>
+//               </Swiper>
+//             </div>
+
+//             {/* Main Image Swiper */}
+//             <div className="relative">
+//               <Swiper
+//                 modules={[Navigation, Thumbs]}
+//                 thumbs={{
+//                   swiper:
+//                     thumbsSwiper && !thumbsSwiper.destroyed
+//                       ? thumbsSwiper
+//                       : null,
+//                 }}
+//                 spaceBetween={10}
+//                 loop={false}
+//                 onSlideChange={(swiper) =>
+//                   setMainImageIndex(swiper.activeIndex)
+//                 }
+//                 initialSlide={mainImageIndex}
+//                 className="xl:min-w-[600px] xl:h-[600px] md:!w-[500px] w-full"
+//               >
+//                 {/* normal swiper  */}
+//                 {/* {images.map((img, idx) => (
+//                   <SwiperSlide key={idx}>
+//                     <img
+//                       src={getImageUrl(img?.url)}
+//                       alt={`${product.title} ${idx}`}
+//                       className="w-full h-full object-cover"
+//                     />
+//                   </SwiperSlide>
+//                 ))} */}
+
+//                 {/* add magnifier */}
+
+//                 {images.map((img, idx) => (
+//                   <SwiperSlide key={idx}>
+//                     <div
+//                       className="relative w-full h-full overflow-hidden cursor-zoom-in"
+//                       onMouseEnter={() => setShowMagnifier(true)}
+//                       onMouseLeave={() => setShowMagnifier(false)}
+//                       onMouseMove={(e) => {
+//                         const { left, top, width, height } =
+//                           e.currentTarget.getBoundingClientRect();
+
+//                         const x = ((e.clientX - left) / width) * 100;
+//                         const y = ((e.clientY - top) / height) * 100;
+
+//                         setZoomPosition({ x, y });
+//                       }}
+//                     >
+//                       {/* MAIN IMAGE */}
+//                       <img
+//                         src={getImageUrl(img?.url)}
+//                         alt={`${product.title} ${idx}`}
+//                         className="w-full h-full object-cover"
+//                       />
+
+//                       {/* 🔍 MAGNIFIER LAYER */}
+//                       {showMagnifier && (
+//                         <div
+//                           className="absolute inset-0 pointer-events-none"
+//                           style={{
+//                             backgroundImage: `url(${getImageUrl(img?.url)})`,
+//                             backgroundRepeat: "no-repeat",
+//                             backgroundSize: "250%",
+//                             backgroundPosition: `${zoomPosition.x}% ${zoomPosition.y}%`,
+//                           }}
+//                         />
+//                       )}
+//                     </div>
+//                   </SwiperSlide>
+//                 ))}
+//               </Swiper>
+
+//               {/* Wishlist Button */}
+//               <button
+//                 type="button"
+//                 className="absolute bg-white shadow-md md:shadow-lg md:bg-white group-hover:block active:scale-110 transition-all ease-in-out duration-300 md:p-2 p-2 rounded-full text-xs top-1 right-1 z-20 cursor-default"
+//                 onClick={handleWishlistToggle}
+//               >
+//                 <Heart
+//                   className="w-8 h-8 p-1 cursor-pointer"
+//                   fill={
+//                     wishlistItems.some(
+//                       (i) =>
+//                         String(i.uuid || i.product || i.productId) ===
+//                           String(product._id) &&
+//                         String(i.variantId) === String(variantId),
+//                     )
+//                       ? "red"
+//                       : "white"
+//                   }
+//                   stroke={
+//                     wishlistItems.some(
+//                       (i) =>
+//                         String(i.uuid || i.product || i.productId) ===
+//                           String(product._id) &&
+//                         String(i.variantId) === String(variantId),
+//                     )
+//                       ? "red"
+//                       : "black"
+//                   }
+//                   strokeWidth={1}
+//                 />
+//               </button>
+//             </div>
+//           </div>
+
+//           {/* Details */}
+//           <div className="w-full">
+//             <h1 className="lg:text-2xl md:text-xl text-lg font-medium md:font-semibold text-gray-900 py-2 leading-7">
+//               {product.productTittle}
+//             </h1>
+
+//             {(isDemo || product?.reviews?.length > 0) && (
+//               <div className="border-gray-200 pb-2 flex items-center gap-4">
+//                 <div className="flex items-center gap-1">
+//                   <span className="text-2xl font-semibold text-gray-900">
+//                     {avgRating > 0 ? avgRating.toFixed(1) : "—"}
+//                   </span>
+//                   <span className="text-gray-500 text-sm">/5</span>
+//                 </div>
+
+//                 <div className="flex flex-col gap-1">
+//                   <Ratings size={20} avgRating={avgRating} />
+//                   <span className="text-sm text-gray-500">
+//                     <span>Based on </span>
+//                     {product?.stats?.totalReviews ?? 0}{" "}
+//                     {product?.stats?.totalReviews === 1 ? "review" : "reviews"}
+//                   </span>
+//                 </div>
+//               </div>
+//             )}
+//             {/* <div className="h-6 w-px bg-gray-300"></div>x
+//             <button
+//             type="button"
+//               className="text-sm font-medium text-[#1C3753] hover:text-[#1C3753] transition-colors underline"
+//               onClick={() =>
+//                 document
+//                   .getElementById("reviews-section")
+//                   ?.scrollIntoView({ behavior: "smooth" })
+//               }
+//             >
+//               See all reviews
+//             </button> */}
+
+//             {/* Product Price & details */}
+//             <div className="py-2 border-b">
+//               <div className="text-neural-700 font-medium">
+//                 <span className="mr-2 text-[28px]">₹{effectivePrice}</span>
+//                 {mrp > effectivePrice ? (
+//                   <span className="line-through text-[#787878] font-normal text-[16px]">
+//                     ₹{mrp}
+//                   </span>
+//                 ) : null}
+//                 {discount > 0 ? (
+//                   <span className="ml-2 text-[#168408] text-sm">
+//                     {Math.round(discount)}% Off
+//                   </span>
+//                 ) : null}
+//               </div>
+//               <span className="text-[#686868] text-xs">
+//                 inclusive of all taxes
+//               </span>
+//             </div>
+
+//             {/* Weight Options */}
+//             {weightOptions.length > 0 && (
+//               <div className="mt-2">
+//                 <h3 className="font-medium">
+//                   Weight:{" "}
+//                   <span className="text-[#1C1C1C] font-medium">
+//                     {selectedVariant?.variantWeight || "-"}
+//                   </span>
+//                   <span className="text-[#1C1C1C] font-medium">
+//                     {selectedVariant?.variantWeightUnit || "-"}
+//                   </span>
+//                 </h3>
+
+//                 <div className="flex gap-2 mt-2 flex-wrap">
+//                   {weightOptions.map((c) => (
+//                     <button
+//                       type="button"
+//                       key={c}
+//                       className={`px-3 py-1 rounded-md border border-[#B6AAFF] text-sm
+//             ${
+//               selectedVariant?.variantWeight === c
+//                 ? "border-2 border-[#1C3753] bg-[#F7F5FF] text-[#1800AC]"
+//                 : "bg-white hover:bg-[#B6AAFF]"
+//             }`}
+//                       onClick={() => onSelectWeight(c)}
+//                     >
+//                       {c}
+//                       {selectedVariant?.variantWeightUnit || ""}
+//                     </button>
+//                   ))}
+//                 </div>
+//               </div>
+//             )}
+
+//             {/* size Options */}
+//             {sizeOptions.length > 0 && (
+//               <div className="mt-3 border-b pb-3">
+//                 <h3 className="font-medium">
+//                   Style Name :{" "}
+//                   <span className="text-[#1C1C1C] font-medium">
+//                     {`${selectedVariant?.variantName || "-"}`}
+//                   </span>
+//                 </h3>
+
+//                 <div className="flex gap-2 mt-2 flex-wrap">
+//                   {sizeOptions.map((s) => (
+//                     <button
+//                       type="button"
+//                       key={s}
+//                       className={`px-3 py-1 rounded-md border border-[#B6AAFF] text-sm
+//             ${
+//               s === selectedVariant?.variantName
+//                 ? "border-2 border-[#1C3753] bg-[#fffff] text-[#1C1C1C]"
+//                 : "bg-white hover:bg-[#B6AAFF]"
+//             }`}
+//                       onClick={() => onSelectStyle(s)}
+//                     >
+//                       {s}
+//                     </button>
+//                   ))}
+//                 </div>
+//               </div>
+//             )}
+
+//             {/* Add to cart */}
+
+//             <div className="flex gap-3 py-4">
+//               {outOfStock ? (
+//                 <button
+//                   type="button"
+//                   disabled
+//                   className="px-6 py-2 bg-gray-300 text-gray-600 rounded-full cursor-not-allowed"
+//                 >
+//                   Out of Stock
+//                 </button>
+//               ) : (
+//                 <button
+//                   type="button"
+//                   onClick={async (e) => {
+//                     if (!checkDeliveryBeforeAction()) return;
+//                     if (inCart) {
+//                       handleGoToCart(e);
+//                       return;
+//                     }
+
+//                     if (!isAuthenticated) {
+//                       dispatch(
+//                         addToCart({
+//                           uuid: product._id,
+//                           productId: product._id,
+//                           variantId,
+//                           title: product.productTittle,
+//                           image:
+//                             selectedVariant?.variantImage?.[0]?.url ||
+//                             "/placeholder.png",
+//                           basePrice: Number(selectedVariant?.variantMrp || 0),
+//                           sellingPrice: Number(
+//                             selectedVariant?.variantSellingPrice || 0,
+//                           ),
+//                           discountPercent: Number(
+//                             selectedVariant?.variantDiscount || 0,
+//                           ),
+//                           stockQuantity: Number(
+//                             selectedVariant?.variantAvailableStock || 0,
+//                           ),
+//                           quantity: 1,
+//                           variantName: selectedVariant?.variantName,
+//                           variantColor: selectedVariant?.variantColor,
+//                           variantAttributes: {
+//                             weight: `${selectedVariant?.variantWeight || ""}${selectedVariant?.variantWeightUnit || ""}`,
+//                             mrp: Number(selectedVariant?.variantMrp || 0),
+//                             sellingPrice: Number(
+//                               selectedVariant?.variantSellingPrice || 0,
+//                             ),
+//                             discount: Number(
+//                               selectedVariant?.variantDiscount || 0,
+//                             ),
+//                           },
+//                         }),
+//                       );
+//                       toast.success("Added to Cart");
+//                       return;
+//                     }
+
+//                     try {
+//                       setCartUpdating(true);
+
+//                       const promise = axiosInstance.post("/cart/add-to-cart", {
+//                         productId: product._id,
+//                         variantId,
+//                         quantity: 1,
+//                       });
+
+//                       const res = await toast.promise(promise, {
+//                         pending: "Adding to cart...",
+//                         success: "Added to Cart",
+//                         error: {
+//                           render({ data }) {
+//                             return (
+//                               data?.response?.data?.message ||
+//                               "Failed to add to cart"
+//                             );
+//                           },
+//                         },
+//                       });
+
+//                       dispatch(setCartFromAPI(res.data.data));
+//                     } catch (err) {
+//                       console.error(err);
+//                     } finally {
+//                       setCartUpdating(false);
+//                     }
+//                   }}
+//                   disabled={cartUpdating}
+//                   className={`px-6 py-2 border rounded-md ${
+//                     inCart
+//                       ? "bg-[#0C0057] text-white border-[#0C0057]"
+//                       : "bg-[#F6F8F9] hover:bg-[#0C0057] hover:text-white text-[#0C0057] border-[#0C0057]"
+//                   }`}
+//                 >
+//                   {cartUpdating
+//                     ? "Adding..."
+//                     : inCart
+//                       ? "Go to Cart"
+//                       : "Add to Cart"}
+//                 </button>
+//               )}
+
+//               <button
+//                 type="button"
+//                 className="px-6 py-2 bg-[#0C0057] text-white border border-[#1C3753] rounded-md"
+//                 onClick={() => handleBuyNow(product, selectedVariant)}
+//                 disabled={outOfStock || cartUpdating}
+//               >
+//                 Buy now
+//               </button>
+//             </div>
+
+//             <div className="flex-col py-4 border-b">
+//               <ProductInfoPincode />
+//             </div>
+
+//             {/* Specifications */}
+//             <div className="py-4 border-b">
+//               <h3 className="font-medium">Product Specifications</h3>
+//               <div className="text-[14px] mt-2">
+//                 {/* <p className="text-[14px] text-[#6C6B6B] mt-2">
+//                   Product Size: -{" "}
+//                   <span className="text-[#171515]">
+//                     {normalizeSize(selectedVariant) || "-"}
+//                   </span>
+//                 </p> */}
+//                 <p className="text-[14px] text-[#1C1C1C]">
+//                   Item Weight -{" "}
+//                   <span className="text-[#686868] capitalize">
+//                     {selectedVariant?.variantWeight || "-"}
+//                     {selectedVariant?.variantWeightUnit || "-"}
+//                   </span>
+//                 </p>
+
+//                 {/* <p className="text-[14px] text-[#6C6B6B]">
+//                   Color:{" "}
+//                   <span className="text-[#171515] capitalize">
+//                     {selectedVariant?.variantColor || "-"}
+//                   </span>
+//                 </p> */}
+//                 {/* <p className="capitalize">
+//                   <span className="text-[#6C6B6B]">Material</span> -{" "}
+//                   {product.materialType}
+//                 </p> */}
+//                 <p className="capitalize">
+//                   <span className="text-[#1C1C1C]">Category:</span> -{" "}
+//                   <span className="text-[#686868]">
+//                     {" "}
+//                     {product.category?.name || "-"}
+//                   </span>
+//                 </p>
+//                 <p className="capitalize">
+//                   <span className="text-[#1C1C1C]">Sub-Category:</span> -{" "}
+//                   <span className="text-[#686868]">
+//                     {product.subcategory?.name || "-"}
+//                   </span>
+//                 </p>
+//                 {/* <p className="capitalize">
+//                   <span className="text-[#6C6B6B]">Return Policy</span> -{" "}
+//                   {product && true ? "Easy 7 days return available" : "-"}
+//                 </p> */}
+//                 {/* <p
+//                   className={`font-medium ${
+//                     stock > 0 ? "text-green-600" : "text-red-600"
+//                   }`}
+//                 >
+//                   <span className="text-[#6C6B6B]">Stock - </span>
+//                   {stock > 0 ? `${stock} available` : "Out of Stock"}
+//                 </p> */}
+//               </div>
+//             </div>
+
+//             {/* About */}
+//             <div className="py-4">
+//               <h3 className="font-medium">Product Description</h3>
+
+//               {product.bulletPoints && product.bulletPoints.length > 0 ? (
+//                 <ul className="list-disc pl-5 text-sm sm:text-base text-[#6C6B6B] mt-2 space-y-1 break-words">
+//                   {product.bulletPoints.map((point, idx) => (
+//                     <li key={idx}>{point}</li>
+//                   ))}
+//                 </ul>
+//               ) : (
+//                 <p className="text-sm sm:text-base text-[#1C1C1C] mt-2 break-words">
+//                   {product.description}
+//                 </p>
+//               )}
+//             </div>
+//           </div>
+//         </div>
+//         {/* Reviews */}
+//         <div className="p-4 bg-[#fcfbfb] rounded-lg mt-4" id="reviews-section">
+//           <h3 className="text-[24px] font-medium text-[#1C3753] uppercase font-marcellus">
+//             Rating & Reviews
+//           </h3>
+
+//           {/* 👉 If NO reviews */}
+//           {(!FetchedReviews || FetchedReviews.length === 0) && (
+//             <div className="flex flex-col items-center justify-center py-10 text-center">
+//               <p className="text-gray-500 mb-4">
+//                 No reviews yet. Be the first to review this product!
+//               </p>
+
+//               <button
+//                 onClick={handleOpenAddReview}
+//                 className="px-5 py-2 bg-[#0C0057] text-white rounded-md"
+//               >
+//                 Write a Review
+//               </button>
+//             </div>
+//           )}
+
+//           {/* 👉 If reviews exist */}
+//           {FetchedReviews?.length > 0 && (
+//             <div className="mt-4 grid grid-cols-1 lg:grid-cols-[580px_minmax(0,1fr)] gap-6 items-start">
+//               <div className="w-full">
+//                 <Reviews
+//                   onAddReview={handleOpenAddReview}
+//                   reviews={FetchedReviews || product?.reviews}
+//                 />
+//               </div>
+
+//               <div className="w-full">
+//                 <CustomerReview
+//                   reviews={FetchedReviews || product?.reviews}
+//                   id={product?._id}
+//                 />
+//               </div>
+//             </div>
+//           )}
+//         </div>
+
+//         {/* Similar & Latest */}
+//         {similarProducts.length > 0 && (
+//           <div className="mt-8">
+//             <h2 className="py-2">Similar Products</h2>
+//             <Card cardData={similarProducts} />
+//           </div>
+//         )}
+//       </section>
+
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default ProductDetails;

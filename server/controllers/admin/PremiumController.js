@@ -1,0 +1,150 @@
+import PremiumSettings from '../../models/PremiumSettings.js';
+
+export const getAllSettings = async (req, res) => {
+  try {
+    let settings = await PremiumSettings.findOne();
+    
+    if (!settings) {
+      return res.json({
+        success: true,
+        data: { homepageFeatures: [] }
+      });
+    }
+    
+    res.json({
+      success: true,
+      data: settings
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: 'Server Error'
+    });
+  }
+};
+
+export const getHomepageFeatures = async (req, res) => {
+  try {
+    let settings = await PremiumSettings.findOne();
+    
+    if (!settings) {
+      return res.json({
+        success: true,
+        data: []
+      });
+    }
+    
+    // Return all features (no filtering by active status)
+    res.json({
+      success: true,
+      data: settings.homepageFeatures
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: 'Server Error'
+    });
+  }
+};
+
+export const updateHomepageFeatures = async (req, res) => {
+  try {
+    const { features } = req.body;
+    
+    let settings = await PremiumSettings.findOne();
+    
+    if (!settings) {
+      settings = new PremiumSettings();
+    }
+    
+    settings.homepageFeatures = features;
+    settings.updatedAt = Date.now();
+    
+    await settings.save();
+    
+    res.json({
+      success: true,
+      data: settings.homepageFeatures,
+      message: 'Homepage features updated successfully'
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: 'Server Error'
+    });
+  }
+};
+
+export const addFeature = async (req, res) => {
+  try {
+    const { text } = req.body;
+    
+    if (!text) {
+      return res.status(400).json({
+        success: false,
+        message: 'Text is required'
+      });
+    }
+    
+    let settings = await PremiumSettings.findOne();
+    
+    if (!settings) {
+      settings = new PremiumSettings();
+      settings.homepageFeatures = [];
+    }
+    
+    const newFeature = {
+      text
+    };
+    
+    settings.homepageFeatures.push(newFeature);
+    await settings.save();
+    
+    res.json({
+      success: true,
+      data: newFeature,
+      message: 'Feature added successfully'
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: 'Server Error'
+    });
+  }
+};
+
+export const deleteFeature = async (req, res) => {
+  try {
+    const settings = await PremiumSettings.findOne();
+    
+    if (!settings) {
+      return res.status(404).json({
+        success: false,
+        message: 'Settings not found'
+      });
+    }
+    
+    settings.homepageFeatures = settings.homepageFeatures.filter(
+      f => f._id.toString() !== req.params.featureId
+    );
+    
+    await settings.save();
+    
+    res.json({
+      success: true,
+      message: 'Feature deleted successfully'
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: 'Server Error'
+    });
+  }
+};
+
+// Remove toggleFeatureStatus function completely (no longer needed)

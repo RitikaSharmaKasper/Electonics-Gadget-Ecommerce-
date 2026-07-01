@@ -1,0 +1,34 @@
+# === Node.js / Backend ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.env
+.env.local
+.env.*.local
+.DS_Store
+
+# Logs
+logs/
+*.log
+logs/*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Runtime data
+tmp/
+temp/
+coverage/
+dist/
+build/
+.cache/
+.next/
+out/
+
+# Compiled binary addons
+build/Release
+
+.vscode/

@@ -1,0 +1,20 @@
+import React from "react";
+import Navbar from "../components/Navbar";
+import Hero from "../sections/Hero";
+import Collection from "../components/homecomponents/Collection";
+import Products from "../sections/Products";
+import Footer from "../sections/Footer";
+
+function HomePage() {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <Collection />
+      <Products />
+      <Footer />
+    </>
+  );
+}
+
+export default HomePage;
