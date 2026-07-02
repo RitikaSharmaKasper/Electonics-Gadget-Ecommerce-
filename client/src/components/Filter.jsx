@@ -100,7 +100,7 @@ function Filter({
         <button
           type="button"
           onClick={() => setFilterOpen((prev) => !prev)}
-          className="w-full text-lg sm:text-xl font-medium text-[#126B6D] flex justify-between items-center"
+          className="w-full text-lg sm:text-xl font-medium font-playpen-sans text-[#126B6D] flex justify-between items-center"
         >
           <span>Filters</span>
           <ChevronDown
@@ -118,7 +118,7 @@ function Filter({
             ).map(({ label, value }) => (
               <button
                 key={value}
-                className={`px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition ${
+                className={`px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition font-playpen-sans ${
                   selectedSort === label
                     ? "bg-[#126B6D] text-white cursor-default"
                     : "bg-[#F0EEFF] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#126B6D]"
@@ -151,7 +151,7 @@ function Filter({
         <button
           type="button"
           onClick={() => setSubOpen((prev) => !prev)}
-          className="w-full text-lg sm:text-xl font-medium text-[#126B6D] flex justify-between items-center"
+          className="w-full text-lg sm:text-xl font-medium font-playpen-sans text-[#126B6D] flex justify-between items-center"
         >
           <span>Sub-Categories</span>
           <ChevronDown
@@ -169,7 +169,7 @@ function Filter({
             ).map((subcat, index) => (
               <button
                 key={index}
-                className={`px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition ${
+                className={`px-3 py-1.5 whitespace-nowrap rounded-full  font-playpen-sans text-sm transition ${
                   (isMobile ? tempCategory : selectedSubcategory) === subcat
                     ? "bg-[#126B6D] text-white cursor-default"
                     : "bg-[#F0EEFF] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#126B6D]"
@@ -202,11 +202,11 @@ function Filter({
         <button
           type="button"
           onClick={() => setOpen((prev) => !prev)}
-          className="w-full text-lg sm:text-xl font-medium text-[#126B6D] flex justify-between items-center"
+          className="w-full text-lg sm:text-xl font-medium font-playpen-sans text-[#126B6D] flex justify-between items-center"
         >
           <span>Colors</span>
           <ChevronDown
-            className={`h-5 w-5 transition-transform duration-200 ${
+            className={`h-5 w-5 transition-transform duration-200  border-[#126B6D] text-[#126B6D] bg-white rounded-md flex items-center gap-2 text-sm${
               open ? "rotate-180" : ""
             }`}
           />
@@ -230,10 +230,10 @@ function Filter({
                     key={colorName}
                     type="button"
                     className={twMerge(
-                      "text-left px-2 py-1 border rounded-md transition text-xs",
+                      "text-left px-2 py-1 border rounded-md font-playpen-sans  transition text-xs",
                       isActive
-                        ? "bg-[#126B6D] border-[#126B6D] text-white font-medium"
-                        : "border-[#F0EEFF] text-[#747877] hover:bg-[#F0EEFF]",
+                       ? "bg-[#126B6D] text-white cursor-default"
+                    : "bg-[#F0EEFF] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#126B6D]"
                     )}
                     onClick={() =>
                       isMobile
@@ -278,7 +278,7 @@ function Filter({
 
       <div className="flex justify-between items-center lg:hidden mb-4">
         <button
-          className="px-4 py-2 border border-[#126B6D] text-[#126B6D] bg-white rounded-md text-sm"
+          className="px-4 py-2 border border-[#126B6D] text-[#126B6D] bg-white font-playpen-sans rounded-md text-sm"
           onClick={() => {
             setTempCategory(selectedSubcategory);
             setTempColor(colors?.[0]?.colorName || "");

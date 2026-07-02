@@ -235,7 +235,7 @@ function Product() {
       <div className="flex flex-col lg:px-20 md:px-[60px] px-4 pb-[23px] gap-4  mt-14 sm:mt-0">
         {/* Heading */}
         <div className="mt-14 sm:mt-0">
-          <span className="text-lg md:text-xl font-semibold capitalize font-marcellus text-[#126B6D]">
+          <span className="text-lg md:text-xl font-semibold capitalize font-playpen-sans text-[#126B6D]">
             {state?.category || displayCategory || "All Products"}
           </span>
         </div>

@@ -380,10 +380,10 @@ function ContactSection() {
     <div className="w-full font-inter mt-5">
       <div className="bg-white md:rounded-md md:shadow-sm overflow-hidden">
         <div className="p-6">
-          <h1 className="text-lg sm:text-xl font-semibold text-gray-800">
+          <h1 className="text-lg sm:text-xl  font-playpen-sans font-semibold text-gray-800">
             Contact Us
           </h1>
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-gray-500  font-marcellus mt-1">
             If you have any questions related orders, products, or anything
             please reach out.
           </p>
@@ -399,16 +399,16 @@ function ContactSection() {
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-3 bg-white rounded-lg border hover:bg-gray-50 transition"
             >
-              <div className="p-2 bg-[#F0EEFF] rounded-full">
-                <Mail className="w-5 h-5 text-[#1800AC]" />
+              <div className="p-2 bg-[#f3dcd8] rounded-full">
+                <Mail className="w-5 h-5 text-[#126B6D]" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-700">Email</p>
+                <p className="text-sm font-medium text-gray-700 font-playpen-sans">Email</p>
                 <a
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=happyartsupplies@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm block text-blue-600"
+                  className="text-sm block text-[#126B6D]"
                 >
                   happyartsupplies@gmail.com
                 </a>
@@ -422,12 +422,12 @@ function ContactSection() {
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-3 bg-white rounded-lg border hover:bg-gray-50 transition"
             >
-              <div className="p-2 bg-[#F0EEFF] rounded-full">
-                <Phone className="w-5 h-5 text-[#1800AC]" />
+              <div className="p-2 bg-[#f3dcd8] rounded-full">
+                <Phone className="w-5 h-5 text-[#126B6D]" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-700">Phone</p>
-                <p className="text-sm text-blue-600">(+91) 98868 94723</p>
+                <p className="text-sm font-medium text-gray-700 font-playpen-sans">Phone</p>
+                <p className="text-sm text-[#126B6D]">(+91) 98868 94723</p>
               </div>
             </a>
 
@@ -438,11 +438,11 @@ function ContactSection() {
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-3 bg-white rounded-lg border hover:bg-gray-50 transition"
             >
-              <div className="p-2 bg-[#F0EEFF] rounded-full">
-                <MapPin className="w-5 h-5 text-[#1800AC]" />
+              <div className="p-2 bg-[#f3dcd8] rounded-full">
+                <MapPin className="w-5 h-5 text-[#126B6D]" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-700">Address</p>
+                <p className="text-sm font-medium text-gray-700 font-playpen-sans">Address</p>
                 <p className="text-sm text-gray-500">
                   {/* B402, United Crossandra, */}
                    Hormavu Agara Lake Road, Horamavu,

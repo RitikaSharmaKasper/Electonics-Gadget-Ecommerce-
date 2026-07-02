@@ -152,7 +152,7 @@ const AddressForm = ({ initialData = null, onClose, inline = false }) => {
       >
         {!inline && (
           <div className="flex justify-between items-center p-6 border-b border-gray-200 sticky top-0 bg-white rounded-t-xl">
-            <h1 className="text-lg sm:text-xl font-semibold font-marcellus text-[#1800AC]">
+            <h1 className="text-lg sm:text-xl font-semibold font-playpen-sans text-[#126B6D]">
               {initialData ? "Edit Address" : "Add New Address"}
             </h1>
             <button
@@ -276,7 +276,7 @@ const AddressForm = ({ initialData = null, onClose, inline = false }) => {
           </div>
 
           <div className="space-y-2">
-            <p className="text-sm font-medium text-gray-700">Address Type</p>
+            <p className="text-sm font-medium text-[#126B6D]">Address Type</p>
             <div className="flex flex-wrap gap-3">
               {[
                 { value: "home", icon: <House size={16} /> },
@@ -294,7 +294,7 @@ const AddressForm = ({ initialData = null, onClose, inline = false }) => {
                   }
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${
                     formData.addressType === type.value
-                      ? "border-[#1800AC] bg-white text-[#1800AC]"
+                      ? "border-[#126B6D] bg-white text-[#126B6D]"
                       : "border-gray-300 hover:border-gray-400 text-gray-700"
                   }`}
                 >
@@ -334,7 +334,7 @@ const AddressForm = ({ initialData = null, onClose, inline = false }) => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 px-6 py-3 bg-[#1800AC] text-white font-medium rounded-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="flex-1 px-6 py-3 bg-[#126B6D] text-white font-medium rounded-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <>

@@ -53,10 +53,11 @@ function UserProfile({ setIsProfileOpen }) {
           </div>
           <div>
             
-            <p className="font-medium text-[#0f6668]">
+            <p className="font-medium text-gray-700  font-playpen-sans
+            " >
               {user?.user?.name || "Guest User"}
             </p>
-            <p className="text-sm text-gray-500">
+            <p className="text-[15px] text-[#126B6D] font-playpen-sans">
               {isAuthenticated ? "Welcome back!" : "Please log in"}
             </p>
           </div>
@@ -77,7 +78,7 @@ function UserProfile({ setIsProfileOpen }) {
               }}
               className={({ isActive }) =>
                 `flex items-center gap-4 p-1.5 my-1 rounded-lg duration-200 group ${
-                  isActive ? "bg-[#F0EEFF]" : "hover:bg-[#F8FBFC]"
+                  isActive ? "bg-[#88D3D5]/50 " : "hover:bg-[#88D3D5]/10 "
                 }`
               }
             >
@@ -85,14 +86,14 @@ function UserProfile({ setIsProfileOpen }) {
                 <>
                   <div
                     className={`p-1 rounded-lg ${
-                      isActive ? "bg-[#]" : "bg-[#F0EEFF]"
+                      isActive ? "bg-[#F0EEFF]" : "bg-[#F0EEFF]"
                     }`}
                   >
-                    <Icon className="w-5 h-5 text-[#1800AC]" />
+                    <Icon className="w-5 h-5 text-[#454653] font-playpen-sans" />
                   </div>
 
                   <div className="flex-1">
-                    <h2 className="font-medium text-[16px] text-gray-800">
+                    <h2 className="font-normal text-[16px] font-playpen-sans text-gray-600">
                       {listName}
                     </h2>
                   </div>

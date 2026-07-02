@@ -916,7 +916,7 @@ function ProductDetails() {
 
           {/* Details */}
           <div className="w-full">
-            <h1 className="lg:text-2xl md:text-xl text-lg font-medium md:font-semibold text-gray-900 py-2 leading-7">
+            <h1 className="lg:text-2xl md:text-xl text-lg font-medium text-sm font-playpen-sans text-[#55516e] py-2 leading-7">
               {product.productTittle}
             </h1>
 
@@ -1144,7 +1144,7 @@ function ProductDetails() {
 
         {/* Reviews */}
         <div className="p-4 bg-[#fcfbfb] rounded-lg mt-4" id="reviews-section">
-          <h3 className="text-[24px] font-medium text-[#1C3753] uppercase font-marcellus">
+          <h3 className="text-[24px] font-medium text-[#1C3753] uppercase font-playpen-sane">
             Rating & Reviews
           </h3>
 

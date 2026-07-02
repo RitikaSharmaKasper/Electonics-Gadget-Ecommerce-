@@ -227,9 +227,9 @@ function Design() {
   <div className="relative mb-4 md:mb-4">
     <div className="text-center ">
       {/* Small badge */}
-      <span className="inline-flex items-center mt-5 gap-1 text-[30px] font-normal leading-6 text-[#126B6D] px-14 py-3 rounded-full border-2 border-[#126B6D]/20 font-playpen-sans">
+      <span className="inline-flex items-center mt-8 gap-2 text-[30px] font-normal leading-6 text-[#126B6D] px-14 py-3 rounded-full border-2 border-[#126B6D]/20 font-playpen-sans">
         <span className="text-[#FF7F66]">✦</span>
-       Explore Some Lavish Stationery Collection
+       Explore Some Lavish Stationary Collection
         <span className="text-[#FF7F66]">✦</span>
       </span>
       
@@ -247,9 +247,9 @@ function Design() {
   {/* Swiper Container - Theme Colors */}
   <div className="relative w-full min-h-[220px] sm:min-h-[300px] md:min-h-[350px] overflow-hidden px-4 sm:px-0 mt-0">
     {/* Decorative background elements - Theme colors */}
-    <div className="absolute inset-0 bg-gradient-to-r from-[#F0EEFF]/50 via-transparent to-[#F0EEFF]/50 pointer-events-none z-0 rounded-xl" />
-    <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#126B6D]/5 rounded-full blur-3xl pointer-events-none" />
-    <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#FF7F66]/5 rounded-full blur-3xl pointer-events-none" />
+    <div className="absolute inset-0  pointer-events-none z-0 rounded-xl" />
+    <div className="absolute top-0 left-1/4 w-64 h-64  rounded-full blur-3xl pointer-events-none" />
+    <div className="absolute bottom-0 right-1/4 w-48 h-48  rounded-full blur-3xl pointer-events-none" />
     
     {/* Theme borders */}
     <div className="absolute inset-1 border border-[#126B6D]/10 rounded-xl pointer-events-none z-0" />
@@ -294,7 +294,7 @@ function Design() {
               </div>
               
               {/* Theme gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#126B6D]/30 via-transparent to-[#FF7F66]/10 pointer-events-none rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#126B6D]/30 via-transparent to-[#FF7F66]/10 pointer-events-none  opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
               
               {/* Bottom decorative line */}
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#FF7F66]/40 to-transparent" />
@@ -309,12 +309,7 @@ function Design() {
       ))}
     </Swiper>
     
-    {/* Scroll indicators - Theme colors */}
-    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-      <span className="w-1.5 h-1.5 rounded-full bg-[#126B6D]/30" />
-      <span className="w-6 h-1.5 rounded-full bg-gradient-to-r from-[#126B6D] to-[#FF7F66] animate-pulse" />
-      <span className="w-1.5 h-1.5 rounded-full bg-[#FF7F66]/30" />
-    </div>
+  
   </div>
 </div>
     </section>

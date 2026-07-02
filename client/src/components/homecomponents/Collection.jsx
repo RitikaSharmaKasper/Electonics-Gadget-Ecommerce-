@@ -352,11 +352,11 @@ function Collection() {
   return (
     <section className="relative group ">
       {!featuresLoading && features.length === 3 && (
-        <div className="flex flex-wrap justify-center sm:justify-between items-center gap-4 px-4 sm:px-6 lg:px-40 py-3 bg-[#f7c1b6] ">
+        <div className="flex flex-wrap justify-center sm:justify-between items-center gap-4 px-4 sm:px-6 lg:px-40 py-3 bg-[#f0eeff] ">
           {features.map((feature, index) => (
             <div
               key={feature._id || index}
-              className="flex items-center gap-2 text-[18px] sm:text-[18px] text-[#be503c] font-domine"
+              className="flex items-center gap-2 text-[24px] sm:text-[24px] text-[#5D5D6B] font-montez"
             >
               <span>{feature.text}</span>
             </div>
@@ -565,7 +565,7 @@ function Collection() {
               <div className="absolute inset-[-4px] rounded-full border-2 border-[#FF7F66]/0  transition-all duration-500 pointer-events-none"></div>
               
               {/* Image */}
-              <div className="w-full h-full rounded-full overflow-hidden bg-[#F6F8F9]">
+              <div className="w-full h-full rounded-full overflow-hidden  hover:border border-[#248f91]">
                 <img
                   src={
                     category.categoryImage?.url ||
@@ -595,12 +595,12 @@ function Collection() {
     ))}
 
     {/* Previous Button - Theme Colors */}
-    <div className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-[#126B6D] text-white shadow-lg rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm hover:bg-[#FF7F66] hover:scale-110 transition-all duration-300">
+    <div className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-[#126B6D] text-white shadow-lg rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm  hover:scale-110 transition-all duration-300">
       ❮
     </div>
 
     {/* Next Button - Theme Colors */}
-    <div className="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-[#126B6D] text-white shadow-lg rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm hover:bg-[#FF7F66] hover:scale-110 transition-all duration-300">
+    <div className="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-[#126B6D] text-white shadow-lg rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm  hover:scale-110 transition-all duration-300">
       ❯
     </div>
   </Swiper>

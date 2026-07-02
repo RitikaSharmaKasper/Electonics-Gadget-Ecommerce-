@@ -10,18 +10,18 @@ function OrderFilter({ setStatus, status, setTime, time }) {
 
   return (
     <div className="w-[280px] bg-white rounded-lg shadow-sm p-5 h-max sticky top-4">
-      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 pb-4 border-b border-gray-200">
+      <h3 className="text-lg sm:text-xl font-semibold text-[#126B6D] pb-4 border-b border-gray-200 font-playpen-sans">
         Filters
       </h3>
 
       {/* Order Status */}
       <div className="py-4 border-b border-gray-200">
-        <h2 className="text-gray-800 font-semibold mb-3 flex items-center justify-between">
+        <h2 className="text-gray-800 font-semibold mb-3 flex items-center justify-between font-playpen-sans">
           ORDER STATUS
           {status && (
             <button
               onClick={() => setStatus("")}
-              className="text-xs text-blue-600 font-normal hover:underline"
+              className="text-xs text-[#126B6D] font-normal hover:underline"
             >
               Reset
             </button>
@@ -56,12 +56,12 @@ function OrderFilter({ setStatus, status, setTime, time }) {
 
       {/* Order Time */}
       <div className="py-4">
-        <h2 className="text-gray-800 font-semibold mb-3 flex items-center justify-between">
+        <h2 className="text-gray-800 font-semibold mb-3 flex items-center justify-between font-playpen-sans">
           ORDER TIME
           {time && (
             <button
               onClick={() => setTime("")}
-              className="text-xs text-blue-600 font-normal hover:underline"
+              className="text-xs text-[#126B6D] font-normal hover:underline"
             >
               Reset
             </button>
@@ -98,7 +98,7 @@ function OrderFilter({ setStatus, status, setTime, time }) {
             setStatus("");
             setTime("");
           }}
-          className="w-full mt-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50"
+          className="w-full  font-[playpen-sans] mt-4 py-2 text-sm font-medium text-[#126B6D] border border-gray-300 rounded-md hover:bg-gray-50"
         >
           Clear All Filters
         </button>

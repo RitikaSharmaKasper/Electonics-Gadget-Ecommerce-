@@ -173,7 +173,7 @@ function OrderHistory() {
         </div>
         {/* Search Input */}
         <div className="flex flex-col sm:flex-row gap-3">
-          <div className="flex items-center w-fit sm:w-auto px-3 py-2 bg-gray-50 border rounded-md focus-within:ring-2 focus-within:ring-[#212121] transition-all">
+          <div className="flex items-center w-fit sm:w-auto px-3 py-2 bg-[#effafa] border rounded-md transition-all">
             <Search className="text-gray-500 w-4 h-4" />
             <input
               type="text"
@@ -188,7 +188,7 @@ function OrderHistory() {
           <div>
             <div className="flex items-center gap-2 justify-end w-full">
               <button
-                className="flex items-center justify-center py-2 px-5 text-xs sm:text-sm bg-[#1800AC] rounded-full text-white"
+                className="flex items-center justify-center py-2 px-5 text-xs sm:text-sm bg-[#126B6D] rounded-full text-white"
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
               >
                 <ListFilter className="w-4 h-4 mr-2" />

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MapPin, Truck } from "lucide-react";
 import axios from "axios";
 import axiosInstance from "../api/axiosInstance";
@@ -9,7 +9,7 @@ function ProductInfoPincode() {
   const [status, setStatus] = useState(null); // success | fail
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-
+const [shippingConfig, setShippingConfig] = useState({});
   const validatePincode = (value) => {
     const regex = /^[1-9][0-9]{5}$/;
     return regex.test(value);
@@ -29,6 +29,27 @@ function ProductInfoPincode() {
       setError("");
     }
   };
+
+
+useEffect(() => {
+    const fetchShippingConfig = async () => {
+      try {
+        const res = await axiosInstance.get(
+          "/dashboard/shipping/get-shipping-config-admin",
+        );
+
+        if (res?.data?.success) {
+          setShippingConfig(res.data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching shipping config:", error);
+      }
+    };
+
+    fetchShippingConfig();
+  }, []);
+
+
 
   const handleCheck = async () => {
     if (!validatePincode(pincode)) {
@@ -129,7 +150,8 @@ function ProductInfoPincode() {
       {/* Info */}
       <p className="text-blue-500 text-sm mt-3 flex items-center gap-1">
         <Truck className="w-5 h-5" />
-        Free Shipping on orders above Rs. 1,999
+        Free Shipping on orders above Rs.{" "}
+        {shippingConfig?.freeDeliveryAbove || 0}
       </p>
     </div>
   );

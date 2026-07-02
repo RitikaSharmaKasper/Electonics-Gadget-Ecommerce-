@@ -323,7 +323,7 @@ function Wishlist() {
                     </div>
                     <div className="flex items-center gap-3">
                       <button
-                        className="bg-[#1C3753] md:px-4 px-2 md:py-1 py-0.5 text-sm text-white border border-[#1C3753] transition-colors whitespace-nowrap shadow-sm hover:shadow-sm rounded-lg disabled:bg-gray-300 disabled:border-gray-300 disabled:text-gray-500"
+                        className="bg-[#126B6D] md:px-4 px-2 md:py-1 py-0.5 text-sm text-white border border-[#126B6D] transition-colors whitespace-nowrap shadow-sm hover:shadow-sm rounded-lg disabled:bg-gray-300 disabled:border-gray-300 disabled:text-gray-500"
                         onClick={() => moveToCart(item)}
                         disabled={
                           (item.stockQuantity ?? 0) <= 0 ||
@@ -338,7 +338,7 @@ function Wishlist() {
                       </button>
 
                       <button
-                        className="md:px-4 px-2 md:py-1 py-0.5 flex items-center text-sm border border-[#1C3753] text-[#1C3753] gap-2 rounded-lg disabled:opacity-60"
+                        className="md:px-4 px-2 md:py-1 py-0.5 flex items-center text-sm border border-[#126B6D] text-[#126B6D] gap-2 rounded-lg disabled:opacity-60"
                         onClick={() => handleRemoveWishlistItem(item)}
                         disabled={actionLoadingId === item._id}
                         aria-label="Remove item"
@@ -360,7 +360,7 @@ function Wishlist() {
                 className={`flex w-max gap-2 items-center md:px-4 md:py-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm sm:w-auto text-center ${
                   hasOutOfStock
                     ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                    : "bg-[#1C3753] text-white hover:bg-black"
+                    : "bg-[#126B6D] text-white hover:bg-[#126B6D]/90"
                 }`}
                 disabled={hasOutOfStock}
                 onClick={() => !hasOutOfStock && moveAllToCart()}

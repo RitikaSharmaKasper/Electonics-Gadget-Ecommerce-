@@ -1119,7 +1119,7 @@ function LatestProducts() {
           </div>
 
           <div className="mt-3">
-            <h3 className="text-sm font-serif text-gray-800 font-normal line-clamp-1 mb-2">
+            <h3 className="text-sm  text-gray-800 font-normal line-clamp-1 mb-2">
               {product.name || product.productTittle || "Product Name"}
             </h3>
 
@@ -1180,26 +1180,26 @@ function LatestProducts() {
   }
 
   return (
-    <div className="lg:px-20 md:px-[60px] px-4 py-[23px] relative bg-[#F0EEFF] shadow-sm rounded-lg">
-      <div className="flex items-center">
-        <Title className="md:items-start px-2 font-marcellus text-[#126B6D]">
-          Best Selling Products
-        </Title>
-        <Link
-          to="/products"
-          onClick={(e) => e.stopPropagation()}
-          className="whitespace-nowrap text-[#FF7F66] hover:text-[#126B6D] px-2 text-sm underline cursor-pointer"
-        >
-          explore more
-        </Link>
-      </div>
+  <div className="lg:px-20 md:px-[60px] px-4 py-[23px] relative bg-[#ececf1] shadow-sm rounded-lg">
+  <div className="flex items-center justify-between">
+    <p className="md:items-start px-2 text-[#126B6D] font-lavishly text-[40px] font-normal">
+      Best Stationary Products
+    </p>
+    <Link
+      to="/products"
+      onClick={(e) => e.stopPropagation()}
+      className="whitespace-nowrap text-[#FF7F66] hover:text-[#126B6D] px-2 text-sm underline cursor-pointer"
+    >
+      Explore more
+    </Link>
+  </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4 relative">
-        {latestProducts.slice(0, visibleCount).map((product) => (
-          <ProductCard key={product._id} product={product} />
-        ))}
-      </div>
-    </div>
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4 relative">
+    {latestProducts.slice(0, visibleCount).map((product) => (
+      <ProductCard key={product._id} product={product} />
+    ))}
+  </div>
+</div>
   );
 }
 

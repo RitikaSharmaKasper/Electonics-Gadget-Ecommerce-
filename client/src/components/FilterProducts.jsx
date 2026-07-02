@@ -12,7 +12,7 @@ const options = [
   { label: "Alphabetical (Z to A)", value: "ztoa" },
 ];
 
-function FilterProducts({ text = "Best Selling Products", sort }) {
+function FilterProducts({ text = "Best Stationary Products", sort }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(options[0]);
   const dropdownRef = useRef(null);
@@ -31,7 +31,7 @@ function FilterProducts({ text = "Best Selling Products", sort }) {
     <div className="relative z-[100px] flex flex-col md:flex-row md:justify-between md:items-center w-full mb-5 gap-3 mt-24 md:mt-0">
       {/* Heading */}
       <div className="block md:block">
-        <p className="text-lg md:text-xl font-marcellus font-medium text-[#126B6D]">
+        <p className="text-lg md:text-xl font-playpen-sans font-medium text-[#126B6D]">
           {text}
         </p>
       </div>
@@ -65,7 +65,7 @@ function FilterProducts({ text = "Best Selling Products", sort }) {
               <button
                 type="button"
                 key={opt.value}
-                className="w-full text-left hover:bg-[#F0EEFF] px-4 py-2 text-sm text-[#747877] hover:text-[#126B6D]"
+                className="w-full text-left hover:bg-[#dffcfd] px-4 py-2 text-sm text-[#747877] hover:text-[#126B6D]"
                 onClick={() => {
                   setSelected(opt);
                   sort?.(opt.value);

@@ -6,7 +6,7 @@ import Design from "../components/homecomponents/Design";
 
 function Products() {
   return (
-    <section className="lg:px-0 px-0 py-[23px] flex flex-col gap-6 bg-[#F6F8F9]">
+    <section className="lg:px-0 px-0 py-[23px] flex flex-col gap-6 ">
 
       <LatestProducts />
       <CategoryProducts />

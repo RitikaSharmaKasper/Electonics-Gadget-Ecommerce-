@@ -15,14 +15,14 @@ function DeliveryDetailsDialog({ onClose }) {
             placeholder="Enter Pincode"
             className="outline-none "
           />
-          <button className="bg-[#EBB100] text-white px-4 py-1 rounded-md">
+          <button className="bg-[#126B6D] text-white px-4 py-1 rounded-md font-playpen-sans ">
             Submit
           </button>
         </div>
       </div>
       <p className="text-center my-6">OR</p>
       <div className="flex shadow-md p-4 border">
-        <button className="flex-1 py-2 text-[#EBB100] border border-[#EBB100] rounded-md">
+        <button className="flex-1 py-2 text-[#126B6D] border border-[#126B6D] rounded-md font-playpen-sans">
           Add New Address
         </button>
       </div>

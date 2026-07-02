@@ -301,7 +301,7 @@ function Card({
               </button>
 
               <img
-                className="lg:min-h-[202px] pt-2 sm:min-w-[207px] sm:min-h-[160px] max-w-40 max-h-40 object-contain lg:group-hover:scale-110 transition duration-300 bg-[#F6F8F9]"
+                className="lg:min-h-[202px] pt-2 sm:min-w-[207px] sm:min-h-[160px] max-w-40 max-h-40 object-contain lg:group-hover:scale-110 transition duration-300 "
                 src={productImage}
                 alt={productName}
                 crossOrigin="anonymous"

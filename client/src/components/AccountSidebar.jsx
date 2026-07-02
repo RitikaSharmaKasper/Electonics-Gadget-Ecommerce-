@@ -74,7 +74,7 @@ function AccountSidebar() {
   return (
     <div className="sticky top-28 h-max min-w-[310px] !w-[310px] bg-white rounded-lg shadow-sm overflow-hidden mt-5">
       {/* Account holder */}
-      <div className="px-6 py-4 flex gap-4 items-center text-white bg-gradient-to-r from-[#CFC7FF]/50 to-[#FFC9EA]/20 rounded-b-3xl rounded-t-lg m-1">
+      <div className="px-6 py-4 flex gap-4 items-center text-white bg-gradient-to-r from-[#88D3D5]/50 to-[#6CB7B9]/20 rounded-b-3xl rounded-t-lg m-1">
         <div className="relative group w-14 h-14 rounded-full overflow-hidden border-2 border-white/90 hover:border-white/50 transition-all duration-300">
           <img
             src={user?.user?.profileImage?.url || "/name1.jpg"}
@@ -112,8 +112,8 @@ function AccountSidebar() {
           />
         </div>
         <div className="text-black">
-          <p className="text-sm font-light">Welcome back</p>
-          <p className="font-medium">{user?.user?.name}</p>
+          <p className="text-[15px] font-light font-playpen-sans">Welcome back</p>
+          <p className="text-[15px] font-medium font-playpen-sans">{user?.user?.name}</p>
         </div>
       </div>
 
@@ -121,7 +121,7 @@ function AccountSidebar() {
       <div className="px-4 py-2">
         {/* Account Details */}
         <div className="mb-6">
-          <h3 className="px-2 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">
+          <h3 className="px-2 py-2 text-sm font-semibold text-[#126B6D] font-playpen-sans uppercase tracking-wider">
             Account
           </h3>
           <ul className="space-y-1">
@@ -130,10 +130,10 @@ function AccountSidebar() {
                 <NavLink
                   to={`/accounts${path}`}
                   className={({ isActive }) =>
-                    `flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    `flex items-center px-3 py-2.5  font-playpen-sans rounded-lg text-sm font-medium transition-all duration-200 ${
                       isActive
-                        ? "bg-[#F0EEFF] text-[#1C3753] border-l-4 border-[#1C3753] "
-                        : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                        ? "bg-[#88D3D5]/50 text-[#126B6D] border-l-4 border-[#1C3753] "
+                        : "text-gray-600 hover:bg-[#88D3D5]/20 hover:text-gray-900"
                     }`
                   }
                 >
@@ -149,10 +149,10 @@ function AccountSidebar() {
         <hr />
         <button
           onClick={handleLogout}
-          className="w-full flex items-center bg-[#F0EEFF] px-3 py-3 mt-1 text-lg font-normal text-[#1C1C1C] rounded-lg transition-all duration-200 group"
+          className="w-full flex items-center bg-[#88D3D5]/50 px-3 py-3 mt-1 text-lg font-normal text-[#1C1C1C] rounded-lg transition-all duration-200 group"
         >
-          <div className="p-1.5 mr-3 bg-[#F0EEFF] text-[#1C3753] rounded-lg transition-all duration-200">
-            <LogOut className="text-[#1800AC]" />
+          <div className="p-1.5 mr-3 bg-[#88D3D5]/50] text-[#1C3753] rounded-lg transition-all duration-200">
+            <LogOut className="text-[#0b565c]" />
           </div>
           Log Out
         </button>

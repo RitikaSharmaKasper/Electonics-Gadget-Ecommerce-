@@ -925,6 +925,11 @@ function Navbar() {
   const [wishlistCount, setWishlistCount] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const guestSyncDoneRef = useRef(false);
+
+const [shippingConfig, setShippingConfig] = useState({});
+
+
+
   // ///////////////////////////check delivery
   const [pincode, setPincode] = useState("");
   // const [error, setError] = useState("");
@@ -1172,6 +1177,15 @@ function Navbar() {
     // navigate("/login", { replace: true });
   };
 
+
+
+
+
+
+
+
+
+
   // Disable background scroll when mobile nav is open
   useEffect(() => {
     if (dropdown || isProfileOpen || (isOpen && window.innerWidth < 1024)) {
@@ -1200,9 +1214,34 @@ function Navbar() {
 
   const filteredResults = searchResults.slice(0, 5);
 
+
+useEffect(() => {
+    const fetchShippingConfig = async () => {
+      try {
+        const res = await axiosInstance.get(
+          "/dashboard/shipping/get-shipping-config-admin",
+        );
+
+        if (res?.data?.success) {
+          setShippingConfig(res.data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching shipping config:", error);
+      }
+    };
+
+    fetchShippingConfig();
+  }, []);
+
+
+
+
+
+
+
   const Announcement = [
     { name: "Notebook, Pencil, Chalk & Classroom Essentials - Shop Now" },
-    { name: "Maps, Slates, Globes & Learning Charts - New Stationery Range" },
+    { name: `Free Shipping on orders above ₹${shippingConfig?.freeDeliveryAbove || 0}` },
     { name: "Buy more, Save more - Unlock exclusive school supplies discounts" },
   ];
 

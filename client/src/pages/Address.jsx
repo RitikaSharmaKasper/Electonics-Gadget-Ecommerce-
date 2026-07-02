@@ -134,16 +134,16 @@ function Address() {
       {/* Header */}
       <div className="md:mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
         <div>
-          <h1 className="text-xl font-semibold text-gray-800 font-inter">
+          <h1 className="text-xl font-semibold text-[#126B6D] font-playpen-sans">
             Saved Addresses
           </h1>
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-gray-500 mt-1 font-marcellus">
             Manage your delivery locations
           </p>
         </div>
         <button
           onClick={() => setOpen(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-[#1800AC] text-white rounded-lg transition-all shadow-sm"
+          className="flex items-center gap-2 px-4 py-2 bg-[#126B6D] text-white rounded-lg transition-all shadow-sm font-playpen-sans" 
         >
           <Plus size={18} />
           <span>Add New Address</span>
@@ -166,7 +166,7 @@ function Address() {
                 {/* Default Badge */}
                 {add.isDefault && (
                   <div className="absolute top-0 right-0">
-                    <div className="bg-[#1800AC] text-white text-xs font-medium px-3 py-1 rounded-bl-lg flex items-center gap-1">
+                    <div className="bg-[#126B6D] text-white text-xs font-medium px-3 py-1 rounded-bl-lg flex items-center gap-1">
                       <Star size={12} className="fill-current" />
                       Default
                     </div>

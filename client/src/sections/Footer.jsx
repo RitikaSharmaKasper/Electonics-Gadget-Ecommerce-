@@ -7,73 +7,79 @@ import footerImg from "../assets/img/FooterImg.png";
 
 function Footer() {
   return (
-    <section className="relative lg:px-20 md:px-[60px] px-4 py-[20px] bg-[#FAFAF8] text-[#2D2F31]">
-      <img
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-100"
+    <section className="relative lg:px-20 md:px-[60px] px-4 py-[20px] bg-[#FAFAF8] text-[#2D2F31] ">
+      {/* <img
+        className="absolute top-32 inset-0 w-full h-full object-bottom z-0 opacity-100"
         src={footerImg}
         alt=""
+      /> */}
+      <img
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-40 pointer-events-none select-none"
+        src={footerImg}
+        alt="Footer Background"
       />
       <div className="relative z-10 flex justify-between lg:flex-nowrap flex-wrap gap-4">
         <div className="flex flex-col w-full">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6 lg:gap-16">
             <div className="flex flex-col gap-2">
               <Link to="/home">
-                <h1 className="font-[500] font-marcellus lg:text-[20px] text-[14.5px] text-[#44546C]">
-                  Happy Art Supplies
+                <h1 className="font-[500] font-playpen-sans lg:text-[20px] text-[14.5px] text-[#126B6D]">
+                  Quiret
                 </h1>
               </Link>
-              <p className="lg:text-[14px] text-[11.5px] font-[300] text-[#7D8694] font-">
-                Happy Art Supplies offers premium resin art materials across
-                India. Since 2021, we’ve helped creators with quality supplies,
-                reliable service, and everything needed to bring ideas to life.
-                ✨
+              <p className="lg:text-[14px] text-[14px] font-playpen-sans font-[300] text-[#1e1e1e] font-playpen-sans">
+                Quiret is a Stationaryhub for your premium destination for
+                office and school supplies, launching across India in 2021.
+                We're here to help creators, students, and professionals with
+                quality stationery, reliable service, and everything needed to
+                bring ideas to life. ✨
               </p>
               <div>
-                <p className="text-[#44546C] text-[16px]">Contact us @</p>
-                <p className="font-[400] lg:text-sm text-sm">
-                  Sangeetha Banerjee
+                <p className="text-[#126B6D] text-[16px] font-playpen-sans">
+                  Contact us :{" "}
                 </p>
+                <p className="font-[400] lg:text-sm text-sm"></p>
                 <a
                   href="https://wa.me/919886894723"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm block text-blue-600"
+                  className="text-sm block text-[#FF7F66]"
                 >
-                  (+91) 98868 94723
+                  (+91) 800-644-8800
                 </a>
                 <a
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=happyartsupplies@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm block text-blue-600"
+                  className="text-sm block text-[#FF7F66]"
                 >
-                  happyartsupplies@gmail.com
+                  info@kasperinfotech.com sales@kasperinfotech.com
                 </a>
-                <p className="text-sm">
+                <p className="text-sm text-[#126B6D] font-playpen-sans">
                   {/* B402, United Crossandra,  */}
-                  Hormavu Agara Lake Road
+                  Office Number 503, TOWER-C,
                 </p>
                 {/* <br /> */}
-                <p className="text-sm">
-                  Horamavu, Bengaluru 560043, Karnataka, India
+                <p className="text-sm text-[#126B6D] font-playpen-sans">
+                  The iThum Towers, Sector 62, Noida, Uttar Pradesh 201301
                 </p>
                 <div className="flex gap-3 font-[200] mt-2">
                   <a
                     target="_"
-                    href=" https://www.instagram.com/happyartsupplies/"
+                    href=" "
                   >
                     {" "}
                     <img src={instagram} alt="" />
                   </a>
                   <a
                     target="_"
-                    href="https://www.facebook.com/HappyArtSupplies/"
+                    href=""
                   >
                     <img src={facebook} alt="" />
                   </a>
                   <a
                     target="_"
-                    href="https://maps.app.goo.gl/uc4USne66zUHXuWe9"
+                    href=""
                   >
                     <img src={map} alt="" />
                   </a>
@@ -83,10 +89,10 @@ function Footer() {
 
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
-                <h1 className="font-[300] lg:text-[20px] text-[14.5px] text-[#44546C]">
+                <h1 className="font-[300] lg:text-[20px] text-[14.5px] text-[#126B6D] font-playpen-sans">
                   About Us
                 </h1>
-                <ul className="font-[300] flex flex-col gap-2 lg:text-[16px] text-[11.5px] text-[#7D8694]">
+                <ul className="font-[300] flex flex-col gap-2 lg:text-[16px] text-[11.5px] text-[#1e1e1e] font-playpen-sans">
                   <Link to="/aboutUs">
                     <li>About Us</li>
                   </Link>
@@ -114,10 +120,10 @@ function Footer() {
 
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-2">
-                <h1 className="font-[300]  lg:text-[20px] text-[14.5px] text-[#44546C]">
+                <h1 className="font-[300]  lg:text-[20px] text-[14.5px] text-[#126B6D] font-playpen-sans">
                   Shop
                 </h1>
-                <ul className="font-[300] flex flex-col gap-2 lg:text-[16px] text-[11.5px] text-[#7D8694]">
+                <ul className="font-[300] flex flex-col gap-2 lg:text-[16px] text-[11.5px] text-[#1e1e1e] font-playpen-sans">
                   <li>
                     <Link to="/products">Best Selling Products</Link>
                   </li>
@@ -134,10 +140,10 @@ function Footer() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <h1 className="font-[300] lg:text-[20px] text-[14.5px] text-[#44546C]">
+              <h1 className="font-[300] lg:text-[20px] text-[14.5px] text-[#126B6D] font-playpen-sans">
                 Account
               </h1>
-              <ul className="lg:text-[16px] text-[11.5px] font-[300] flex flex-col gap-2 text-[#7D8694]">
+              <ul className="lg:text-[16px] text-[11.5px] font-[300] font-playpen-sans flex flex-col gap-2 text-[#1e1e1e]">
                 <li>
                   <Link to="/accounts/details">My Account</Link>
                 </li>
@@ -198,8 +204,8 @@ function Footer() {
             </div> */}
           </div>
           <div className="flex justify-between py-[20px] border-t-[1px] border-[#ACACAC] mt-4">
-            <p className="lg:text-sm text-xs text-[#2D2F31]">
-              © 2026 HAPPY ART SUPPLIES. All rights reserved.
+            <p className="lg:text-sm text-xs text-[#126B6D]">
+              © 2026 QUIRET. All rights reserved.
             </p>
             <ul className="flex md:gap-4 gap-1 font-[400] lg:text-[16px] text-[11.5px]">
               <li className="lg:text-sm text-xs text-[#2D2F31]">
