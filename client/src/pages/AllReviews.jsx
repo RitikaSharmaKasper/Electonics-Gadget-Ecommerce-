@@ -82,10 +82,10 @@ function AllReviews() {
           <div className="flex items-center gap-2">
             <ChevronLeft
               size={25}
-              className="cursor-pointer text-[#1800AC]"
+              className="cursor-pointer text-[#12]"
               onClick={() => navigate(`/product/${slugOrId}`)}
             />
-            <h3 className="text-xl font-semibold font-marcellus text-[#1800AC]">
+            <h3 className="text-xl font-semibold font-playpen-sans text-[#126B6D]">
               Rating & Reviews
             </h3>
           </div>
@@ -99,7 +99,7 @@ function AllReviews() {
             <div className="mt-6 rounded-xl bg-[#ffff] border border-[#E5E5E5] p-3">
               <div className="flex items-center justify-between mb-3">
                 <div>
-                  <h4 className="text-[18px] font-semibold text-[#1800AC]">
+                  <h4 className="text-[18px] font-semibold text-[#126B6D] font-playpen-sans">
                     Review With images
                   </h4>
                   <p className="text-sm text-[#686868]">

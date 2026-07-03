@@ -173,13 +173,13 @@ const GeneralSettingsForm = () => {
 
         <div className="flex items-center gap-3">
           <Link to={"/admin/settings/general"}>
-            <button className="border border-[#1F3B5B] text-[#1F3B5B] text-[13px] font-medium px-4 py-2 rounded-[6px] bg-white">
+            <button className="border border-[#126B6D] text-[#126B6D] text-[13px] font-medium px-4 py-2 rounded-[6px] bg-white">
               Cancel
             </button>
           </Link>
           <button
             onClick={handleSubmit}
-            className="bg-[#1F3B5B] text-white text-[13px] font-medium px-4 py-2 rounded-[6px]"
+            className="bg-[#126B6D] text-white text-[13px] font-medium px-4 py-2 rounded-[6px]"
           >
             Save Changes
           </button>

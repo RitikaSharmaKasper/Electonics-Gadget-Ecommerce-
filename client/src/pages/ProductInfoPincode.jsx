@@ -119,9 +119,9 @@ useEffect(() => {
         <button
           onClick={handleCheck}
           disabled={!validatePincode(pincode) || loading}
-          className={`px-5 py-2 rounded-md font-medium text-sm transition flex items-center justify-center ${
+          className={`px-5 py-2 rounded-md font-medium text-sm transition flex items-center font-playpen-sans justify-center ${
             validatePincode(pincode)
-              ? "bg-[#1C146B] text-white"
+              ? "bg-[#126B6D] text-white"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"
           }`}
         >
@@ -148,7 +148,7 @@ useEffect(() => {
       )}
 
       {/* Info */}
-      <p className="text-blue-500 text-sm mt-3 flex items-center gap-1">
+      <p className="text-[#126B6D] text-sm mt-3 flex items-center gap-1">
         <Truck className="w-5 h-5" />
         Free Shipping on orders above Rs.{" "}
         {shippingConfig?.freeDeliveryAbove || 0}

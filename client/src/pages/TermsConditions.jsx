@@ -35,7 +35,7 @@ const TermsConditions = () => {
           <div
             className="ql-editor p-0 text-[#1C1C1C] text-sm sm:text-base leading-relaxed w-full overflow-hidden [&_p]:!mb-6 [&_ul]:!mb-6 [&_ol]:!mb-6 [&_li]:!mb-2"
             dangerouslySetInnerHTML={{
-              __html: termsData?.content || "<p>Welcome to Happy Art Supplies. By accessing our website and placing an order, you agree to comply with the following Terms & Conditions. Please read them carefully before making a purchase.</p>",
+              __html: termsData?.content || "<p>Welcome to Ivoryinks.com. By accessing our website and placing an order, you agree to comply with the following Terms & Conditions. Please read them carefully before making a purchase.</p>",
             }}
           />
         </div>

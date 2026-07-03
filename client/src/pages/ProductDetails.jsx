@@ -916,14 +916,14 @@ function ProductDetails() {
 
           {/* Details */}
           <div className="w-full">
-            <h1 className="lg:text-2xl md:text-xl text-lg font-medium text-sm font-playpen-sans text-[#55516e] py-2 leading-7">
+            <h1 className="lg:text-2xl md:text-xl text-lg    font-medium font-playpen-sans text-[#126B6D] py-2 leading-7">
               {product.productTittle}
-            </h1>
+            </h1> 
 
             {product?.reviews?.length > 0 && (
               <div className="border-gray-200 pb-2 flex items-center gap-4">
                 <div className="flex items-center gap-1">
-                  <span className="text-2xl font-semibold text-gray-900">
+                  <span className="text-2xl font-semibold text-[#126B6D]">
                     {avgRating > 0 ? avgRating.toFixed(1) : "—"}
                   </span>
                   <span className="text-gray-500 text-sm">/5</span>
@@ -942,9 +942,11 @@ function ProductDetails() {
             {/* Product Price & details */}
             <div className="py-2 border-b">
               <div className="text-neural-700 font-medium">
-                <span className="mr-2 text-[28px]">₹{effectivePrice}</span>
+                <span className="mr-2 text-[25px] text-[#126B6D]">
+                  ₹{effectivePrice}
+                </span>
                 {mrp > effectivePrice ? (
-                  <span className="line-through text-[#787878] font-normal text-[16px]">
+                  <span className="line-through text-gray-400 font-normal text-[16px]">
                     ₹{mrp}
                   </span>
                 ) : null}
@@ -962,7 +964,7 @@ function ProductDetails() {
             {/* Weight Options */}
             {weightOptions.length > 0 && (
               <div className="mt-2">
-                <h3 className="font-medium">
+                <h3 className="font-medium font-playpen-sans text-[#126B6D]">
                   Weight:{" "}
                   <span className="text-[#1C1C1C] font-medium">
                     {selectedVariant?.variantWeight || "-"}
@@ -976,11 +978,11 @@ function ProductDetails() {
                     <button
                       type="button"
                       key={c}
-                      className={`px-3 py-1 rounded-md border border-[#B6AAFF] text-sm
+                      className={`px-3 py-1 rounded-md border border-[#126B6D] text-sm
                         ${
                           selectedVariant?.variantWeight === c
-                            ? "border-2 border-[#1C3753] bg-[#F7F5FF] text-[#1800AC]"
-                            : "bg-white hover:bg-[#B6AAFF]"
+                            ? "border-1 border-[#126B6D]  text-[#eb755d]"
+                            : "bg-white hover:bg-[#126B6D] hover:text-white text-[#126B6D] border-[#126B6D]"
                         }`}
                       onClick={() => onSelectWeight(c)}
                     >
@@ -995,7 +997,7 @@ function ProductDetails() {
             {/* Style Options */}
             {sizeOptions.length > 0 && (
               <div className="mt-3 border-b pb-3">
-                <h3 className="font-medium">
+                <h3 className="font-medium font-playpen-sans text-[#126B6D]">
                   Style Name :{" "}
                   <span className="text-[#1C1C1C] font-medium">
                     {`${selectedVariant?.variantName || "-"}`}
@@ -1006,11 +1008,11 @@ function ProductDetails() {
                     <button
                       type="button"
                       key={s}
-                      className={`px-3 py-1 rounded-md border border-[#B6AAFF] text-sm
+                      className={`px-3 py-1 rounded-md border border-[#126B6D] text-sm
                         ${
                           s === selectedVariant?.variantName
-                            ? "border-2 border-[#1C3753] bg-[#fffff] text-[#1C1C1C]"
-                            : "bg-white hover:bg-[#B6AAFF]"
+                          ? "border-1 border-[#126B6D]  text-[#eb755d]"
+                            : "bg-white hover:bg-[#126B6D] hover:text-white text-[#126B6D] border-[#126B6D]"
                         }`}
                       onClick={() => onSelectStyle(s)}
                     >
@@ -1023,11 +1025,11 @@ function ProductDetails() {
             {/* Style Options */}
             {colorOptions.length > 0 && (
               <div className="mt-3 border-b pb-3">
-                <h3 className="font-medium">
+                <h3 className="font-medium font-playpen-sans text-[#126B6D] ">
                   Color :{" "}
-                  <span className="text-[#1C1C1C] font-medium">
+                  <span className="font-medium">
                     {selectedVariant?.variantColor || "-"}
-                  </span>
+                  </span> 
                 </h3>
 
                 <div className="flex gap-2 mt-2 flex-wrap">
@@ -1035,11 +1037,11 @@ function ProductDetails() {
                     <button
                       type="button"
                       key={color}
-                      className={`px-3 py-1 rounded-md border border-[#B6AAFF] text-sm
+                      className={`px-3 py-1 rounded-md border border-[#126B6D] text-sm
             ${
               color === selectedVariant?.variantColor
-                ? "border-2 border-[#1C3753] bg-[#F7F5FF] text-[#1C1C1C]"
-                : "bg-white hover:bg-[#B6AAFF]"
+              ? "border-1 border-[#126B6D]  text-[#eb755d]"
+                            : "bg-white hover:bg-[#126B6D] hover:text-white text-[#126B6D] border-[#126B6D]"
             }`}
                       onClick={() => onSelectColor(color)}
                     >
@@ -1067,8 +1069,8 @@ function ProductDetails() {
                   disabled={cartUpdating}
                   className={`px-6 py-2 border rounded-md ${
                     inCart
-                      ? "bg-[#0C0057] text-white border-[#0C0057]"
-                      : "bg-[#F6F8F9] hover:bg-[#0C0057] hover:text-white text-[#0C0057] border-[#0C0057]"
+                      ? "bg-[#126B6D] text-white border-[#126B6D]"
+                      : "bg-[#F6F8F9] hover:bg-[#126B6D] hover:text-white text-[#126B6D] border-[#126B6D]"
                   }`}
                 >
                   {cartUpdating
@@ -1081,7 +1083,7 @@ function ProductDetails() {
 
               <button
                 type="button"
-                className="px-6 py-2 bg-[#0C0057] text-white border border-[#1C3753] rounded-md"
+                className="px-6 py-2  border border-[#126B6D] text-[#126B6D] rounded-md"
                 onClick={handleBuyNow}
                 disabled={outOfStock || cartUpdating}
               >
@@ -1097,7 +1099,7 @@ function ProductDetails() {
             <div className="py-4 border-b">
               <h3 className="font-medium">Product Specifications</h3>
               <div className="text-[14px] mt-2">
-                <p className="text-[14px] text-[#1C1C1C]">
+                <p className="text-[14px] text-[#126B6D] ">
                   Item Weight -{" "}
                   <span className="text-[#686868] capitalize">
                     {selectedVariant?.variantWeight || "-"}
@@ -1105,13 +1107,13 @@ function ProductDetails() {
                   </span>
                 </p>
                 <p className="capitalize">
-                  <span className="text-[#1C1C1C]">Category:</span> -{" "}
+                  <span className="text-[#126B6D]">Category:</span> -{" "}
                   <span className="text-[#686868]">
                     {product.category?.name || "-"}
                   </span>
                 </p>
                 <p className="capitalize">
-                  <span className="text-[#1C1C1C]">Sub-Category:</span> -{" "}
+                  <span className="text-[#126B6D]">Sub-Category:</span> -{" "}
                   <span className="text-[#686868]">
                     {product.subcategory?.name || "-"}
                   </span>
@@ -1144,7 +1146,7 @@ function ProductDetails() {
 
         {/* Reviews */}
         <div className="p-4 bg-[#fcfbfb] rounded-lg mt-4" id="reviews-section">
-          <h3 className="text-[24px] font-medium text-[#1C3753] uppercase font-playpen-sane">
+          <h3 className="text-[21px] font-medium text-[#126B6D]  font-playpen-sans">
             Rating & Reviews
           </h3>
 
@@ -1155,7 +1157,7 @@ function ProductDetails() {
               </p>
               <button
                 onClick={handleOpenAddReview}
-                className="px-5 py-2 bg-[#0C0057] text-white rounded-md"
+                className="px-5 py-2 bg-[#126B6D]text-white rounded-md"
               >
                 Write a Review
               </button>
@@ -2145,8 +2147,8 @@ export default ProductDetails;
 //                   disabled={cartUpdating}
 //                   className={`px-6 py-2 border rounded-md ${
 //                     inCart
-//                       ? "bg-[#0C0057] text-white border-[#0C0057]"
-//                       : "bg-[#F6F8F9] hover:bg-[#0C0057] hover:text-white text-[#0C0057] border-[#0C0057]"
+//                       ? "bg-[#126B6D]text-white border-[#0C0057]"
+//                       : "bg-[#F6F8F9] hover:bg-[#126B6D]hover:text-white text-[#0C0057] border-[#0C0057]"
 //                   }`}
 //                 >
 //                   {cartUpdating
@@ -2159,7 +2161,7 @@ export default ProductDetails;
 
 //               <button
 //                 type="button"
-//                 className="px-6 py-2 bg-[#0C0057] text-white border border-[#1C3753] rounded-md"
+//                 className="px-6 py-2 bg-[#126B6D]text-white border border-[#1C3753] rounded-md"
 //                 onClick={() => handleBuyNow(product, selectedVariant)}
 //                 disabled={outOfStock || cartUpdating}
 //               >
@@ -2260,7 +2262,7 @@ export default ProductDetails;
 
 //               <button
 //                 onClick={handleOpenAddReview}
-//                 className="px-5 py-2 bg-[#0C0057] text-white rounded-md"
+//                 className="px-5 py-2 bg-[#126B6D]text-white rounded-md"
 //               >
 //                 Write a Review
 //               </button>

@@ -90,7 +90,7 @@ export default ProfileSidebar;
 //               key={tab.label}
 //               to={`/admin/customers/${id}${tab.path}`}
 //               className={`relative py-4 text-sm font-medium transition-colors ${
-//                 isActive ? "text-blue-600" : "text-gray-500 hover:text-gray-800"
+//                 isActive ? "text-blue-600" : "text-gray-500 hover:text-[#126B6D] font-playpen-sans"
 //               }`}>
 //               {tab.label}
 
@@ -162,7 +162,7 @@ export default ProfileSidebar;
 //         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 border-b border-gray-200 flex justify-between items-center">
 //           {!isCollapsed && (
 //             <div>
-//               <h3 className="font-semibold text-gray-800">Customer Profile</h3>
+//               <h3 className="font-semibold text-[#126B6D] font-playpen-sans">Customer Profile</h3>
 //               <p className="text-sm text-gray-600 mt-1 truncate">{customer?.name || 'Customer Details'}</p>
 //             </div>
 //           )}

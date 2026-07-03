@@ -475,9 +475,9 @@ function TopProducts() {
           fontFamily: "'Marcellus SC', cursive",
         }}
       >
-        <p className="md:items-start px-2 text-[65px] sm:text-[50px] text-[#126B6D] font-montez">Featured Collection</p>
+        <p className="md:items-start px-2 text-[30px]  md: text-[30px] sm:text-[30px] text-[#126B6D] font-playpen-sans">Featured Collection</p>
         <Link
-          className="whitespace-nowrap font-montez text-[#FF7F66] hover:text-[#126B6D] px-2 text-base sm:text-xl md:text-xl underline cursor-pointer"
+          className="whitespace-nowrap font-lavishly text-[#FF7F66] text-[32px] hover:text-[#126B6D] px-2 text-base sm:text-xl md:text-xl underline cursor-pointer"
           to="/products/top-products "
         >
           Explore more

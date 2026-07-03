@@ -308,7 +308,7 @@
 //           </div>
 
 //           <div className="mt-3">
-//             <h3 className="text-sm font-serif text-gray-800 font-normal line-clamp-1 mb-2">
+//             <h3 className="text-sm font-serif text-[#126B6D] font-playpen-sans font-normal line-clamp-1 mb-2">
 //               {product.name || product.productTittle || "Product Name"}
 //             </h3>
 
@@ -646,14 +646,14 @@
 // //                 </button>
 
 // //                 {/* {typeof ratingAvg === "number" && (
-// //                   <div className="absolute top-2 right-2 bg-yellow-400 shadow-md text-gray-800 text-xs font-semibold px-2 py-1 rounded-full flex items-center">
+// //                   <div className="absolute top-2 right-2 bg-yellow-400 shadow-md text-[#126B6D] font-playpen-sans text-xs font-semibold px-2 py-1 rounded-full flex items-center">
 // //                     <span>{Number(ratingAvg).toFixed(1)} ★</span>
 // //                   </div>
 // //                 )} */}
 // //               </div>
 
 // //               <div className="mt-3">
-// //                 <h3 className="text-sm font-serif text-gray-800 font-normal line-clamp-1 mb-2">
+// //                 <h3 className="text-sm font-serif text-[#126B6D] font-playpen-sans font-normal line-clamp-1 mb-2">
 // //                   {p.name || p.slug || "Product Name"}
 // //                 </h3>
 
@@ -1119,7 +1119,7 @@ function LatestProducts() {
           </div>
 
           <div className="mt-3">
-            <h3 className="text-sm  text-gray-800 font-normal line-clamp-1 mb-2">
+            <h3 className="text-sm  text-gray-700  font-normal line-clamp-1 mb-2">
               {product.name || product.productTittle || "Product Name"}
             </h3>
 
@@ -1171,7 +1171,7 @@ function LatestProducts() {
 
   if (loading) {
     return (
-      <div className="lg:px-20 md:px-[60px] px-4 py-[23px] bg-[#F0EEFF] shadow-sm rounded-lg">
+      <div className="lg:px-20 md:px-[60px] px-4 py-[23px]">
         <div className="flex justify-center items-center h-64">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#126B6D] mx-auto"></div>
         </div>
@@ -1180,7 +1180,7 @@ function LatestProducts() {
   }
 
   return (
-  <div className="lg:px-20 md:px-[60px] px-4 py-[23px] relative bg-[#ececf1] shadow-sm rounded-lg">
+  <div className="lg:px-20 md:px-[60px] px-4 py-[23px] relative">
   <div className="flex items-center justify-between">
     <p className="md:items-start px-2 text-[#126B6D] font-lavishly text-[40px] font-normal">
       Best Stationary Products

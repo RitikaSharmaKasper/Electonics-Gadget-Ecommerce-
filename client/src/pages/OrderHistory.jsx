@@ -168,7 +168,7 @@ function OrderHistory() {
     <div className="w-full mt-5">
       <div className="md:mb-6 relative flex flex-row justify-between items-center border border-gray-200 bg-white md:rounded-lg p-3 gap-3 sm:gap-4">
         <div>
-          <p className="text-lg font-semibold">Your Orders</p>
+          <p className="text-lg font-semibold font-playpen-sans text-[#126B6D]">Your Orders</p>
           <span className="text-sm text-[#686868]">Manage your Orders</span>
         </div>
         {/* Search Input */}
@@ -233,7 +233,7 @@ function OrderHistory() {
                 className="bg-white md:rounded-lg md:shadow-sm text-xs sm:text-sm md:text-base"
               >
                 {/* Order Header */}
-                <div className="flex flex-wrap sm:flex-row justify-between gap-3 bg-[#F0EEFF] sm:gap-0 items-start sm:items-center px-4 sm:px-6 py-4 border-b">
+                <div className="flex flex-wrap sm:flex-row justify-between gap-3 bg-gradient-to-r from-[#88D3D5]/50 to-[#6CB7B9]/20  sm:gap-0 items-start sm:items-center px-4 sm:px-6 py-4 border-b">
                   <div>
                     <span className="text-gray-500 block">Order Placed</span>
                     <p className="font-medium">{formatDate(order.placedAt)}</p>
@@ -264,13 +264,13 @@ function OrderHistory() {
                   </div>
                   <div className="flex items-end gap-2 justify-end max-sm:w-full">
                     <Link
-                      className="border border-[#0C0057]  text-[#0C0057]  bg-white text-center mb-1 px-3 py-1 rounded-md text-xs sm:text-sm"
+                      className="border border-[#126B6D]  text-[#126B6D]  bg-white text-center mb-1 px-3 py-1 rounded-md text-xs sm:text-sm"
                       to={`/accounts/order-detail/${order._id}`}
                     >
                       Order Details
                     </Link>
                     {order.status !== "cancelled" && (
-                      <div className="border border-[#0C0057] text-[#0C0057] bg-white text-center mb-1 px-3 py-1 rounded-md text-xs sm:text-sm">
+                      <div className="border border-[#126B6D] text-[#126B6D] bg-white text-center mb-1 px-3 py-1 rounded-md text-xs sm:text-sm">
                         <p
                           onClick={() =>
                             navigate(`/order-history/${order?._id}`)
@@ -406,7 +406,7 @@ function OrderHistory() {
             key={i}
             onClick={() => setPage(i + 1)}
             className={`px-3 py-1 border rounded ${
-              page === i + 1 ? "bg-[#1800AC] text-white" : ""
+              page === i + 1 ? "bg-[#126B6D] text-white" : ""
             }`}
           >
             {i + 1}

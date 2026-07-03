@@ -206,7 +206,7 @@ const TransporterDetail = () => {
     return (
       <div className="p-[24px] bg-[#F6F8F9] rounded-md min-h-screen">
         <div className="bg-white rounded-xl p-6">
-          <h2 className="text-[20px] font-semibold text-gray-800 mb-4">
+          <h2 className="text-[20px] font-semibold text-[#126B6D] font-playpen-sans mb-4">
             Transporter not found
           </h2>
           <button
@@ -233,7 +233,7 @@ const TransporterDetail = () => {
               >
                 <ChevronLeft />
               </button>
-              <h2 className="text-[20px] font-semibold text-gray-800">
+              <h2 className="text-[20px] font-semibold text-[#126B6D] font-playpen-sans">
                 {transporter.transporterName || "--"}
               </h2>
               <div className="">
@@ -447,7 +447,7 @@ const TransporterDetail = () => {
 
               <button
                 onClick={() => setIsEditModalOpen(false)}
-                className="text-gray-500 hover:text-gray-800"
+                className="text-gray-500 hover:text-[#126B6D] font-playpen-sans"
               >
                 ✕
               </button>
@@ -740,7 +740,7 @@ const TransporterDetail = () => {
               </button>
               <button
                 type="button"
-                className="px-4 py-2 rounded-lg bg-[#1C3753] text-white hover:bg-[#344558]"
+                className="px-4 py-2 rounded-lg bg-[#126B6D] text-white hover:bg-[#126B6D]/90"
                 onClick={handleSaveChanges}
               >
                 Save Changes

@@ -193,7 +193,7 @@ function CustomerReview({ reviews = [], id, allReviews = false }) {
       {!allReviews && (
         <button
           type="button"
-          className="py-2 mt-3 font-medium text-[#1800AC]"
+          className="py-2 mt-3 font-medium  text-[#126B6D]"
           onClick={handleSeeMoreReviews}
         >
           See more reviews ›

@@ -112,7 +112,7 @@ function FilterCard({ cardData }) {
           </div>
         ))
       ) : (
-        <h1 className="text-lg sm:text-xl font-semibold text-gray-800">
+        <h1 className="text-lg sm:text-xl font-semibold text-[#126B6D] font-playpen-sans">
           Not Available
         </h1>
       )}

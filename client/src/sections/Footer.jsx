@@ -24,11 +24,11 @@ function Footer() {
             <div className="flex flex-col gap-2">
               <Link to="/home">
                 <h1 className="font-[500] font-playpen-sans lg:text-[20px] text-[14.5px] text-[#126B6D]">
-                  Quiret
+                  Ivoryinks.com
                 </h1>
               </Link>
               <p className="lg:text-[14px] text-[14px] font-playpen-sans font-[300] text-[#1e1e1e] font-playpen-sans">
-                Quiret is a Stationaryhub for your premium destination for
+                Ivoryinks.com is a Stationaryhub for your premium destination for
                 office and school supplies, launching across India in 2021.
                 We're here to help creators, students, and professionals with
                 quality stationery, reliable service, and everything needed to
@@ -205,7 +205,7 @@ function Footer() {
           </div>
           <div className="flex justify-between py-[20px] border-t-[1px] border-[#ACACAC] mt-4">
             <p className="lg:text-sm text-xs text-[#126B6D]">
-              © 2026 QUIRET. All rights reserved.
+              © 2026 Ivoryinks.com. All rights reserved.
             </p>
             <ul className="flex md:gap-4 gap-1 font-[400] lg:text-[16px] text-[11.5px]">
               <li className="lg:text-sm text-xs text-[#2D2F31]">

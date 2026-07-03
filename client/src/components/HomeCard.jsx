@@ -29,14 +29,14 @@ const HomeCard = ({ product }) => {
         />
 
         {typeof ratingAvg === "number" && (
-          <div className="absolute top-2 right-2 bg-yellow-400 shadow-md text-gray-800 text-xs font-semibold px-2 py-1 rounded-full flex items-center">
+          <div className="absolute top-2 right-2 bg-yellow-400 shadow-md text-[#126B6D] font-playpen-sans text-xs font-semibold px-2 py-1 rounded-full flex items-center">
             <span>{Number(ratingAvg).toFixed(1)} ★</span>
           </div>
         )}
       </div>
 
       <div className="mt-3">
-        <h3 className="text-sm font-serif text-gray-800 font-normal line-clamp-1 mb-2">
+        <h3 className="text-sm font-serif text-[#126B6D] font-playpen-sans font-normal line-clamp-1 mb-2">
           {product.title}
         </h3>
 

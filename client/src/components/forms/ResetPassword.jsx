@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { Eye, EyeOff, Lock, CheckCircle, Star, ArrowLeft } from "lucide-react";
 import userService from "../../services/userService";
 import MainLog from "../../assets/IconsUsed/HomeMainLogo.png";
-import SideImg from "../../assets/FirstPageVideo/RestImg.png";
+import SideImg from "../../assets/FirstPageVideo/RestImg.jpg";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -246,7 +246,7 @@ const ResetPassword = () => {
                 disabled={
                   loading || formData.password !== formData.confirmPassword
                 }
-                className="w-full bg-[#1800AC] text-white disabled:bg-[#DEDEDE] disabled:text-[#686868] py-3 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-[#126B6D] text-white disabled:bg-[#DEDEDE] disabled:text-[#686868] py-3 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>

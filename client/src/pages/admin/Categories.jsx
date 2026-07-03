@@ -268,7 +268,7 @@
 //         {/* <div className=""> */}
 //         <div className="flex items-center justify-between mb-6">
 //           <div className="flex items-center justify-between  16px px-2 rounded-md">
-//             <h2 className="text-[20px] font-semibold text-gray-800">
+//             <h2 className="text-[20px] font-semibold text-[#126B6D] font-playpen-sans">
 //               Categories
 //             </h2>
 //           </div>
@@ -854,7 +854,7 @@ const Products = () => {
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center justify-between 16px px-2 rounded-md">
-            <h2 className="text-[20px] font-semibold text-gray-800">
+            <h2 className="text-[20px] font-semibold text-[#126B6D] font-playpen-sans">
               Categories
             </h2>
           </div>
@@ -864,7 +864,7 @@ const Products = () => {
               onClick={() => {
                 setOpenCategory(true);
               }}
-              className="bg-[#1C3753] text-white px-4 py-2 rounded-lg hover:bg-[#344558]"
+              className="bg-[#126B6D] text-white px-4 py-2 rounded-lg hover:bg-[#126B6D] font-playpen-sans"
             >
               + Add Category
             </button>

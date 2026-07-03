@@ -5,7 +5,7 @@ function DeliveryDetailsDialog({ onClose }) {
   return (
     <div className="w-[510px] h-max shadow-md mx-auto my-10 bg-white rounded-lg">
       <div className="flex justify-between p-4 shadow-md">
-        <h1 className="text-lg sm:text-xl font-semibold text-gray-800">Enter Delivery Details</h1>
+        <h1 className="text-lg sm:text-xl font-semibold text-[#126B6D] font-playpen-sans">Enter Delivery Details</h1>
         <X className="cursor-pointer" size={20} onClick={onClose} />
       </div>
       <div className="mt-4 shadow-md p-4">

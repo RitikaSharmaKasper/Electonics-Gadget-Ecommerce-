@@ -258,7 +258,7 @@ function RegisterForm({ onOtpSent }) {
           <button
             type="submit"
             disabled={loading || !termsAccepted}
-            className="w-full bg-[#1800AC] text-white hover:bg-[#1800AC] hover:text-white disabled:bg-[#DEDEDE] disabled:text-[#686868] py-3 px-4 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed"
+            className="w-full bg-[#126B6D] text-white hover:bg-[#126B6D] hover:text-white disabled:bg-[#DEDEDE] disabled:text-[#686868] py-3 px-4 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed"
           >
             {loading ? (
               <div className="flex items-center justify-center gap-2">

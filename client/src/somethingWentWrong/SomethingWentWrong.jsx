@@ -27,7 +27,7 @@ const SomethingWentWrong = ({
         </div>
 
         {/* Error Code */}
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">{errorCode}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-[#126B6D] font-playpen-sans mb-2">{errorCode}</h1>
 
         {/* Message */}
         <h2 className="text-xl font-semibold text-gray-700 mb-4">{message}</h2>

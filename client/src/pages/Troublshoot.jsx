@@ -10,7 +10,7 @@ function Troublshoot() {
           <span className="rounded-full overflow-hidden">
             <TriangleAlert className="p-2 w-10 h-10 bg-[#FEF0C7] text-[#DC6803] "></TriangleAlert>
           </span>
-          <h1 className="font-medium text-lg sm:text-xl text-gray-800">Something went wrong...</h1>
+          <h1 className="font-medium text-lg sm:text-xl text-[#126B6D] font-playpen-sans">Something went wrong...</h1>
           <p className="text-center text-[#828282] leading-5">
             We had some trouble loading this page. Please refresh the page to
             try again or get in touch if the problem come again!

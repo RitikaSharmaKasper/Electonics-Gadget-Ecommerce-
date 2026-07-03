@@ -10,11 +10,18 @@ const router = Router();
 
 router.post("/config", authenticate, authorize("admin"), upsertShippingConfig);
 
-router.get("/get-shipping-config", authenticate, getShippingConfig);
+// router.get("/get-shipping-config", authenticate, getShippingConfig);
+router.get("/get-shipping-config", getShippingConfig);
+// router.get(
+//   "/get-shipping-config-admin",
+//   authenticate,
+//   authorize("admin"),
+//   getShippingConfigAdmin,
+// );
 router.get(
   "/get-shipping-config-admin",
-  authenticate,
-  authorize("admin"),
+  // authenticate,
+  // authorize("admin"),
   getShippingConfigAdmin,
 );
 

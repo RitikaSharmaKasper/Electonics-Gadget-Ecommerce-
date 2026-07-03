@@ -187,7 +187,7 @@ const OrderDetails = ({
                   alt="Payment Screenshot"
                   className="w-24 h-24 object-cover rounded-md border"
                 /> */}
-                  <span className="text-xs text-[#2C87E2] underline">
+                  <span className="text-xs text-[#126B6D] underline">
                     View Screenshot
                   </span>
                 </a>
@@ -288,15 +288,15 @@ const OrderDetails = ({
           {status === "shipped" ? (
             <div className="p-3 border rounded-md bg-[#F8FAFB] text-sm space-y-1">
               <div className="flex items-center justify-between ">
-                <span className="text-gray-600">Partner</span>{" "}
+                <span className="text-[#126B6D]">Partner</span>{" "}
                 <span>{data?.tracking?.carrier}</span>
               </div>
               <div className="flex items-center justify-between ">
-                <span className="text-gray-600">Tracking ID</span>{" "}
+                <span className="text-[#126B6D]">Tracking ID</span>{" "}
                 {data.tracking?.trackingNumber}
               </div>
               <div className="flex items-center justify-between ">
-                <span className="text-gray-600">Tracking URL:</span>{" "}
+                <span className="text-[#126B6D]">Tracking URL:</span>{" "}
                 <span>
                   {" "}
                   {/* {data?.tracking?.trackingUrl && ( */}
@@ -308,7 +308,7 @@ const OrderDetails = ({
                     }
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[#2C87E2] underline"
+                    className="text-[#126B6D] underline"
                   >
                     {data?.tracking?.trackingUrl}
                   </a>
@@ -338,7 +338,7 @@ const OrderDetails = ({
                   onSaveTracking({ orderId, trackingId, trackingUrl })
                 }
                 className={`mt-2 px-4 py-2 rounded-md text-sm
-            ${trackingId ? "bg-[#1C3753] text-white" : "bg-gray-300 text-gray-600 cursor-not-allowed"}`}
+            ${trackingId ? "bg-[#126B6D] text-white" : "bg-gray-300 text-gray-600 cursor-not-allowed"}`}
               >
                 Save Tracking
               </button>
@@ -489,7 +489,7 @@ const OrderDetails = ({
               download
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 text-[#2C87E2] shrink-0 cursor-pointer"
+              className="flex items-center gap-2 text-[#126B6D] shrink-0 cursor-pointer"
               onClick={(e) => {
                 if (!data?.invoice?.invoicePdf?.downloadUrl) {
                   e.preventDefault();
@@ -573,7 +573,7 @@ const OrderDetails = ({
               className={`px-6 py-1.5 rounded-md text-white flex items-center justify-center gap-2
   ${
     canAccept && !acceptLoading
-      ? "bg-[#1C3753]"
+      ? "bg-[#126B6D]"
       : "bg-gray-300 cursor-not-allowed"
   }`}
             >
@@ -593,7 +593,7 @@ const OrderDetails = ({
                 setopenCancelModule(orderId);
                 setSelectedOrderId();
               }}
-              className="px-6 py-1.5 rounded-md text-[#1C3753] bg-white border border-[#1C3753]"
+              className="px-6 py-1.5 rounded-md text-[#126B6D] bg-white border border-[#126B6D]"
             >
               Reject
             </button>
@@ -605,7 +605,7 @@ const OrderDetails = ({
             onClick={() =>
               onReadyToShip({ orderId: data._id, carrier: selectedPartner })
             }
-            className="px-6 py-1.5 rounded-md text-sm font-medium bg-[#1C3753] text-white"
+            className="px-6 py-1.5 rounded-md text-sm font-medium bg-[#126B6D] text-white"
           >
             Ready to Ship
           </button>
@@ -631,7 +631,7 @@ const OrderDetails = ({
                 trackingUrl,
               });
             }}
-            className="px-6 py-1.5 rounded-md text-sm font-medium bg-[#1C3753] text-white"
+            className="px-6 py-1.5 rounded-md text-sm font-medium bg-[#126B6D] text-white"
           >
             Mark as Shipped
           </button>
@@ -640,7 +640,7 @@ const OrderDetails = ({
           <button
             type="button"
             onClick={() => onMarkDelivered?.({ orderId: data._id })}
-            className="px-3 py-1.5 text-sm rounded-md text-white bg-[#1C3753]"
+            className="px-3 py-1.5 text-sm rounded-md text-white bg-[#126B6D]"
           >
             Mark as Delivered
           </button>

@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { Mail, ArrowLeft, Star, Shield, Send } from "lucide-react";
 import userService from "../../services/userService";
 import MainLog from "../../assets/IconsUsed/HomeMainLogo.png";
-import SideImg from "../../assets/FirstPageVideo/RestImg.png";
+import SideImg from "../../assets/FirstPageVideo/RestImg.jpg";
 import { MdLockReset } from "react-icons/md";
 
 const ForgotPassword = () => {
@@ -92,7 +92,7 @@ const ForgotPassword = () => {
             {/* Form Header */}
             <div className="text-center mb-8">
               <div className="bg-[#F0EEFF] p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
-                <MdLockReset className="w-6 h-6 text-blue-600" />
+                <MdLockReset className="w-6 h-6 text-[#126B6D]" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">
                 Forgot Password?
@@ -104,7 +104,7 @@ const ForgotPassword = () => {
             {/* Back to Login */}
             <Link
               to="/login"
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-6 transition-colors"
+              className="inline-flex items-center gap-2 text-gray-600 hover:text-[#126B6D] mb-6 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="text-sm font-medium">Back to Login</span>
@@ -123,7 +123,7 @@ const ForgotPassword = () => {
                     placeholder="your@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1C3753] focus:border-transparent transition-all"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#126B6D] focus:border-transparent transition-all"
                     disabled={loading}
                   />
                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -146,7 +146,7 @@ const ForgotPassword = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#1800AC] text-[#FFFFFF] hover:bg-[#1800AC] hover:text-white disabled:bg-gray-400 py-3 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-[#126B6D] text-[#FFFFFF] hover:bg-[#126B6D] hover:text-white disabled:bg-gray-400 py-3 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>
@@ -171,7 +171,7 @@ const ForgotPassword = () => {
                     rel="noopener noreferrer"
                     className="text-amber-600 hover:text-amber-700 font-medium"
                   >
-                    (+91) 98868 94723
+                    (+91) 0000000000
                   </a>
                 </p>
               </div>

@@ -88,7 +88,7 @@ const DiwaliProducts = () => {
         <div className="flex justify-center mb-4">
           {/* <div className="w-12 h-1 bg-[#eaa100]"></div> */}
         </div>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-800 mb-3">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-[#126B6D] font-playpen-sans mb-3">
           {/* Illuminate Your{" "} */}
           <span className="font-serif  text-[#000000]">Festive Occasions</span>
         </h1>
@@ -131,7 +131,7 @@ const DiwaliProducts = () => {
                 />
 
                 {ratingAvg > 0 && (
-                  <div className="absolute top-2 right-2 bg-yellow-400 shadow-md text-gray-800 text-xs font-semibold px-2 py-1 rounded-full flex items-center">
+                  <div className="absolute top-2 right-2 bg-yellow-400 shadow-md text-[#126B6D] font-playpen-sans text-xs font-semibold px-2 py-1 rounded-full flex items-center">
                     <span>{ratingAvg.toFixed(1)} ★</span>
                   </div>
                 )}
@@ -153,7 +153,7 @@ const DiwaliProducts = () => {
               {/* </div>
 
               <div className="mt-3">
-                <h3 className="lg:text-xl md:text-base text-sm text-center font-serif text-gray-800 font-normal line-clamp-1 mb-2">
+                <h3 className="lg:text-xl md:text-base text-sm text-center font-serif text-[#126B6D] font-playpen-sans font-normal line-clamp-1 mb-2">
                   {p.productTittle}
                 </h3>
 

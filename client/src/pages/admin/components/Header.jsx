@@ -61,7 +61,7 @@ function Header({ isCollapsed }) {
     >
       {/* Left: Logo */}
       <div className="flex items-center gap-2">
-        <Link to="/" className="text-xl font-bold text-gray-800">
+        <Link to="/" className="text-xl font-bold text-[#126B6D] font-playpen-sans">
           {mainLogo && <img src={mainLogo} alt={mainLogo} />}
         </Link>
       </div>

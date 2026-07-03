@@ -12,7 +12,7 @@ import {
   LogIn,
 } from "lucide-react";
 import MainLog from "../../assets/IconsUsed/HomeMainLogo.png";
-import MainVideo from "../../assets/FirstPageVideo/Register.mp4";
+import MainVideo from "../../assets/FirstPageVideo/Register.jpg";
 
 function RegisterPage() {
   const [step, setStep] = useState("register");
@@ -30,7 +30,7 @@ function RegisterPage() {
         {/* Left Side - Welcome Section */}
         <div className="hidden md:flex flex-1 text-white">
           <div className="hidden md:flex flex-1 relative overflow-hidden text-white">
-            <video
+            {/* <video
               autoPlay
               loop
               muted
@@ -40,7 +40,12 @@ function RegisterPage() {
             >
               <source src={MainVideo} type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
+            <img
+                          src={MainVideo}
+                          alt="background"
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
 
             {/* <div className="absolute inset-0 bg-black/50 z-0"></div> */}
 
@@ -162,7 +167,7 @@ function RegisterPage() {
                     Create Account
                   </h2>
                   <p className="text-gray-600 mt-2">
-                    Sign up to get started with Happy Art Supplies
+                    Sign up to get started with Ivoryinks.com
                   </p>
                 </div>
                 {/* <div className=" sm:hidden flex items-center justify-between mt-8 px-4 mb-4">
@@ -172,10 +177,10 @@ function RegisterPage() {
                       <div
                         className={`w-7 h-7 rounded-full flex items-center justify-center border-2 ${
                           step === "register"
-                            ? "bg-[#1800AC] text-white"
+                            ? "bg-[#126B6D] text-white"
                             : step === "otp" || step === "done"
                               ? "bg-green-400 border-green-400 text-white"
-                              : "bg-[#1800AC] text-[#1800AC]"
+                              : "bg-[#126B6D] text-[#1800AC]"
                         }`}
                       >
                         {step === "register" ? (
@@ -301,7 +306,7 @@ function RegisterPage() {
 
                 <Link
                   to="/login"
-                  className="inline-flex items-center justify-center w-full bg-[#1C3753] hover:bg-[#27405a] text-white py-3 px-4 rounded-lg transition-colors font-semibold mb-4"
+                  className="inline-flex items-center justify-center w-full bg-[#126B6D] hover:bg-[#126B6D] text-white py-3 px-4 rounded-lg transition-colors font-semibold mb-4"
                 >
                   Go to Login
                 </Link>

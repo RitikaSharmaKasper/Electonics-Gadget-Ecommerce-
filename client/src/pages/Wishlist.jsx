@@ -192,7 +192,7 @@ function Wishlist() {
     return (
       <div className="mt-5 w-full bg-white rounded-lg shadow-sm md:border border-gray-200">
         <div className="flex flex-row items-center justify-between p-4 md:p-6 border-b border-gray-200">
-          <h1 className="text-lg sm:text-xl font-medium text-gray-800">
+          <h1 className="text-lg sm:text-xl font-medium text-[#126B6D] font-playpen-sans">
             Wishlist <span>(0)</span>
           </h1>
         </div>
@@ -210,7 +210,7 @@ function Wishlist() {
   return (
     <div className="mt-5 w-full bg-white rounded-lg shadow-sm md:border border-gray-200">
       <div className="flex flex-row items-center justify-between p-4 md:p-6 border-b border-gray-200">
-        <h1 className="text-lg sm:text-xl font-medium text-gray-800">
+        <h1 className="text-lg sm:text-xl font-medium text-[#126B6D] font-playpen-sans">
           Wishlist <span>({totalItems})</span>
         </h1>
         {totalItems > 1 && (
@@ -255,7 +255,7 @@ function Wishlist() {
                     <div className="flex-grow">
                       <Link
                         to={`/product/${item.uuid}`}
-                        className="md:text-lg text-sm font-medium text-gray-800 line-clamp-2"
+                        className="md:text-lg text-sm font-medium text-[#126B6D] font-playpen-sans line-clamp-2"
                       >
                         {item.title}
                       </Link>
@@ -293,7 +293,7 @@ function Wishlist() {
                         </div>
                       </div>
                       <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <span className="md:text-xl text-base font-semibold text-gray-800">
+                        <span className="md:text-xl text-base font-semibold text-[#126B6D] font-playpen-sans">
                           {formatPrice(
                             item.basePrice -
                               (item.discountPercent * item.basePrice) / 100,

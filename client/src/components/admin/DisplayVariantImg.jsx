@@ -27,7 +27,7 @@ const DisplayVariantImg = ({
         {/* ✕ Main close */}
         <button
           onClick={() => setIsModalOpen(false)}
-          className="absolute top-3 right-3 text-gray-800 hover:text-red-600 text-3xl font-bold transition-all"
+          className="absolute top-3 right-3 text-[#126B6D] font-playpen-sans hover:text-red-600 text-3xl font-bold transition-all"
         >
           ✕
         </button>

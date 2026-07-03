@@ -49,7 +49,7 @@
 //         {/* <div className="lg:col-span-2">
 //             <div className="p-6 border-b border-gray-200 bg-gray-50">
 //               <div>
-//                 <h1 className="text-lg sm:text-xl font-semibold text-gray-800">
+//                 <h1 className="text-lg sm:text-xl font-semibold text-[#126B6D] font-playpen-sans">
 //                   Contact Us
 //                 </h1>
 //                 <p className="text-sm text-gray-500 mt-1">
@@ -163,7 +163,7 @@
 //               {/* Submit */}
 //         {/* <button
 //                 type="submit"
-//                 className="w-full md:w-auto px-6 py-3 text-sm font-medium bg-[#1800AC] text-white rounded-lg shadow-sm transition flex items-center justify-center"
+//                 className="w-full md:w-auto px-6 py-3 text-sm font-medium bg-[#126B6D] text-white rounded-lg shadow-sm transition flex items-center justify-center"
 //               >
 //                 <Send className="w-4 h-4 mr-2" />
 //                 Submit
@@ -174,7 +174,7 @@
 //         {/* ===== Right: Contact Info ===== */}
 //         {/* <div className="p-8 w-full flex flex-col justify-center bg-gradient-to-b from-[#CFC7FF]/20 to-[#FFC9EA]/50 space-y-6">
 //             <div className="text-center mb-1">
-//               <h2 className="text-lg font-semibold text-gray-800">
+//               <h2 className="text-lg font-semibold text-[#126B6D] font-playpen-sans">
 //                 Get in Touch
 //               </h2>
 //               <p className="text-sm text-gray-500 mt-1">
@@ -242,7 +242,7 @@
 //           <div className="lg:col-span-2">
 //             <div className="p-6  bg-[#FFFFFF]">
 //               <div>
-//                 <h1 className="text-lg sm:text-xl font-semibold text-gray-800">
+//                 <h1 className="text-lg sm:text-xl font-semibold text-[#126B6D] font-playpen-sans">
 //                   Contact Us
 //                 </h1>
 //                 <p className="text-sm text-gray-500 mt-1">
@@ -380,7 +380,7 @@ function ContactSection() {
     <div className="w-full font-inter mt-5">
       <div className="bg-white md:rounded-md md:shadow-sm overflow-hidden">
         <div className="p-6">
-          <h1 className="text-lg sm:text-xl  font-playpen-sans font-semibold text-gray-800">
+          <h1 className="text-lg sm:text-xl  font-playpen-sans font-semibold text-[#126B6D] font-playpen-sans">
             Contact Us
           </h1>
           <p className="text-sm text-gray-500  font-marcellus mt-1">

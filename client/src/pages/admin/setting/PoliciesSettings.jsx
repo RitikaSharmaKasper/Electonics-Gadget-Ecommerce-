@@ -45,7 +45,7 @@ const PoliciesSettings = () => {
         </div>
 
         <Link to={"/admin/settings/PoliciesSettingsEdit-form"}>
-          <button className="bg-[#17324D] text-white px-5 py-2 rounded-md text-sm font-medium">
+          <button className="bg-[#126B6D] text-white px-5 py-2 rounded-md text-sm font-medium">
             Edit
           </button>
         </Link>

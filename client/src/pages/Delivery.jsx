@@ -191,18 +191,18 @@ function Delivery() {
           {/* Address Section */}
           <div className="w-full lg:w-2/3 p-4 md:p-6 md:shadow-sm bg-white md:rounded-md">
             <div className="flex justify-between items-center mb-6">
-              <div className="text-lg sm:text-xl flex gap-2 items-center font-light text-gray-800">
+              <div className="text-lg sm:text-xl flex gap-2 items-center font-light text-[#126B6D] font-playpen-sans">
                 <Link to="/bag">
                   <ChevronLeft className="w-8 h-8" />
                 </Link>{" "}
-                <span className="font-marcellus text-[#1800AC]">
+                <span className="font-playpen-sans text-[#126B6D] ">
                   {" "}
                   Delivery Address
                 </span>
               </div>
               <button
                 onClick={() => setOpen(true)}
-                className="bg-[#0C0057] hover:bg-black text-white rounded-lg px-6 py-2 text-sm font-medium transition-colors"
+                className="bg-[#126B6D]hover:bg-black text-white rounded-lg px-6 py-2 text-sm font-medium transition-colors"
               >
                 + Add New Address
               </button>
@@ -216,7 +216,7 @@ function Delivery() {
                     key={addr._id}
                     className={`p-4 border rounded-lg cursor-pointer transition-all ${
                       selectedAddress?._id === addr._id
-                        ? "border-blue-500 bg-blue-50 shadow-sm"
+                        ? "border-[#126B6D] bg-[#126B6D]/10 shadow-sm"
                         : "border-gray-200 hover:border-gray-300"
                     }`}
                     onClick={() => handleSelectAddress(addr)}
@@ -230,14 +230,14 @@ function Delivery() {
 
                           {/* Address type tag */}
                           {addr.addressType && (
-                            <span className="text-xs px-2 py-0.5 bg-white rounded-md border-[#1C3753] border text-[#1C3753]">
+                            <span className="text-xs px-2 py-0.5 bg-white rounded-md border-[#126B6D] border text-[#126B6D]">
                               {addr.addressType}
                             </span>
                           )}
 
                           {/* Default badge */}
                           {addr.isDefault === true && (
-                            <span className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded-md border-[#1C3753] border">
+                            <span className="text-xs px-2 py-0.5 bg-blue-100 -[#126B6D] rounded-md border-[#126B6D] border">
                               Default
                             </span>
                           )}
@@ -258,7 +258,7 @@ function Delivery() {
                             setEditingAddress(addr);
                             setOpen(true);
                           }}
-                          className="text-[#006EE1] hover:text-gray-800 text-sm rounded-full p-1 hover:bg-gray-100"
+                          className="text-[#126B6D] hover:text-[#126B6D] font-playpen-sans text-sm rounded-full p-1 hover:bg-gray-200"
                         >
                           Edit Address
                         </button>
@@ -273,7 +273,7 @@ function Delivery() {
                             setEditingAddress(addr);
                             setOpen(true);
                           }}
-                          className="text-gray-500 hover:text-gray-800 text-sm rounded-full p-1 hover:bg-gray-100"
+                          className="text-gray-500 hover:text-[#126B6D] font-playpen-sans text-sm rounded-full p-1 hover:bg-gray-100"
                         >
                           Edit
                         </button> */}

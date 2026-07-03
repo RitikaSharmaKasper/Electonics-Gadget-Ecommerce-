@@ -847,7 +847,7 @@ const AddProduct = () => {
             <Link to={`/admin/products`}>
               <ChevronLeft className="w-8 h-8 text-[#686868]" />
             </Link>
-            <h1 className="text-[#1C1C1C] text-[20px] font-medium font-['Inter']">
+            <h1 className="text-[#126B6D] text-[20px] font-medium font-playpen-sans">
               Add Product
             </h1>
           </div>
@@ -861,7 +861,7 @@ const AddProduct = () => {
             </button>
             <button
               type="submit"
-              className="py-1 px-3 rounded-lg bg-[#1C3753] text-[#FFFFFF] font-medium"
+              className="py-1 px-3 rounded-lg bg-[#126B6D] text-[#FFFFFF] font-medium font-playpen-sans"
             >
               {isEditing ? "Update Product" : "Save"}
             </button>

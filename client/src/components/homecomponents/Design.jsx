@@ -123,7 +123,7 @@ function Design() {
   //   return () => clearInterval(interval);
   // }, [product1.image.length, controls]);
   return (
-    <section className="lg:px-0 md:px-0 px-0 pb-8 bg-[#ececf1]">
+    <section className="lg:px-0 md:px-0 px-0 pb-8 ">
       {/* <div className="flex flex-col lg:flex-row gap-2.5 lg:h-[600px]">
         <div className="relative group overflow-hidden w-full lg:w-1/2 rounded-md">
           <motion.div
@@ -143,10 +143,10 @@ function Design() {
             ))}
           </motion.div>
           <div className="absolute lg:opacity-0 group-hover:opacity-100 bottom-0 bg-[#D5E5F5] m-3 p-3 rounded-md shadow-md transition-all ease-in">
-            <h2 className="text-lg sm:text-xl md:text-2xl text-gray-800 md:line-clamp-none line-clamp-2 font-sans font-medium tracking-tight !leading-tight">
+            <h2 className="text-lg sm:text-xl md:text-2xl text-[#126B6D] font-playpen-sans md:line-clamp-none line-clamp-2 font-sans font-medium tracking-tight !leading-tight">
               {product3.title}
             </h2>
-            <p className="text-sm hidden lg:block sm:text-base md:text-lg text-gray-800">
+            <p className="text-sm hidden lg:block sm:text-base md:text-lg text-[#126B6D] font-playpen-sans">
               {product3.description}
             </p>
           </div>
@@ -171,7 +171,7 @@ function Design() {
                 <h3 className="text-xs md:line-clamp-none line-clamp-2 sm:text-lg md:text-xl lg:text-2xl font-medium tracking-tight !leading-tight">
                   {product1.title}
                 </h3>
-                <p className="text-xs hidden lg:block sm:text-sm md:text-base text-gray-800">
+                <p className="text-xs hidden lg:block sm:text-sm md:text-base text-[#126B6D] font-playpen-sans">
                   {product1.description}
                 </p>
               </div>
@@ -194,7 +194,7 @@ function Design() {
                 <h3 className="text-xs md:line-clamp-none line-clamp-2 sm:text-lg md:text-xl lg:text-2xl  font-medium tracking-tight !leading-tight">
                   {product2.title}
                 </h3>
-                <p className="text-xs hidden lg:block sm:text-sm md:text-base text-gray-800">
+                <p className="text-xs hidden lg:block sm:text-sm md:text-base text-[#126B6D] font-playpen-sans">
                   {product2.description}
                 </p>
               </div>
@@ -225,21 +225,19 @@ function Design() {
   <div className="relative w-full ">
   {/* Heading with Theme Colors */}
   <div className="relative mb-4 md:mb-4">
-    <div className="text-center ">
+    <div className="text-center px-4">
       {/* Small badge */}
-      <span className="inline-flex items-center mt-8 gap-2 text-[30px] font-normal leading-6 text-[#126B6D] px-14 py-3 rounded-full border-2 border-[#126B6D]/20 font-playpen-sans">
+      <span className="inline-flex items-center justify-center flex-wrap mt-5 gap-1.5 sm:gap-2 text-[15px] sm:text-[19px] md:text-[24px] lg:text-[30px] font-normal leading-tight sm:leading-6 text-[#126B6D] px-4 py-1.5 sm:px-8 sm:py-2 md:px-10 md:py-2.5 lg:px-14 lg:py-3 rounded-full border-2 border-[#126B6D]/20 font-playpen-sans text-center">
         <span className="text-[#FF7F66]">✦</span>
-       Explore Some Lavish Stationary Collection
+        Explore Some Lavish Stationary Collection
         <span className="text-[#FF7F66]">✦</span>
       </span>
-      
-     
-      
+
       {/* Decorative divider */}
-      <div className="flex items-center justify-center gap-3 mt-0">
-        <div className="h-px w-9 bg-gradient-to-r from-transparent to-[#126B6D]/30" />
-        <span className="text-[#FF7F66] text-lg">✧</span>
-        <div className="h-px w-9 bg-gradient-to-l from-transparent to-[#126B6D]/30" />
+      <div className="flex items-center justify-center gap-2 sm:gap-3 mt-2 sm:mt-0">
+        <div className="h-px w-6 sm:w-9 bg-gradient-to-r from-transparent to-[#126B6D]/30" />
+        <span className="text-[#FF7F66] text-base sm:text-lg">✧</span>
+        <div className="h-px w-6 sm:w-9 bg-gradient-to-l from-transparent to-[#126B6D]/30" />
       </div>
     </div>
   </div>

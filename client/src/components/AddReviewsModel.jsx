@@ -205,11 +205,11 @@ function AddReviewsModel({ open, review, onClose, onSave, product }) {
       <div className="w-full max-w-3xl rounded-xl bg-white shadow-lg overflow-hidden">
         {/* Header */}
         <div className="border-b px-6 py-4 flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-900">
+          <h2 className="text-lg font-semibold text-[#126B6D] font-playpen-sans">
             Ratings & Reviews
           </h2>
           <button onClick={onClose} className="p-1">
-            <X className="w-6 h-6 text-gray-700" />
+            <X className="w-6 h-6 text-[#126B6D]" />
           </button>
         </div>
 
@@ -226,7 +226,7 @@ function AddReviewsModel({ open, review, onClose, onSave, product }) {
               />
             </div>
             <div className="flex-1">
-              <p className="text-sm text-gray-800 font-medium">
+              <p className="text-sm text-[#126B6D] font-playpen-sans font-medium">
                 How was the item?
               </p>
               <p className="text-sm text-gray-600">
@@ -258,7 +258,7 @@ function AddReviewsModel({ open, review, onClose, onSave, product }) {
 
           {/* Textarea */}
           <div className="mt-4">
-            <p className="text-sm font-medium text-gray-900 mb-2">
+            <p className="text-sm font-medium text-[#126B6D] mb-2">
               Write a review
             </p>
             <textarea
@@ -321,7 +321,7 @@ function AddReviewsModel({ open, review, onClose, onSave, product }) {
             <button
               type="button"
               onClick={handleSave}
-              className="min-w-[140px] rounded-lg bg-[#1800AC] px-6 py-3 text-white text-sm font-medium hover:opacity-95"
+              className="min-w-[140px] rounded-lg bg-[#126B6D] px-6 py-3 text-white text-sm font-medium hover:opacity-95"
             >
               {review ? "Update" : "Save"}
             </button>
@@ -339,7 +339,7 @@ function AddReviewsModel({ open, review, onClose, onSave, product }) {
               type="button"
               onClick={handleSave}
               disabled={isSubmitting}
-              className="min-w-[140px] rounded-lg bg-[#1800AC] px-6 py-3 text-white text-sm font-medium hover:opacity-95 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="min-w-[140px] rounded-lg bg-[#126B6D] font-playpen-sans px-6 py-3 text-white text-sm font-medium hover:opacity-95 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <>
@@ -376,7 +376,7 @@ function AddReviewsModel({ open, review, onClose, onSave, product }) {
               type="button"
               onClick={onClose}
               disabled={isSubmitting}
-              className="min-w-[140px] rounded-lg border border-[#1C3753] px-6 py-3 text-[#1C3753] text-sm font-medium hover:bg-[#1C3753]/5 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="min-w-[140px] rounded-lg border border-[#126B6D]  text-[#126B6D] font-playpen-sans px-6 py-3  text-sm font-medium  hover:bg-[#126B6D]/50 hover:text-white hover:border-none  disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Cancel
             </button>

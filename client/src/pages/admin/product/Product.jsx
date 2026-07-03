@@ -130,7 +130,7 @@
 //                               alt="thumb"
 //                               className="w-7 h-7 rounded-full object-cover"
 //                             />
-//                             <span className="font-medium text-gray-800 truncate">
+//                             <span className="font-medium text-[#126B6D] font-playpen-sans truncate">
 //                               {r.title}
 //                             </span>
 //                           </div>
@@ -695,14 +695,14 @@ const Products = () => {
         <div className="">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-between  16px px-2 rounded-md">
-              <h2 className="text-[20px] font-semibold text-gray-800">
+              <h2 className="text-[20px] font-semibold text-[#126B6D] font-playpen-sans">
                 All Products
               </h2>
             </div>
 
             <div>
               <Link to={`/admin/add-product`}>
-                <button className="bg-[#1C3753] text-white px-4 py-2 rounded-lg hover:bg-[#344558]">
+                <button className="bg-[#126B6D] text-white px-4 py-2 rounded-lg hover:bg-[#0f5a5c]">
                   + Add Product
                 </button>
               </Link>

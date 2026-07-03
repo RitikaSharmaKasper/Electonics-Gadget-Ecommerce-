@@ -32,7 +32,7 @@ function CustomerForm() {
                   className={`px-1 pb-3 -mb-px border-b-2 ${
                     activeTab === t.path
                       ? "border-amber-500 text-gray-900"
-                      : "border-transparent text-gray-500 hover:text-gray-800"
+                      : "border-transparent text-gray-500 hover:text-[#126B6D] font-playpen-sans"
                   }`}
                   to={t.path}
                 >

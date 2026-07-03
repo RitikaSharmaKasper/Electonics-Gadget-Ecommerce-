@@ -318,7 +318,7 @@ const Transporter = () => {
         <div className="mb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-between  16px px-2 rounded-md">
-              <h2 className="text-[20px] font-semibold text-gray-800">
+              <h2 className="text-[20px] font-semibold text-[#126B6D] font-playpen-sans">
                 Transporter
               </h2>
             </div>
@@ -623,7 +623,7 @@ const Transporter = () => {
                   setIsAddModalOpen(false);
                   // resetForm();
                 }}
-                className="text-gray-500 hover:text-gray-800"
+                className="text-gray-500 hover:text-[#126B6D] font-playpen-sans"
               >
                 ✕
               </button>

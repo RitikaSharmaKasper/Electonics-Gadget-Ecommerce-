@@ -39,7 +39,7 @@ function ProductInformation() {
       {/* Header */}
       <div className="h-16 bg-white rounded-lg flex items-center justify-between gap-3 px-4">
         <Link to="/admin/products" className="flex items-center gap-2">
-          <ArrowLeft className="w-6 h-6 text-gray-800" />
+          <ArrowLeft className="w-6 h-6 text-[#126B6D] font-playpen-sans" />
           <h1 className="text-black text-xl font-semibold">{product.title}</h1>
         </Link>
         <button className="bg-[#F8F8F8] px-5 py-1.5 border text-base rounded-lg">
@@ -59,7 +59,7 @@ function ProductInformation() {
 
             {/* {product.variants.map((item,i)=>( */}
             <div>
-              <span className="bg-purple-100 px-3 py-1 rounded-full text-purple-700 text-sm font-medium">
+              <span className="bg- px-3 py-1 rounded-full text-[#126B6D] text-sm font-medium">
                 {product.type}
               </span>
             </div>

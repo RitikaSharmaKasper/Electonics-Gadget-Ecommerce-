@@ -1795,7 +1795,7 @@ const AddProduct = () => {
         <div className="fixed inset-0 z-[9999] bg-black/40 flex items-center justify-center">
           <div className="bg-white rounded-xl px-6 py-4 flex items-center gap-3">
             <div className="h-5 w-5 rounded-full border-2 border-gray-300 border-t-[#1C3753] animate-spin" />
-            <p className="text-sm font-medium text-gray-800">
+            <p className="text-sm font-medium text-[#126B6D] font-playpen-sans">
               Uploading product, please wait...
             </p>
           </div>
@@ -1887,7 +1887,7 @@ const AddProduct = () => {
               type="submit"
               disabled={isSubmitting}
               className={`py-1 px-3 rounded-lg font-medium 
-    ${isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-[#1C3753]"} 
+    ${isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-[#126B6D]"} 
     text-[#FFFFFF]`}
             >
               {isSubmitting

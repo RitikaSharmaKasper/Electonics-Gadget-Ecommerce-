@@ -476,7 +476,7 @@ export default Filter;
 //         <button
 //           type="button"
 //           onClick={() => setFilterOpen((prev) => !prev)}
-//           className="w-full text-lg sm:text-xl font-medium text-gray-800 flex justify-between items-center"
+//           className="w-full text-lg sm:text-xl font-medium text-[#126B6D] font-playpen-sans flex justify-between items-center"
 //         >
 //           <span>Filters</span>
 //           <ChevronDown
@@ -513,7 +513,7 @@ export default Filter;
 //         <button
 //           type="button"
 //           onClick={() => setSubOpen((prev) => !prev)}
-//           className="w-full text-lg sm:text-xl font-medium text-gray-800 flex justify-between items-center"
+//           className="w-full text-lg sm:text-xl font-medium text-[#126B6D] font-playpen-sans flex justify-between items-center"
 //         >
 //           <span>Sub-Categories</span>
 //           <ChevronDown
@@ -550,7 +550,7 @@ export default Filter;
 //         <button
 //           type="button"
 //           onClick={() => setOpen((prev) => !prev)}
-//           className="w-full text-lg sm:text-xl font-medium text-gray-800 flex justify-between items-center"
+//           className="w-full text-lg sm:text-xl font-medium text-[#126B6D] font-playpen-sans flex justify-between items-center"
 //         >
 //           <span>Colors</span>
 //           <ChevronDown

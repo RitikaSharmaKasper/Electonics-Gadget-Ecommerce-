@@ -16,7 +16,7 @@ function OrderFilter({ setStatus, status, setTime, time }) {
 
       {/* Order Status */}
       <div className="py-4 border-b border-gray-200">
-        <h2 className="text-gray-800 font-semibold mb-3 flex items-center justify-between font-playpen-sans">
+        <h2 className="text-[#126B6D] font-playpen-sans font-semibold mb-3 flex items-center justify-between font-playpen-sans">
           ORDER STATUS
           {status && (
             <button
@@ -56,7 +56,7 @@ function OrderFilter({ setStatus, status, setTime, time }) {
 
       {/* Order Time */}
       <div className="py-4">
-        <h2 className="text-gray-800 font-semibold mb-3 flex items-center justify-between font-playpen-sans">
+        <h2 className="text-[#126B6D] font-playpen-sans font-semibold mb-3 flex items-center justify-between font-playpen-sans">
           ORDER TIME
           {time && (
             <button

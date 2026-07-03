@@ -6,7 +6,7 @@ import { CirclePower } from "lucide-react";
 function LogoutModalContent({ onCancel, onConfirm }) {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-center text-lg sm:text-xl font-semibold text-gray-800">Log Out</h1>
+      <h1 className="text-center text-lg sm:text-xl font-semibold text-[#126B6D] font-playpen-sans">Log Out</h1>
       <div className="flex flex-col items-center gap-2">
         <span className="p-1 text-center">
           <CirclePower className="text-[#EBB100] p-1 bg-[#ECEFF3] rounded-full" />

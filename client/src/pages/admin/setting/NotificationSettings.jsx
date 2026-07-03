@@ -67,7 +67,7 @@ const GeneralSettings = () => {
 
         <Link to={"/admin/settings/notification-form"}>
           {" "}
-          <button className="bg-[#1800AC] text-white text-[13px] font-medium px-4 py-2 rounded-[6px]">
+          <button className="bg-[#126B6D] text-white text-[13px] font-medium px-4 py-2 rounded-[6px]">
             Edit
           </button>
         </Link>

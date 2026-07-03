@@ -91,7 +91,7 @@ function PriceDetails({
       <div className="bg-white md:rounded-lg shadow-sm p-4 md:p-6 sticky top-20 font-inter">
         <>
           <div className="flex justify-between items-center ">
-            <h2 className="text-base md:text-lg lg:text-xl font-medium text-gray-800">
+            <h2 className="text-base md:text-lg lg:text-xl font-playpen-sans text-[#126B6D]">
               Cart Items
                {/* ({cart?.totalQuantity || 0}) */}
             </h2> 
@@ -137,7 +137,7 @@ function PriceDetails({
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between gap-2">
                         <div>
-                          <p className="text-[12px] font-semibold text-[#1C1C1C] line-clamp-1">
+                          <p className="text-[12px] font-semibold font-playpen-sans text-[#126B6D] line-clamp-1">
                             {item.productTitle}
                           </p>
 
@@ -196,9 +196,9 @@ function PriceDetails({
 
         <>
           <div className="flex justify-between items-center">
-            <h2 className="text-base md:text-lg lg:text-xl font-medium text-gray-800">
+            <p className="text-base md:text-lg lg:text-xl font-playpen-sans text-[#126B6D]">
               Price Summary
-            </h2>
+            </p>
             <button
               onClick={() => setShowPrice(!showPrice)}
               className="p-2 rounded-lg transition-colors"
@@ -335,9 +335,9 @@ function PriceDetails({
           </div>
 
           <div className="mt-6 p-3 bg-[#F8F8F8] rounded-lg flex items-start gap-2">
-            <Info className="text-[#1C3753] mt-0.5 flex-shrink-0" size={16} />
+            <Info className="text-[#126B6D] mt-0.5 flex-shrink-0" size={16} />
             <div>
-              <p className="text-[#1C3753] font-medium text-sm sm:text-base">
+              <p className="text-[#126B6D] font-medium text-sm sm:text-base">
                 You're saving ₹{safeTotalDiscount.toLocaleString("en-IN")} on
                 this order!
               </p>
@@ -355,7 +355,7 @@ function PriceDetails({
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-start gap-3">
                   <div className="mt-1">
-                    <BadgeCheck className="w-6 h-6 text-[#2E1065]" />
+                    <BadgeCheck className="w-6 h-6 text-[#126B6D]" />
                   </div>
 
                   <div className="flex flex-col">
@@ -385,7 +385,7 @@ function PriceDetails({
                   <button
                     type="button"
                     onClick={() => onApplyPoints(0)} // 🔥 REMOVE
-                    className="min-w-[100px] rounded-lg border border-[#2E1065] px-4 py-2 text-[14px] font-medium text-[#2E1065] hover:bg-[#F7F5FF]"
+                    className="min-w-[100px] rounded-lg border border-[#126B6D] px-4 py-2 text-[14px] font-medium text-[#126B6D] hover:bg-[#F7F5FF]"
                   >
                     Remove
                   </button>
@@ -393,7 +393,7 @@ function PriceDetails({
                   <button
                     type="button"
                     onClick={() => setShowCoupon(true)} // 🔥 OPEN POPUP
-                    className="min-w-[100px] rounded-lg border border-[#2E1065] px-4 py-2 text-[14px] font-medium text-[#2E1065] hover:bg-[#F7F5FF]"
+                    className="min-w-[100px] rounded-lg border border-[#126B6D] px-4 py-2 text-[14px] font-medium text-[#126B6D] hover:bg-[#F7F5FF]"
                   >
                     Apply
                   </button>
@@ -408,11 +408,11 @@ function PriceDetails({
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-start gap-3">
                   <div className="mt-1">
-                    <Tag className="w-6 h-6 text-[#2E1065]" />
+                    <Tag className="w-6 h-6 text-[#126B6D]" />
                   </div>
 
                   <div className="flex flex-col ">
-                    <span className="text-[16px] font-semibold text-[#1C1C1C]">
+                    <span className="text-[16px] font-semibold text-[#126B6D]">
                       Apply Coupon
                     </span>
                     <span className="text-[13px] text-gray-500">
@@ -443,7 +443,7 @@ function PriceDetails({
                   <button
                     type="button"
                     onClick={() => onApplyCoupon(couponCodeSet)}
-                    className="w-full sm:w-auto rounded-lg bg-[#2E1065] px-5 py-2 text-[14px] font-medium text-white"
+                    className="w-full sm:w-auto rounded-lg bg-[#126B6D] px-5 py-2 text-[14px] font-medium text-white"
                   >
                     Apply
                   </button>
@@ -484,7 +484,7 @@ function PriceDetails({
                     <button
                       type="button"
                       onClick={() => setCouponCodeSet(coupon.code)}
-                      className="w-full sm:w-auto rounded-lg border border-[#2E1065] px-4 py-2 text-[13px] font-medium text-[#2E1065]"
+                      className="w-full sm:w-auto rounded-lg border border-[#126B6D] px-4 py-2 text-[13px] font-medium text-[#126B6D]"
                     >
                       Use
                     </button>
@@ -502,7 +502,7 @@ function PriceDetails({
                   <button
                     type="button"
                     onClick={() => setShowCouponList((prev) => !prev)}
-                    className="mt-3 text-[14px] font-medium text-[#2E1065]"
+                    className="mt-3 text-[14px] font-medium text-[#126B6D]"
                   >
                     {showCouponList ? "Hide coupons" : "Show more coupons"}
                   </button>
@@ -541,7 +541,7 @@ function PriceDetails({
                               {coupon.discountPercentage}% off up to ₹
                               {coupon.maxDiscountAmount}
                             </p>
-                            <p className="mt-1 w-fit rounded bg-[#F7F5FF] px-2 py-1 text-[12px] font-semibold text-[#2E1065]">
+                            <p className="mt-1 w-fit rounded bg-[#F7F5FF] px-2 py-1 text-[12px] font-semibold text-[#126B6D]">
                               {coupon.code}
                             </p>
                           </div>
@@ -552,7 +552,7 @@ function PriceDetails({
                             <button
                               type="button"
                               disabled={`${coupon.isEligible === false}`}
-                              className={`rounded-lg border border-[#2E1065] px-4 py-2 text-xs font-medium text-[#2E1065] ${coupon.isEligible === false ? `cursor-not-allowed` : ` block`}`}
+                              className={`rounded-lg border border-[#126B6D] px-4 py-2 text-xs font-medium text-[#126B6D] ${coupon.isEligible === false ? `cursor-not-allowed` : ` block`}`}
                             >
                               Not applicable
                             </button>
@@ -587,7 +587,7 @@ function PriceDetails({
                 ) : (
                   <Link
                     to="/checkout/delivery"
-                    className="bg-[#0C0057] rounded-lg text-white md:px-8 md:py-3 px-4 py-2 font-medium transition-colors flex items-center gap-2 text-[14px]"
+                    className="bg-[#126B6D] rounded-lg text-white md:px-8 md:py-3 px-4 py-2 font-medium transition-colors flex items-center gap-2 text-[14px]"
                   >
                     Proceed to Checkout
                   </Link>
@@ -596,7 +596,7 @@ function PriceDetails({
               {step === "delivery" && canProceed && (
                 <button
                   onClick={goToPayment}
-                  className="bg-[#0C0057] rounded-lg hover:bg-black text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2"
+                  className="bg-[#126B6D] rounded-lg hover:bg-black text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2"
                 >
                   Proceed to Checkout
                 </button>
@@ -605,7 +605,7 @@ function PriceDetails({
               {step === "payment" && selected === "Razorpay" && (
                 <button
                   onClick={handlePlaceOrder}
-                  className="bg-[#0C0057] rounded-lg text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2 whitespace-nowrap"
+                  className="bg-[#126B6D] rounded-lg text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2 whitespace-nowrap"
                 >
                   {buyNowMode ? "Buy Now & Pay" : "Place Order"}
                   <ArrowRight size={16} />
@@ -634,7 +634,7 @@ function PriceDetails({
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between w-full gap-5">
-                <span className="text-[18px] text-[#1c1c1c] font-semibold">
+                <span className="text-[18px] text-[#126B6D] font-semibold">
                   Apply Coupon
                 </span>
                 <button
@@ -645,7 +645,7 @@ function PriceDetails({
                 </button>
               </div>
 
-              <div className="mt-4 bg-gradient-to-r from-[#FFFFFF] to-[#B2FF00]/20 p-3 border-b-dashed border-[#727681] rounded-xl">
+              <div className="mt-4 bg-gradient-to-r from-[#88D3D5]/50 to-[#6CB7B9]/20  p-3 border-b-dashed border-[#727681] rounded-xl">
                 <div className="flex justify-between p-2 gap-8 items-center">
                   <div>
                     <span className="text-[#0E101A] text-[16px] font-medium">
@@ -660,7 +660,7 @@ function PriceDetails({
                       onApplyPoints(availablePoints);
                       setShowCoupon(false);
                     }}
-                    className="bg-[#1C3753] text-white px-4 py-2 rounded-md font-medium"
+                    className="bg-[#126B6D] text-white px-4 py-2 rounded-md font-medium"
                   >
                     Apply
                   </button>

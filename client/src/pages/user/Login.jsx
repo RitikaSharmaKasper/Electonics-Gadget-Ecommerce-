@@ -8,7 +8,7 @@ import {
   clearError,
 } from "../../redux/cart/userSlice";
 import MainLog from "../../assets/IconsUsed/HomeMainLogo.png";
-import MainVideo from "../../assets/FirstPageVideo/login.mp4";
+import MainVideo from "../../assets/FirstPageVideo/login.jpg";
 
 function Login() {
   const [formData, setFormData] = useState({ identifier: "", password: "" });
@@ -148,7 +148,7 @@ function Login() {
         {/* Left Side - Welcome Section */}
         <div className="hidden md:flex flex-1 text-white">
           <div className="hidden md:flex flex-1 relative overflow-hidden text-white">
-            <video
+            {/* <Image
               autoPlay
               loop
               muted
@@ -158,7 +158,12 @@ function Login() {
             >
               <source src={MainVideo} type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </Image> */}
+            <img
+              src={MainVideo}
+              alt="background"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
 
             {/* <div className="absolute inset-0 bg-black/50 z-0"></div> */}
 
@@ -313,7 +318,7 @@ function Login() {
               <button
                 type="submit"
                 disabled={authLoading}
-                className="w-full bg-[#1800AC]  hover:bg-[#FFFFF] hover:text-white disabled:bg-gray-400 text-[#FFFFFF] py-3 px-4 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-[#126B6D]  hover:bg-[#FFFFF] hover:text-white disabled:bg-gray-400 text-[#FFFFFF] py-3 px-4 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {authLoading ? (
                   <>
@@ -333,7 +338,7 @@ function Login() {
             {/* Sign Up Link */}
             <div className="text-center mt-8 pt-6 border-t border-gray-200">
               <p className="text-gray-600">
-                New to Happy Art Supplies?{" "}
+                New to Ivoryinks.com?{" "}
                 <Link
                   to="/register"
                   className="text-[#F8A14A] hover:text-amber-700 font-semibold underline transition-colors"

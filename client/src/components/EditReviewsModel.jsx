@@ -96,7 +96,7 @@ function EditReviewModal({ open, review, onClose, onSave }) {
             </div>
 
             <div className="flex-1">
-              <p className="text-sm text-gray-800 font-medium">
+              <p className="text-sm text-[#126B6D] font-playpen-sans font-medium">
                 How was the item?
               </p>
               <p className="text-sm text-gray-600">
@@ -216,7 +216,7 @@ function EditReviewModal({ open, review, onClose, onSave }) {
             <button
               type="button"
               onClick={handleSave}
-              className="min-w-[140px] rounded-lg bg-[#1800AC] px-6 py-3 text-white text-sm font-medium hover:opacity-95"
+              className="min-w-[140px] rounded-lg bg-[#126B6D] font-playpen-sans px-6 py-3 text-white text-sm font-medium hover:opacity-95"
             >
               Save
             </button>
@@ -224,7 +224,7 @@ function EditReviewModal({ open, review, onClose, onSave }) {
             <button
               type="button"
               onClick={onClose}
-              className="min-w-[140px] rounded-lg border border-[#1800AC] px-6 py-3 text-[#1800AC] text-sm font-medium hover:bg-[#1C3753]/5"
+              className="min-w-[140px] rounded-lg border border-[#126B6D]  text-[#126B6D] font-playpen-sans px-6 py-3  text-sm font-medium  hover:bg-[#126B6D]/50 hover:text-white hover:border-none  disabled:opacity-50 disabled:cursor-not-allowed   "
             >
               Cancel
             </button>

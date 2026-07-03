@@ -144,7 +144,7 @@ function User() {
                             alt="avatar"
                             className="w-7 h-7 rounded-full object-cover"
                           />
-                          <span className="font-medium text-gray-800">
+                          <span className="font-medium text-[#126B6D] font-playpen-sans">
                             {r.name}
                           </span>
                         </div>
@@ -159,7 +159,7 @@ function User() {
                       </td>
                       <td className="px-4 lg:px-6 py-3">{r.signUp}</td>
                       <td className="px-4 lg:px-6 py-3">
-                        <div className="flex items-center gap-2 text-gray-800">
+                        <div className="flex items-center gap-2 text-[#126B6D] font-playpen-sans">
                           {r.lastActivity.date}
                           <span className="text-xs text-gray-500">
                             {r.lastActivity.time}

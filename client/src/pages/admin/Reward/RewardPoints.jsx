@@ -84,12 +84,12 @@ function RewardPoints() {
     <div className="p-4 sm:p-6 bg-[#F6F8F9] min-h-screen">
       {/* <--------------------------------------- HEADER -----------------------------------> */}
       <div className="flex justify-between items-center">
-        <span className="text-[#1C1C1C] font-medium text-[16px] sm:text-[18px] lg:text-[20px]">
+        <span className="text-[#126B6D] font-playpen-sans font-medium text-[16px] sm:text-[18px] lg:text-[20px]">
           Reward Points
         </span>
         {rewardCard.length === 0 && (
           <button
-            className="flex items-center gap-2 px-4 py-2 bg-[#0B3142] text-white font-semibold text-[16px] border border-[#0B3142] rounded-lg"
+            className="flex items-center gap-2 px-4 py-2 bg-[#126B6D] text-white font-semibold text-[16px] border border-[#0B3142] rounded-lg"
             onClick={() => setShowReward(true)}
           >
             <MdOutlineAdd size={20} />

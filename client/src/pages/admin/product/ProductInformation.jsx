@@ -298,7 +298,7 @@ function ProductInformation() {
       <div className="p-[24px] bg-[#F6F8F9] rounded-md min-h-screen flex justify-center items-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1C3753] mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading product details...</p>
+          <p className="mt-4 text-[#126B6D]">Loading product details...</p>
         </div>
       </div>
     );
@@ -316,14 +316,14 @@ function ProductInformation() {
       {/* Header */}
       <div className="rounded-lg flex items-center justify-between">
         <Link to="/admin/products" className="flex items-center gap-2">
-          <ChevronLeft className="w-8 h-8 text-gray-800" />
+          <ChevronLeft className="w-8 h-8 text-[#126B6D] font-playpen-sans" />
           <h1 className="text-black text-[20px] font-semibold">
             {product.productTittle || "Product Details"}
           </h1>
         </Link>
         <button
           onClick={handleEdit}
-          className="px-5 py-1.5 text-[#1C3753] border border-[#1C3753] text-base rounded-lg"
+          className="px-5 py-1.5 text-[#126B6D] border border-[#355455] text-base rounded-lg"
         >
           Edit Product
         </button>
@@ -377,22 +377,22 @@ function ProductInformation() {
                     <p>₹ {defaultVariant?.variantSellingPrice || 0}</p>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs text-gray-600 mt-0.5">
+                  <div className="flex items-center justify-between text-xs text-[#126B6D] mt-0.5">
                     <div className="flex gap-2">
                       {defaultVariant?.variantColor && (
-                        <span className="border border-[#495F75]  px-1 rounded-md">
+                        <span className="border border-[#126B6D]  px-1 rounded-md">
                           {defaultVariant.variantColor}
                         </span>
                       )}
 
                       {defaultVariant?.variantName && (
-                        <span className="border border-[#495F75] text-xs px-1 rounded-md">
+                        <span className="border border-[#126B6D] text-xs px-1 rounded-md">
                           {defaultVariant.variantName}
                         </span>
                       )}
 
                       {defaultVariant?.variantWeight && (
-                        <span className="border border-[#495F75] text-xs px-1 rounded-md">
+                        <span className="border border-[#126B6D] text-xs px-1 rounded-md">
                           {`${defaultVariant.variantWeight}`}
                         </span>
                       )}
@@ -435,15 +435,15 @@ function ProductInformation() {
                     <p>₹ {item.variantSellingPrice}</p>
                   </div>
 
-                  <div className="flex justify-between text-xs text-gray-600 mt-0.5">
+                  <div className="flex justify-between text-xs text-[#126B6D] mt-0.5">
                     <div className="flex gap-2">
                       {item.variantColor && (
-                        <span className="border border-[#495F75] px-1 rounded-md">
+                        <span className="border border-[#126B6D] px-1 rounded-md">
                           {item.variantColor}
                         </span>
                       )}
                       {item.variantName && (
-                        <span className="border border-[#495F75] text-xs px-1 rounded-md">
+                        <span className="border border-[#126B6D] text-xs px-1 rounded-md">
                           {item.variantName}
                         </span>
                       )}
@@ -484,8 +484,8 @@ function ProductInformation() {
               </div>
             </div>
             <div>
-              <p className="">Product Name</p>
-              <span className="text-[#686868] text-sm">
+              <p className="text-[#126B6D] text-sm">Product Name</p>
+              <span className="text-[#2C2C2C] text-sm">
                 {product.productTittle || "-"}
               </span>
             </div>
@@ -503,7 +503,7 @@ function ProductInformation() {
               {product.description && product.description.length > 120 && (
                 <button
                   onClick={() => setExpanded(!expanded)}
-                  className="text-blue-600 text-xs mt-1 hover:underline"
+                  className="text-[#126B6D] text-xs mt-1 hover:underline"
                 >
                   {expanded ? "Show less" : "Show more"}
                 </button>
@@ -516,7 +516,7 @@ function ProductInformation() {
             <h3 className="text-lg font-semibold mb-2">Variant Details</h3>
 
             <div>
-              <p className="text-[14px] text-[#686868] text-sm mb-2">Images</p>
+              <p className="text-[14px] text-[#126B6D] text-sm mb-2">Images</p>
               <div className="flex flex-wrap gap-3 items-start">
                 {currentImages.length > 0 ? (
                   currentImages.map((img, i) => (

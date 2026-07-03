@@ -153,7 +153,7 @@ function Hero() {
 
     //             {/* Description */}
     //             <p className="mt-4 text-[14px] sm:text-[20px] text-white/90 max-w-[800px]  leading-6 font-light">
-    //               Welcome to Happy Art Supplies, your trusted destination for
+    //               Welcome to Ivoryinks.com, your trusted destination for
     //               premium resin art materials in Bangalore and across India. We
     //               are passionate about empowering artists, hobbyists, and small
     //               business owners with high-quality resin supplies that inspire
@@ -228,7 +228,7 @@ function Hero() {
     //             </h1>
 
     //             <p className="mt-4 text-[14px] sm:text-[20px] text-white/90 max-w-[800px] leading-6 font-light">
-    //               Welcome to Happy Art Supplies, your trusted destination for
+    //               Welcome to Ivoryinks.com, your trusted destination for
     //               premium resin art materials in Bangalore and across India...
     //             </p>
     //           </div>

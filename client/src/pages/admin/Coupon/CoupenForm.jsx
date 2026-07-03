@@ -302,17 +302,17 @@ const CoupenForm = () => {
             <div className="flex items-start gap-4">
               <div
                 onClick={() => navigate("/admin/ManageCoupons")}
-                className="size-12 rounded-xl bg-[#2b7fff]/10 text-[#0C0057] flex justify-center items-center cursor-pointer"
+                className="size-12 rounded-xl bg-[#88D3D5]/50 text-[#126B6D] flex justify-center items-center cursor-pointer"
               >
                 <ChevronLeft className="size-6" />
               </div>
 
               <div>
-                <h1 className="font-semibold text-2xl">
+                <p className="font-semibold text-2xl font-playpen-sans text-[#126B6D]">
                   {couponId ? "Update Coupon" : "Create Coupon"}
-                </h1>
+                </p>
                 <p className="text-[#71717b] text-sm">
-                  Create and manage promotional discount coupons.
+                  Create and manage promotional discount coupons.Rev
                 </p>
               </div>
             </div>
@@ -322,7 +322,7 @@ const CoupenForm = () => {
                 <button
                   onClick={handleCancel}
                   type="button"
-                  className="border border-zinc-200 bg-white text-zinc-950 px-4 py-2 rounded-md flex items-center gap-2"
+                  className="border border-zinc-200 bg-white text-[#126B6D] px-4 py-2 rounded-md flex items-center gap-2"
                 >
                   <X className="size-4" />
                   Cancel
@@ -333,8 +333,8 @@ const CoupenForm = () => {
                   disabled={loading}
                   className={`min-w-[140px] px-4 py-2 rounded-md flex items-center justify-center gap-2 transition-all duration-300 ${
                     loading
-                      ? "bg-[#0C0057]/80 cursor-not-allowed"
-                      : "bg-[#0C0057] hover:bg-[#4e458a]"
+                      ? "bg-[#88D3D5]/50 cursor-not-allowed"
+                      : "bg-[#126B6D] hover:bg-[#fdd1c8] hover:text-gray-600"
                   } text-white`}
                 >
                   {loading ? (
@@ -360,7 +360,7 @@ const CoupenForm = () => {
               <div className="bg-white rounded-xl border border-zinc-200 shadow-sm p-6 flex flex-col gap-6">
                 <div>
                   <h2 className="text-base font-semibold flex items-center gap-2">
-                    <Info className="size-4 text-[#0C0057]" />
+                    <Info className="size-4 text-[#126B6D]" />
                     Coupon Details
                   </h2>
                   <p className="text-xs text-[#71717b]">
@@ -648,7 +648,7 @@ const CoupenForm = () => {
                           return (
                             <span
                               key={id}
-                              className="px-3 py-1 rounded-md bg-[#2b7fff]/10 text-[#0C0057] text-sm flex items-center gap-1"
+                              className="px-3 py-1 rounded-md bg-[#126B6D]/50 text-[#126B6D] text-sm flex items-center gap-1"
                             >
                               {category?.name}
 
@@ -749,7 +749,7 @@ const CoupenForm = () => {
                           return (
                             <span
                               key={id}
-                              className="px-3 py-1 rounded-md bg-[#0C0057]/10 text-[#0C0057] text-sm flex items-center gap-1"
+                              className="px-3 py-1 rounded-md bg-[#126B6D]/50 text-[#126B6D] text-sm flex items-center gap-1"
                             >
                               {selectedProduct?.name ||
                                 selectedProduct?.productName ||
@@ -781,7 +781,7 @@ const CoupenForm = () => {
               <div className="bg-white rounded-xl border border-zinc-200 shadow-sm p-6 flex flex-col gap-6">
                 <div>
                   <h2 className="text-base font-semibold flex items-center gap-2">
-                    <Repeat className="size-4 text-[#0C0057]" />
+                    <Repeat className="size-4 text-[#126B6D]" />
                     Usage & Visibility
                   </h2>
                   <p className="text-xs text-[#71717b]">
@@ -837,7 +837,7 @@ const CoupenForm = () => {
 
                   <div className="col-span-3 rounded-lg border border-zinc-200 flex p-4 justify-between items-center">
                     <div className="flex items-start gap-3">
-                      <Globe className="size-5 text-[#0C0057] mt-0.5" />
+                      <Globe className="size-5 text-[#126B6D] mt-0.5" />
                       <div>
                         <span className="font-medium text-sm">
                           Public Coupon
@@ -857,7 +857,7 @@ const CoupenForm = () => {
                       }
                       className={`w-10 h-6 rounded-full p-1 flex transition-all ${
                         formData.isPublic
-                          ? "bg-[#0C0057] justify-end"
+                          ? "bg-[#126B6D] justify-end"
                           : "bg-gray-300 justify-start"
                       }`}
                     >
@@ -915,7 +915,7 @@ const CoupenForm = () => {
             <div className="col-span-1 flex flex-col gap-6">
               <div className="bg-white rounded-xl border border-zinc-200 shadow-sm sticky top-24 p-6 flex flex-col gap-4">
                 <div>
-                  <h2 className="text-base font-semibold flex items-center gap-2">
+                  <h2 className="font-semibold flex items-center gap-2 text-[#126B6D] font-playpen-sans">
                     {/* <Eye className="size-4 text-[#2b7fff]" /> */}
                     Live Preview
                   </h2>
@@ -924,7 +924,7 @@ const CoupenForm = () => {
                   </p>
                 </div>
 
-                <div className="relative rounded-xl bg-[#0C0057] text-white p-5 overflow-hidden">
+                <div className="relative rounded-xl bg-[#88D3D5]/90 text-white p-5 overflow-hidden">
                   <div className="flex justify-between items-center">
                     <div>
                       <span className="uppercase opacity-80 text-xs tracking-wider">
@@ -948,7 +948,7 @@ const CoupenForm = () => {
                       </p>
                     </div>
 
-                    <span className="rounded-md bg-white px-2 py-1 text-sm text-zinc-950">
+                    <span className="rounded-md bg-white px-2 py-1 text-sm font-playpen-sans text-[#126B6D]">
                       {formData.isActive ? "Active" : "Inactive"}
                     </span>
                   </div>

@@ -116,11 +116,11 @@ export const Dashboard = () => {
       <div className="grid grid-cols-12 gap-4 mb-10 relative">
         <div className="col-span-8 bg-white p-4 rounded-xl shadow-sm border-l-4 border-[#3D3270] transition-all duration-300 hover:shadow-md">
           <p className="text-sm text-gray-500">Pending Requests</p>
-          <p className="text-2xl font-light text-gray-800">3</p>
+          <p className="text-2xl font-light text-[#126B6D] font-playpen-sans">3</p>
         </div>
         <div className="col-span-4 bg-white p-4 rounded-xl shadow-sm border-l-4 border-[#3D3270] transition-all duration-300 hover:shadow-md flex flex-col justify-center">
           <p className="text-sm text-gray-500">Completed</p>
-          <p className="text-2xl font-light text-gray-800">12</p>
+          <p className="text-2xl font-light text-[#126B6D] font-playpen-sans">12</p>
         </div>
         
         <div className="absolute -right-4 -top-4 w-20 h-20 bg-[#3D3270] opacity-5 rounded-full z-0"></div>
@@ -179,7 +179,7 @@ export const Dashboard = () => {
           <div className="flex items-start pl-8 transition-all duration-300 hover:bg-[#f0f0ff] p-3 rounded-xl">
             <div className="absolute left-5 mt-2 w-3 h-3 rounded-full bg-amber-500 border-4 border-white"></div>
             <div className="flex-1">
-              <p className="font-normal text-gray-800">Transcript Request</p>
+              <p className="font-normal text-[#126B6D] font-playpen-sans">Transcript Request</p>
               <p className="text-xs text-gray-400">Submitted 2 days ago</p>
             </div>
             <span className="px-2 py-1 text-xs bg-amber-100 text-amber-700 rounded-full">In Review</span>
@@ -188,7 +188,7 @@ export const Dashboard = () => {
           <div className="flex items-start pl-8 transition-all duration-300 hover:bg-[#f0f0ff] p-3 rounded-xl">
             <div className="absolute left-5 mt-2 w-3 h-3 rounded-full bg-emerald-500 border-4 border-white"></div>
             <div className="flex-1">
-              <p className="font-normal text-gray-800">Recommendation Letter</p>
+              <p className="font-normal text-[#126B6D] font-playpen-sans">Recommendation Letter</p>
               <p className="text-xs text-gray-400">Submitted 1 week ago</p>
             </div>
             <span className="px-2 py-1 text-xs bg-emerald-100 text-emerald-700 rounded-full">Approved</span>
@@ -197,7 +197,7 @@ export const Dashboard = () => {
           <div className="flex items-start pl-8 transition-all duration-300 hover:bg-[#f0f0ff] p-3 rounded-xl">
             <div className="absolute left-5 mt-2 w-3 h-3 rounded-full bg-blue-500 border-4 border-white"></div>
             <div className="flex-1">
-              <p className="font-normal text-gray-800">Enrollment Verification</p>
+              <p className="font-normal text-[#126B6D] font-playpen-sans">Enrollment Verification</p>
               <p className="text-xs text-gray-400">Submitted 5 days ago</p>
             </div>
             <span className="px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded-full">Processing</span>

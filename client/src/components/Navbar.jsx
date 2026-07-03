@@ -517,7 +517,7 @@
 //                             <LogOut className="w-5 h-5 text-gray-600 group-hover:text-[#1C3753]" />
 //                           </div>
 //                           <div className="flex-1">
-//                             <h2 className="text-gray-800 font-medium text-[16px]">
+//                             <h2 className="text-[#126B6D] font-playpen-sans font-medium text-[16px]">
 //                               Log Out
 //                             </h2>
 //                           </div>
@@ -533,7 +533,7 @@
 //                           <LogIn className="w-5 h-5 text-gray-600 group-hover:text-[#1C3753]" />
 //                         </div>
 //                         <div className="flex-1">
-//                           <h2 className="text-gray-800 font-medium text-sm">
+//                           <h2 className="text-[#126B6D] font-playpen-sans font-medium text-sm">
 //                             Log In
 //                           </h2>
 //                         </div>
@@ -636,7 +636,7 @@
 //                 <Link
 //                   to="/home"
 //                   onClick={() => setIsMobileMenuOpen(false)}
-//                   className="flex items-center gap-3 py-3 text-gray-800 font-medium hover:text-[#1C3753] transition-colors"
+//                   className="flex items-center gap-3 py-3 text-[#126B6D] font-playpen-sans font-medium hover:text-[#1C3753] transition-colors"
 //                 >
 //                   Home
 //                 </Link>
@@ -645,7 +645,7 @@
 //                 <Link
 //                   to="/accounts/addresses"
 //                   onClick={() => setIsMobileMenuOpen(false)}
-//                   className="flex items-center gap-3 py-3 text-gray-800 font-medium hover:text-[#1C3753] transition-colors"
+//                   className="flex items-center gap-3 py-3 text-[#126B6D] font-playpen-sans font-medium hover:text-[#1C3753] transition-colors"
 //                 >
 //                   <MapPin size={18} />
 //                   Add Delivery Location
@@ -732,7 +732,7 @@
 //                 <Link
 //                   to="/faqs"
 //                   onClick={() => setDropdown(false)}
-//                   className="flex items-center gap-3 py-3 text-gray-800 font-medium hover:text-[#1C3753] transition-colors"
+//                   className="flex items-center gap-3 py-3 text-[#126B6D] font-playpen-sans font-medium hover:text-[#1C3753] transition-colors"
 //                 >
 //                   FAQs
 //                 </Link>
@@ -784,7 +784,7 @@
 //                         <LogOut className="w-5 h-5 text-gray-600 group-hover:text-red-600" />
 //                       </div>
 //                       <div className="flex-1">
-//                         <h2 className="text-gray-800 font-medium text-sm">
+//                         <h2 className="text-[#126B6D] font-playpen-sans font-medium text-sm">
 //                           Log Out
 //                         </h2>
 //                       </div>
@@ -1597,7 +1597,7 @@ useEffect(() => {
                           <LogOut className="w-5 h-5 text-gray-600 group-hover:text-[#126B6D]" />
                         </div>
                         <div className="flex-1">
-                          <h2 className="text-gray-800 font-medium text-[16px]">
+                          <h2 className="text-[#126B6D] font-playpen-sans font-medium text-[16px]">
                             Log Out
                           </h2>
                         </div>
@@ -1611,7 +1611,7 @@ useEffect(() => {
                           <LogIn className="w-5 h-5 text-gray-600 group-hover:text-[#0f6668]" />
                         </div>
                         <div className="flex-1">
-                          <h2 className="text-[#126B6D] font-medium text-sm">
+                          <h2 className="text-[#126B6D] font-medium text-sm font-playpen-sans">
                             Log In
                           </h2>
                         </div>
@@ -1721,7 +1721,7 @@ useEffect(() => {
                 <Link
                   to="/home"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 py-3 text-gray-800 font-medium hover:text-[#126B6D] transition-colors"
+                  className="flex items-center gap-3 py-3 text-[#126B6D] font-playpen-sans font-medium hover:text-[#126B6D] transition-colors"
                 >
                   Home
                 </Link>
@@ -1843,7 +1843,7 @@ useEffect(() => {
                 {/* <Link
                   to="/faqs"
                   onClick={() => setDropdown(false)}
-                  className="flex items-center gap-3 py-3 text-gray-800 font-medium hover:text-[#126B6D] transition-colors"
+                  className="flex items-center gap-3 py-3 text-[#126B6D] font-playpen-sans font-medium hover:text-[#126B6D] transition-colors"
                 >
                   FAQs
                 </Link> */}
@@ -1884,7 +1884,7 @@ useEffect(() => {
                       <LogOut className="w-5 h-5 text-gray-600 group-hover:text-red-600" />
                     </div>
                     <div className="flex-1">
-                      <h2 className="text-gray-800 font-medium text-sm">
+                      <h2 className="text-[#126B6D] font-playpen-sans font-medium text-sm">
                         Log Out
                       </h2>
                     </div>
@@ -1983,7 +1983,7 @@ useEffect(() => {
                       disabled={!validatePincode(pincode) || loading}
                       className={`px-5 py-2 rounded-md font-medium text-sm transition flex items-center justify-center ${
                         validatePincode(pincode)
-                          ? "bg-[#1C146B] text-white"
+                          ? "bg-[#126B6D] text-white"
                           : "bg-gray-300 text-gray-500 cursor-not-allowed"
                       }`}
                     >

@@ -246,7 +246,7 @@ function AccountDetails() {
                         type="button"
                         onClick={handleSave}
                         disabled={isSaving}
-                        className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium bg-[#126B6D] text-white rounded-lg shadow-sm hover:bg-[#1C3753]/90 transition flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium bg-[#126B6D] text-white rounded-lg shadow-sm hover:bg-[#126B6D]/70 transition flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {isSaving ? (
                           <>
@@ -285,7 +285,7 @@ function AccountDetails() {
                     <label className="block text-xs sm:text-sm text-gray-500 mb-1">
                       Email Address
                     </label>
-                    <div className="flex items-start gap-2 text-gray-800 font-medium text-sm sm:text-base break-all">
+                    <div className="flex items-start gap-2 text-[#126B6D] font-playpen-sans font-medium text-sm sm:text-base break-all">
                       <span className="break-all">
                         {user?.user?.email || "Not provided"}
                       </span>
@@ -328,7 +328,7 @@ function AccountDetails() {
                   </>
                 ) : (
                   <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-gray-800 text-sm sm:text-base">
+                    <p className="text-[#126B6D] font-playpen-sans text-sm sm:text-base">
                       {user?.user?.name || "Not provided"}
                     </p>
                   </div>
@@ -358,7 +358,7 @@ function AccountDetails() {
                   />
                 ) : (
                   <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-gray-800 text-sm sm:text-base">
+                    <p className="text-[#126B6D] font-playpen-sans text-sm sm:text-base">
                       {user?.user?.dateOfBirth
                         ? new Date(user.user.dateOfBirth).toLocaleDateString(
                             "en-GB",
@@ -396,7 +396,7 @@ function AccountDetails() {
                   </div>
                 ) : (
                   <div className="px-3 sm:px-4 py-2 sm:py-3 border-gray-300 bg-gray-50 rounded-lg border ">
-                    <p className="text-gray-800 capitalize text-sm sm:text-base">
+                    <p className="text-[#126B6D] font-playpen-sans capitalize text-sm sm:text-base">
                       {user?.user?.gender || "Not provided"}
                     </p>
                   </div>
@@ -426,7 +426,7 @@ function AccountDetails() {
                   />
                 ) : (
                   <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-gray-800 text-sm sm:text-base">
+                    <p className="text-[#126B6D] font-playpen-sans text-sm sm:text-base">
                       {user?.user?.phoneNumber || "Not provided"}
                     </p>
                   </div>
@@ -452,13 +452,13 @@ function AccountDetails() {
                   //   disabled={isSaving}
                   // />
                   <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-gray-800 text-sm sm:text-base">
+                    <p className="text-[#126B6D] font-playpen-sans text-sm sm:text-base">
                       ***********
                     </p>
                   </div>
                 ) : (
                   <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-gray-800 text-sm sm:text-base">
+                    <p className="text-[#126B6D] font-playpen-sans text-sm sm:text-base">
                       ***********
                     </p>
                   </div>
@@ -495,7 +495,7 @@ function AccountDetails() {
             </div>
 
             <div className="text-center">
-              <p className="text-gray-800 font-semibold text-base sm:text-lg">
+              <p className="text-[#126B6D] font-playpen-sans font-semibold text-base sm:text-lg">
                 {user?.user?.name || "Not provided"}
               </p>
               <p className="text-xs sm:text-sm text-gray-500 mt-1 flex items-center justify-center gap-1">

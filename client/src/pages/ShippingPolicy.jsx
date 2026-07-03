@@ -47,7 +47,7 @@ function ShippingPolicy() {
             dangerouslySetInnerHTML={{
               __html: cleanHTML(
                 shippingData?.content ||
-                  "<p>At Happy Art Supplies, we ensure safe, reliable, and timely delivery of your resin art materials across India.</p>",
+                  "<p>At Ivoryinks.com, we ensure safe, reliable, and timely delivery of your resin art materials across India.</p>",
               ),
             }}
           />
