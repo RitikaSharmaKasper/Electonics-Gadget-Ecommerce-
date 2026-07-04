@@ -67,7 +67,7 @@ function RecentlyViewed() {
       <Navbar />
       <section className="lg:px-20 md:px-[60px] px-4 py-6">
         <div className="text-center">
-          <h1 className="text-lg sm:text-xl text-[#126B6D] font-playpen-sans font-medium">
+          <h1 className="text-lg sm:text-xl text-[#7A1F2B] font-stack-sans font-medium">
             Recently Viewed
           </h1>
           <p className="text-[#8F8F8F] my-2">{totalItems} items</p>
@@ -116,7 +116,7 @@ function RecentlyViewed() {
                 {/* Text content */}
                 <div className="p-2 flex flex-col justify-between gap-1">
                   <div className="flex flex-col lg:gap-2 ">
-                    <h1 className="text-lg sm:text-xl text-[#126B6D] font-playpen-sans font-medium overflow-clip text-ellipsis max-lg:whitespace-nowrap">
+                    <h1 className="text-lg sm:text-xl text-[#7A1F2B] font-stack-sans font-medium overflow-clip text-ellipsis max-lg:whitespace-nowrap">
                       {title}
                     </h1>
                     <p className="text-[13px] w-full text-[#787878] lg:hidden">

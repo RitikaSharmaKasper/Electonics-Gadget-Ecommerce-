@@ -112,7 +112,7 @@ export const generateInvoice = (order) => {
   let y = box1Y + 15;
   const soldX = left + 2;
 
-  doc.text("Name: Ivoryinks.com.", soldX, y);
+  doc.text("Name: Divinex.", soldX, y);
   y += 5;
   doc.text("B402, Unites Crossandra, Horamavu, Bengaluru ", soldX, y);
   y += 4.5;
@@ -454,7 +454,7 @@ const OrderDetail = () => {
 
       <div className="border-b pb-4 mb-6 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
         <div>
-          <h1 className="flex items-center gap-2 text-lg sm:text-xl font-semibold text-[#126B6D] font-playpen-sans">
+          <h1 className="flex items-center gap-2 text-lg sm:text-xl font-semibold text-[#7A1F2B] font-stack-sans">
             <Link to="/accounts/order-history">
               <ChevronLeft className="w-8 h-8" />
             </Link>
@@ -495,7 +495,7 @@ const OrderDetail = () => {
               }
             }}
             // onClick={() => generateInvoice(order)}
-            className="text-white px-4 py-2 md:px-6 md:py-2 border border-[#126B6D] rounded-lg text-sm bg-[#126B6D]transition-colors flex items-center justify-center gap-2 w-full lg:w-auto cursor-pointer"
+            className="text-white px-4 py-2 md:px-6 md:py-2 border border-[#52151d] rounded-lg text-sm bg-[#7A1F2B]transition-colors flex items-center justify-center gap-2 w-full lg:w-auto cursor-pointer"
           >
             Download Invoice <Download size={18} />
           </a>
@@ -535,7 +535,7 @@ const OrderDetail = () => {
           <h2 className="font-medium text-base md:text-lg mb-3">
             Delivery Address
           </h2>
-          <p className="text-[#126B6D] font-playpen-sans text-sm md:text-base">
+          <p className="text-[#7A1F2B] font-stack-sans text-sm md:text-base">
             {order.shippingAddress.address}
           </p>
           <p className="text-gray-600 text-sm md:text-base">
@@ -864,7 +864,7 @@ const OrderDetail = () => {
             </button> */}
 
             <button
-              className="bg-[#126B6D] text-white px-6 py-2 rounded-md text-sm hover:bg-[#126B6D] transition-colors"
+              className="  bg-[#7A1F2B] text-white px-6 py-2 rounded-md text-sm hover:  bg-[#7A1F2B] transition-colors"
               onClick={() => navigate(`/order-history/${order._id}`)}
             >
               Track Order
@@ -893,7 +893,7 @@ const OrderDetail = () => {
                 }
               }}
               // onClick={() => generateInvoice(order)}
-              className=" text-[#126B6D] px-6 py-2 border border-[#126B6D] rounded-lg text-sm hover:bg-[#126B6D] hover:text-white transition-colors flex items-center gap-2 cursor-pointer"
+              className=" text-[#7A1F2B] px-6 py-2 border border-[#52151d] rounded-lg text-sm hover:  bg-[#7A1F2B] hover:text-white transition-colors flex items-center gap-2 cursor-pointer"
             >
               Download Invoice <Download size={18} />
             </a>

@@ -13,7 +13,7 @@ import axiosInstance from "../api/axiosInstance";
 const OrderSkeleton = () => {
   return (
     <div className="bg-white md:rounded-lg md:shadow-sm animate-pulse">
-      <div className="flex flex-wrap justify-between gap-3 bg-[#F0EEFF] px-4 sm:px-6 py-4 border-b">
+      <div className="flex flex-wrap justify-between gap-3 bg-[#f1d5d9] px-4 sm:px-6 py-4 border-b">
         <div className="h-10 w-28 bg-gray-200 rounded" />
         <div className="h-10 w-20 bg-gray-200 rounded" />
         <div className="h-10 w-32 bg-gray-200 rounded" />
@@ -168,7 +168,7 @@ function OrderHistory() {
     <div className="w-full mt-5">
       <div className="md:mb-6 relative flex flex-row justify-between items-center border border-gray-200 bg-white md:rounded-lg p-3 gap-3 sm:gap-4">
         <div>
-          <p className="text-lg font-semibold font-playpen-sans text-[#126B6D]">Your Orders</p>
+          <p className="text-lg font-semibold font-stack-sans text-[#7A1F2B]">Your Orders</p>
           <span className="text-sm text-[#686868]">Manage your Orders</span>
         </div>
         {/* Search Input */}
@@ -188,7 +188,7 @@ function OrderHistory() {
           <div>
             <div className="flex items-center gap-2 justify-end w-full">
               <button
-                className="flex items-center justify-center py-2 px-5 text-xs sm:text-sm bg-[#126B6D] rounded-full text-white"
+                className="flex items-center justify-center py-2 px-5 text-xs sm:text-sm bg-[#7A1F2B] rounded-full text-white"
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
               >
                 <ListFilter className="w-4 h-4 mr-2" />
@@ -264,13 +264,13 @@ function OrderHistory() {
                   </div>
                   <div className="flex items-end gap-2 justify-end max-sm:w-full">
                     <Link
-                      className="border border-[#126B6D]  text-[#126B6D]  bg-white text-center mb-1 px-3 py-1 rounded-md text-xs sm:text-sm"
+                      className="border border-[#52151d]  text-[#7A1F2B]  bg-white text-center mb-1 px-3 py-1 rounded-md text-xs sm:text-sm"
                       to={`/accounts/order-detail/${order._id}`}
                     >
                       Order Details
                     </Link>
                     {order.status !== "cancelled" && (
-                      <div className="border border-[#126B6D] text-[#126B6D] bg-white text-center mb-1 px-3 py-1 rounded-md text-xs sm:text-sm">
+                      <div className="border border-[#52151d] text-[#7A1F2B] bg-white text-center mb-1 px-3 py-1 rounded-md text-xs sm:text-sm">
                         <p
                           onClick={() =>
                             navigate(`/order-history/${order?._id}`)
@@ -406,7 +406,7 @@ function OrderHistory() {
             key={i}
             onClick={() => setPage(i + 1)}
             className={`px-3 py-1 border rounded ${
-              page === i + 1 ? "bg-[#126B6D] text-white" : ""
+              page === i + 1 ? "  bg-[#7A1F2B] text-white" : ""
             }`}
           >
             {i + 1}

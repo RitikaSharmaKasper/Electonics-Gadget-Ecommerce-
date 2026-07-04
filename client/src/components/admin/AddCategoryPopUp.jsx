@@ -44,9 +44,9 @@ const AddCategoryPopUp = ({
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
       <div className="bg-white p-6 rounded-lg w-[40%] relative">
-        <h2 className="text-xl font-semibold mb-4 font-playpen-sans">Add Category</h2>
+        <h2 className="text-xl font-semibold mb-4 font-stack-sans">Add Category</h2>
 
-        <label className="block text-black text-[14px] font-medium mb-2 font-playpen-sans">
+        <label className="block text-black text-[14px] font-medium mb-2 font-stack-sans">
           Category Name
         </label>
         <input
@@ -58,7 +58,7 @@ const AddCategoryPopUp = ({
         />
 
         {/* Subcategory Input */}
-        <label className="block text-black text-[14px] font-medium mb-2 font-playpen-sans">
+        <label className="block text-black text-[14px] font-medium mb-2 font-stack-sans">
           Sub Category
         </label>
         <input
@@ -73,14 +73,14 @@ const AddCategoryPopUp = ({
         <div className="flex justify-end gap-4 mt-6">
           <button
             type="button"
-            className="px-6 py-2 bg-gray-200 rounded-lg text-[#126B6D] font-playpen-sans font-medium hover:bg-gray-300"
+            className="px-6 py-2 bg-gray-200 rounded-lg text-[#7A1F2B] font-stack-sans font-medium hover:bg-gray-300"
             onClick={() => setShowCategoryModal(false)}
           >
             Cancel
           </button>
           <button
             type="button"
-            className="px-6 py-2 bg-[#126B6D] rounded-lg text-white font-medium hover:bg-[#126B6D]"
+            className="px-6 py-2 bg-[#7A1F2B] rounded-lg text-white font-medium hover:  bg-[#7A1F2B]"
             onClick={handleSave}
           >
             Save

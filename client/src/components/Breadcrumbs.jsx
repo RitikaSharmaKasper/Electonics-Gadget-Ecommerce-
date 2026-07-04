@@ -21,7 +21,7 @@ function Breadcrumbs({ category, subcategory, title }) {
       <ol className="inline-flex items-center text-sm space-x-2">
         {/* Home */}
         <li className="inline-flex items-center flex-shrink-0">
-          <Link to="/home" className="inline-flex items-center text-[#747877] hover:text-[#126B6D]">
+          <Link to="/home" className="inline-flex items-center text-[#747877] hover:text-[#7A1F2B]">
             Home
           </Link>
         </li>
@@ -37,7 +37,7 @@ function Breadcrumbs({ category, subcategory, title }) {
                   category: categoryName,
                   slug: categorySlug,
                 }}
-                className="ms-1 text-[#126B6D] truncate max-w-[120px] sm:max-w-none"
+                className="ms-1 text-[#7A1F2B] truncate max-w-[120px] sm:max-w-none"
               >
                 {categoryName}
               </Link>
@@ -58,7 +58,7 @@ function Breadcrumbs({ category, subcategory, title }) {
                   slug: categorySlug,
                   subcategorySlug,
                 }}
-                className="ms-1 text-[#126B6D] truncate max-w-[120px] sm:max-w-none"
+                className="ms-1 text-[#7A1F2B] truncate max-w-[120px] sm:max-w-none"
               >
                 {subcategoryName}
               </Link>
@@ -86,7 +86,7 @@ function Breadcrumbs({ category, subcategory, title }) {
 function SeparatorIcon() {
   return (
     <svg
-      className="rtl:rotate-180 w-3 h-3 text-[#FF7F66] mx-1"
+      className="rtl:rotate-180 w-3 h-3 text-[#5d5e5] mx-1"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

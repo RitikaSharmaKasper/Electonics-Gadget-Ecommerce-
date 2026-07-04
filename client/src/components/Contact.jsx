@@ -49,7 +49,7 @@
 //         {/* <div className="lg:col-span-2">
 //             <div className="p-6 border-b border-gray-200 bg-gray-50">
 //               <div>
-//                 <h1 className="text-lg sm:text-xl font-semibold text-[#126B6D] font-playpen-sans">
+//                 <h1 className="text-lg sm:text-xl font-semibold text-[#7A1F2B] font-stack-sans">
 //                   Contact Us
 //                 </h1>
 //                 <p className="text-sm text-gray-500 mt-1">
@@ -163,7 +163,7 @@
 //               {/* Submit */}
 //         {/* <button
 //                 type="submit"
-//                 className="w-full md:w-auto px-6 py-3 text-sm font-medium bg-[#126B6D] text-white rounded-lg shadow-sm transition flex items-center justify-center"
+//                 className="w-full md:w-auto px-6 py-3 text-sm font-medium bg-[#7A1F2B] text-white rounded-lg shadow-sm transition flex items-center justify-center"
 //               >
 //                 <Send className="w-4 h-4 mr-2" />
 //                 Submit
@@ -174,7 +174,7 @@
 //         {/* ===== Right: Contact Info ===== */}
 //         {/* <div className="p-8 w-full flex flex-col justify-center bg-gradient-to-b from-[#CFC7FF]/20 to-[#FFC9EA]/50 space-y-6">
 //             <div className="text-center mb-1">
-//               <h2 className="text-lg font-semibold text-[#126B6D] font-playpen-sans">
+//               <h2 className="text-lg font-semibold text-[#7A1F2B] font-stack-sans">
 //                 Get in Touch
 //               </h2>
 //               <p className="text-sm text-gray-500 mt-1">
@@ -184,7 +184,7 @@
 
 //             <div className="w-full bg-[#F6F8F9] rounded-lg p-5 border border-gray-200 shadow-sm space-y-3">
 //               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 p-3 bg-white rounded-lg">
-//                 <div className="p-2 bg-[#F0EEFF] rounded-lg flex-shrink-0">
+//                 <div className="p-2 bg-[#f1d5d9] rounded-lg flex-shrink-0">
 //                   <Mail className="w-5 h-5 text-[#1800AC]" />
 //                 </div>
 
@@ -197,7 +197,7 @@
 //               </div>
 
 //               <div className="flex items-center gap-4 p-3 bg-white rounded-lg">
-//                 <div className="p-2 bg-[#F0EEFF] rounded-lg">
+//                 <div className="p-2 bg-[#f1d5d9] rounded-lg">
 //                   <Phone className="w-5 h-5 text-[#1800AC]" />
 //                 </div>
 //                 <div>
@@ -207,7 +207,7 @@
 //               </div>
 
 //               <div className="flex items-center gap-4 p-3 bg-white rounded-lg">
-//                 <div className="p-2 bg-[#F0EEFF] rounded-lg">
+//                 <div className="p-2 bg-[#f1d5d9] rounded-lg">
 //                   <MapPin className="w-5 h-5 text-[#1800AC]" />
 //                 </div>
 //                 <div>
@@ -242,7 +242,7 @@
 //           <div className="lg:col-span-2">
 //             <div className="p-6  bg-[#FFFFFF]">
 //               <div>
-//                 <h1 className="text-lg sm:text-xl font-semibold text-[#126B6D] font-playpen-sans">
+//                 <h1 className="text-lg sm:text-xl font-semibold text-[#7A1F2B] font-stack-sans">
 //                   Contact Us
 //                 </h1>
 //                 <p className="text-sm text-gray-500 mt-1">
@@ -256,7 +256,7 @@
 //               <div className="w-[50%] bg-[#FFFFFF]">
 //                 <div className="border-b">
 //                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 p-3 bg-white rounded-lg">
-//                     <div className="p-2 bg-[#F0EEFF] rounded-full flex-shrink-0">
+//                     <div className="p-2 bg-[#f1d5d9] rounded-full flex-shrink-0">
 //                       <Mail className="w-5 h-5 text-[#1800AC]" />
 //                     </div>
 //                     <div>
@@ -268,7 +268,7 @@
 //                   </div>
 
 //                   <div className="flex items-center gap-4 p-3 bg-white rounded-full">
-//                     <div className="p-2 bg-[#F0EEFF] rounded-full">
+//                     <div className="p-2 bg-[#f1d5d9] rounded-full">
 //                       <Phone className="w-5 h-5 text-[#1800AC]" />
 //                     </div>
 //                     <div>
@@ -278,7 +278,7 @@
 //                   </div>
 
 //                   <div className="flex items-center gap-4 p-3 bg-white rounded-full">
-//                     <div className="p-2 bg-[#F0EEFF] rounded-full">
+//                     <div className="p-2 bg-[#f1d5d9] rounded-full">
 //                       <MapPin className="w-5 h-5 text-[#1800AC]" />
 //                     </div>
 //                     <div>
@@ -380,10 +380,10 @@ function ContactSection() {
     <div className="w-full font-inter mt-5">
       <div className="bg-white md:rounded-md md:shadow-sm overflow-hidden">
         <div className="p-6">
-          <h1 className="text-lg sm:text-xl  font-playpen-sans font-semibold text-[#126B6D] font-playpen-sans">
+          <h1 className="text-lg sm:text-xl  font-stack-sans font-semibold text-[#7A1F2B] font-stack-sans">
             Contact Us
           </h1>
-          <p className="text-sm text-gray-500  font-marcellus mt-1">
+          <p className="text-sm text-gray-500  font-merriweather mt-1">
             If you have any questions related orders, products, or anything
             please reach out.
           </p>
@@ -400,15 +400,15 @@ function ContactSection() {
               className="flex items-center gap-4 p-3 bg-white rounded-lg border hover:bg-gray-50 transition"
             >
               <div className="p-2 bg-[#f3dcd8] rounded-full">
-                <Mail className="w-5 h-5 text-[#126B6D]" />
+                <Mail className="w-5 h-5 text-[#7A1F2B]" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-700 font-playpen-sans">Email</p>
+                <p className="text-sm font-medium text-gray-700 font-stack-sans">Email</p>
                 <a
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=happyartsupplies@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm block text-[#126B6D]"
+                  className="text-sm block text-[#7A1F2B]"
                 >
                   happyartsupplies@gmail.com
                 </a>
@@ -423,11 +423,11 @@ function ContactSection() {
               className="flex items-center gap-4 p-3 bg-white rounded-lg border hover:bg-gray-50 transition"
             >
               <div className="p-2 bg-[#f3dcd8] rounded-full">
-                <Phone className="w-5 h-5 text-[#126B6D]" />
+                <Phone className="w-5 h-5 text-[#7A1F2B]" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-700 font-playpen-sans">Phone</p>
-                <p className="text-sm text-[#126B6D]">(+91) 98868 94723</p>
+                <p className="text-sm font-medium text-gray-700 font-stack-sans">Phone</p>
+                <p className="text-sm text-[#7A1F2B]">(+91) 98868 94723</p>
               </div>
             </a>
 
@@ -439,10 +439,10 @@ function ContactSection() {
               className="flex items-center gap-4 p-3 bg-white rounded-lg border hover:bg-gray-50 transition"
             >
               <div className="p-2 bg-[#f3dcd8] rounded-full">
-                <MapPin className="w-5 h-5 text-[#126B6D]" />
+                <MapPin className="w-5 h-5 text-[#7A1F2B]" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-700 font-playpen-sans">Address</p>
+                <p className="text-sm font-medium text-gray-700 font-stack-sans">Address</p>
                 <p className="text-sm text-gray-500">
                   {/* B402, United Crossandra, */}
                    Hormavu Agara Lake Road, Horamavu,

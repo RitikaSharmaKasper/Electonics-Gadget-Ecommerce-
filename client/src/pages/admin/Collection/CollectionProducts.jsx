@@ -400,7 +400,7 @@ function CollectionProducts() {
                           onError={(e) => (e.target.src = "/placeholder.png")}
                         />
                         <div className="flex flex-col">
-                          <span className="text-[16px] font-medium  font-playpen-sans text-[#55516e]">
+                          <span className="text-[16px] font-medium  font-stack-sans text-[#55516e]">
                             {item.productTittle || item.name}
                           </span>
                         </div>

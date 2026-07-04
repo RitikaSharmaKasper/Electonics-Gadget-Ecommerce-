@@ -570,10 +570,10 @@ function Collection() {
     <div className="p-6 bg-[#F6F8F9] min-h-screen">
       {/* HEADER */}
       <div className="flex justify-between items-center mb-6">
-        <p className="text-[20px] font-semibold font-playpen-sans text-[#126B6D]">Collection</p>
+        <p className="text-[20px] font-semibold font-stack-sans text-[#7A1F2B]">Collection</p>
 
         <button
-          className="flex items-center gap-2 px-4 py-2 bg-[#126B6D] font-playpen-sans text-white rounded-lg"
+          className="flex items-center gap-2 px-4 py-2 bg-[#7A1F2B] font-stack-sans text-white rounded-lg"
           onClick={() => setAddCollectionModal(true)}
         >
           <MdOutlineAdd size={20} />
@@ -634,7 +634,7 @@ function Collection() {
                   setSearch("");
                   setCurrentPage(1);
                 }}
-                className="text-[#126B6D] font-playpen-sans"
+                className="text-[#7A1F2B] font-stack-sans"
               >
                 Clear
               </button>
@@ -792,7 +792,7 @@ function Collection() {
             className="bg-white rounded-xl p-6 w-[400px]"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-lg font-semibold mb-4 font-playpen-sans text-[#126B6D]">Add Collection</h2>
+            <h2 className="text-lg font-semibold mb-4 font-stack-sans text-[#7A1F2B]">Add Collection</h2>
 
             <div className="mb-5">
               <span>Collection Status</span>
@@ -851,7 +851,7 @@ function Collection() {
               <button
                 onClick={handleAddCollection}
                 disabled={submitting}
-                className="px-4 py-2 bg-[#126B6D] text-white rounded disabled:opacity-50"
+                className="px-4 py-2 bg-[#7A1F2B] text-white rounded disabled:opacity-50"
               >
                 {submitting ? "Saving..." : "Save"}
               </button>
@@ -871,7 +871,7 @@ function Collection() {
           }}
         >
           <div className="bg-white rounded-xl p-6 w-[400px]">
-            <h2 className="text-lg font-semibold mb-4 font-playpen-sans text-[#126B6D]">
+            <h2 className="text-lg font-semibold mb-4 font-stack-sans text-[#7A1F2B]">
               Edit Collection
             </h2>
 
@@ -928,7 +928,7 @@ function Collection() {
               <button
                 onClick={handleUpdateCollection}
                 disabled={submitting}
-                className="px-4 py-2 bg-[#126B6D] text-white rounded disabled:opacity-50"
+                className="px-4 py-2 bg-[#7A1F2B] text-white rounded disabled:opacity-50"
               >
                 {submitting ? "Updating..." : "Update"}
               </button>
@@ -948,10 +948,10 @@ function Collection() {
           }}
         >
           <div className="bg-white rounded-xl p-6 w-[400px]">
-            <h2 className="text-lg font-semibold mb-4 font-playpen-sans text-[#126B6D]">
+            <h2 className="text-lg font-semibold mb-4 font-stack-sans text-[#7A1F2B]">
               Delete Collection
             </h2>
-            <p className="mb-6 font-marcellus">
+            <p className="mb-6 font-merriweather">
               Are you sure you want to delete "
               <strong>{deleteConfirm.collectionName}</strong>"? This action
               cannot be undone.

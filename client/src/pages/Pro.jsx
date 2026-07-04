@@ -730,7 +730,7 @@ hover:scale-105 border border-[#1C3753] rounded-md"
             {/* <div className="py-5 border-b border-gray-200">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-[#126B6D] font-playpen-sans mb-1">
+                  <h3 className="text-lg font-semibold text-[#7A1F2B] font-stack-sans mb-1">
                     Delivery Options
                   </h3>
                   <p className="text-sm text-gray-600">

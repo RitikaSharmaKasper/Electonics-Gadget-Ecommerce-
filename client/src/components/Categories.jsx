@@ -62,8 +62,8 @@ function Categories({
     <div className="min-w-[223px] bg-white lg:block hidden border border-[#F0EEFF] p-2 pb-6 rounded-md shadow-sm">
       {filter.length > 0 && (
         <div className="w-[195px] flex justify-between border-b border-[#F0EEFF] py-2">
-          <h1 className="text-[15px] font-[500] px-2 text-[#126B6D]">Categories</h1>
-          <ChevronRight className="text-[#FF7F66]" />
+          <h1 className="text-[15px] font-[500] px-2 text-[#7A1F2B]">Categories</h1>
+          <ChevronRight className="text-[#5d5e5]" />
         </div>
       )}
 
@@ -105,8 +105,8 @@ function Categories({
       {/* Colors */}
       <div className="w-[195px] flex flex-col gap-6">
         <div className="flex justify-between border-b border-[#F0EEFF] py-2">
-          <h1 className="text-[15px] font-[500] px-2 text-[#126B6D]">Colors</h1>
-          <ChevronRight className="text-[#FF7F66]" />
+          <h1 className="text-[15px] font-[500] px-2 text-[#7A1F2B]">Colors</h1>
+          <ChevronRight className="text-[#5d5e5]" />
         </div>
         <div className="flex gap-4 px-3">
           {colors.map(({ colorName, colorCode }) => (

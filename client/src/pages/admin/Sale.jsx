@@ -164,7 +164,7 @@ function Sale() {
                       <td className="px-4 lg:px-6 py-3 text-gray-700">
                         {r.sr}
                       </td>
-                      <td className="px-4 lg:px-6 py-3 font-medium text-[#126B6D] font-playpen-sans">
+                      <td className="px-4 lg:px-6 py-3 font-medium text-[#7A1F2B] font-stack-sans">
                         {r.name}
                       </td>
                       <td className="px-4 lg:px-6 py-3">{r.category}</td>

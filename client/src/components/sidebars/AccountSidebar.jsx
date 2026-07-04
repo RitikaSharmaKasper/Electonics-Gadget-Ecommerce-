@@ -112,7 +112,7 @@ function AccountSidebar() {
                   className={({ isActive }) =>
                     `flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                       isActive
-                        ? "bg-amber-50 text-[#126B6D]"
+                        ? "bg-amber-50 text-[#7A1F2B]"
                         : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                     }`
                   }

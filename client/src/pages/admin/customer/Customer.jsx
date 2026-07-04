@@ -206,7 +206,7 @@ function Customer() {
               >
                 <ChevronLeft className="w-5 h-5" />
               </button> */}
-              <span className="ml-3 font-medium text-[20px] text-[#126B6D] font-playpen-sans">Customers</span>
+              <span className="ml-3 font-medium text-[20px] text-[#7A1F2B] font-stack-sans">Customers</span>
             </div>
           </div>
         </div>

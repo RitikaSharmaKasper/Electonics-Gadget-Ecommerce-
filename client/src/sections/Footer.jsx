@@ -23,19 +23,19 @@ function Footer() {
           <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6 lg:gap-16">
             <div className="flex flex-col gap-2">
               <Link to="/home">
-                <h1 className="font-[500] font-playpen-sans lg:text-[20px] text-[14.5px] text-[#126B6D]">
-                  Ivoryinks.com
+                <h1 className="font-[500] font-stack-sans lg:text-[20px] text-[14.5px] text-[#7A1F2B]">
+                  Divinex
                 </h1>
               </Link>
-              <p className="lg:text-[14px] text-[14px] font-playpen-sans font-[300] text-[#1e1e1e] font-playpen-sans">
-                Ivoryinks.com is a Stationaryhub for your premium destination for
+              <p className="lg:text-[14px] text-[14px] font-stack-sans font-[300] text-[#1e1e1e] font-stack-sans">
+                Divinex is a Stationaryhub for your premium destination for
                 office and school supplies, launching across India in 2021.
                 We're here to help creators, students, and professionals with
                 quality stationery, reliable service, and everything needed to
                 bring ideas to life. ✨
               </p>
               <div>
-                <p className="text-[#126B6D] text-[16px] font-playpen-sans">
+                <p className="text-[#7A1F2B] text-[16px] font-stack-sans">
                   Contact us :{" "}
                 </p>
                 <p className="font-[400] lg:text-sm text-sm"></p>
@@ -43,7 +43,7 @@ function Footer() {
                   href="https://wa.me/919886894723"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm block text-[#FF7F66]"
+                  className="text-sm block text-[#5d5e5]"
                 >
                   (+91) 800-644-8800
                 </a>
@@ -51,16 +51,16 @@ function Footer() {
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=happyartsupplies@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm block text-[#FF7F66]"
+                  className="text-sm block text-[#5d5e5]"
                 >
                   info@kasperinfotech.com sales@kasperinfotech.com
                 </a>
-                <p className="text-sm text-[#126B6D] font-playpen-sans">
+                <p className="text-sm text-[#7A1F2B] font-stack-sans">
                   {/* B402, United Crossandra,  */}
                   Office Number 503, TOWER-C,
                 </p>
                 {/* <br /> */}
-                <p className="text-sm text-[#126B6D] font-playpen-sans">
+                <p className="text-sm text-[#7A1F2B] font-stack-sans">
                   The iThum Towers, Sector 62, Noida, Uttar Pradesh 201301
                 </p>
                 <div className="flex gap-3 font-[200] mt-2">
@@ -89,10 +89,10 @@ function Footer() {
 
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
-                <h1 className="font-[300] lg:text-[20px] text-[14.5px] text-[#126B6D] font-playpen-sans">
+                <h1 className="font-[300] lg:text-[20px] text-[14.5px] text-[#7A1F2B] font-stack-sans">
                   About Us
                 </h1>
-                <ul className="font-[300] flex flex-col gap-2 lg:text-[16px] text-[11.5px] text-[#1e1e1e] font-playpen-sans">
+                <ul className="font-[300] flex flex-col gap-2 lg:text-[16px] text-[11.5px] text-[#1e1e1e] font-stack-sans">
                   <Link to="/aboutUs">
                     <li>About Us</li>
                   </Link>
@@ -120,10 +120,10 @@ function Footer() {
 
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-2">
-                <h1 className="font-[300]  lg:text-[20px] text-[14.5px] text-[#126B6D] font-playpen-sans">
+                <h1 className="font-[300]  lg:text-[20px] text-[14.5px] text-[#7A1F2B] font-stack-sans">
                   Shop
                 </h1>
-                <ul className="font-[300] flex flex-col gap-2 lg:text-[16px] text-[11.5px] text-[#1e1e1e] font-playpen-sans">
+                <ul className="font-[300] flex flex-col gap-2 lg:text-[16px] text-[11.5px] text-[#1e1e1e] font-stack-sans">
                   <li>
                     <Link to="/products">Best Selling Products</Link>
                   </li>
@@ -140,10 +140,10 @@ function Footer() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <h1 className="font-[300] lg:text-[20px] text-[14.5px] text-[#126B6D] font-playpen-sans">
+              <h1 className="font-[300] lg:text-[20px] text-[14.5px] text-[#7A1F2B] font-stack-sans">
                 Account
               </h1>
-              <ul className="lg:text-[16px] text-[11.5px] font-[300] font-playpen-sans flex flex-col gap-2 text-[#1e1e1e]">
+              <ul className="lg:text-[16px] text-[11.5px] font-[300] font-stack-sans flex flex-col gap-2 text-[#1e1e1e]">
                 <li>
                   <Link to="/accounts/details">My Account</Link>
                 </li>
@@ -204,8 +204,8 @@ function Footer() {
             </div> */}
           </div>
           <div className="flex justify-between py-[20px] border-t-[1px] border-[#ACACAC] mt-4">
-            <p className="lg:text-sm text-xs text-[#126B6D]">
-              © 2026 Ivoryinks.com. All rights reserved.
+            <p className="lg:text-sm text-xs text-[#7A1F2B]">
+              © 2026 Divinex. All rights reserved.
             </p>
             <ul className="flex md:gap-4 gap-1 font-[400] lg:text-[16px] text-[11.5px]">
               <li className="lg:text-sm text-xs text-[#2D2F31]">

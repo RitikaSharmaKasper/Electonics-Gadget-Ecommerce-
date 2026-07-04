@@ -126,7 +126,7 @@ const ChangePassword = ({ showPasswordModal, setShowPasswordModal }) => {
 
             <button
               type="submit"
-              className="px-4 py-2 bg-[#126B6D] text-white rounded-lg disabled:opacity-60"
+              className="px-4 py-2 bg-[#7A1F2B] text-white rounded-lg disabled:opacity-60"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Updating..." : "Update"}

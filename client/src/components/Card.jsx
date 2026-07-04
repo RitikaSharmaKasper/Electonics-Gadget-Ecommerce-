@@ -327,7 +327,7 @@ function Card({
 
                   {discountPercent > 0 && (
                     <div>
-                      <span className="text-[#126B6D] text-sm">
+                      <span className="text-[#7A1F2B] text-sm">
                         {Math.round(discountPercent)}% Off
                       </span>
                     </div>
@@ -338,7 +338,7 @@ function Card({
                   {outOfStock ? (
                     <button
                       disabled
-                      className="px-4 py-2 bg-[#F0EEFF] text-xs w-full text-center text-[#747877] rounded-full cursor-not-allowed"
+                      className="px-4 py-2 bg-[#f1d5d9] text-xs w-full text-center text-[#747877] rounded-full cursor-not-allowed"
                     >
                       Out of Stock
                     </button>
@@ -348,7 +348,7 @@ function Card({
                         e.stopPropagation();
                         navigate("/bag");
                       }}
-                      className="flex items-center w-full text-xs justify-center gap-2 px-2 border border-[#126B6D] text-[#126B6D] bg-white p-2 rounded-md"
+                      className="flex items-center w-full text-xs justify-center gap-2 px-2 border border-[#52151d] text-[#7A1F2B] bg-white p-2 rounded-md"
                     >
                       <ShoppingCart className="w-4 h-4" />
                       <span>Go to Cart</span>
@@ -360,7 +360,7 @@ function Card({
                         handleAddToCart(item);
                       }}
                       disabled={isLoading}
-                      className="px-4 py-2 bg-[#126B6D] text-xs w-full text-center rounded text-white hover:bg-[#0f5c5e] disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="px-4 py-2 bg-[#7A1F2B] text-xs w-full text-center rounded text-white hover:bg-[#7A1F2B] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoading ? (
                         <div className="flex items-center gap-2">
@@ -383,7 +383,7 @@ function Card({
           );
         })
       ) : (
-        <h1 className="text-lg sm:text-xl font-semibold text-[#126B6D] col-span-full text-center">
+        <h1 className="text-lg sm:text-xl font-semibold text-[#7A1F2B] col-span-full text-center">
           No Products Available
         </h1>
       )}

@@ -29,7 +29,7 @@ const Modal = ({
             className="bg-white p-6 rounded-lg max-w-md w-full shadow-lg"
           >
             {/* Title */}
-            <h2 className="text-lg font-semibold text-[#126B6D] font-playpen-sans mb-2">{title}</h2>
+            <h2 className="text-lg font-semibold text-[#7A1F2B] font-stack-sans mb-2">{title}</h2>
 
             {/* Description */}
             <p className="text-gray-600 mb-6">{description}</p>

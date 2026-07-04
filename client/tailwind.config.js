@@ -19,6 +19,8 @@ export default {
         'inter': ['Inter', 'sans-serif'],
         'montez': ['Montez', 'cursive'],
         'marcellus': ['"Marcellus SC"', 'serif'],
+            'stack-sans': ['"Stack Sans Notch"', 'sans-serif'],
+                'merriweather': ['"Merriweather Sans"', 'sans-serif'], 
       },
       screens: {
         xs: "393px",

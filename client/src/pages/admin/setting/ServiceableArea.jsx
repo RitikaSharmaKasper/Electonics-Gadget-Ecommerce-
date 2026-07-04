@@ -269,7 +269,7 @@ const ServiceableArea = () => {
         </h2>
 
         <div className="flex items-center gap-8 mb-4">
-          <label className="flex items-center gap-3 text-[#126B6D] text-[14px] font-medium cursor-pointer">
+          <label className="flex items-center gap-3 text-[#7A1F2B] text-[14px] font-medium cursor-pointer">
             <input
               type="radio"
               checked={type === "pin-code"}
@@ -282,7 +282,7 @@ const ServiceableArea = () => {
             Pin-Code
           </label>
 
-          <label className="flex items-center gap-3 text-[#126B6D] text-[14px] font-medium cursor-pointer">
+          <label className="flex items-center gap-3 text-[#7A1F2B] text-[14px] font-medium cursor-pointer">
             <input
               type="radio"
               checked={type === "prefix"}
@@ -306,7 +306,7 @@ const ServiceableArea = () => {
               ? "Enter 6-digit pin-code (e.g., 560034)"
               : "Enter 3-digit prefix (e.g., 560)"
           }
-          className="w-full h-[45px] bg-[#F8FBFC] border border-[#DADADA] rounded-lg px-4 text-[14px] outline-none focus:border-[#126B6D]"
+          className="w-full h-[45px] bg-[#F8FBFC] border border-[#DADADA] rounded-lg px-4 text-[14px] outline-none focus:border-[#52151d]"
         />
 
         <p className="text-[#686868] text-[14px] mt-2">
@@ -343,7 +343,7 @@ const ServiceableArea = () => {
             className="
 px-5
 py-2
-bg-[#126B6D]
+  bg-[#7A1F2B]
 text-white
 rounded
 cursor-pointer
@@ -361,8 +361,8 @@ flex items-center gap-2
 px-5
 py-2
 border
-border-[#126B6D]
-bg-[#126B6D]
+border-[#52151d]
+  bg-[#7A1F2B]
 text-white
 rounded-md
 flex items-center gap-2
@@ -487,7 +487,7 @@ flex items-center gap-2
             <button
               disabled={page === 1}
               onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-              className="w-8 h-8 rounded-md bg-[#126B6D] text-white disabled:opacity-50"
+              className="w-8 h-8 rounded-md bg-[#7A1F2B] text-white disabled:opacity-50"
             >
               ‹
             </button>
@@ -500,7 +500,7 @@ flex items-center gap-2
             <button
               disabled={page === totalPages}
               onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-              className="w-8 h-8 rounded-md bg-[#126B6D] text-white disabled:opacity-50"
+              className="w-8 h-8 rounded-md bg-[#7A1F2B] text-white disabled:opacity-50"
             >
               ›
             </button>
@@ -521,7 +521,7 @@ flex items-center gap-2
               {["Active", "Inactive"].map((status) => (
                 <label
                   key={status}
-                  className="flex items-center gap-3 text-[#126B6D] text-[16px] cursor-pointer"
+                  className="flex items-center gap-3 text-[#7A1F2B] text-[16px] cursor-pointer"
                 >
                   <input
                     type="radio"
@@ -551,7 +551,7 @@ flex items-center gap-2
                   code: e.target.value.replace(/\D/g, ""),
                 }))
               }
-              className="w-full h-[52px] bg-[#F8FBFC] border border-[#DADADA] rounded-lg px-4 text-[16px] outline-none focus:border-[#126B6D]"
+              className="w-full h-[52px] bg-[#F8FBFC] border border-[#DADADA] rounded-lg px-4 text-[16px] outline-none focus:border-[#52151d]"
             />
 
             <div className="flex justify-end gap-5 mt-8">
@@ -560,14 +560,14 @@ flex items-center gap-2
                   setEditModal(false);
                   setEditData(null);
                 }}
-                className="w-[150px] h-[48px] border border-[#126B6D] text-[#126B6D] rounded-lg"
+                className="w-[150px] h-[48px] border border-[#52151d] text-[#7A1F2B] rounded-lg"
               >
                 Cancel
               </button>
 
               <button
                 onClick={handleUpdate}
-                className="w-[180px] h-[48px] bg-[#126B6D] text-white rounded-lg"
+                className="w-[180px] h-[48px] bg-[#7A1F2B] text-white rounded-lg"
               >
                 Update {editData.type}
               </button>

@@ -100,7 +100,7 @@ function Filter({
         <button
           type="button"
           onClick={() => setFilterOpen((prev) => !prev)}
-          className="w-full text-lg sm:text-xl font-medium font-playpen-sans text-[#126B6D] flex justify-between items-center"
+          className="w-full text-lg sm:text-xl font-medium font-stack-sans text-[#7A1F2B] flex justify-between items-center"
         >
           <span>Filters</span>
           <ChevronDown
@@ -118,10 +118,10 @@ function Filter({
             ).map(({ label, value }) => (
               <button
                 key={value}
-                className={`px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition font-playpen-sans ${
+                className={`px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition font-stack-sans ${
                   selectedSort === label
-                    ? "bg-[#126B6D] text-white cursor-default"
-                    : "bg-[#F0EEFF] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#126B6D]"
+                    ? "  bg-[#7A1F2B] text-white cursor-default"
+                    : "bg-[#f1d5d9] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#7A1F2B]"
                 }`}
                 onClick={() => {
                   setSelectedSort(label);
@@ -136,7 +136,7 @@ function Filter({
             {sortOptions.length > INITIAL_SORT_COUNT && (
               <button
                 onClick={() => setShowAllSortOptions(!showAllSortOptions)}
-                className="px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition bg-transparent text-[#FF7F66] hover:underline"
+                className="px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition bg-transparent text-[#5d5e5] hover:underline"
               >
                 {showAllSortOptions ? "Show Less" : "Show More"}
                 {/* (${sortOptions.length - INITIAL_SORT_COUNT} */}
@@ -151,7 +151,7 @@ function Filter({
         <button
           type="button"
           onClick={() => setSubOpen((prev) => !prev)}
-          className="w-full text-lg sm:text-xl font-medium font-playpen-sans text-[#126B6D] flex justify-between items-center"
+          className="w-full text-lg sm:text-xl font-medium font-stack-sans text-[#7A1F2B] flex justify-between items-center"
         >
           <span>Sub-Categories</span>
           <ChevronDown
@@ -169,10 +169,10 @@ function Filter({
             ).map((subcat, index) => (
               <button
                 key={index}
-                className={`px-3 py-1.5 whitespace-nowrap rounded-full  font-playpen-sans text-sm transition ${
+                className={`px-3 py-1.5 whitespace-nowrap rounded-full  font-stack-sans text-sm transition ${
                   (isMobile ? tempCategory : selectedSubcategory) === subcat
-                    ? "bg-[#126B6D] text-white cursor-default"
-                    : "bg-[#F0EEFF] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#126B6D]"
+                    ? "  bg-[#7A1F2B] text-white cursor-default"
+                    : "bg-[#f1d5d9] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#7A1F2B]"
                 }`}
                 onClick={() =>
                   isMobile
@@ -187,7 +187,7 @@ function Filter({
             {filterSubcategories.length > INITIAL_SUBCATEGORIES_COUNT && (
               <button
                 onClick={() => setShowAllSubcategories(!showAllSubcategories)}
-                className="px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition bg-transparent text-[#FF7F66] hover:underline"
+                className="px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition bg-transparent text-[#5d5e5] hover:underline"
               >
                 {showAllSubcategories ? "Show Less" : "Show More"}
                 {/* (${filterSubcategories.length - INITIAL_SUBCATEGORIES_COUNT}  */}
@@ -202,11 +202,11 @@ function Filter({
         <button
           type="button"
           onClick={() => setOpen((prev) => !prev)}
-          className="w-full text-lg sm:text-xl font-medium font-playpen-sans text-[#126B6D] flex justify-between items-center"
+          className="w-full text-lg sm:text-xl font-medium font-stack-sans text-[#7A1F2B] flex justify-between items-center"
         >
           <span>Colors</span>
           <ChevronDown
-            className={`h-5 w-5 transition-transform duration-200  border-[#126B6D] text-[#126B6D] bg-white rounded-md flex items-center gap-2 text-sm${
+            className={`h-5 w-5 transition-transform duration-200  border-[#52151d] text-[#7A1F2B] bg-white rounded-md flex items-center gap-2 text-sm${
               open ? "rotate-180" : ""
             }`}
           />
@@ -230,10 +230,10 @@ function Filter({
                     key={colorName}
                     type="button"
                     className={twMerge(
-                      "text-left px-2 py-1 border rounded-md font-playpen-sans  transition text-xs",
+                      "text-left px-2 py-1 border rounded-md font-stack-sans  transition text-xs",
                       isActive
-                       ? "bg-[#126B6D] text-white cursor-default"
-                    : "bg-[#F0EEFF] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#126B6D]"
+                       ? "  bg-[#7A1F2B] text-white cursor-default"
+                    : "bg-[#f1d5d9] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#7A1F2B]"
                     )}
                     onClick={() =>
                       isMobile
@@ -257,7 +257,7 @@ function Filter({
             {colors.length > INITIAL_COLORS_COUNT && (
               <button
                 onClick={() => setShowAllColors(!showAllColors)}
-                className="px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition bg-transparent text-[#FF7F66]"
+                className="px-3 py-1.5 whitespace-nowrap rounded-full text-sm transition bg-transparent text-[#5d5e5]"
                 style={{ fontSize: "12px" }}
               >
                 {showAllColors ? "Show Less" : "Show More"}
@@ -278,7 +278,7 @@ function Filter({
 
       <div className="flex justify-between items-center lg:hidden mb-4">
         <button
-          className="px-4 py-2 border border-[#126B6D] text-[#126B6D] bg-white font-playpen-sans rounded-md text-sm"
+          className="px-4 py-2 border border-[#52151d] text-[#7A1F2B] bg-white font-stack-sans rounded-md text-sm"
           onClick={() => {
             setTempCategory(selectedSubcategory);
             setTempColor(colors?.[0]?.colorName || "");
@@ -290,7 +290,7 @@ function Filter({
 
         <div className="relative">
           <button
-            className="px-4 py-2 border border-[#126B6D] text-[#126B6D] bg-white rounded-md flex items-center gap-2 text-sm"
+            className="px-4 py-2 border border-[#52151d] text-[#7A1F2B] bg-white rounded-md flex items-center gap-2 text-sm"
             onClick={() => setSortOpen(!sortOpen)}
           >
             {selectedSort} <ChevronDown className="h-4 w-4" />
@@ -301,7 +301,7 @@ function Filter({
               {sortOptions.map(({ label, value }) => (
                 <p
                   key={value}
-                  className="px-4 py-2 hover:bg-[#F0EEFF] cursor-pointer text-sm text-[#747877]"
+                  className="px-4 py-2 hover:bg-[#f1d5d9] cursor-pointer text-sm text-[#747877]"
                   onClick={() => {
                     setSelectedSort(label);
                     sort(value);
@@ -351,7 +351,7 @@ function Filter({
                 </button>
 
                 <button
-                  className="flex-1 py-2 bg-[#126B6D] text-white rounded-md"
+                  className="flex-1 py-2 bg-[#7A1F2B] text-white rounded-md"
                   onClick={() => {
                     setSelectedSubcategory(tempCategory);
                     setColor(tempColor ? [tempColor] : []);
@@ -476,7 +476,7 @@ export default Filter;
 //         <button
 //           type="button"
 //           onClick={() => setFilterOpen((prev) => !prev)}
-//           className="w-full text-lg sm:text-xl font-medium text-[#126B6D] font-playpen-sans flex justify-between items-center"
+//           className="w-full text-lg sm:text-xl font-medium text-[#7A1F2B] font-stack-sans flex justify-between items-center"
 //         >
 //           <span>Filters</span>
 //           <ChevronDown
@@ -513,7 +513,7 @@ export default Filter;
 //         <button
 //           type="button"
 //           onClick={() => setSubOpen((prev) => !prev)}
-//           className="w-full text-lg sm:text-xl font-medium text-[#126B6D] font-playpen-sans flex justify-between items-center"
+//           className="w-full text-lg sm:text-xl font-medium text-[#7A1F2B] font-stack-sans flex justify-between items-center"
 //         >
 //           <span>Sub-Categories</span>
 //           <ChevronDown
@@ -550,7 +550,7 @@ export default Filter;
 //         <button
 //           type="button"
 //           onClick={() => setOpen((prev) => !prev)}
-//           className="w-full text-lg sm:text-xl font-medium text-[#126B6D] font-playpen-sans flex justify-between items-center"
+//           className="w-full text-lg sm:text-xl font-medium text-[#7A1F2B] font-stack-sans flex justify-between items-center"
 //         >
 //           <span>Colors</span>
 //           <ChevronDown

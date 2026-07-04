@@ -49,7 +49,7 @@ const ReturnRefundPolicy = () => {
             dangerouslySetInnerHTML={{
               __html: cleanHTML(
                 refundData?.content ||
-                  "<p>At Ivoryinks.com, we strive to provide high-quality resin art materials and supplies. Due to the nature of our products, we maintain a strict policy of no returns, no exchanges, and no cancellations once an order has been placed.</p>",
+                  "<p>At Divinex, we strive to provide high-quality resin art materials and supplies. Due to the nature of our products, we maintain a strict policy of no returns, no exchanges, and no cancellations once an order has been placed.</p>",
               ),
             }}
           />

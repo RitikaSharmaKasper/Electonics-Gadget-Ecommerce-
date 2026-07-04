@@ -38,7 +38,7 @@ function UserProfile({ setIsProfileOpen }) {
       {/* Top section: user icon and welcome message */}
       <div className="flex gap-4 items-center px-4 py-5 border-b border-gray-200 cursor-default">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-[#f5dccc] flex items-center justify-center">
+          <div className="w-10 h-10 rounded-full bg-[#dadde0] flex items-center justify-center">
             {user ? (
               <img
                 src={user?.user?.profileImage?.url}
@@ -48,16 +48,16 @@ function UserProfile({ setIsProfileOpen }) {
                 referrerPolicy="no-referrer"
               />
             ) : (
-              <UserRound size={20} className="text-[#0f6668]" />
+              <UserRound size={20} className="text-[#5d5e5f]" />
             )}
           </div>
           <div>
             
-            <p className="font-medium text-gray-700  font-playpen-sans
+            <p className="font-medium text-gray-700  font-stack-sans
             " >
               {user?.user?.name || "Guest User"}
             </p>
-            <p className="text-[15px] text-[#126B6D] font-playpen-sans">
+            <p className="text-[15px] text-[#7A1F2B] font-stack-sans">
               {isAuthenticated ? "Welcome back!" : "Please log in"}
             </p>
           </div>
@@ -78,7 +78,7 @@ function UserProfile({ setIsProfileOpen }) {
               }}
               className={({ isActive }) =>
                 `flex items-center gap-4 p-1.5 my-1 rounded-lg duration-200 group ${
-                  isActive ? "bg-[#88D3D5]/50 " : "hover:bg-[#88D3D5]/10 "
+                  isActive ? "bg-[#dadde0]" : "hover:bg-[#dadde0]/50"
                 }`
               }
             >
@@ -86,14 +86,14 @@ function UserProfile({ setIsProfileOpen }) {
                 <>
                   <div
                     className={`p-1 rounded-lg ${
-                      isActive ? "bg-[#F0EEFF]" : "bg-[#F0EEFF]"
+                      isActive ? "bg-[#f1d5d9]" : "bg-[#f1d5d9]"
                     }`}
                   >
-                    <Icon className="w-5 h-5 text-[#454653] font-playpen-sans" />
+                    <Icon className="w-5 h-5 text-[#5d5e5f] font-stack-sans" />
                   </div>
 
                   <div className="flex-1">
-                    <h2 className="font-normal text-[16px] font-playpen-sans text-gray-600">
+                    <h2 className="font-normal text-[16px] font-stack-sans text-gray-600">
                       {listName}
                     </h2>
                   </div>

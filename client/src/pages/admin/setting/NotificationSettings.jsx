@@ -67,7 +67,7 @@ const GeneralSettings = () => {
 
         <Link to={"/admin/settings/notification-form"}>
           {" "}
-          <button className="bg-[#126B6D] text-white text-[13px] font-medium px-4 py-2 rounded-[6px]">
+          <button className="  bg-[#7A1F2B] text-white text-[13px] font-medium px-4 py-2 rounded-[6px]">
             Edit
           </button>
         </Link>
@@ -121,7 +121,7 @@ const GeneralSettings = () => {
 
           <div className="mt-4 flex flex-wrap gap-2">
             {shippingConfig?.metroCities?.map((item) => (
-              <span key={item} className="rounded-full bg-[#F0EEFF] px-4 py-2">
+              <span key={item} className="rounded-full bg-[#f1d5d9] px-4 py-2">
                 {item}
               </span>
             ))}
@@ -135,7 +135,7 @@ const GeneralSettings = () => {
               {shippingConfig?.specialStates?.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full bg-[#F0EEFF] px-4 py-2"
+                  className="rounded-full bg-[#f1d5d9] px-4 py-2"
                 >
                   {item}
                 </span>

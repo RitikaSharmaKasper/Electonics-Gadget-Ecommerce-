@@ -80,7 +80,7 @@
 
 //           <div className="py-2">
 //             <div className="text-[13px] font-medium text-gray-700 mb-1">Public Comments:</div>
-//             <p className="text-sm text-[#126B6D] font-playpen-sans italic mb-2">“{data.comment}”</p>
+//             <p className="text-sm text-[#7A1F2B] font-stack-sans italic mb-2">“{data.comment}”</p>
 //             <div className="flex items-center gap-1 text-sm text-gray-700">
 //               <Star className="w-4 h-4 text-amber-400 fill-amber-400" /> Verified Buyer
 //             </div>
@@ -121,7 +121,7 @@ const Card = ({ children, className = "" }) => (
 //     low: "bg-blue-100 text-blue-800 w-max",
 //     completed: "bg-green-100 text-green-800 w-max",
 //     progress: "bg-blue-100 text-blue-800 w-max",
-//     open: "bg-gray-100 text-[#126B6D] font-playpen-sans w-max",
+//     open: "bg-gray-100 text-[#7A1F2B] font-stack-sans w-max",
 //   };
 
 //   return (

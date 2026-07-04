@@ -235,12 +235,12 @@
 //             {/* Cart Items Section */}
 //             <div className=" bg-white md:rounded-lg shadow-sm">
 //               <div className="p-4 md:p-6 flex items-center justify-between border-b border-gray-200">
-//                 <div className="text-xl font-medium flex items-center gap-2 text-[#126B6D] font-playpen-sans">
+//                 <div className="text-xl font-medium flex items-center gap-2 text-[#7A1F2B] font-stack-sans">
 //                   <Link to="/home">
 //                     {" "}
 //                     <ChevronLeft className="w-7 h-7" />
 //                   </Link>{" "}
-//                   <span className="font-marcellus text-[#1800AC]">
+//                   <span className="font-merriweather text-[#1800AC]">
 //                     Shopping Cart ({cart?.totalQuantity || 0})
 //                   </span>
 //                 </div>
@@ -345,7 +345,7 @@
 //                               </div>
 //                               {/* Price Section */}
 //                               <div className="mt-2 flex flex-wrap items-center gap-2">
-//                                 <span className="md:text-xl text-base font-semibold text-[#126B6D] font-playpen-sans">
+//                                 <span className="md:text-xl text-base font-semibold text-[#7A1F2B] font-stack-sans">
 //                                   {formatPrice(effective)}
 //                                 </span>
 //                                 <span className="text-[#686868] md:text-sm text-xs line-through">
@@ -787,7 +787,7 @@ console.log(cart)
         <section className="lg:px-20 md:px-[60px] md:py-4 bg-gray-50 mt-24 min-h-screen">
           <div className="bg-white md:rounded-lg shadow-sm p-8 text-center">
             <ShoppingCart className="w-16 h-16 mx-auto text-gray-400 mb-4" />
-            <h2 className="text-2xl font-semibold text-[#126B6D] font-playpen-sans mb-2">
+            <h2 className="text-2xl font-semibold text-[#7A1F2B] font-stack-sans mb-2">
               Your Cart is Waiting
             </h2>
             <p className="text-gray-600 mb-6">
@@ -795,7 +795,7 @@ console.log(cart)
             </p>
             <Link
               to="/login"
-              className="inline-block px-6 py-3 bg-[#126B6D]text-white rounded-md hover:bg-[#126B6D] transition-colors"
+              className="inline-block px-6 py-3 bg-[#7A1F2B]text-white rounded-md hover:  bg-[#7A1F2B] transition-colors"
             >
               Login to Continue
             </Link>
@@ -813,7 +813,7 @@ console.log(cart)
         <section className="lg:px-20 md:px-[60px] md:py-4 bg-gray-50 mt-24 min-h-screen">
           <div className="bg-white md:rounded-lg shadow-sm p-8 text-center">
             <div className="flex justify-center items-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#126B6D]"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#52151d]"></div>
               <span className="ml-3 text-gray-600">Loading your cart...</span>
             </div>
           </div>
@@ -835,11 +835,11 @@ console.log(cart)
             {/* Cart Items Section */}
             <div className="bg-white md:rounded-lg shadow-sm">
               <div className="p-4 md:p-6 flex items-center justify-between border-b border-gray-200">
-                <div className="text-xl font-medium flex items-center gap-2 text-[#126B6D] font-playpen-sans">
+                <div className="text-xl font-medium flex items-center gap-2 text-[#7A1F2B] font-stack-sans">
                   <Link to="/home">
                     <ChevronLeft className="w-7 h-7" />
                   </Link>
-                  <span className="font-playpen-sans text-[#126B6D]">
+                  <span className="font-stack-sans text-[#7A1F2B]">
                     Shopping Cart ({cart?.totalQuantity || 0})
                   </span>
                 </div>
@@ -893,7 +893,7 @@ console.log(cart)
                           <div className="flex-grow">
                             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                               <div>
-                                <h3 className="md:text-lg text-sm font-playpen-sans text-[#126B6D] line-clamp-2">
+                                <h3 className="md:text-lg text-sm font-stack-sans text-[#7A1F2B] line-clamp-2">
                                   {item.productTitle}
                                 </h3>
 
@@ -907,7 +907,7 @@ console.log(cart)
 
                             {/* Price Section */}
                             <div className="mt-2 flex flex-wrap items-center gap-2">
-                              <span className="md:text-xl text-base font-semibold text-[#126B6D] font-playpen-sans">
+                              <span className="md:text-xl text-base font-semibold text-[#7A1F2B] font-stack-sans">
                                 {formatPrice(effective)}
                               </span>
                               <span className="text-[#686868] md:text-sm text-xs line-through">
@@ -929,23 +929,23 @@ console.log(cart)
                                 <div className="flex flex-wrap items-center gap-2">
                                   {item.variantAttributes?.weight && item.variantAttributes.weight !== "undefined" && (
                                     <div className="min-w-[80px] px-2 py-1 border border-[] rounded-lg text-center">
-                                      <span className="text-[#126B6D] text-sm">
+                                      <span className="text-[#7A1F2B] text-sm">
                                         {item.variantAttributes.weight}
                                       </span>
                                     </div>
                                   )}
 
                                   {item.variantColor && (
-                                    <div className="min-w-[80px] px-2 py-1 border border-[#126B6D] rounded-lg text-center">
-                                      <span className="text-[#126B6D] text-sm">
+                                    <div className="min-w-[80px] px-2 py-1 border border-[#52151d] rounded-lg text-center">
+                                      <span className="text-[#7A1F2B] text-sm">
                                         {item.variantColor}
                                       </span>
                                     </div>
                                   )}
 
                                   {item.variantName && (
-                                    <div className="min-w-[80px] px-2 py-1 border border-[#126B6D] rounded-lg text-center">
-                                      <span className="text-[#126B6D] text-sm">
+                                    <div className="min-w-[80px] px-2 py-1 border border-[#52151d] rounded-lg text-center">
+                                      <span className="text-[#7A1F2B] text-sm">
                                         {item.variantName}
                                       </span>
                                     </div>
@@ -985,7 +985,7 @@ console.log(cart)
                               {/* Actions */}
                               <div className="flex md:flex-row items-center gap-2 text-sm font-medium">
                                 <button
-                                  className="text-[#126B6D] hover:text-red-600 transition-colors disabled:opacity-50"
+                                  className="text-[#7A1F2B] hover:text-red-600 transition-colors disabled:opacity-50"
                                   onClick={() => handleRemoveItem(item)}
                                   disabled={isLoading === "remove"}
                                 >
@@ -997,7 +997,7 @@ console.log(cart)
                                 <span className="hidden sm:inline">|</span>
 
                                 <button
-                                  className="text-[#126B6D] whitespace-nowrap hover:text-[#126B6D] transition-colors disabled:opacity-50"
+                                  className="text-[#7A1F2B] whitespace-nowrap hover:text-[#7A1F2B] transition-colors disabled:opacity-50"
                                   onClick={() => moveToWishlist(item)}
                                   disabled={isLoading === "wishlist"}
                                 >

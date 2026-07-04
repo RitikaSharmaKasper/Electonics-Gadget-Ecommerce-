@@ -91,7 +91,7 @@ function PriceDetails({
       <div className="bg-white md:rounded-lg shadow-sm p-4 md:p-6 sticky top-20 font-inter">
         <>
           <div className="flex justify-between items-center ">
-            <h2 className="text-base md:text-lg lg:text-xl font-playpen-sans text-[#126B6D]">
+            <h2 className="text-base md:text-lg lg:text-xl font-stack-sans text-[#7A1F2B]">
               Cart Items
                {/* ({cart?.totalQuantity || 0}) */}
             </h2> 
@@ -137,7 +137,7 @@ function PriceDetails({
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between gap-2">
                         <div>
-                          <p className="text-[12px] font-semibold font-playpen-sans text-[#126B6D] line-clamp-1">
+                          <p className="text-[12px] font-semibold font-stack-sans text-[#7A1F2B] line-clamp-1">
                             {item.productTitle}
                           </p>
 
@@ -196,7 +196,7 @@ function PriceDetails({
 
         <>
           <div className="flex justify-between items-center">
-            <p className="text-base md:text-lg lg:text-xl font-playpen-sans text-[#126B6D]">
+            <p className="text-base md:text-lg lg:text-xl font-stack-sans text-[#7A1F2B]">
               Price Summary
             </p>
             <button
@@ -335,9 +335,9 @@ function PriceDetails({
           </div>
 
           <div className="mt-6 p-3 bg-[#F8F8F8] rounded-lg flex items-start gap-2">
-            <Info className="text-[#126B6D] mt-0.5 flex-shrink-0" size={16} />
+            <Info className="text-[#7A1F2B] mt-0.5 flex-shrink-0" size={16} />
             <div>
-              <p className="text-[#126B6D] font-medium text-sm sm:text-base">
+              <p className="text-[#7A1F2B] font-medium text-sm sm:text-base">
                 You're saving ₹{safeTotalDiscount.toLocaleString("en-IN")} on
                 this order!
               </p>
@@ -355,7 +355,7 @@ function PriceDetails({
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-start gap-3">
                   <div className="mt-1">
-                    <BadgeCheck className="w-6 h-6 text-[#126B6D]" />
+                    <BadgeCheck className="w-6 h-6 text-[#7A1F2B]" />
                   </div>
 
                   <div className="flex flex-col">
@@ -385,7 +385,7 @@ function PriceDetails({
                   <button
                     type="button"
                     onClick={() => onApplyPoints(0)} // 🔥 REMOVE
-                    className="min-w-[100px] rounded-lg border border-[#126B6D] px-4 py-2 text-[14px] font-medium text-[#126B6D] hover:bg-[#F7F5FF]"
+                    className="min-w-[100px] rounded-lg border border-[#52151d] px-4 py-2 text-[14px] font-medium text-[#7A1F2B] hover:bg-[#F7F5FF]"
                   >
                     Remove
                   </button>
@@ -393,7 +393,7 @@ function PriceDetails({
                   <button
                     type="button"
                     onClick={() => setShowCoupon(true)} // 🔥 OPEN POPUP
-                    className="min-w-[100px] rounded-lg border border-[#126B6D] px-4 py-2 text-[14px] font-medium text-[#126B6D] hover:bg-[#F7F5FF]"
+                    className="min-w-[100px] rounded-lg border border-[#52151d] px-4 py-2 text-[14px] font-medium text-[#7A1F2B] hover:bg-[#F7F5FF]"
                   >
                     Apply
                   </button>
@@ -408,11 +408,11 @@ function PriceDetails({
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-start gap-3">
                   <div className="mt-1">
-                    <Tag className="w-6 h-6 text-[#126B6D]" />
+                    <Tag className="w-6 h-6 text-[#7A1F2B]" />
                   </div>
 
                   <div className="flex flex-col ">
-                    <span className="text-[16px] font-semibold text-[#126B6D]">
+                    <span className="text-[16px] font-semibold text-[#7A1F2B]">
                       Apply Coupon
                     </span>
                     <span className="text-[13px] text-gray-500">
@@ -443,7 +443,7 @@ function PriceDetails({
                   <button
                     type="button"
                     onClick={() => onApplyCoupon(couponCodeSet)}
-                    className="w-full sm:w-auto rounded-lg bg-[#126B6D] px-5 py-2 text-[14px] font-medium text-white"
+                    className="w-full sm:w-auto rounded-lg bg-[#7A1F2B] px-5 py-2 text-[14px] font-medium text-white"
                   >
                     Apply
                   </button>
@@ -484,7 +484,7 @@ function PriceDetails({
                     <button
                       type="button"
                       onClick={() => setCouponCodeSet(coupon.code)}
-                      className="w-full sm:w-auto rounded-lg border border-[#126B6D] px-4 py-2 text-[13px] font-medium text-[#126B6D]"
+                      className="w-full sm:w-auto rounded-lg border border-[#52151d] px-4 py-2 text-[13px] font-medium text-[#7A1F2B]"
                     >
                       Use
                     </button>
@@ -502,7 +502,7 @@ function PriceDetails({
                   <button
                     type="button"
                     onClick={() => setShowCouponList((prev) => !prev)}
-                    className="mt-3 text-[14px] font-medium text-[#126B6D]"
+                    className="mt-3 text-[14px] font-medium text-[#7A1F2B]"
                   >
                     {showCouponList ? "Hide coupons" : "Show more coupons"}
                   </button>
@@ -541,7 +541,7 @@ function PriceDetails({
                               {coupon.discountPercentage}% off up to ₹
                               {coupon.maxDiscountAmount}
                             </p>
-                            <p className="mt-1 w-fit rounded bg-[#F7F5FF] px-2 py-1 text-[12px] font-semibold text-[#126B6D]">
+                            <p className="mt-1 w-fit rounded bg-[#F7F5FF] px-2 py-1 text-[12px] font-semibold text-[#7A1F2B]">
                               {coupon.code}
                             </p>
                           </div>
@@ -552,7 +552,7 @@ function PriceDetails({
                             <button
                               type="button"
                               disabled={`${coupon.isEligible === false}`}
-                              className={`rounded-lg border border-[#126B6D] px-4 py-2 text-xs font-medium text-[#126B6D] ${coupon.isEligible === false ? `cursor-not-allowed` : ` block`}`}
+                              className={`rounded-lg border border-[#52151d] px-4 py-2 text-xs font-medium text-[#7A1F2B] ${coupon.isEligible === false ? `cursor-not-allowed` : ` block`}`}
                             >
                               Not applicable
                             </button>
@@ -587,7 +587,7 @@ function PriceDetails({
                 ) : (
                   <Link
                     to="/checkout/delivery"
-                    className="bg-[#126B6D] rounded-lg text-white md:px-8 md:py-3 px-4 py-2 font-medium transition-colors flex items-center gap-2 text-[14px]"
+                    className="  bg-[#7A1F2B] rounded-lg text-white md:px-8 md:py-3 px-4 py-2 font-medium transition-colors flex items-center gap-2 text-[14px]"
                   >
                     Proceed to Checkout
                   </Link>
@@ -596,7 +596,7 @@ function PriceDetails({
               {step === "delivery" && canProceed && (
                 <button
                   onClick={goToPayment}
-                  className="bg-[#126B6D] rounded-lg hover:bg-black text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2"
+                  className="  bg-[#7A1F2B] rounded-lg hover:bg-black text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2"
                 >
                   Proceed to Checkout
                 </button>
@@ -605,7 +605,7 @@ function PriceDetails({
               {step === "payment" && selected === "Razorpay" && (
                 <button
                   onClick={handlePlaceOrder}
-                  className="bg-[#126B6D] rounded-lg text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2 whitespace-nowrap"
+                  className="  bg-[#7A1F2B] rounded-lg text-white md:px-8 md:py-3 px-4 py-2 text-base font-medium transition-colors flex items-center gap-2 whitespace-nowrap"
                 >
                   {buyNowMode ? "Buy Now & Pay" : "Place Order"}
                   <ArrowRight size={16} />
@@ -634,7 +634,7 @@ function PriceDetails({
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between w-full gap-5">
-                <span className="text-[18px] text-[#126B6D] font-semibold">
+                <span className="text-[18px] text-[#7A1F2B] font-semibold">
                   Apply Coupon
                 </span>
                 <button
@@ -660,7 +660,7 @@ function PriceDetails({
                       onApplyPoints(availablePoints);
                       setShowCoupon(false);
                     }}
-                    className="bg-[#126B6D] text-white px-4 py-2 rounded-md font-medium"
+                    className="  bg-[#7A1F2B] text-white px-4 py-2 rounded-md font-medium"
                   >
                     Apply
                   </button>
@@ -675,7 +675,7 @@ function PriceDetails({
                   </span>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-[#FFFFFF] to-[#B2FF00]/20 p-3 border-t-dashed border-[#727681] rounded-xl">
+              <div className="bg-gradient-to-b from-[#dadde0] to-[#dadde0]/50 p-3 border-t-dashed border-[#727681] rounded-xl">
                 <div className="flex flex-col gap-2">
                   <span className="text-[#0E101A] text-[14px] font-medium">
                     • 1 point = ₹{Points} value during redemption

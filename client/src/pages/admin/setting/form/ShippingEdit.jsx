@@ -60,10 +60,10 @@ const ShippingEdit = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <button className="border border-[#126B6D] text-[#126B6D] bg-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]">
+          <button className="border border-[#52151d] text-[#7A1F2B] bg-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]">
             Cancel
           </button>
-          <button className="bg-[#126B6D] text-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]">
+          <button className="  bg-[#7A1F2B] text-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]">
             Save Changes
           </button>
         </div>

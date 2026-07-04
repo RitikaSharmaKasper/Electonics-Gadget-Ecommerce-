@@ -142,7 +142,7 @@ function MyReviews({ totalItems = 0 }) {
       {/* Header */}
       <div className="flex flex-row justify-between items-start sm:items-center gap-3 sm:gap-4 p-4 sm:p-6 bg-white md:shadow-sm border-b border-gray-200">
         <div>
-          <h1 className="text-lg sm:text-xl font-semibold text-[#126B6D] font-playpen-sans">
+          <h1 className="text-lg sm:text-xl font-semibold text-[#7A1F2B] font-stack-sans">
             Reviews & Ratings ({reviews.length})
           </h1>
         </div>
@@ -210,7 +210,7 @@ function MyReviews({ totalItems = 0 }) {
 
                   {/* Review Title */}
                   {item.reviewTitle && (
-                    <h3 className="text-md font-semibold text-[#126B6D] font-playpen-sans mt-1">
+                    <h3 className="text-md font-semibold text-[#7A1F2B] font-stack-sans mt-1">
                       {item.reviewTitle}
                     </h3>
                   )}
@@ -254,7 +254,7 @@ function MyReviews({ totalItems = 0 }) {
                     {item.reviewText || "No Reviews"}
                   </p>
                      {item?.repliedBy && (
-                <div className="bg-[#F0EEFF] px-[10px] py-[12px] rounded-md mt-3">
+                <div className="bg-[#f1d5d9] px-[10px] py-[12px] rounded-md mt-3">
                   <div className="flex items-center gap-2">
                     <img
                       className="w-[24px] h-[24px] rounded-full object-cover"
@@ -309,7 +309,7 @@ function MyReviews({ totalItems = 0 }) {
                 </div>
               </div>
               {/* {item?.repliedBy && (
-                <div className="bg-[#F0EEFF] px-[10px] py-[12px] rounded-md mt-3">
+                <div className="bg-[#f1d5d9] px-[10px] py-[12px] rounded-md mt-3">
                   <div className="flex items-center gap-2">
                     <img
                       className="w-[24px] h-[24px] rounded-full object-cover"

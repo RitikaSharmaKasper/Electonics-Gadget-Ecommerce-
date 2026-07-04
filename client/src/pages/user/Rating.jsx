@@ -25,14 +25,14 @@ const Rating = () => {
       <div className="px-20 bg-gray-50 w-full h-full">
         <div className="flex items-center gap-4 py-5">
           <IoIosArrowBack size={24} />
-          <span className="text-[#126B6D] font-playpen-sans text-[24px] font-marcellus">
+          <span className="text-[#7A1F2B] font-stack-sans text-[24px] font-merriweather">
             Rating & Reviews
           </span>
         </div>
         <div className="mt-5 bg-white px-6 py-4">
           <div className=" flex items-center justify-between mt-6">
             <div className="flex flex-col gap-1 border-r-[1px] border-[#E5E5E5] w-[40%]">
-              <span className="text-[#126B6D] font-playpen-sans text-[16px] font-normal">
+              <span className="text-[#7A1F2B] font-stack-sans text-[16px] font-normal">
                 Average Rating
               </span>
               <div className="flex items-center flex-row gap-1">
@@ -131,7 +131,7 @@ const Rating = () => {
         <div className="py-4 border-t-[1px] border-[#E5E5E5]">
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-1">
-              <span className="p-4 w-[20px] h-[20px] flex items-center justify-center rounded-full bg-[#fdddbf] text-[#126B6D] text-[14px] font-normal">
+              <span className="p-4 w-[20px] h-[20px] flex items-center justify-center rounded-full bg-[#fdddbf] text-[#7A1F2B] text-[14px] font-normal">
                 M
               </span>
               <span className="text-[#1C1C1C] font-normal text-[16px]">

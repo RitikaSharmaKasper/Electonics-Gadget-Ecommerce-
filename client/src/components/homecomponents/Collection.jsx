@@ -207,11 +207,11 @@ function Collection() {
   return (
     <section className="relative group ">
       {!featuresLoading && features.length === 3 && (
-        <div className="flex flex-wrap justify-center sm:justify-between items-center gap-4 px-4 sm:px-6 lg:px-40 py-3 bg-[#f0eeff] ">
+        <div className="flex flex-wrap justify-center sm:justify-between items-center gap-4 px-4 sm:px-6 lg:px-40 py-3 bg-[#f1d5d9] ">
           {features.map((feature, index) => (
             <div
               key={feature._id || index}
-              className="flex items-center gap-2 text-[30px] sm:text-[30px] text-[#5D5D6B] font-lavishly"
+              className="flex items-center gap-2 text-[18px] sm:text-[18px] text-[#7A1F2B] font-stack-sans"
             >
               <span>{feature.text}</span>
             </div>
@@ -222,7 +222,7 @@ function Collection() {
       <div className="mx-auto bg-white px-4 py-4">
         <div className="max-w-4xl mx-auto text-center ">
           <div className="flex justify-center mb-6"></div>
-          <span className="lg:text-[31px] md:text-[31px] text-[31px] font-playpen-sans text-[#126B6D] mb-3 font-medium">
+          <span className="lg:text-[31px] md:text-[31px] text-[31px] font-stack-sans text-[#7A1F2B] mb-3 font-medium">
             Explore Stationary
           </span>
         </div>
@@ -231,38 +231,61 @@ function Collection() {
 
         <div className="relative mt-6 px-2 sm:px-6">
           <style>{`
-            @keyframes floatUp {
-              0%, 100% { 
-                transform: translateY(0px); 
+            /* ---- Unique entrance: soft rise + gentle scale settle, staggered per card ---- */
+            @keyframes riseSettle {
+              0% {
+                opacity: 0;
+                transform: translateY(22px) scale(0.88);
               }
-              50% { 
-                transform: translateY(-10px); 
+              60% {
+                opacity: 1;
+                transform: translateY(-4px) scale(1.03);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
               }
             }
+
             .category-item {
-              animation: floatUp 3s ease-in-out infinite;
+              animation: riseSettle 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
             }
-            .category-item:nth-child(2n) {
-              animation-duration: 3.5s;
-              animation-delay: 0.5s;
+
+            /* ---- Soft, slow-drifting border (no spin, no shimmer) ---- */
+            @keyframes haloDrift {
+              0%   { background-position: 0% 50%; }
+              50%  { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
             }
-            .category-item:nth-child(3n) {
-              animation-duration: 4s;
-              animation-delay: 1s;
+
+            .category-halo {
+              position: absolute;
+              inset: -3px;
+              border-radius: 28%;
+              padding: 1.5px;
+background: linear-gradient(to bottom, #dadde0, #7A1F2B);
+              background-size: 300% 300%;
+              opacity: 0.45;
+              transition: opacity 0.35s ease;
+              -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              animation: haloDrift 8s ease-in-out infinite;
             }
-            .category-item:nth-child(4n) {
-              animation-duration: 2.8s;
-              animation-delay: 0.3s;
+
+            .group:hover .category-halo {
+              opacity: 0.85;
             }
-            .category-item:nth-child(5n) {
-              animation-duration: 3.8s;
-              animation-delay: 0.8s;
+
+            /* ---- Name label: subtle letter-spacing expand instead of plain color change ---- */
+            .category-label {
+              transition: letter-spacing 0.35s ease, color 0.3s ease;
             }
-            .category-item:nth-child(6n) {
-              animation-duration: 3.2s;
-              animation-delay: 1.2s;
+            .group:hover .category-label {
+              letter-spacing: 0.04em;
             }
-            /* Give the float animation room without breaking Swiper's own clipping/snap logic */
+
+            /* Give the animations room without breaking Swiper's own clipping/snap logic */
             .category-swiper {
               padding-top: 14px;
               padding-bottom: 4px;
@@ -324,15 +347,20 @@ function Collection() {
                 >
                   <div
                     className="category-item flex flex-col items-center group"
-                    style={{ animationDelay: `${index * 0.15}s` }}
+                    style={{ animationDelay: `${index * 0.08}s` }}
                   >
-                    {/* Image Container - Fixed Size */}
-                    <div className="relative w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] lg:w-[140px] lg:h-[140px] flex-shrink-0">
-                      {/* Outer Border */}
-                      <div className="absolute inset-0 rounded-full border-2 border-[#126B6D]/20 transition-all duration-300 shadow-sm group-hover:shadow-[0_0_25px_rgba(18,107,109,0.2)]"></div>
+                    {/* Image Container - Fixed Size. Hover-lift lives here (not on .category-item),
+                        so the entrance animation and the hover transform never fight over the
+                        same element, and the lift only ever applies to the exact item under the cursor. */}
+                    <div className="relative w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] lg:w-[140px] lg:h-[140px] flex-shrink-0 transition-transform duration-300 ease-out hover:-translate-y-2">
+                      {/* Static subtle border (kept, no longer the only hover cue) */}
+                      <div className="absolute inset-0 rounded-[28%] border-2 border-[#52151d]/20 transition-all duration-300"></div>
+
+                      {/* Subtle, slowly drifting gradient border */}
+                      <div className="category-halo"></div>
 
                       {/* Image */}
-                      <div className="w-full h-full rounded-full overflow-hidden hover:border border-[#248f91]">
+                      <div className="relative w-full h-full rounded-[28%] overflow-hidden hover:border border-[#7A1F2B] duration-300">
                         <img
                           src={
                             category.categoryImage?.url ||
@@ -345,17 +373,17 @@ function Collection() {
                     </div>
 
                     {/* Category Name */}
-                    <span className="mt-2 text-[11px] sm:text-[13px] md:text-[15px] lg:text-[16px] text-center capitalize text-[#126B6D] font-medium group-hover:text-[#FF7F66] transition-colors duration-300">
+                    <span className="category-label mt-2 text-[11px] sm:text-[13px] md:text-[15px] lg:text-[16px] text-center capitalize text-[#7A1F2B] font-medium group-hover:text-[#5d5e5] transition-colors duration-300">
                       {category.name}
                     </span>
 
                     {/* Category Details */}
-                    <span className="mt-0.5 max-w-[120px] sm:max-w-[150px] text-center text-[10px] sm:text-[11px] md:text-[12px] text-[#747877] line-clamp-2 group-hover:text-[#126B6D] transition-colors duration-300">
+                    <span className="mt-0.5 max-w-[120px] sm:max-w-[150px] text-center text-[10px] sm:text-[11px] md:text-[12px] text-[#747877] line-clamp-2 group-hover:text-[#7A1F2B] transition-colors duration-300">
                       {category.details}
                     </span>
 
                     {/* Bottom Decorative Line */}
-                    <div className="mt-1.5 w-0 h-0.5 bg-gradient-to-r from-[#126B6D] to-[#FF7F66] group-hover:w-10 transition-all duration-500 rounded-full"></div>
+                    <div className="mt-1.5 w-0 h-0.5 bg-gradient-to-b from-[#dadde0] to-[#dadde0]/50 group-hover:w-10 transition-all duration-500 rounded-full"></div>
                   </div>
                 </Link>
               </SwiperSlide>
@@ -363,12 +391,12 @@ function Collection() {
           </Swiper>
 
           {/* Previous Button */}
-          <div className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-[#126B6D] text-white shadow-lg rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm hover:scale-110 transition-all duration-300">
+          <div className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-[#7A1F2B] text-white shadow-lg rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm hover:scale-110 transition-all duration-300">
             ❮
           </div>
 
           {/* Next Button */}
-          <div className="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-[#126B6D] text-white shadow-lg rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm hover:scale-110 transition-all duration-300">
+          <div className="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-[#7A1F2B] text-white shadow-lg rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm hover:scale-110 transition-all duration-300">
             ❯
           </div>
         </div>

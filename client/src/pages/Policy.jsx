@@ -49,7 +49,7 @@ function Policy() {
             dangerouslySetInnerHTML={{
               __html: cleanHTML(
                 privacyData?.content ||
-                  "<p>At Ivoryinks.com, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit or make a purchase from our website.</p>",
+                  "<p>At Divinex, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit or make a purchase from our website.</p>",
               ),
             }}
           />

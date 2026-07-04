@@ -12,7 +12,7 @@ function PaymentPage() {
       <div>
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between px-2 rounded-md">
-            <h2 className="text-[20px] font-semibold text-[#126B6D] font-playpen-sans">
+            <h2 className="text-[20px] font-semibold text-[#7A1F2B] font-stack-sans">
               Payments Dashboard
             </h2>
           </div>

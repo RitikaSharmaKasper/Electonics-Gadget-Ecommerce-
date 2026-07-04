@@ -308,7 +308,7 @@
 //           </div>
 
 //           <div className="mt-3">
-//             <h3 className="text-sm font-serif text-[#126B6D] font-playpen-sans font-normal line-clamp-1 mb-2">
+//             <h3 className="text-sm font-serif text-[#7A1F2B] font-stack-sans font-normal line-clamp-1 mb-2">
 //               {product.name || product.productTittle || "Product Name"}
 //             </h3>
 
@@ -371,7 +371,7 @@
 //   return (
 //     <div className="lg:px-20 md:px-[60px] px-4 py-[23px] relative bg-[#EEFDFF] shadow-sm rounded-lg">
 //       <div className="flex items-center">
-//         <Title className="md:items-start px-2 font-marcellus text-[#1800AC]">
+//         <Title className="md:items-start px-2 font-merriweather text-[#1800AC]">
 //           Best Selling Products
 //         </Title>
 //         <Link
@@ -545,7 +545,7 @@
 // //   return (
 // //     <div className="lg:px-20 md:px-[60px] px-4 py-[23px] relative bg-[#EEFDFF] shadow-sm rounded-lg">
 // //       <div className="flex items-center">
-// //         <Title className="md:items-start px-2 font-marcellus text-[#1800AC]">
+// //         <Title className="md:items-start px-2 font-merriweather text-[#1800AC]">
 // //           Best Selling Products
 // //         </Title>
 // //         <Link
@@ -646,14 +646,14 @@
 // //                 </button>
 
 // //                 {/* {typeof ratingAvg === "number" && (
-// //                   <div className="absolute top-2 right-2 bg-yellow-400 shadow-md text-[#126B6D] font-playpen-sans text-xs font-semibold px-2 py-1 rounded-full flex items-center">
+// //                   <div className="absolute top-2 right-2 bg-yellow-400 shadow-md text-[#7A1F2B] font-stack-sans text-xs font-semibold px-2 py-1 rounded-full flex items-center">
 // //                     <span>{Number(ratingAvg).toFixed(1)} ★</span>
 // //                   </div>
 // //                 )} */}
 // //               </div>
 
 // //               <div className="mt-3">
-// //                 <h3 className="text-sm font-serif text-[#126B6D] font-playpen-sans font-normal line-clamp-1 mb-2">
+// //                 <h3 className="text-sm font-serif text-[#7A1F2B] font-stack-sans font-normal line-clamp-1 mb-2">
 // //                   {p.name || p.slug || "Product Name"}
 // //                 </h3>
 
@@ -1135,7 +1135,7 @@ function LatestProducts() {
               {discountPercent > 0 && (
                 <>
                   <div className="border-l border-[#DBDBDB] h-3"></div>
-                  <span className="text-[#126B6D] text-xs">
+                  <span className="text-[#7A1F2B] text-xs">
                     {Math.round(discountPercent)}% Off
                   </span>
                 </>
@@ -1148,8 +1148,8 @@ function LatestProducts() {
         <button
           className={`w-full rounded-md flex justify-center items-center gap-4 p-2 mt-2 transition-all duration-300 cursor-pointer ${
             inCart
-              ? "bg-white border border-[#126B6D] text-[#126B6D]"
-              : "bg-[#126B6D] border border-[#126B6D] text-white hover:bg-[#0f5c5e]"
+              ? "bg-white border border-[#52151d] text-[#7A1F2B]"
+              : "  bg-[#7A1F2B] border border-[#52151d] text-white hover:bg-[#7A1F2B]"
           }`}
           onClick={inCart ? handleGoToCart : handleAddToCartClick}
         >
@@ -1173,7 +1173,7 @@ function LatestProducts() {
     return (
       <div className="lg:px-20 md:px-[60px] px-4 py-[23px]">
         <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#126B6D] mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#52151d] mx-auto"></div>
         </div>
       </div>
     );
@@ -1182,13 +1182,13 @@ function LatestProducts() {
   return (
   <div className="lg:px-20 md:px-[60px] px-4 py-[23px] relative">
   <div className="flex items-center justify-between">
-    <p className="md:items-start px-2 text-[#126B6D] font-lavishly text-[40px] font-normal">
-      Best Stationary Products
+    <p className="md:items-start px-2 text-[#7A1F2B] font-stack-sans text-[30px] font-normal">
+      Best Accessories
     </p>
     <Link
       to="/products"
       onClick={(e) => e.stopPropagation()}
-      className="whitespace-nowrap text-[#FF7F66] hover:text-[#126B6D] px-2 text-sm underline cursor-pointer"
+      className="whitespace-nowrap text-[#5d5e5] hover:text-[#7A1F2B] px-2 text-sm underline cursor-pointer"
     >
       Explore more
     </Link>

@@ -35,7 +35,7 @@ function WarehouseDetails() {
         <div>
           <Link
             to={"/admin/settings/tax-form"}
-            className="inline-flex items-center bg-[#126B6D] text-white gap-2 rounded-md border px-5 py-1.5 text-sm"
+            className="inline-flex items-center bg-[#7A1F2B] text-white gap-2 rounded-md border px-5 py-1.5 text-sm"
           >
             Edit
           </Link>

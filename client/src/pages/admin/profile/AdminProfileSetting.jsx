@@ -138,7 +138,7 @@ export default AdminProfileSetting;
 //     <div className="flex justify-between items-start mb-3">
 //       <div>
 //         <p className="text-sm text-gray-500 mb-1">{title}</p>
-//         <p className="text-2xl font-bold text-[#126B6D] font-playpen-sans">{value}</p>
+//         <p className="text-2xl font-bold text-[#7A1F2B] font-stack-sans">{value}</p>
 //       </div>
 //       <div className="p-2 bg-blue-50 rounded-lg">
 //         <Icon className="w-5 h-5 text-blue-600" />
@@ -257,15 +257,15 @@ export default AdminProfileSetting;
 //                 <div className="w-full mt-6 space-y-3">
 //                   <div className="flex justify-between items-center text-sm">
 //                     <span className="text-gray-500">Role:</span>
-//                     <span className="font-medium text-[#126B6D] font-playpen-sans">{admin.role}</span>
+//                     <span className="font-medium text-[#7A1F2B] font-stack-sans">{admin.role}</span>
 //                   </div>
 //                   <div className="flex justify-between items-center text-sm">
 //                     <span className="text-gray-500">Joined:</span>
-//                     <span className="font-medium text-[#126B6D] font-playpen-sans">{admin.joined}</span>
+//                     <span className="font-medium text-[#7A1F2B] font-stack-sans">{admin.joined}</span>
 //                   </div>
 //                   <div className="flex justify-between items-center text-sm">
 //                     <span className="text-gray-500">Last Login:</span>
-//                     <span className="font-medium text-[#126B6D] font-playpen-sans">{admin.lastLogin}</span>
+//                     <span className="font-medium text-[#7A1F2B] font-stack-sans">{admin.lastLogin}</span>
 //                   </div>
 //                 </div>
 //               </div>

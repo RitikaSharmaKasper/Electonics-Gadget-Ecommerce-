@@ -389,7 +389,7 @@ function TopProducts() {
           </div>
 
           <div className="mt-3">
-            <h3 className="text-sm font-marcellus text-[#55516e] font-normal line-clamp-1 mb-2">
+            <h3 className="text-sm font-merriweather text-[#55516e] font-normal line-clamp-1 mb-2">
               {product.productTittle}
             </h3>
 
@@ -405,7 +405,7 @@ function TopProducts() {
               {discountPercent > 0 && (
                 <>
                   <div className="border-l border-[#DBDBDB] h-3"></div>
-                  <span className="text-[#126B6D] text-xs">
+                  <span className="text-[#7A1F2B] text-xs">
                     {discountPercent}% Off
                   </span>
                 </>
@@ -418,8 +418,8 @@ function TopProducts() {
         <button
           className={`w-full rounded-md flex justify-center items-center gap-4 p-2 mt-2 transition-all duration-300 cursor-pointer ${
             inCart
-              ? "bg-white border border-[#126B6D] text-[#126B6D]"
-              : "bg-[#126B6D] border border-[#126B6D] text-white hover:bg-[#0f5c5e]"
+              ? "bg-white border border-[#52151d] text-[#7A1F2B]"
+              : "  bg-[#7A1F2B] border border-[#52151d] text-white hover:bg-[#7A1F2B]"
           }`}
           onClick={inCart ? handleGoToCart : handleAddToCartClick}
         >
@@ -444,7 +444,7 @@ function TopProducts() {
       <div className="lg:px-20 md:px-[60px] px-4 py-[23px] bg-white shadow-sm rounded-lg border border-[#F0EEFF]">
         <div className="flex justify-center items-center h-64">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#126B6D] mx-auto"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#52151d] mx-auto"></div>
             <p className="mt-4 text-gray-600">Loading products...</p>
           </div>
         </div>
@@ -472,12 +472,12 @@ function TopProducts() {
         className="flex items-center justify-between mb-6"
         style={{
           color: "#126B6D",
-          fontFamily: "'Marcellus SC', cursive",
+          fontFamily: "Stack Sans Notch', 'sans-serif",
         }}
       >
-        <p className="md:items-start px-2 text-[30px]  md: text-[30px] sm:text-[30px] text-[#126B6D] font-playpen-sans">Featured Collection</p>
+        <p className="md:items-start px-2 text-[30px]  md: text-[30px] sm:text-[30px] text-[#7A1F2B] font-stack-sans">Featured Collection</p>
         <Link
-          className="whitespace-nowrap font-lavishly text-[#FF7F66] text-[32px] hover:text-[#126B6D] px-2 text-base sm:text-xl md:text-xl underline cursor-pointer"
+          className="whitespace-nowrap font-merriweather text-gray-800 hover:text-[#7A1F2B] px-2 text-base sm:text-lg md:text-lg underline cursor-pointer"
           to="/products/top-products "
         >
           Explore more
@@ -504,7 +504,7 @@ function TopProducts() {
               className="text-[22px]"
               style={{
                 color: "#1E1E1E",
-                fontFamily: "'Playpen Sans', 'cursive', 'sans-serif'",
+                fontFamily:"Stack Sans Notch', 'sans-serif",
               }}
             >
               {collection.collectionName}

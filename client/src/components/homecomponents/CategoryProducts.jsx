@@ -103,10 +103,10 @@ function CategoryProducts() {
       <div className="w-full">
         {/* Header Section */}
         <div className="mb-8 px-2">
-          <h2 className="text-3xl md:text-3xl font-playpen-sans text-[#126B6D] font-normal">
+          <h2 className="text-3xl md:text-3xl font-stack-sans text-[#7A1F2B] font-normal">
             Shop By Category
           </h2>
-          <div className="w-24 h-1 bg-[#126B6D] mt-2 rounded-full opacity-20"></div>
+          <div className="w-24 h-1 bg-[#7A1F2B] mt-2 rounded-full opacity-20"></div>
         </div>
 
         {/* Categories Grid */}
@@ -119,17 +119,17 @@ function CategoryProducts() {
                 className="group relative bg-white rounded-2xl p-5 shadow-sm border-2 border-[#F0EEFF] transition-all duration-300 hover:shadow-2xl overflow-hidden"
               >
                 {/* Decorative hover line */}
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 h-1 bg-[#126B6D] w-0 group-hover:w-[100px] transition-all duration-500 ease-in-out z-20 rounded-full" />
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 h-1 bg-[#7A1F2B] w-0 group-hover:w-[100px] transition-all duration-500 ease-in-out z-20 rounded-full" />
 
                 {/* Category Title & View All */}
                 <div className="flex items-center justify-between mb-2 px-1">
-                  <h3 className="text-[26px] font-medium font-montez text-[#126B6D] truncate capitalize">
+                  <h3 className="text-[20px] font-medium font-merriweather text-[#7A1F2B] truncate capitalize">
                     {category}
                   </h3>
                   <Link
                     to={`/products/${encodeURIComponent(category)}`}
                     state={{ category }}
-                    className="text-[12px] font-medium  font-playpen-sans tracking-tighter text-[#FF7F66] underline hover:bg-[#F0EEFF] rounded-lg transition-colors px-2 py-1"
+                    className="text-[12px] font-medium  font-stack-sans tracking-tighter text-[#5d5e5] underline hover:bg-[#f1d5d9] rounded-lg transition-colors px-2 py-1"
                   >
                     explore more
                   </Link>
@@ -144,7 +144,7 @@ function CategoryProducts() {
                       className="flex flex-col group/item"
                     >
                       {/* Product Image */}
-                      <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-[#F0EEFF]  border border-gray-100 shadow-sm mb-2">
+                      <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-[#f1d5d9]  border border-gray-100 shadow-sm mb-2">
                         <img
                           className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110"
                           src={getProductImage(product)}
@@ -155,7 +155,7 @@ function CategoryProducts() {
 
                       {/* Product Info (Name & Rating) */}
                       <div className="px-1">
-                        <h4 className="text-[10px] md:text-[13px] font-medium font-playpen-sans  text-[#126B6D] truncate mb-1 group-hover/item:text-[#126B6D] transition-colors">
+                        <h4 className="text-[10px] md:text-[13px] font-medium font-stack-sans  text-[#7A1F2B] truncate mb-1 group-hover/item:text-[#7A1F2B] transition-colors">
                           {product.name || product.title || "United Product"}
                         </h4>
 
@@ -280,7 +280,7 @@ export default CategoryProducts;
 
 // //                         {/* Optional rating badge */}
 // //                         {typeof p?.reviews?.rating?.average === "number" && (
-// //                           <span className="absolute top-1 right-1 bg-yellow-400 text-[#126B6D] font-playpen-sans text-[10px] px-2 py-0.5 rounded-full shadow">
+// //                           <span className="absolute top-1 right-1 bg-yellow-400 text-[#7A1F2B] font-stack-sans text-[10px] px-2 py-0.5 rounded-full shadow">
 // //                             {p.rating.average.toFixed(1)} ★
 // //                           </span>
 // //                         )}
@@ -431,7 +431,7 @@ export default CategoryProducts;
 //               className="bg-gradient-to-b shadow-sm rounded-lg bg-white py-2 px-3 w-full"
 //             >
 //               <div className="flex items-center justify-between">
-//                 <h2 className="md:text-2xl text-[20px] py-[9px] font-light font-marcellus text-[#1800AC]">
+//                 <h2 className="md:text-2xl text-[20px] py-[9px] font-light font-merriweather text-[#1800AC]">
 //                   {category}
 //                 </h2>
 
@@ -464,7 +464,7 @@ export default CategoryProducts;
 //                         />
 
 //                         {typeof p?.reviews?.rating?.average === "number" && (
-//                           <span className="absolute top-1 right-1 bg-yellow-400 text-[#126B6D] font-playpen-sans text-[10px] px-2 py-0.5 rounded-full shadow">
+//                           <span className="absolute top-1 right-1 bg-yellow-400 text-[#7A1F2B] font-stack-sans text-[10px] px-2 py-0.5 rounded-full shadow">
 //                             {p.rating.average.toFixed(1)} ★
 //                           </span>
 //                         )}

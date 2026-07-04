@@ -264,7 +264,7 @@ function Stock() {
                       <td className="px-4 lg:px-6 py-3 text-gray-700 overflow-hidden !text-ellipsis line-clamp-2 max-h-[3rem]">
                         {r.uuid}
                       </td>
-                      <td className="px-4 lg:px-6 py-3 font-medium text-[#126B6D] font-playpen-sans">
+                      <td className="px-4 lg:px-6 py-3 font-medium text-[#7A1F2B] font-stack-sans">
                         {r.title}
                       </td>
                       <td className="px-4 lg:px-6 py-3">{r.category}</td>

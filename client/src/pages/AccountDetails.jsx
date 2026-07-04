@@ -56,7 +56,7 @@ const AccountDetailsSkeleton = () => (
         </div>
 
         {/* Right Panel Skeleton */}
-        <div className="p-6 sm:p-8 flex flex-col items-center rounded-md bg-gradient-to-b from-[#D5E5F5] to-[#FFFFFF] space-y-5 sm:space-y-6">
+        <div className="p-6 sm:p-8 flex flex-col items-center rounded-md bg-gradient-to-b from-[#dadde0] to-[#dadde0]/50 space-y-5 sm:space-y-6">
           <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-full animate-pulse"></div>
           <div className="text-center w-full">
             <div className="h-5 w-32 bg-gray-200 rounded animate-pulse mx-auto"></div>
@@ -222,7 +222,7 @@ function AccountDetails() {
             <div className="p-4 sm:p-6 border-b border-gray-200 bg-gray-50">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
-                  <h1 className="text-lg sm:text-xl font-semibold text-[#126B6D] font-playpen-sans">
+                  <h1 className="text-lg sm:text-xl font-semibold text-[#7A1F2B] font-stack-sans">
                     Account Details
                   </h1>
                   <p className="text-xs sm:text-sm text-gray-500 mt-1">
@@ -246,7 +246,7 @@ function AccountDetails() {
                         type="button"
                         onClick={handleSave}
                         disabled={isSaving}
-                        className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium bg-[#126B6D] text-white rounded-lg shadow-sm hover:bg-[#126B6D]/70 transition flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium bg-[#7A1F2B] text-white rounded-lg shadow-sm hover:  bg-[#7A1F2B]/70 transition flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {isSaving ? (
                           <>
@@ -276,16 +276,16 @@ function AccountDetails() {
             </div>
 
             <div className="p-4 sm:p-6 space-y-5 sm:space-y-6">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 bg-[#88D3D5]/30  rounded-lg border border-blue-100">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 bg-gradient-to-b from-[#dadde0] to-[#dadde0]/50  rounded-lg border border-blue-100">
                 <div className="flex items-start gap-3">
-                  <div className="p-2 bg-[#FFFFFF] rounded-full">
+                  <div className="p-2 bg-gradient-to-b from-[#dadde0] to-[#dadde0]/50 rounded-full">
                     <Mail className="w-5 h-5 text-[#1C3753]" />
                   </div>
                   <div>
                     <label className="block text-xs sm:text-sm text-gray-500 mb-1">
                       Email Address
                     </label>
-                    <div className="flex items-start gap-2 text-[#126B6D] font-playpen-sans font-medium text-sm sm:text-base break-all">
+                    <div className="flex items-start gap-2 text-[#7A1F2B] font-stack-sans font-medium text-sm sm:text-base break-all">
                       <span className="break-all">
                         {user?.user?.email || "Not provided"}
                       </span>
@@ -328,7 +328,7 @@ function AccountDetails() {
                   </>
                 ) : (
                   <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-[#126B6D] font-playpen-sans text-sm sm:text-base">
+                    <p className="text-[#7A1F2B] font-stack-sans text-sm sm:text-base">
                       {user?.user?.name || "Not provided"}
                     </p>
                   </div>
@@ -358,7 +358,7 @@ function AccountDetails() {
                   />
                 ) : (
                   <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-[#126B6D] font-playpen-sans text-sm sm:text-base">
+                    <p className="text-[#7A1F2B] font-stack-sans text-sm sm:text-base">
                       {user?.user?.dateOfBirth
                         ? new Date(user.user.dateOfBirth).toLocaleDateString(
                             "en-GB",
@@ -396,7 +396,7 @@ function AccountDetails() {
                   </div>
                 ) : (
                   <div className="px-3 sm:px-4 py-2 sm:py-3 border-gray-300 bg-gray-50 rounded-lg border ">
-                    <p className="text-[#126B6D] font-playpen-sans capitalize text-sm sm:text-base">
+                    <p className="text-[#7A1F2B] font-stack-sans capitalize text-sm sm:text-base">
                       {user?.user?.gender || "Not provided"}
                     </p>
                   </div>
@@ -426,7 +426,7 @@ function AccountDetails() {
                   />
                 ) : (
                   <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-[#126B6D] font-playpen-sans text-sm sm:text-base">
+                    <p className="text-[#7A1F2B] font-stack-sans text-sm sm:text-base">
                       {user?.user?.phoneNumber || "Not provided"}
                     </p>
                   </div>
@@ -452,13 +452,13 @@ function AccountDetails() {
                   //   disabled={isSaving}
                   // />
                   <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-[#126B6D] font-playpen-sans text-sm sm:text-base">
+                    <p className="text-[#7A1F2B] font-stack-sans text-sm sm:text-base">
                       ***********
                     </p>
                   </div>
                 ) : (
                   <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-[#126B6D] font-playpen-sans text-sm sm:text-base">
+                    <p className="text-[#7A1F2B] font-stack-sans text-sm sm:text-base">
                       ***********
                     </p>
                   </div>
@@ -481,7 +481,7 @@ function AccountDetails() {
             </div>
           </div>
 
-          <div className="p-6 sm:p-8  flex flex-col items-center rounded-md  bg-gradient-to-r from-[#88D3D5]/50 to-[#6CB7B9]/20  space-y-5 sm:space-y-6">
+          <div className="p-6 sm:p-8  flex flex-col items-center rounded-md  bg-gradient-to-b from-[#dadde0] to-[#dadde0]/50  space-y-5 sm:space-y-6">
             <div className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center bg-[#F6F8F9] rounded-full shadow-inner overflow-hidden">
               {user?.user?.profileImage?.url ? (
                 <img
@@ -490,12 +490,12 @@ function AccountDetails() {
                   alt="Profile"
                 />
               ) : (
-                <User className="w-10 h-10 sm:w-12 sm:h-12 text-[#126B6D]" />
+                <User className="w-10 h-10 sm:w-12 sm:h-12 text-[#7A1F2B]" />
               )}
             </div>
 
             <div className="text-center">
-              <p className="text-[#126B6D] font-playpen-sans font-semibold text-base sm:text-lg">
+              <p className="text-[#7A1F2B] font-stack-sans font-semibold text-base sm:text-lg">
                 {user?.user?.name || "Not provided"}
               </p>
               <p className="text-xs sm:text-sm text-gray-500 mt-1 flex items-center justify-center gap-1">
@@ -510,10 +510,10 @@ function AccountDetails() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3 sm:gap-4 p-3 bg-[#FFFFFF] rounded-lg">
                   <div className="p-2 bg-[#f3dcd8] rounded-full">
-                    <Calendar className="w-4 sm:w-5 h-4 sm:h-5 text-[#126B6D]" />
+                    <Calendar className="w-4 sm:w-5 h-4 sm:h-5 text-[#7A1F2B]" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm font-medium text-[#126B6D] font-playpen-sans">
+                    <p className="text-xs sm:text-sm font-medium text-[#7A1F2B] font-stack-sans">
                       DOB
                     </p>
                     <p className="text-xs sm:text-sm text-gray-500">
@@ -533,10 +533,10 @@ function AccountDetails() {
 
                 <div className="flex items-center gap-3 sm:gap-4 p-3 bg-[#FFFFFF] rounded-lg">
                   <div className="p-2 bg-[#f3dcd8] rounded-full">
-                    <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-[#126B6D]" />
+                    <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-[#7A1F2B]" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm font-medium text-[#126B6D] font-playpen-sans">
+                    <p className="text-xs sm:text-sm font-medium text-[#7A1F2B] font-stack-sans">
                       Phone
                     </p>
                     <p className="text-xs sm:text-sm text-gray-500">
@@ -549,10 +549,10 @@ function AccountDetails() {
 
                 <div className="flex items-center gap-3 sm:gap-4 p-3 bg-[#FFFFFF] rounded-lg">
                   <div className="p-2 bg-[#f3dcd8] rounded-full">
-                    <User className="w-4 sm:w-5 h-4 sm:h-5 text-[#126B6D]" />
+                    <User className="w-4 sm:w-5 h-4 sm:h-5 text-[#7A1F2B]" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm font-medium text-[#126B6D] font-playpen-sans">
+                    <p className="text-xs sm:text-sm font-medium text-[#7A1F2B] font-stack-sans">
                       Gender
                     </p>
                     <p className="text-xs sm:text-sm text-gray-500 capitalize">

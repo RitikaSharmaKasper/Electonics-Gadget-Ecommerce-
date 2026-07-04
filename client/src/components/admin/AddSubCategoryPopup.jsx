@@ -104,7 +104,7 @@ const AddSubCategoryPopup = ({
         <div className="flex justify-end gap-4 mt-6">
           <button
             type="button"
-            className="px-6 py-2 bg-gray-200 rounded-lg text-[#126B6D] font-playpen-sans font-medium hover:bg-gray-300"
+            className="px-6 py-2 bg-gray-200 rounded-lg text-[#7A1F2B] font-stack-sans font-medium hover:bg-gray-300"
             onClick={() => setShowSubCategoryModal(false)}
           >
             Cancel

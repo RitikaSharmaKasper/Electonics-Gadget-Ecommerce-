@@ -141,7 +141,7 @@ function Hero() {
     //           <div className="px-4 sm:px-6 md:px-10 lg:px-12 w-full max-w-[100%]">
     //             {/* Gradient Handwritten Heading */}
     //             <h1
-    //               className="font-montez w-full
+    //               className="font-merriweather w-full
     // text-[28px] sm:text-[40px] md:text-[64px] lg:text-[96px]
     // leading-[1.1] tracking-wide
     // bg-gradient-to-r from-[#FF5667] via-[#E8E8E8] to-[#8494FB]
@@ -153,7 +153,7 @@ function Hero() {
 
     //             {/* Description */}
     //             <p className="mt-4 text-[14px] sm:text-[20px] text-white/90 max-w-[800px]  leading-6 font-light">
-    //               Welcome to Ivoryinks.com, your trusted destination for
+    //               Welcome to Divinex, your trusted destination for
     //               premium resin art materials in Bangalore and across India. We
     //               are passionate about empowering artists, hobbyists, and small
     //               business owners with high-quality resin supplies that inspire
@@ -217,7 +217,7 @@ function Hero() {
     //         {/* <div className="absolute inset-0 z-20 flex items-center">
     //           <div className="px-4 sm:px-6 md:px-10 lg:px-12 w-full">
     //             <h1
-    //               className="font-montez
+    //               className="font-merriweather
     //           text-[28px] sm:text-[40px] md:text-[64px] lg:text-[96px]
     //           leading-[1.1] tracking-wide
     //           bg-gradient-to-r from-[#FF5667] via-[#E8E8E8] to-[#8494FB]
@@ -228,7 +228,7 @@ function Hero() {
     //             </h1>
 
     //             <p className="mt-4 text-[14px] sm:text-[20px] text-white/90 max-w-[800px] leading-6 font-light">
-    //               Welcome to Ivoryinks.com, your trusted destination for
+    //               Welcome to Divinex, your trusted destination for
     //               premium resin art materials in Bangalore and across India...
     //             </p>
     //           </div>

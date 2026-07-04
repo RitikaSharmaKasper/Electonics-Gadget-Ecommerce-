@@ -83,7 +83,7 @@ function ProductInformation() {
       {/* Header */}
       <div className="h-16 bg-white rounded-lg flex items-center justify-between gap-3 px-4">
         <Link to="/admin/products" className="flex items-center gap-2">
-          <ArrowLeft className="w-6 h-6 text-[#126B6D] font-playpen-sans" />
+          <ArrowLeft className="w-6 h-6 text-[#7A1F2B] font-stack-sans" />
           <h1 className="text-black text-xl font-semibold">{product.title}</h1>
         </Link>
         <button

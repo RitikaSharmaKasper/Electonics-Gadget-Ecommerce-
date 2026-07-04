@@ -89,12 +89,12 @@ const PoliciesSettingsEdit = () => {
 
         <div className="flex items-center gap-2">
           <Link to={"/admin/settings/Policies"}>
-            <button className="border border-[#126B6D] text-[#126B6D] bg-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]">
+            <button className="border border-[#52151d] text-[#7A1F2B] bg-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]">
               Cancel
             </button>
           </Link>
           <button
-            className="bg-[#126B6D] text-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]"
+            className="  bg-[#7A1F2B] text-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]"
             onClick={saveChanges}
           >
             Save Changes

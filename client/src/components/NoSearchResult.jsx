@@ -29,7 +29,7 @@ function NoSearchResult() {
           <div className="max-w-3xl mx-auto">
             <div className="p-6 md:p-8">
               <div className="text-center">
-                <h1 className="text-2xl md:text-3xl font-semibold text-[#126B6D] font-playpen-sans mb-4">
+                <h1 className="text-2xl md:text-3xl font-semibold text-[#7A1F2B] font-stack-sans mb-4">
                   Sorry, no search results found :(
                 </h1>
 

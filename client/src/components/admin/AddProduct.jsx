@@ -1795,7 +1795,7 @@ const AddProduct = () => {
         <div className="fixed inset-0 z-[9999] bg-black/40 flex items-center justify-center">
           <div className="bg-white rounded-xl px-6 py-4 flex items-center gap-3">
             <div className="h-5 w-5 rounded-full border-2 border-gray-300 border-t-[#1C3753] animate-spin" />
-            <p className="text-sm font-medium text-[#126B6D] font-playpen-sans">
+            <p className="text-sm font-medium text-[#7A1F2B] font-stack-sans">
               Uploading product, please wait...
             </p>
           </div>
@@ -1887,7 +1887,7 @@ const AddProduct = () => {
               type="submit"
               disabled={isSubmitting}
               className={`py-1 px-3 rounded-lg font-medium 
-    ${isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-[#126B6D]"} 
+    ${isSubmitting ? "bg-gray-400 cursor-not-allowed" : "  bg-[#7A1F2B]"} 
     text-[#FFFFFF]`}
             >
               {isSubmitting
@@ -2230,8 +2230,8 @@ const AddProduct = () => {
                                 }}
                                 className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
                                   formData.category === cat._id
-                                    ? "bg-[#E6F0FA] text-[#1C3753] font-medium"
-                                    : "text-gray-700"
+                                    ? "bg-[#E6F0FA] text-[#7A1F2B] font-medium"
+                                    : "text-[#7A1F2B]"
                                 }`}
                               >
                                 {cat.name}
@@ -2371,7 +2371,7 @@ const AddProduct = () => {
                                 }}
                                 className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
                                   formData.subcategory === sub._id
-                                    ? "bg-[#E6F0FA] text-[#1C3753] font-medium"
+                                    ? "bg-[#E6F0FA] text-[#7A1F2B] font-medium"
                                     : "text-gray-700"
                                 }`}
                               >
@@ -2403,7 +2403,7 @@ const AddProduct = () => {
                         <button
                           type="button"
                           onClick={() => setShowCategoryModal(true)}
-                          className="text-[#1C3753] font-medium text-sm"
+                          className="text-[#7A1F2B] font-medium text-sm"
                         >
                           + Add Category
                         </button>
@@ -2435,7 +2435,7 @@ const AddProduct = () => {
                     <button
                       type="button"
                       onClick={addVariantRow}
-                      className="rounded-md bg-[#1C3753] px-4 py-1 text-sm text-white"
+                      className="rounded-md bg-[#7A1F2B] px-4 py-1 text-sm text-white"
                     >
                       + Add Variant
                     </button>
@@ -2538,7 +2538,7 @@ const AddProduct = () => {
                             )}
                             <td className="px-3 py-1">
                               {isExisting && !isProductDraft ? (
-                                <div className="w-[140px] rounded-md border px-3 py-1 text-sm bg-gray-100 text-gray-600 min-h-[36px]">
+                                <div className="w-[140px] rounded-md border px-3 py-1 text-sm bg-gray-100 text-[#7A1F2B] min-h-[36px]">
                                   {variant.variantColor || "-"}
                                 </div>
                               ) : (
@@ -2583,7 +2583,7 @@ const AddProduct = () => {
 
                             <td className="px-3 py-1">
                               {isExisting && !isProductDraft ? (
-                                <div className="border px-3 py-2 rounded bg-gray-100 text-gray-600 min-w-[120px]">
+                                <div className="border px-3 py-2 rounded bg-gray-100 text-[#7A1F2B] min-w-[120px]">
                                   {variant.variantName || "-"}
                                 </div>
                               ) : (
@@ -2621,7 +2621,7 @@ const AddProduct = () => {
 
                             <td className="px-3 py-1">
                               {isExisting && !isProductDraft ? (
-                                <div className="flex items-center gap-2 border rounded px-3 py-1 bg-gray-100 text-gray-600 min-w-[140px] ">
+                                <div className="flex items-center gap-2 border rounded px-3 py-1 bg-gray-100 text-[#7A1F2B] min-w-[140px] ">
                                   <span>{variant.variantWeight || "-"}</span>
                                 </div>
                               ) : (
@@ -2661,7 +2661,7 @@ const AddProduct = () => {
                             <td className="px-3 py-2">
                               <div>
                                 {isExisting && !isProductDraft ? (
-                                  <div className="w-[274px] h-[28px] border rounded px-3 bg-gray-100 text-gray-600 flex items-center">
+                                  <div className="w-[274px] h-[28px] border rounded px-3 bg-gray-100 text-[#7A1F2B] flex items-center">
                                     {variant.variantSkuId || "N/A"}
                                   </div>
                                 ) : (
@@ -2684,7 +2684,7 @@ const AddProduct = () => {
                                       }}
                                       placeholder="Generate Variant SKU ID"
                                       className="w-[300px] h-[28px] border border-[#D0D0D0] rounded px-3 pr-28
-    bg-[#F8FAFB] text-sm text-[#6B6B6B] placeholder-[#494848]"
+    bg-[#F8FAFB] text-sm text-[#7A1F2B] placeholder-[#494848]"
                                     />
                                     {/* {index !== 0 && (
                                       <button
@@ -2768,12 +2768,12 @@ const AddProduct = () => {
                                   >
                                     <div className="h-9 w-9 rounded-md border bg-[#EFEFEF] flex items-center justify-center">
                                       {uploadingVariantIndex === actualIndex ? (
-                                        <div className="h-5 w-5 rounded-full border-2 border-gray-300 border-t-[#1C3753] animate-spin" />
+                                        <div className="h-5 w-5 rounded-full border-2 border-gray-300 border-t-[#126B6D] animate-spin" />
                                       ) : (
-                                        <FiUpload className="h-5 w-5 text-[#1C3753]" />
+                                        <FiUpload className="h-5 w-5 text-[#7A1F2B]" />
                                       )}
                                     </div>
-                                    <span className="text-sm text-[#1C3753]">
+                                    <span className="text-sm text-[#7A1F2B]">
                                       {uploadingVariantIndex === actualIndex
                                         ? "Uploading..."
                                         : "Add Images"}
@@ -2803,7 +2803,7 @@ const AddProduct = () => {
                                               className="h-full w-full object-cover"
                                             />
                                           </div>
-                                          <span className="text-sm text-[#1C3753]">
+                                          <span className="text-sm text-[#7A1F2B]">
                                             {variant.variantImage.length} Image
                                             {variant.variantImage.length !== 1
                                               ? "s"
@@ -2845,12 +2845,12 @@ const AddProduct = () => {
                                       <div className="h-9 w-9 rounded-md border bg-[#EFEFEF] flex items-center justify-center">
                                         {uploadingVariantIndex ===
                                         actualIndex ? (
-                                          <div className="h-5 w-5 rounded-full border-2 border-gray-300 border-t-[#1C3753] animate-spin" />
+                                          <div className="h-5 w-5 rounded-full border-2 border-gray-300 border-t-[#126B6D] animate-spin" />
                                         ) : (
-                                          <FiUpload className="h-5 w-5 text-[#1C3753]" />
+                                          <FiUpload className="h-5 w-5 text-[#7A1F2B]" />
                                         )}
                                       </div>
-                                      <span className="text-sm text-[#1C3753]">
+                                      <span className="text-sm text-[#7A1F2B]">
                                         {uploadingVariantIndex === actualIndex
                                           ? "Uploading..."
                                           : "Add Images"}
@@ -2880,7 +2880,7 @@ const AddProduct = () => {
                                               className="h-full w-full object-cover"
                                             />
                                           </div>
-                                          <span className="text-sm text-[#1C3753]">
+                                          <span className="text-sm text-[#7A1F2B]">
                                             + {variant.variantImage.length}{" "}
                                             Image
                                             {variant.variantImage.length !== 1
@@ -3003,7 +3003,7 @@ const AddProduct = () => {
                                   className="placeholder:text-[#6B6B6B] bg-white w-20"
                                 />
 
-                                <div className="border rounded-lg px-3 bg-[#264464] text-white text-sm">
+                                <div className="border rounded-lg px-3 bg-[#7A1F2B] text-white text-sm">
                                   %
                                 </div>
                               </div>
@@ -3012,7 +3012,7 @@ const AddProduct = () => {
                             {/* Available Stock */}
                             <td className="px-3 py-2">
                               {isExisting && !isProductDraft ? (
-                                <div className="rounded border px-2 py-1 bg-gray-100 text-gray-600">
+                                <div className="rounded border px-2 py-1 bg-gray-100 text-[#7A1F2B] ]">
                                   {variant.variantAvailableStock || 0}
                                 </div>
                               ) : (

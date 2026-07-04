@@ -130,7 +130,7 @@ const AccountSettings = () => {
         </div>
 
         <Link to={"/admin/settings/AccountSettingsEdit-form"}>
-          <button className="bg-[#126B6D] text-white text-[14px] font-medium px-5 py-2 rounded-[6px]">
+          <button className="  bg-[#7A1F2B] text-white text-[14px] font-medium px-5 py-2 rounded-[6px]">
             Edit
           </button>
         </Link>

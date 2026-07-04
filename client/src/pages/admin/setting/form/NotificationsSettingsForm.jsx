@@ -296,14 +296,14 @@ const NotificationSettingsForm = () => {
 
         <div className="flex items-center gap-2">
           <Link to={"/admin/settings/notification"}>
-            <button className="border border-[#126B6D] text-[#126B6D] bg-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]">
+            <button className="border border-[#52151d] text-[#7A1F2B] bg-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]">
               Cancel
             </button>
           </Link>
           <button
             onClick={handleSave}
             disabled={loading}
-            className="bg-[#126B6D] text-white text-[12px] font-medium px-3 py-1.5 rounded-[4px] disabled:opacity-70 disabled:cursor-not-allowed"
+            className="  bg-[#7A1F2B] text-white text-[12px] font-medium px-3 py-1.5 rounded-[4px] disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {loading ? "Saving..." : "Save Changes"}
           </button>
@@ -365,7 +365,7 @@ const NotificationSettingsForm = () => {
               Metro Cities
             </span>
             <button
-              className="flex items-center px-4 py-2 bg-[#126B6D] text-white rounded-lg"
+              className="flex items-center px-4 py-2 bg-[#7A1F2B] text-white rounded-lg"
               onClick={() => setAddZones(true)}
             >
               <MdOutlineAdd size={20} />
@@ -376,7 +376,7 @@ const NotificationSettingsForm = () => {
             {formData?.metroCities?.map((item) => (
               <span
                 key={item}
-                className="rounded-full bg-[#F0EEFF] px-4 py-2 flex items-center gap-2"
+                className="rounded-full bg-[#f1d5d9] px-4 py-2 flex items-center gap-2"
               >
                 {item}{" "}
                 <button
@@ -395,7 +395,7 @@ const NotificationSettingsForm = () => {
                 Special Regions
               </span>
               <button
-                className="flex items-center px-4 py-2 bg-[#126B6D] text-white rounded-lg"
+                className="flex items-center px-4 py-2 bg-[#7A1F2B] text-white rounded-lg"
                 onClick={() => setAddSpecialZones(true)}
               >
                 <MdOutlineAdd size={20} />
@@ -406,7 +406,7 @@ const NotificationSettingsForm = () => {
               {formData?.specialStates?.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full bg-[#F0EEFF] px-4 py-2 flex items-center gap-2"
+                  className="rounded-full bg-[#f1d5d9] px-4 py-2 flex items-center gap-2"
                 >
                   {item}{" "}
                   <button
@@ -510,7 +510,7 @@ const NotificationSettingsForm = () => {
 
             <div className="flex justify-end gap-4 items-center mt-3">
               <button
-                className="border border-[#126B6D] text-[#126B6D] bg-white text-[12px] font-medium px-2.5 py-2 rounded-[4px]"
+                className="border border-[#52151d] text-[#7A1F2B] bg-white text-[12px] font-medium px-2.5 py-2 rounded-[4px]"
                 onClick={() => {
                   setAddZones(false);
                   setNewMetroCity("");
@@ -520,7 +520,7 @@ const NotificationSettingsForm = () => {
               </button>
               <button
                 onClick={handleAddMetroCity}
-                className="bg-[#126B6D] text-white text-[12px] font-medium px-2.5 py-2 rounded-[4px]"
+                className="  bg-[#7A1F2B] text-white text-[12px] font-medium px-2.5 py-2 rounded-[4px]"
               >
                 Add
               </button>
@@ -563,7 +563,7 @@ const NotificationSettingsForm = () => {
 
             <div className="flex justify-end gap-4 items-center mt-3">
               <button
-                className="border border-[#126B6D] text-[#126B6D] bg-white text-[12px] font-medium px-2.5 py-2 rounded-[4px]"
+                className="border border-[#52151d] text-[#7A1F2B] bg-white text-[12px] font-medium px-2.5 py-2 rounded-[4px]"
                 onClick={() => {
                   setAddSpecialZones(false);
                   setNewSpecialRegion("");
@@ -573,7 +573,7 @@ const NotificationSettingsForm = () => {
               </button>
               <button
                 onClick={handleAddSpecialRegion}
-                className="bg-[#126B6D] text-white text-[12px] font-medium px-2.5 py-2 rounded-[4px]"
+                className="  bg-[#7A1F2B] text-white text-[12px] font-medium px-2.5 py-2 rounded-[4px]"
               >
                 Add
               </button>

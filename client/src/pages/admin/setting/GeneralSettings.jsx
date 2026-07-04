@@ -70,7 +70,7 @@ function GeneralSettings() {
         <div>
           <Link
             to={"/admin/settings/general-form"}
-            className="inline-flex items-center bg-[#126B6D] text-white gap-2 rounded-md border px-5 py-1.5 text-sm hover:bg-gray-500 hover:text-black"
+            className="inline-flex items-center bg-[#7A1F2B] text-white gap-2 rounded-md border px-5 py-1.5 text-sm hover:bg-gray-500 hover:text-black"
           >
             Edit
           </Link>

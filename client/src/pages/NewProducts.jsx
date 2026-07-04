@@ -427,7 +427,7 @@ function NewProducts() {
           </div>
 
           <div className="mt-3">
-            <h3 className="text-sm font-marcellus text-[#55516e] font-normal line-clamp-1 mb-2">
+            <h3 className="text-sm font-merriweather text-[#55516e] font-normal line-clamp-1 mb-2">
               {product.name || product.productTittle || "Product Name"}
             </h3>
 
@@ -448,7 +448,7 @@ function NewProducts() {
 
         <button
           className={`w-full rounded-md flex justify-center items-center gap-4 p-2 mt-2 transition-all duration-300 cursor-pointer ${
-            inCart ? "bg-white border border-[#252525] text-black" : "bg-[#126B6D] border border-[#252525] text-white"
+            inCart ? "bg-white border border-[#5a1720] text-black" : "  bg-[#7A1F2B] border border-[#5a1720] text-white"
           }`}
           onClick={inCart ? handleGoToCart : handleAddToCartClick}
         >
@@ -496,10 +496,10 @@ function NewProducts() {
   return (
     <>
       <Navbar />
-      <Breadcrumbs title={"Best Stationary Products"} />
+      <Breadcrumbs title={"Best Accessories"} />
 
       <section className="lg:px-20 md:px-[60px] px-4 pb-[23px] bg-gray-50 ">
-        <FilterProducts text={"Best Stationary Products"} sort={sort} />
+        <FilterProducts text={"Best Accessories"} sort={sort} />
 
         <div
           className="flex lg:gap-6 justify-center min-h-[80vh] overflow-y-auto"
@@ -525,7 +525,7 @@ function NewProducts() {
 
                 {loadingMore && (
                   <div className="flex justify-center py-4">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#1C3753]"></div>
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#5a1720]"></div>
                   </div>
                 )}
 

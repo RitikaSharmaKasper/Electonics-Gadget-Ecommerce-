@@ -160,7 +160,7 @@ function CustomerReview({ reviews = [], id, allReviews = false }) {
               </p>
               {/* admin reply */}
               {repliedBy && (
-                <div className="bg-[#F0EEFF] px-[10px] py-[12px] rounded-md mt-3">
+                <div className="bg-[#f1d5d9] px-[10px] py-[12px] rounded-md mt-3">
                   <div className="flex items-center gap-2">
                     <img
                       className="w-[24px] h-[24px] rounded-full object-cover"
@@ -193,7 +193,7 @@ function CustomerReview({ reviews = [], id, allReviews = false }) {
       {!allReviews && (
         <button
           type="button"
-          className="py-2 mt-3 font-medium  text-[#126B6D]"
+          className="py-2 mt-3 font-medium  text-[#7A1F2B]"
           onClick={handleSeeMoreReviews}
         >
           See more reviews ›

@@ -160,14 +160,14 @@ function RegisterPage() {
             {step === "register" && (
               <div>
                 <div className="text-center mb-6">
-                  {/* <div className="bg-[#F0EEFF] p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                  {/* <div className="bg-[#f1d5d9] p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
                     <Mail className="w-6 h-6 text-[#1800AC]" />
                   </div> */}
                   <h2 className="text-2xl font-bold text-gray-900">
                     Create Account
                   </h2>
                   <p className="text-gray-600 mt-2">
-                    Sign up to get started with Ivoryinks.com
+                    Sign up to get started with Divinex
                   </p>
                 </div>
                 {/* <div className=" sm:hidden flex items-center justify-between mt-8 px-4 mb-4">
@@ -177,10 +177,10 @@ function RegisterPage() {
                       <div
                         className={`w-7 h-7 rounded-full flex items-center justify-center border-2 ${
                           step === "register"
-                            ? "bg-[#126B6D] text-white"
+                            ? "  bg-[#7A1F2B] text-white"
                             : step === "otp" || step === "done"
                               ? "bg-green-400 border-green-400 text-white"
-                              : "bg-[#126B6D] text-[#1800AC]"
+                              : "  bg-[#7A1F2B] text-[#1800AC]"
                         }`}
                       >
                         {step === "register" ? (
@@ -306,7 +306,7 @@ function RegisterPage() {
 
                 <Link
                   to="/login"
-                  className="inline-flex items-center justify-center w-full bg-[#126B6D] hover:bg-[#126B6D] text-white py-3 px-4 rounded-lg transition-colors font-semibold mb-4"
+                  className="inline-flex items-center justify-center w-full bg-[#7A1F2B] hover:  bg-[#7A1F2B] text-white py-3 px-4 rounded-lg transition-colors font-semibold mb-4"
                 >
                   Go to Login
                 </Link>

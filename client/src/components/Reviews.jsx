@@ -43,7 +43,7 @@ function Reviews({ reviews = [], onAddReview }) {
           <button
             type="button"
             onClick={onAddReview}
-            className="py-2 px-6 border tetx-[#0C0057] border-[#0C0057] rounded-md hover:bg-[#126B6D] hover:text-white transition-all duration-200"
+            className="py-2 px-6 border tetx-[#0C0057] border-[#0C0057] rounded-md hover:  bg-[#7A1F2B] hover:text-white transition-all duration-200"
           >
             Write a product review
           </button>
@@ -109,7 +109,7 @@ function Reviews({ reviews = [], onAddReview }) {
             <button
               type="button"
               onClick={onAddReview}
-              className="py-2 px-6 border border-[#126B6D] rounded-md hover:bg-[#126B6D] hover:text-white transition-all duration-200"
+              className="py-2 px-6 border border-[#52151d] rounded-md hover:  bg-[#7A1F2B] hover:text-white transition-all duration-200"
             >
               Write a product review
             </button>

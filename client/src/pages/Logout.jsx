@@ -28,7 +28,7 @@ function Logout({ onCancel, onConfirm }) {
                           <LogOut className="w-5 h-5 text-gray-600 group-hover:text-red-600" />
                         </div>
                         <div className="flex-1">
-                          <h2 className="text-[#126B6D] font-playpen-sans font-medium text-sm">
+                          <h2 className="text-[#5d5e5f] font-stack-sans font-medium text-sm">
                             Log Out
                           </h2>
                         </div>

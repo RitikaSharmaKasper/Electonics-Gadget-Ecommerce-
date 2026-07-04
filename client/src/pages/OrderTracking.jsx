@@ -108,7 +108,7 @@ function OrderTracking() {
           <div className="w-full mt-14">
             {/* Order Tracking Header */}
             <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 ">
-              <h2 className="text-lg flex flex-col space-y-2  sm:text-xl fontd-semibold text-[#126B6D] font-playpen-sans mb-6 text-center sm:text-left border-b border-gray-200 pb-4">
+              <h2 className="text-lg flex flex-col space-y-2  sm:text-xl fontd-semibold text-[#7A1F2B] font-stack-sans mb-6 text-center sm:text-left border-b border-gray-200 pb-4">
                 <span className="flex items-center font-semibold gap-2">
                   {" "}
                   <Link to="/accounts/order-history">
@@ -238,7 +238,7 @@ function OrderTracking() {
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {/* Shipping Info */}
               <div className="bg-[#F6F8F9] p-5 rounded-lg shadow-sm">
-                <h2 className="text-lg font-medium text-[#126B6D] font-playpen-sans mb-4 flex items-center gap-2">
+                <h2 className="text-lg font-medium text-[#7A1F2B] font-stack-sans mb-4 flex items-center gap-2">
                   <Truck className="text-[#1C3753]" size={18} /> Shipping
                   Information
                 </h2>
@@ -268,7 +268,7 @@ function OrderTracking() {
 
               {/* Delivery Estimate */}
               {/* <div className="bg-[#F6F8F9] p-5 rounded-lg shadow-sm">
-                <h2 className="text-lg font-medium text-[#126B6D] font-playpen-sans mb-4 flex items-center gap-2">
+                <h2 className="text-lg font-medium text-[#7A1F2B] font-stack-sans mb-4 flex items-center gap-2">
                   <Calendar className="text-[#1C3753]" size={18} /> Delivery
                   Estimate
                 </h2>
@@ -298,7 +298,7 @@ function OrderTracking() {
 
               {/* Recent Updates */}
               <div className="bg-[#F6F8F9] p-5 rounded-lg shadow-sm">
-                <h2 className="text-lg font-medium text-[#126B6D] font-playpen-sans mb-4 flex items-center gap-2">
+                <h2 className="text-lg font-medium text-[#7A1F2B] font-stack-sans mb-4 flex items-center gap-2">
                   Track Order
                 </h2>
                 <div className="space-y-4">
@@ -351,7 +351,7 @@ function OrderTracking() {
             <div className="mt-8 bg-white rounded-lg shadow-sm overflow-hidden">
               <div className="flex flex-col lg:flex-row">
                 <div className="p-6 lg:w-1/2">
-                  <h2 className="text-xl font-medium text-[#126B6D] font-playpen-sans mb-4 flex items-center gap-2">
+                  <h2 className="text-xl font-medium text-[#7A1F2B] font-stack-sans mb-4 flex items-center gap-2">
                     Need Help With Your Order?
                   </h2>
                   <p className="text-sm text-gray-600 mb-6">
@@ -365,7 +365,7 @@ function OrderTracking() {
                         <MessageCircle className="text-[#EBB100]" size={18} />
                       </div>
                       <div>
-                        <h3 className="font-medium text-[#126B6D] font-playpen-sans">Live Chat</h3>
+                        <h3 className="font-medium text-[#7A1F2B] font-stack-sans">Live Chat</h3>
                         <p className="text-xs text-gray-500">
                           Get instant help from our support team
                         </p>
@@ -377,7 +377,7 @@ function OrderTracking() {
                         <Mail className="text-[#1C3753]" size={18} />
                       </div>
                       <div>
-                        <h3 className="font-medium text-[#126B6D] font-playpen-sans">Email Us</h3>
+                        <h3 className="font-medium text-[#7A1F2B] font-stack-sans">Email Us</h3>
                         <p className="text-xs text-gray-500">
                           happyartsupplies@gmail.com
                         </p>
@@ -389,7 +389,7 @@ function OrderTracking() {
                         <Phone className="text-[#1C3753]" size={18} />
                       </div>
                       <div>
-                        <h3 className="font-medium text-[#126B6D] font-playpen-sans">Call Us</h3>
+                        <h3 className="font-medium text-[#7A1F2B] font-stack-sans">Call Us</h3>
                         <p className="text-xs text-gray-500">
                           (+91) 98868 94723
                         </p>

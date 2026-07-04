@@ -196,14 +196,14 @@ const AccountSettingsEdit = () => {
 
         <div className="flex items-center gap-2">
           <Link to={"/admin/settings/AccountSettings"}>
-            <button className="border border-[#126B6D] text-[#126B6D] bg-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]">
+            <button className="border border-[#52151d] text-[#7A1F2B] bg-white text-[12px] font-medium px-3 py-1.5 rounded-[4px]">
               Cancel
             </button>
           </Link>
           <button
             onClick={handleSaveProfile}
             disabled={loading}
-            className="bg-[#126B6D] text-white text-[12px] font-medium px-3 py-1.5 rounded-[4px] disabled:opacity-60"
+            className="  bg-[#7A1F2B] text-white text-[12px] font-medium px-3 py-1.5 rounded-[4px] disabled:opacity-60"
           >
             {loading ? "Saving..." : "Save Changes"}
           </button>
@@ -500,12 +500,12 @@ const AccountSettingsEdit = () => {
               <button
                 onClick={handleChangePassword}
                 disabled={loading}
-                className="bg-[#126B6D]text-white text-[12px] font-medium px-4 py-2.5 rounded-[6px] disabled:opacity-60"
+                className="  bg-[#7A1F2B]text-white text-[12px] font-medium px-4 py-2.5 rounded-[6px] disabled:opacity-60"
               >
                 {loading ? "Saving..." : "Save"}
               </button>
               <button
-                className="text-[#126B6D] border border-[#126B6D] text-[12px] font-medium px-4 py-2.5 rounded-[6px]"
+                className="text-[#7A1F2B] border border-[#52151d] text-[12px] font-medium px-4 py-2.5 rounded-[6px]"
                 onClick={() => setShowPassword(false)}
               >
                 Cancel

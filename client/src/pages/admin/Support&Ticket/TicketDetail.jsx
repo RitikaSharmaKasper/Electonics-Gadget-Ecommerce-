@@ -42,7 +42,7 @@ const TicketDetail = () => {
               >
                 <ChevronLeft />
               </button>
-              <h2 className="text-[20px] font-semibold text-[#126B6D] font-playpen-sans">
+              <h2 className="text-[20px] font-semibold text-[#7A1F2B] font-stack-sans">
                 Ticket Details
               </h2>
               <div className="">

@@ -101,16 +101,16 @@ export default function Coupon() {
   console.log(Coupons);
 
   return (
-    <div className="bg-white text-[#126B6D] w-full min-h-screen font-playpen-sans">
+    <div className="bg-white text-[#7A1F2B] w-full min-h-screen font-stack-sans">
       <main className="px-8 py-6 bg-[#F6F8F9] min-h-screen">
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-4">
-            <div className="size-12 rounded-xl bg-[#88D3D5]/50 text-[#126B6D] font-playpen-sans flex justify-center items-center">
+            <div className="size-12 rounded-xl bg-[#88D3D5]/50 text-[#7A1F2B] font-stack-sans flex justify-center items-center">
               <Ticket className="size-6" />
             </div>
 
             <div>
-              <p className="font-semibold text-2xl font-playpen-sans">Coupons</p>
+              <p className="font-semibold text-2xl font-stack-sans">Coupons</p>
               <p className="text-[#71717b] text-sm">
                 Browse, filter, and manage all your promotional discount
                 coupons.
@@ -120,7 +120,7 @@ export default function Coupon() {
 
           <button
             onClick={() => navigate("/admin/CouponForm")}
-            className="bg-[#126B6D] text-white px-4 py-2 rounded-lg flex items-center gap-2"
+            className="  bg-[#7A1F2B] text-white px-4 py-2 rounded-lg flex items-center gap-2"
           >
             <Plus className="size-4" />
             Add Coupon
@@ -131,7 +131,7 @@ export default function Coupon() {
         <div className="bg-white border border-zinc-200 shadow-sm rounded-2xl mt-6 p-6">
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <SlidersHorizontal className="size-5 text-[#126B6D]" />
+              <SlidersHorizontal className="size-5 text-[#7A1F2B]" />
               <h3 className="font-bold text-base">Search & Filter Coupons</h3>
             </div>
 
@@ -168,7 +168,7 @@ export default function Coupon() {
                 setPage(1);
                 getCoupons();
               }}
-              className="h-[42px] bg-[#126B6D] text-white px-4 rounded-lg flex items-center gap-2 whitespace-nowrap"
+              className="h-[42px] bg-[#7A1F2B] text-white px-4 rounded-lg flex items-center gap-2 whitespace-nowrap"
             >
               <Search className="size-4" />
               Search
@@ -189,7 +189,7 @@ export default function Coupon() {
                     setStatus(e.target.value);
                     setPage(1);
                   }}
-                  className="w-full h-[42px] border border-[#E5E7EB] rounded-lg pl-9 pr-8 text-sm text-[#126B6D] outline-none appearance-none bg-white"
+                  className="w-full h-[42px] border border-[#E5E7EB] rounded-lg pl-9 pr-8 text-sm text-[#7A1F2B] outline-none appearance-none bg-white"
                 >
                   <option value="all">All Statuses</option>
                   <option value="active">Active</option>
@@ -206,12 +206,12 @@ export default function Coupon() {
         <div className="flex mt-6 justify-between items-center">
           <p className="text-[#71717b] text-sm">
             Showing{" "}
-            <span className="font-semibold text-[#126B6D]">
+            <span className="font-semibold text-[#7A1F2B]">
               {" "}
               {Coupons.length}
             </span>{" "}
             of{" "}
-            <span className="font-semibold text-[#126B6D]">
+            <span className="font-semibold text-[#7A1F2B]">
               {pagination.filteredCount}
             </span>{" "}
             coupons
@@ -221,7 +221,7 @@ export default function Coupon() {
             <span className="text-[#71717b] text-sm">Sort by:</span>
 
             <div className="relative">
-              <ArrowUpDown className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-[#126B6D]" />
+              <ArrowUpDown className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-[#7A1F2B]" />
               <select
                 value={sort}
                 onChange={(e) => {
@@ -250,7 +250,7 @@ export default function Coupon() {
                 key={index}
                 className="bg-white shadow-sm rounded-xl overflow-hidden border border-zinc-200 min-h-[330px] flex flex-col"
               >
-                <div className="relative white bg-gradient-to-r from-[#88D3D5]/50 to-[#6CB7B9]/20  text-[#126B6D] flex p-4 justify-between items-start">
+                <div className="relative white bg-gradient-to-r from-[#88D3D5]/50 to-[#6CB7B9]/20  text-[#7A1F2B] flex p-4 justify-between items-start">
                   {/* <div className="relative bg-[#2b7fff] bg-gradient-to-l text-white flex p-4 justify-between items-start"> */}
                   <div className="flex flex-col gap-1">
                     <span className="font-bold text-lg text-[#686868] tracking-wide">
@@ -301,7 +301,7 @@ export default function Coupon() {
 
                       <div className="rounded-full bg-zinc-100 w-full h-1.5">
                         <div
-                          className="rounded-full bg-[#126B6D] h-1.5 transition-all duration-500"
+                          className="rounded-full bg-[#7A1F2B] h-1.5 transition-all duration-500"
                           style={{ width: `${progressPercentage}%` }}
                         />
                       </div>
@@ -332,7 +332,7 @@ export default function Coupon() {
 
                     <div className="flex flex-col gap-1">
                       <span className="text-[#71717b]">Applies To</span>
-                      <span className="bg-[#88D3D5]/50 text-[#126B6D] w-fit px-2 py-1 rounded-md text-xs">
+                      <span className="bg-[#88D3D5]/50 text-[#7A1F2B] w-fit px-2 py-1 rounded-md text-xs">
                         {coupon.appliesTo}
                       </span>
                     </div>
@@ -377,11 +377,11 @@ export default function Coupon() {
         <div className="flex mt-8 justify-between items-center">
           <p className="text-sm text-[#71717b]">
             Showing{" "}
-            <span className="font-semibold text-[#126B6D]">
+            <span className="font-semibold text-[#7A1F2B]">
               {Coupons.length}
             </span>{" "}
             of{" "}
-            <span className="font-semibold text-[#126B6D]">
+            <span className="font-semibold text-[#7A1F2B]">
               {pagination.filteredCount}
             </span>{" "}
             coupons
@@ -404,7 +404,7 @@ export default function Coupon() {
                   onClick={() => setPage(pageNumber)}
                   className={`size-9 rounded-lg text-sm ${
                     page === pageNumber
-                      ? "bg-[#126B6D] text-white"
+                      ? "  bg-[#7A1F2B] text-white"
                       : "border border-zinc-200 bg-white"
                   }`}
                 >

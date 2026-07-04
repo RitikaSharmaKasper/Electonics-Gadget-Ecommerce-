@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const faqs = [
   {
-    question: "1.What products does Ivoryinks.com offer?",
+    question: "1.What products does Divinex offer?",
     answer:
       "We provide a wide range of resin art materials, including epoxy resin, hardeners, pigments, molds, mica powders, dried flowers, tools, and accessories. Everything you need to create beautiful resin art.",
   },
@@ -67,7 +67,7 @@ function Faqs() {
             Frequently Asked Questions (FAQs)
           </h1>
           
-          <span>At Ivoryinks.com, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit or make a purchase from our website.</span>
+          <span>At Divinex, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit or make a purchase from our website.</span>
           <div className="flex flex-col gap-6 mt-5">
             {faqs.map((faq) => (
               <div key={faq.question} className="flex flex-col gap-2">
@@ -85,15 +85,15 @@ function Faqs() {
         {/* Contact + Newsletter */}
         <div>
           {/* Still Have Questions */}
-          <div className="h-auto bg-[#F0EEFF] flex flex-col items-center py-6 px-4 gap-2 rounded-md">
-            <h1 className="text-lg sm:text-xl text-[#126B6D] font-playpen-sans md:text-[20px] font-medium">
+          <div className="h-auto bg-[#f1d5d9] flex flex-col items-center py-6 px-4 gap-2 rounded-md">
+            <h1 className="text-lg sm:text-xl text-[#7A1F2B] font-stack-sans md:text-[20px] font-medium">
               Do you still have any questions?
             </h1>
             <p className="text-[#1C1C1C] text-center text-sm md:text-base max-w-lg">
               Can’t find the answer you’re looking for? Please chat to our
               friendly team.
             </p>
-            <button className="py-2 px-6 flex items-center gap-2 bg-[#126B6D] text-white  rounded-md mt-4">
+            <button className="py-2 px-6 flex items-center gap-2 bg-[#7A1F2B] text-white  rounded-md mt-4">
               Contact Us  <ArrowRight className="w-5 h-5" />
             </button>
           </div>
@@ -101,7 +101,7 @@ function Faqs() {
           {/* Newsletter Section */}
           {/* <div className="flex flex-col lg:flex-row justify-between items-center gap-8 my-10">
             <div className="flex flex-col justify-center items-center text-center lg:text-left flex-1">
-              <h1 className="text-lg sm:text-xl text-[#126B6D] font-playpen-sans font-medium">
+              <h1 className="text-lg sm:text-xl text-[#7A1F2B] font-stack-sans font-medium">
                 Sign up for our Newsletter
               </h1>
               <p className="text-[14px] text-[#828282]">

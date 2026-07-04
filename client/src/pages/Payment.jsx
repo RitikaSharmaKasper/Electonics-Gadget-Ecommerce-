@@ -50,7 +50,7 @@ function Payment() {
   const [placingOrder, setPlacingOrder] = useState(false);
 
   const companyData = {
-    companyName: "Ivoryinks.com",
+    companyName: "Divinex",
     upiId: "sango17-1@oksbi",
   };
 
@@ -328,7 +328,7 @@ function Payment() {
               <PackageCheck className="w-6 h-6 text-[#1800AC] animate-pulse" />
             </div>
           </div>
-          <h3 className="text-xl font-semibold text-[#126B6D] font-playpen-sans">
+          <h3 className="text-xl font-semibold text-[#7A1F2B] font-stack-sans">
             Verifying Payment
           </h3>
           <p className="text-gray-600 text-center">
@@ -336,15 +336,15 @@ function Payment() {
           </p>
           <div className="flex gap-1 mt-2">
             <div
-              className="w-2 h-2 bg-[#126B6D] rounded-full animate-bounce"
+              className="w-2 h-2 bg-[#7A1F2B] rounded-full animate-bounce"
               style={{ animationDelay: "0s" }}
             ></div>
             <div
-              className="w-2 h-2 bg-[#126B6D] rounded-full animate-bounce"
+              className="w-2 h-2 bg-[#7A1F2B] rounded-full animate-bounce"
               style={{ animationDelay: "0.2s" }}
             ></div>
             <div
-              className="w-2 h-2 bg-[#126B6D] rounded-full animate-bounce"
+              className="w-2 h-2 bg-[#7A1F2B] rounded-full animate-bounce"
               style={{ animationDelay: "0.4s" }}
             ></div>
           </div>
@@ -408,7 +408,7 @@ function Payment() {
   //       key: razorpayOrder.key,
   //       amount: razorpayOrder.amount,
   //       currency: razorpayOrder.currency,
-  //       name: "Ivoryinks.com",
+  //       name: "Divinex",
   //       description: "Order Payment",
   //       order_id: razorpayOrder.rzOrderId,
   //       handler: async function (response) {
@@ -656,21 +656,21 @@ function Payment() {
       <section className="lg:px-20 md:px-[60px] px-0 lg:py-4 bg-gray-50 mt-24">
         <div className="flex flex-col lg:flex-row justify-between md:gap-6">
           <div className="p-4 md:p-6 md:shadow-sm bg-white md:rounded-md w-full lg:w-2/3">
-            <div className="text-lg sm:text-xl flex gap-2 items-center font-light text-[#126B6D] font-playpen-sans mb-2">
+            <div className="text-lg sm:text-xl flex gap-2 items-center font-light text-[#7A1F2B] font-stack-sans mb-2">
               <Link to={isBuyNowMode ? "/home" : "/bag"}>
                 <ChevronLeft className="w-8 h-8" />
               </Link>
-              <span className="text-[#126B6D] font-playpen-sans">
+              <span className="text-[#7A1F2B] font-stack-sans">
                 Payment Options
               </span>
             </div>
 
             {selectedAddress ? (
               <div className="border border-gray-200 rounded-lg p-4">
-                <p className="font-medium text-[#126B6D] font-playpen-sans">
+                <p className="font-medium text-[#7A1F2B] font-stack-sans">
                   {selectedAddress.fullName}{" "}
                   {selectedAddress.addressType && (
-                    <span className="bg-blue-100 text-[#126B6D] text-xs px-2 py-0.5 rounded-md border-[#126B6D] border">
+                    <span className="bg-blue-100 text-[#7A1F2B] text-xs px-2 py-0.5 rounded-md border-[#52151d] border">
                       {selectedAddress.addressType}
                     </span>
                   )}
@@ -692,7 +692,7 @@ function Payment() {
                         : {},
                     })
                   }
-                  className="mt-3 text-sm text-[#006EE1] hover:underline font-playpen-sans"
+                  className="mt-3 text-sm text-[#006EE1] hover:underline font-stack-sans"
                 >
                   Change Address
                 </button>
@@ -708,7 +708,7 @@ function Payment() {
                         : "/checkout/delivery",
                     )
                   }
-                  className="mt-2 px-4 py-2 bg-[#126B6D]text-white rounded-md text-sm"
+                  className="mt-2 px-4 py-2 bg-[#7A1F2B]text-white rounded-md text-sm"
                 >
                   Add Address
                 </button>
@@ -819,7 +819,7 @@ function Payment() {
                     className={`mt-2 px-6 py-3 rounded-lg font-medium text-white ${
                       !paymentScreenshot || placingOrder
                         ? "bg-gray-400 cursor-not-allowed"
-                        : "bg-[#126B6D] hover:bg-[#0f0075]"
+                        : "  bg-[#7A1F2B] hover:bg-[#0f0075]"
                     }`}
                   >
                     {placingOrder

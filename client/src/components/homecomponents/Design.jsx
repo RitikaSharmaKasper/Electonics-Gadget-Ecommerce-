@@ -143,10 +143,10 @@ function Design() {
             ))}
           </motion.div>
           <div className="absolute lg:opacity-0 group-hover:opacity-100 bottom-0 bg-[#D5E5F5] m-3 p-3 rounded-md shadow-md transition-all ease-in">
-            <h2 className="text-lg sm:text-xl md:text-2xl text-[#126B6D] font-playpen-sans md:line-clamp-none line-clamp-2 font-sans font-medium tracking-tight !leading-tight">
+            <h2 className="text-lg sm:text-xl md:text-2xl text-[#7A1F2B] font-stack-sans md:line-clamp-none line-clamp-2 font-sans font-medium tracking-tight !leading-tight">
               {product3.title}
             </h2>
-            <p className="text-sm hidden lg:block sm:text-base md:text-lg text-[#126B6D] font-playpen-sans">
+            <p className="text-sm hidden lg:block sm:text-base md:text-lg text-[#7A1F2B] font-stack-sans">
               {product3.description}
             </p>
           </div>
@@ -171,7 +171,7 @@ function Design() {
                 <h3 className="text-xs md:line-clamp-none line-clamp-2 sm:text-lg md:text-xl lg:text-2xl font-medium tracking-tight !leading-tight">
                   {product1.title}
                 </h3>
-                <p className="text-xs hidden lg:block sm:text-sm md:text-base text-[#126B6D] font-playpen-sans">
+                <p className="text-xs hidden lg:block sm:text-sm md:text-base text-[#7A1F2B] font-stack-sans">
                   {product1.description}
                 </p>
               </div>
@@ -194,7 +194,7 @@ function Design() {
                 <h3 className="text-xs md:line-clamp-none line-clamp-2 sm:text-lg md:text-xl lg:text-2xl  font-medium tracking-tight !leading-tight">
                   {product2.title}
                 </h3>
-                <p className="text-xs hidden lg:block sm:text-sm md:text-base text-[#126B6D] font-playpen-sans">
+                <p className="text-xs hidden lg:block sm:text-sm md:text-base text-[#7A1F2B] font-stack-sans">
                   {product2.description}
                 </p>
               </div>
@@ -227,16 +227,16 @@ function Design() {
   <div className="relative mb-4 md:mb-4">
     <div className="text-center px-4">
       {/* Small badge */}
-      <span className="inline-flex items-center justify-center flex-wrap mt-5 gap-1.5 sm:gap-2 text-[15px] sm:text-[19px] md:text-[24px] lg:text-[30px] font-normal leading-tight sm:leading-6 text-[#126B6D] px-4 py-1.5 sm:px-8 sm:py-2 md:px-10 md:py-2.5 lg:px-14 lg:py-3 rounded-full border-2 border-[#126B6D]/20 font-playpen-sans text-center">
-        <span className="text-[#FF7F66]">✦</span>
+      <span className="inline-flex items-center justify-center flex-wrap mt-5 gap-1.5 sm:gap-2 text-[15px] sm:text-[19px] md:text-[24px] lg:text-[30px] font-normal leading-tight sm:leading-6 text-[#7A1F2B] px-4 py-1.5 sm:px-8 sm:py-2 md:px-10 md:py-2.5 lg:px-14 lg:py-3 rounded-full border-2 border-[text-gray-900] font-stack-sans text-center">
+        <span className="text-gray-400">✦</span>
         Explore Some Lavish Stationary Collection
-        <span className="text-[#FF7F66]">✦</span>
+        <span className="text-gray-400">✦</span>
       </span>
 
       {/* Decorative divider */}
       <div className="flex items-center justify-center gap-2 sm:gap-3 mt-2 sm:mt-0">
         <div className="h-px w-6 sm:w-9 bg-gradient-to-r from-transparent to-[#126B6D]/30" />
-        <span className="text-[#FF7F66] text-base sm:text-lg">✧</span>
+        <span className="text-[#5d5e5] text-base sm:text-lg">✧</span>
         <div className="h-px w-6 sm:w-9 bg-gradient-to-l from-transparent to-[#126B6D]/30" />
       </div>
     </div>
@@ -250,14 +250,14 @@ function Design() {
     <div className="absolute bottom-0 right-1/4 w-48 h-48  rounded-full blur-3xl pointer-events-none" />
     
     {/* Theme borders */}
-    <div className="absolute inset-1 border border-[#126B6D]/10 rounded-xl pointer-events-none z-0" />
+    <div className="absolute inset-1 border border-[#52151d]/10 rounded-xl pointer-events-none z-0" />
     <div className="absolute inset-2 border border-[#FF7F66]/10 rounded-xl pointer-events-none z-0" />
     
     {/* Corner accents - Theme colors */}
-    <div className="absolute top-3 left-3 w-6 h-6 border-l-2 border-t-2 border-[#126B6D]/20 rounded-tl-lg pointer-events-none z-10" />
-    <div className="absolute top-3 right-3 w-6 h-6 border-r-2 border-t-2 border-[#126B6D]/20 rounded-tr-lg pointer-events-none z-10" />
-    <div className="absolute bottom-3 left-3 w-6 h-6 border-l-2 border-b-2 border-[#126B6D]/20 rounded-bl-lg pointer-events-none z-10" />
-    <div className="absolute bottom-3 right-3 w-6 h-6 border-r-2 border-b-2 border-[#126B6D]/20 rounded-br-lg pointer-events-none z-10" />
+    <div className="absolute top-3 left-3 w-6 h-6 border-l-2 border-t-2 border-[#52151d]/20 rounded-tl-lg pointer-events-none z-10" />
+    <div className="absolute top-3 right-3 w-6 h-6 border-r-2 border-t-2 border-[#52151d]/20 rounded-tr-lg pointer-events-none z-10" />
+    <div className="absolute bottom-3 left-3 w-6 h-6 border-l-2 border-b-2 border-[#52151d]/20 rounded-bl-lg pointer-events-none z-10" />
+    <div className="absolute bottom-3 right-3 w-6 h-6 border-r-2 border-b-2 border-[#52151d]/20 rounded-br-lg pointer-events-none z-10" />
     
     <Swiper
       modules={[Autoplay]}
@@ -281,7 +281,7 @@ function Design() {
             {/* Outer glow - Theme colors with zoom effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-[#126B6D]/20 via-[#FF7F66]/20 to-[#126B6D]/20 rounded-xl blur-md opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
             
-            <div className="relative h-[200px] sm:h-[260px] md:h-[358px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white p-1 border-2 border-[#126B6D]/10 group-hover:border-[#126B6D]/40">
+            <div className="relative h-[200px] sm:h-[260px] md:h-[358px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white p-1 border-2 border-[#52151d]/10 group-hover:border-[#52151d]/40">
               {/* Image with zoom on hover */}
               <div className="w-full h-full overflow-hidden rounded-lg">
                 <img
@@ -292,10 +292,10 @@ function Design() {
               </div>
               
               {/* Theme gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#126B6D]/30 via-transparent to-[#FF7F66]/10 pointer-events-none  opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
+              <div className="absolute inset-0  bg-gradient-to-b from-transparent via-[#dadde0]/50 to-transparent pointer-events-none  opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
               
               {/* Bottom decorative line */}
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#FF7F66]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-b from-transparent via-[#dadde0]/50 to-transparent" />
               
               {/* Hover overlay with text */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">

@@ -91,8 +91,8 @@ const ForgotPassword = () => {
 
             {/* Form Header */}
             <div className="text-center mb-8">
-              <div className="bg-[#F0EEFF] p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
-                <MdLockReset className="w-6 h-6 text-[#126B6D]" />
+              <div className="bg-[#f1d5d9] p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                <MdLockReset className="w-6 h-6 text-[#7A1F2B]" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">
                 Forgot Password?
@@ -104,7 +104,7 @@ const ForgotPassword = () => {
             {/* Back to Login */}
             <Link
               to="/login"
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-[#126B6D] mb-6 transition-colors"
+              className="inline-flex items-center gap-2 text-gray-600 hover:text-[#7A1F2B] mb-6 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="text-sm font-medium">Back to Login</span>
@@ -146,7 +146,7 @@ const ForgotPassword = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#126B6D] text-[#FFFFFF] hover:bg-[#126B6D] hover:text-white disabled:bg-gray-400 py-3 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-[#7A1F2B] text-[#FFFFFF] hover:  bg-[#7A1F2B] hover:text-white disabled:bg-gray-400 py-3 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>

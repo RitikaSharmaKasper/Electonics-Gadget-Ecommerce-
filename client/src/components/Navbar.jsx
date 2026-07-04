@@ -235,7 +235,7 @@
 //     // <div className="w-full">
 //     <div className="fixed top-0 left-0 w-full z-50">
 //       {/* Top Announcement Bar */}
-//       <div className="w-full bg-[#F0EEFF] text-[#1C1C1C] text-center text-sm py-2">
+//       <div className="w-full bg-[#f1d5d9] text-[#1C1C1C] text-center text-sm py-2">
 //         <Swiper
 //           modules={[Autoplay]}
 //           autoplay={{
@@ -261,7 +261,7 @@
 //           <div className="flex items-center gap-4 md:gap-8">
 //             {/* Mobile menu button */}
 //             <div
-//               className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#F0EEFF] transition-colors cursor-pointer"
+//               className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#f1d5d9] transition-colors cursor-pointer"
 //               onClick={() => {
 //                 // setDropdown(!dropdown);
 //                 setIsMobileMenuOpen((p) => !p);
@@ -380,7 +380,7 @@
 
 //               {/* Mobile Search Icon */}
 //               <button
-//                 className="lg:hidden p-2 rounded-lg hover:bg-[#F0EEFF] transition-colors"
+//                 className="lg:hidden p-2 rounded-lg hover:bg-[#f1d5d9] transition-colors"
 //                 onClick={() => setIsOpen(true)}
 //               >
 //                 <Search size={20} className="text-gray-600" />
@@ -476,7 +476,7 @@
 //             {showChoice && (
 //               <button
 //                 onClick={() => navigate("/admin")}
-//                 className="p-2 rounded-lg group hover:bg-[#F0EEFF] transition-colors"
+//                 className="p-2 rounded-lg group hover:bg-[#f1d5d9] transition-colors"
 //               >
 //                 <LayoutDashboard
 //                   size={20}
@@ -488,7 +488,7 @@
 //             {/* User dropdown */}
 //             <div className="relative group cursor-pointer">
 //               <button
-//                 className="p-2 rounded-lg hover:bg-[#F0EEFF] transition-colors"
+//                 className="p-2 rounded-lg hover:bg-[#f1d5d9] transition-colors"
 //                 onClick={() => {
 //                   setIsProfileOpen(!isProfileOpen);
 //                   setDropdown(false);
@@ -513,11 +513,11 @@
 //                           className="flex items-center gap-4 px-7 pb-5 rounded-lg cursor-pointer transition-colors duration-200 group"
 //                           onClick={() => setShowLogoutModal(true)}
 //                         >
-//                           <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#F0EEFF] transition-colors duration-200">
+//                           <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#f1d5d9] transition-colors duration-200">
 //                             <LogOut className="w-5 h-5 text-gray-600 group-hover:text-[#1C3753]" />
 //                           </div>
 //                           <div className="flex-1">
-//                             <h2 className="text-[#126B6D] font-playpen-sans font-medium text-[16px]">
+//                             <h2 className="text-[#7A1F2B] font-stack-sans font-medium text-[16px]">
 //                               Log Out
 //                             </h2>
 //                           </div>
@@ -529,11 +529,11 @@
 //                         to="/login"
 //                         className="flex items-center gap-4 px-7 pb-6 rounded-lg cursor-pointer transition-colors duration-200 group"
 //                       >
-//                         <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#F0EEFF] transition-colors duration-200">
+//                         <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#f1d5d9] transition-colors duration-200">
 //                           <LogIn className="w-5 h-5 text-gray-600 group-hover:text-[#1C3753]" />
 //                         </div>
 //                         <div className="flex-1">
-//                           <h2 className="text-[#126B6D] font-playpen-sans font-medium text-sm">
+//                           <h2 className="text-[#7A1F2B] font-stack-sans font-medium text-sm">
 //                             Log In
 //                           </h2>
 //                         </div>
@@ -549,7 +549,7 @@
 //             {/* Wishlist */}
 //             <Link
 //               to="/accounts/wishlist"
-//               className="relative p-2 rounded-lg group hover:bg-[#F0EEFF] transition-colors"
+//               className="relative p-2 rounded-lg group hover:bg-[#f1d5d9] transition-colors"
 //             >
 //               <Heart
 //                 size={20}
@@ -565,7 +565,7 @@
 //             {/* Cart */}
 //             <Link
 //               to="/bag"
-//               className="relative p-2 group rounded-lg hover:bg-[#F0EEFF] transition-colors"
+//               className="relative p-2 group rounded-lg hover:bg-[#f1d5d9] transition-colors"
 //             >
 //               <ShoppingCart
 //                 size={20}
@@ -636,7 +636,7 @@
 //                 <Link
 //                   to="/home"
 //                   onClick={() => setIsMobileMenuOpen(false)}
-//                   className="flex items-center gap-3 py-3 text-[#126B6D] font-playpen-sans font-medium hover:text-[#1C3753] transition-colors"
+//                   className="flex items-center gap-3 py-3 text-[#7A1F2B] font-stack-sans font-medium hover:text-[#1C3753] transition-colors"
 //                 >
 //                   Home
 //                 </Link>
@@ -645,7 +645,7 @@
 //                 <Link
 //                   to="/accounts/addresses"
 //                   onClick={() => setIsMobileMenuOpen(false)}
-//                   className="flex items-center gap-3 py-3 text-[#126B6D] font-playpen-sans font-medium hover:text-[#1C3753] transition-colors"
+//                   className="flex items-center gap-3 py-3 text-[#7A1F2B] font-stack-sans font-medium hover:text-[#1C3753] transition-colors"
 //                 >
 //                   <MapPin size={18} />
 //                   Add Delivery Location
@@ -732,7 +732,7 @@
 //                 <Link
 //                   to="/faqs"
 //                   onClick={() => setDropdown(false)}
-//                   className="flex items-center gap-3 py-3 text-[#126B6D] font-playpen-sans font-medium hover:text-[#1C3753] transition-colors"
+//                   className="flex items-center gap-3 py-3 text-[#7A1F2B] font-stack-sans font-medium hover:text-[#1C3753] transition-colors"
 //                 >
 //                   FAQs
 //                 </Link>
@@ -784,7 +784,7 @@
 //                         <LogOut className="w-5 h-5 text-gray-600 group-hover:text-red-600" />
 //                       </div>
 //                       <div className="flex-1">
-//                         <h2 className="text-[#126B6D] font-playpen-sans font-medium text-sm">
+//                         <h2 className="text-[#7A1F2B] font-stack-sans font-medium text-sm">
 //                           Log Out
 //                         </h2>
 //                       </div>
@@ -1335,7 +1335,7 @@ useEffect(() => {
   return (
     <div className="fixed top-0 left-0 w-full z-50">
       {/* Top Announcement Bar */}
-      <div className="w-full bg-[#126B6D] text-white text-center text-sm py-2">
+      <div className="w-full bg-[#bec2c5] text-[#1e1e1e] text-center text-sm py-2  font-stack-sans">
         <Swiper
           modules={[Autoplay]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -1356,16 +1356,16 @@ useEffect(() => {
           <div className="flex items-center gap-4 md:gap-8">
             {/* Mobile menu button */}
             <div
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#F0EEFF] transition-colors cursor-pointer"
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#f1d5d9] transition-colors cursor-pointer"
               onClick={() => {
                 setIsMobileMenuOpen((p) => !p);
                 setIsProfileOpen(false);
               }}
             >
               {isMobileMenuOpen ? (
-                <X size={24} className="text-[#126B6D]" />
+                <X size={24} className="text-[#7A1F2B]" />
               ) : (
-                <Menu size={24} className="text-[#126B6D]" />
+                <Menu size={24} className="text-[#7A1F2B]" />
               )}
             </div>
 
@@ -1388,7 +1388,7 @@ useEffect(() => {
               }}
               className="hidden lg:flex items-center gap-2"
             >
-              <MapPin size={16} className="text-[#FF7F66]" />
+              <MapPin size={16} className="text-[#5d5e5]" />
               <span className="text-sm lg:text-xs md:text-sm text-[#747877]">
                 {isAuthenticated && defaultAddress ? (
                   <div className="flex-col items-start justify-start">
@@ -1407,8 +1407,8 @@ useEffect(() => {
             {/* Search Section */}
             <div className="relative">
               {/* Desktop Search Input */}
-              <div className="hidden lg:flex items-center bg-[#e7f1f1] overflow-hidden w-64 lg:w-80 xl:w-96 rounded-md /10">
-                <Search size={18} className="mx-2 text-[#126B6D]" />
+              <div className="hidden lg:flex items-center bg-[#dadde0] overflow-hidden w-64 lg:w-80 xl:w-96 rounded-md /10">
+                <Search size={18} className="mx-2 text-[#7A1F2B]" />
                 <input
                   type="text"
                   placeholder="Search for products..."
@@ -1456,7 +1456,7 @@ useEffect(() => {
                               <p className="text-sm font-medium">
                                 {item.productTittle}
                               </p>
-                              <p className="text-xs text-[#126B6D]">
+                              <p className="text-xs text-[#7A1F2B]">
                                 in {item.categoryName || "Uncategorized"}
                               </p>
                             </div>
@@ -1474,7 +1474,7 @@ useEffect(() => {
 
               {/* Mobile Search Icon */}
               <button
-                className="lg:hidden p-2 rounded-lg hover:bg-[#F0EEFF] transition-colors"
+                className="lg:hidden p-2 rounded-lg hover:bg-[#C9CBCE] transition-colors"
                 onClick={() => setIsOpen(true)}
               >
                 <Search size={20} className="text-gray-600" />
@@ -1493,7 +1493,7 @@ useEffect(() => {
                         setIsOpen(false);
                         setSearchParams({}, { replace: true });
                       }}
-                      className="p-2 rounded-full hover:bg-[#F0EEFF]"
+                      className="p-2 rounded-full hover:bg-[#C9CBCE]"
                     >
                       <X size={20} />
                     </button>
@@ -1540,7 +1540,7 @@ useEffect(() => {
                               <p className="text-sm font-medium">
                                 {item.productTittle}
                               </p>
-                              <p className="text-xs text-[#126B6D]">
+                              <p className="text-xs text-[#7A1F2B]">
                                 in {item.categoryName || "Uncategorized"}
                               </p>
                             </div>
@@ -1548,7 +1548,7 @@ useEffect(() => {
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-[#126B6D] text-sm">No results found.</p>
+                      <p className="text-[#7A1F2B] text-sm">No results found.</p>
                     )}
                   </div>
                 </div>
@@ -1559,11 +1559,11 @@ useEffect(() => {
             {showChoice && (
               <button
                 onClick={() => navigate("/admin")}
-                className="p-2 rounded-lg group hover:bg-[#F0EEFF] transition-colors"
+                className="p-2 rounded-lg group hover:bg-[#f1d5d9] transition-colors"
               >
                 <LayoutDashboard
                   size={20}
-                  className="text-[#126B6D] group-hover:text-[#FF7F66]"
+                  className="text-[#7A1F2B]  group-hover:text-[#5d5e5f] "
                 />
               </button>
             )}
@@ -1571,7 +1571,7 @@ useEffect(() => {
             {/* User dropdown */}
             <div className="relative group cursor-pointer">
               <button
-                className="p-2 rounded-lg hover:bg-[#F0EEFF] transition-colors"
+                className="p-2 rounded-lg hover:bg-[#f1d5d9] transition-colors"
                 onClick={() => {
                   setIsProfileOpen(!isProfileOpen);
                   setDropdown(false);
@@ -1580,7 +1580,7 @@ useEffect(() => {
               >
                 <UserRound
                   size={20}
-                  className="text-[#126B6D] group-hover:text-[#FF7F66]"
+                  className="text-[#7A1F2B] group-hover:text-[#5d5e5f]"
                 />
               </button>
 
@@ -1593,11 +1593,11 @@ useEffect(() => {
                         className="flex items-center gap-4 px-7 pb-5 rounded-lg cursor-pointer transition-colors duration-200 group"
                         onClick={() => setShowLogoutModal(true)}
                       >
-                        <div className="p-2 rounded-lg bg-[#F0EEFF] group-hover:bg-[#F0EEFF] transition-colors duration-200">
-                          <LogOut className="w-5 h-5 text-gray-600 group-hover:text-[#126B6D]" />
+                        <div className="p-2 rounded-lg bg-[#f1d5d9] group-hover:bg-[#f1d5d9] transition-colors duration-200">
+                          <LogOut className="w-5 h-5 text-gray-600 group-hover:bg-[#dadde0]/50" />
                         </div>
                         <div className="flex-1">
-                          <h2 className="text-[#126B6D] font-playpen-sans font-medium text-[16px]">
+                          <h2 className="text-[#7A1F2B] font-stack-sans font-medium text-[16px]">
                             Log Out
                           </h2>
                         </div>
@@ -1607,11 +1607,11 @@ useEffect(() => {
                         to="/login"
                         className="flex items-center gap-4 px-7 pb-6 rounded-lg cursor-pointer transition-colors duration-200 group"
                       >
-                        <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#f5dccc] transition-colors duration-200">
-                          <LogIn className="w-5 h-5 text-gray-600 group-hover:text-[#0f6668]" />
+                        <div className="p-2 rounded-lg bg-gray-100  transition-colors duration-200">
+                          <LogIn className="w-5 h-5 text-gray-600 hover:bg-[#dadde0]/50" />
                         </div>
                         <div className="flex-1">
-                          <h2 className="text-[#126B6D] font-medium text-sm font-playpen-sans">
+                          <h2 className="text-[#7A1F2B] font-medium text-sm font-stack-sans">
                             Log In
                           </h2>
                         </div>
@@ -1634,15 +1634,15 @@ useEffect(() => {
 
                 navigate("/accounts/wishlist");
               }}
-              className="relative p-2 rounded-lg group hover:bg-[#F0EEFF] transition-colors"
+              className="relative p-2 rounded-lg group hover:bg-[#f1d5d9] transition-colors"
             >
               <Heart
                 size={20}
-                className="text-[#126B6D] group-hover:text-[#FF7F66]"
+                className="text-[#7A1F2B] group-hover:text-[#5d5e5f]"
               />
 
               {wishlistCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#FF7F66] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-[#dcdee0] text-[#a7646d] text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
                   {wishlistCount}
                 </span>
               )}
@@ -1658,15 +1658,15 @@ useEffect(() => {
 
                 navigate("/bag");
               }}
-              className="relative p-2 group rounded-lg hover:bg-[#F0EEFF] transition-colors"
+              className="relative p-2 group rounded-lg hover:bg-[#f1d5d9] transition-colors"
             >
               <ShoppingCart
                 size={20}
-                className="text-[#126B6D] group-hover:text-[#FF7F66]"
+                className="text-[#7A1F2B] group-hover:text-[#5d5e5f]"
               />
 
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#FF7F66] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-[#dcdee0] text-[#a7646d] text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
@@ -1696,7 +1696,7 @@ useEffect(() => {
             >
               <div className="p-5 border-b border-gray-200">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#F0EEFF] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-[#f1d5d9] flex items-center justify-center">
                     {user?.user?.profileImage?.url ? (
                       <img
                         src={user.user.profileImage.url}
@@ -1706,7 +1706,7 @@ useEffect(() => {
                         className="w-full h-full object-cover rounded-full"
                       />
                     ) : (
-                      <UserRound size={20} className="text-[#126B6D]" />
+                      <UserRound size={20} className="text-[#7A1F2B]" />
                     )}
                   </div>
                   <div>
@@ -1721,7 +1721,7 @@ useEffect(() => {
                 <Link
                   to="/home"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 py-3 text-[#126B6D] font-playpen-sans font-medium hover:text-[#126B6D] transition-colors"
+                  className="flex items-center gap-3 py-3 text-[#7A1F2B] font-stack-sans font-medium hover:text-[#7A1F2B] transition-colors"
                 >
                   Home
                 </Link>
@@ -1760,7 +1760,7 @@ useEffect(() => {
                   return (
                     <div key={item._id || item.name || index} className="py-2">
                       <div
-                        className="flex items-center justify-between py-3 px-3 text-gray-700 font-medium rounded-lg hover:bg-[#F0EEFF] hover:text-[#126B6D] cursor-pointer"
+                        className="flex items-center justify-between py-3 px-3 text-gray-700 font-medium rounded-lg hover:bg-[#f1d5d9] hover:text-[#7A1F2B] cursor-pointer"
                         onClick={() => {
                           if (subcategories.length > 0) {
                             setSubDropdown(
@@ -1790,7 +1790,7 @@ useEffect(() => {
                           }`}
                         >
                           <div
-                            className="py-2 px-3 text-sm rounded-md text-gray-600 hover:bg-[#F0EEFF] hover:text-[#126B6D] cursor-pointer"
+                            className="py-2 px-3 text-sm rounded-md text-gray-600 hover:bg-[#f1d5d9] hover:text-[#7A1F2B] cursor-pointer"
                             onClick={() => {
                               navigate(
                                 `/products/${encodeURIComponent(item.slug || item.name)}`,
@@ -1814,7 +1814,7 @@ useEffect(() => {
                             .map((sub, i) => (
                               <div
                                 key={sub._id || sub.name || i}
-                                className="py-2 px-3 text-sm text-gray-600 rounded-md hover:bg-[#F0EEFF] hover:text-[#126B6D] cursor-pointer"
+                                className="py-2 px-3 text-sm text-gray-600 rounded-md hover:bg-[#f1d5d9] hover:text-[#7A1F2B] cursor-pointer"
                                 onClick={() => {
                                   navigate(
                                     `/products/${encodeURIComponent(item.slug || item.name)}/${encodeURIComponent(sub.slug || sub.name)}`,
@@ -1843,7 +1843,7 @@ useEffect(() => {
                 {/* <Link
                   to="/faqs"
                   onClick={() => setDropdown(false)}
-                  className="flex items-center gap-3 py-3 text-[#126B6D] font-playpen-sans font-medium hover:text-[#126B6D] transition-colors"
+                  className="flex items-center gap-3 py-3 text-[#7A1F2B] font-stack-sans font-medium hover:text-[#7A1F2B] transition-colors"
                 >
                   FAQs
                 </Link> */}
@@ -1884,7 +1884,7 @@ useEffect(() => {
                       <LogOut className="w-5 h-5 text-gray-600 group-hover:text-red-600" />
                     </div>
                     <div className="flex-1">
-                      <h2 className="text-[#126B6D] font-playpen-sans font-medium text-sm">
+                      <h2 className="text-[#7A1F2B] font-stack-sans font-medium text-sm">
                         Log Out
                       </h2>
                     </div>
@@ -1894,11 +1894,11 @@ useEffect(() => {
                     to="/login"
                     className="flex items-center gap-4 px-7 pb-6 rounded-lg cursor-pointer transition-colors duration-200 group"
                   >
-                    <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#F0EEFF] transition-colors duration-200">
-                      <LogIn className="w-5 h-5 text-gray-600 group-hover:text-[#126B6D]" />
+                    <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-[#f1d5d9] transition-colors duration-200">
+                      <LogIn className="w-5 h-5 text-gray-600 group-hover:text-[#7A1F2B]" />
                     </div>
                     <div className="flex-1">
-                      <h2 className="text-[#126B6D] font-medium text-sm">
+                      <h2 className="text-[#7A1F2B] font-medium text-sm">
                         Log In
                       </h2>
                     </div>
@@ -1983,7 +1983,7 @@ useEffect(() => {
                       disabled={!validatePincode(pincode) || loading}
                       className={`px-5 py-2 rounded-md font-medium text-sm transition flex items-center justify-center ${
                         validatePincode(pincode)
-                          ? "bg-[#126B6D] text-white"
+                          ? "bg-[#4A4D52] text-white"
                           : "bg-gray-300 text-gray-500 cursor-not-allowed"
                       }`}
                     >

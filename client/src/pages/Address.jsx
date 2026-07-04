@@ -134,16 +134,16 @@ function Address() {
       {/* Header */}
       <div className="md:mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
         <div>
-          <h1 className="text-xl font-semibold text-[#126B6D] font-playpen-sans">
+          <h1 className="text-xl font-semibold text-[#7A1F2B] font-stack-sans">
             Saved Addresses
           </h1>
-          <p className="text-sm text-gray-500 mt-1 font-marcellus">
+          <p className="text-sm text-gray-500 mt-1 font-merriweather">
             Manage your delivery locations
           </p>
         </div>
         <button
           onClick={() => setOpen(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-[#126B6D] text-white rounded-lg transition-all shadow-sm font-playpen-sans" 
+          className="flex items-center gap-2 px-4 py-2 bg-[#7A1F2B] text-white rounded-lg transition-all shadow-sm font-stack-sans" 
         >
           <Plus size={18} />
           <span>Add New Address</span>
@@ -166,7 +166,7 @@ function Address() {
                 {/* Default Badge */}
                 {add.isDefault && (
                   <div className="absolute top-0 right-0">
-                    <div className="bg-[#126B6D] text-white text-xs font-medium px-3 py-1 rounded-bl-lg flex items-center gap-1">
+                    <div className="  bg-[#7A1F2B] text-white text-xs font-medium px-3 py-1 rounded-bl-lg flex items-center gap-1">
                       <Star size={12} className="fill-current" />
                       Default
                     </div>
@@ -279,7 +279,7 @@ function Address() {
               className="bg-white rounded-xl border-2 border-dashed border-gray-300 p-6 flex flex-col items-center justify-center cursor-pointer hover:border-[#1C3753] hover:bg-gray-50 transition-all duration-200 min-h-[280px] group"
               onClick={() => setOpen(true)}
             >
-              <div className="p-3 bg-gray-100 rounded-full group-hover:bg-[#F0EEFF] transition-colors duration-200">
+              <div className="p-3 bg-gray-100 rounded-full group-hover:bg-[#f1d5d9] transition-colors duration-200">
                 <Plus
                   size={28}
                   className="text-gray-500 group-hover:text-[#1C3753]"

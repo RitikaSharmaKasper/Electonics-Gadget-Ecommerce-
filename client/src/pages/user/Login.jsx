@@ -202,7 +202,7 @@ function Login() {
 
             {/* Form Header */}
             <div className="text-center mb-8">
-              {/* <div className="bg-[#F0EEFF] p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+              {/* <div className="bg-[#f1d5d9] p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
                 <LogIn className="w-6 h-6 text-[#1C3753]" />
               </div> */}
               <h2 className="text-3xl font-bold text-gray-900">Welcome Back</h2>
@@ -318,7 +318,7 @@ function Login() {
               <button
                 type="submit"
                 disabled={authLoading}
-                className="w-full bg-[#126B6D]  hover:bg-[#FFFFF] hover:text-white disabled:bg-gray-400 text-[#FFFFFF] py-3 px-4 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-[#7A1F2B]  hover:bg-[#FFFFF] hover:text-white disabled:bg-gray-400 text-[#FFFFFF] py-3 px-4 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {authLoading ? (
                   <>
@@ -338,7 +338,7 @@ function Login() {
             {/* Sign Up Link */}
             <div className="text-center mt-8 pt-6 border-t border-gray-200">
               <p className="text-gray-600">
-                New to Ivoryinks.com?{" "}
+                New to Divinex?{" "}
                 <Link
                   to="/register"
                   className="text-[#F8A14A] hover:text-amber-700 font-semibold underline transition-colors"
