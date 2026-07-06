@@ -294,8 +294,8 @@ function Card({
               >
                 <Heart
                   className="w-5 h-5 cursor-pointer"
-                  fill={inWishlist ? "#FF7F66" : "white"}
-                  stroke={inWishlist ? "#FF7F66" : "#126B6D"}
+                  fill={inWishlist ? " #7A1F2B" : "white"}
+                  stroke={inWishlist ? "#7A1F2B" : "#192324"}
                   strokeWidth={1}
                 />
               </button>

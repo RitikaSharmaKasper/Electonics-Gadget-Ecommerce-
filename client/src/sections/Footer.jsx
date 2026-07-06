@@ -14,7 +14,7 @@ function Footer() {
         alt=""
       /> */}
       <img
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-40 pointer-events-none select-none"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-30 pointer-events-none select-none"
         src={footerImg}
         alt="Footer Background"
       />
@@ -45,24 +45,22 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="text-sm block text-[#5d5e5]"
                 >
-                  (+91) 800-644-8800
+                  (+91)8383926143
                 </a>
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=happyartsupplies@gmail.com"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm block text-[#5d5e5]"
                 >
-                  info@kasperinfotech.com sales@kasperinfotech.com
+                  info@divinexinfomatics.com sales@divinexinfomatics.com
                 </a>
                 <p className="text-sm text-[#7A1F2B] font-stack-sans">
                   {/* B402, United Crossandra,  */}
-                  Office Number 503, TOWER-C,
+                  Dwarka, New Delhi
                 </p>
-                {/* <br /> */}
-                <p className="text-sm text-[#7A1F2B] font-stack-sans">
-                  The iThum Towers, Sector 62, Noida, Uttar Pradesh 201301
-                </p>
+                
+                
                 <div className="flex gap-3 font-[200] mt-2">
                   <a
                     target="_"

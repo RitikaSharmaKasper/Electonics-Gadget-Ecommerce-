@@ -277,7 +277,7 @@ function Hero() {
       <div className="hidden lg:flex absolute right-4 lg:right-6 xl:right-10 bottom-6 lg:bottom-10 xl:bottom-12 z-30 items-center justify-center">
         <button
           onClick={handleScrollDown}
-        className="bg-[#e3e0f3] shadow-md rounded-full p-2.5 lg:p-3 hover:bg-[#e3e0f3]  border border-[#bdbcd1] transition animate-bounce"
+        className="bg-[#dadde0] shadow-md rounded-full p-2.5 lg:p-3 hover:bg-[#dadde0]  border border-[#747877] transition animate-bounce"
         >
           <ChevronDown className="w-5 h-5 lg:w-6 lg:h-6" />
         </button>

@@ -173,7 +173,7 @@ function OrderHistory() {
         </div>
         {/* Search Input */}
         <div className="flex flex-col sm:flex-row gap-3">
-          <div className="flex items-center w-fit sm:w-auto px-3 py-2 bg-[#effafa] border rounded-md transition-all">
+          <div className="flex items-center w-fit sm:w-auto px-3 py-2 bg-[#dadde0] border rounded-md transition-all">
             <Search className="text-gray-500 w-4 h-4" />
             <input
               type="text"
@@ -233,7 +233,7 @@ function OrderHistory() {
                 className="bg-white md:rounded-lg md:shadow-sm text-xs sm:text-sm md:text-base"
               >
                 {/* Order Header */}
-                <div className="flex flex-wrap sm:flex-row justify-between gap-3 bg-gradient-to-r from-[#88D3D5]/50 to-[#6CB7B9]/20  sm:gap-0 items-start sm:items-center px-4 sm:px-6 py-4 border-b">
+                <div className="flex flex-wrap sm:flex-row justify-between gap-3 bg-[#f1d5d9]  sm:gap-0 items-start sm:items-center px-4 sm:px-6 py-4 border-b">
                   <div>
                     <span className="text-gray-500 block">Order Placed</span>
                     <p className="font-medium">{formatDate(order.placedAt)}</p>

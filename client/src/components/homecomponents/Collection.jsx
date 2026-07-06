@@ -223,7 +223,7 @@ function Collection() {
         <div className="max-w-4xl mx-auto text-center ">
           <div className="flex justify-center mb-6"></div>
           <span className="lg:text-[31px] md:text-[31px] text-[31px] font-stack-sans text-[#7A1F2B] mb-3 font-medium">
-            Explore Stationary
+          Explore the Electronics & Computer Accessories Market
           </span>
         </div>
 
@@ -263,7 +263,7 @@ function Collection() {
               inset: -3px;
               border-radius: 28%;
               padding: 1.5px;
-background: linear-gradient(to bottom, #dadde0, #7A1F2B);
+// background: linear-gradient(to bottom, #dadde0, #7A1F2B);
               background-size: 300% 300%;
               opacity: 0.45;
               transition: opacity 0.35s ease;

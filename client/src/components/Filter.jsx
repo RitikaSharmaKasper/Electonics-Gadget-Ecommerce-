@@ -172,7 +172,7 @@ function Filter({
                 className={`px-3 py-1.5 whitespace-nowrap rounded-full  font-stack-sans text-sm transition ${
                   (isMobile ? tempCategory : selectedSubcategory) === subcat
                     ? "  bg-[#7A1F2B] text-white cursor-default"
-                    : "bg-[#f1d5d9] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#7A1F2B]"
+                    : "bg-[#f1d5d9] text-[#747877] hover:bg-[#dadde0] hover:text-[#7A1F2B]"
                 }`}
                 onClick={() =>
                   isMobile
@@ -217,7 +217,7 @@ function Filter({
             className="flex flex-wrap gap-2 mt-3 "
             style={{ display: "flex", flexDirection: "column" }}
           >
-            <div className="flex gap-2">
+            <div className="flex  flex-wrap gap-2">
               {(showAllColors
                 ? colors
                 : colors.slice(0, INITIAL_COLORS_COUNT)
@@ -233,7 +233,7 @@ function Filter({
                       "text-left px-2 py-1 border rounded-md font-stack-sans  transition text-xs",
                       isActive
                        ? "  bg-[#7A1F2B] text-white cursor-default"
-                    : "bg-[#f1d5d9] text-[#747877] hover:bg-[#ffdfd7] hover:text-[#7A1F2B]"
+                    : "bg-[#f1d5d9] text-[#747877] hover:bg-[#dadde0] hover:text-[#7A1F2B]"
                     )}
                     onClick={() =>
                       isMobile

@@ -229,7 +229,7 @@ function Design() {
       {/* Small badge */}
       <span className="inline-flex items-center justify-center flex-wrap mt-5 gap-1.5 sm:gap-2 text-[15px] sm:text-[19px] md:text-[24px] lg:text-[30px] font-normal leading-tight sm:leading-6 text-[#7A1F2B] px-4 py-1.5 sm:px-8 sm:py-2 md:px-10 md:py-2.5 lg:px-14 lg:py-3 rounded-full border-2 border-[text-gray-900] font-stack-sans text-center">
         <span className="text-gray-400">✦</span>
-        Explore Some Lavish Stationary Collection
+        Explore Our Tec Accessories Collection
         <span className="text-gray-400">✦</span>
       </span>
 

@@ -1736,7 +1736,7 @@ useEffect(() => {
                   }}
                   className="lg:hidden flex items-center gap-1 px-2 py-1 border border-[#E5E7EB] rounded-md bg-[#F9FAFB]"
                 >
-                  <MapPin size={14} className="text-[#1C146B]" />
+                  <MapPin size={14} className="text-[#7A1F2B]" />
 
                   <span className="text-[11px] font-medium text-[#4C5562]">
                     {isAuthenticated && defaultAddress

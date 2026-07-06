@@ -39,7 +39,7 @@ function FilterProducts({ text = "Best Accessories", sort }) {
       {/* Sort */}
       <div
         ref={dropdownRef}
-        className="relative flex justify-between md:justify-start items-center gap-2 w-full md:w-auto border border-[#F0EEFF] rounded-[5px] bg-[#FFFFFF] px-3 py-2 shadow-sm"
+        className="relative flex justify-between md:justify-start items-center gap-2 w-full md:w-auto border border-[#747877] rounded-[5px] bg-[#FFFFFF] px-3 py-2 shadow-sm"
       >
         <span className="text-[#747877] text-xs md:text-base">Sort by:</span>
 
@@ -65,7 +65,7 @@ function FilterProducts({ text = "Best Accessories", sort }) {
               <button
                 type="button"
                 key={opt.value}
-                className="w-full text-left hover:bg-[#dffcfd] px-4 py-2 text-sm text-[#747877] hover:text-[#7A1F2B]"
+                className="w-full text-left hover:bg-[#dadde0] px-4 py-2 text-sm text-[#747877] hover:text-[#7A1F2B]"
                 onClick={() => {
                   setSelected(opt);
                   sort?.(opt.value);

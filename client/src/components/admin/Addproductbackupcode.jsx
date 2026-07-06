@@ -1589,7 +1589,7 @@ const AddProduct = () => {
                           type="button"
                           onClick={() => generateVariantSKU(index)}
                           className="absolute right-2 top-1/2 -translate-y-1/2
-                  h-[32px] px-4 bg-[#1C3753] text-white text-sm rounded-md"
+                  h-[32px] px-4 bg-[#7A1F2B] text-white text-sm rounded-md"
                         >
                           Generate
                         </button>

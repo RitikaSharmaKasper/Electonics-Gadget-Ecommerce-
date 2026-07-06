@@ -1032,7 +1032,7 @@ function LatestProducts() {
     }
   };
 
-  // Product Card Component
+  // Product Card Component — same logic, redesigned visuals to match TopProducts styling
   const ProductCard = ({ product }) => {
     const defaultVariant = product.variants?.[0];
     const variantId = defaultVariant?._id;
@@ -1089,79 +1089,82 @@ function LatestProducts() {
     };
 
     return (
-      <div className="bg-white p-2 rounded-lg group block border border-[#F0EEFF] transition-shadow duration-300 hover:shadow-lg">
+      <div className="bg-white p-2.5 rounded-tl-[26px] rounded-tr-md rounded-bl-md rounded-br-[26px] group block border border-[#F0EEFF] shadow-sm transition-shadow duration-300 hover:shadow-lg">
         <Link
           to={`/product/${product.slug || product._id}`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="relative w-full overflow-hidden rounded-md">
-            <button
-              type="button"
-              className="absolute top-2 right-2 bg-white shadow-md rounded-full p-1.5 z-10 hover:scale-110 transition-transform"
-              onClick={(e) => handleWishlistToggle(e, product)}
-            >
-              <Heart
-                className="w-4 h-4"
-                fill={inWishlist ? "red" : "white"}
-                stroke={inWishlist ? "red" : "black"}
-                strokeWidth={1.5}
+          {/* Outer wrapper has NO overflow-hidden, so the floating price tag below isn't clipped */}
+          <div className="relative w-full mb-4">
+            <div className="relative w-full overflow-hidden rounded-tl-[20px] rounded-tr-sm rounded-bl-sm rounded-br-[20px] bg-[#FAF9FB]">
+              {/* Discount badge, top-left corner ribbon style */}
+              {discountPercent > 0 && (
+                <span className="absolute top-0 left-0 z-10 bg-[#7A1F2B] text-white text-[10px] font-semibold tracking-wide px-2.5 py-1 rounded-br-lg rounded-tl-[20px] shadow-sm">
+                  {Math.round(discountPercent)}% OFF
+                </span>
+              )}
+
+              <button
+                type="button"
+                className="absolute top-2 right-2 backdrop-blur-md bg-white/70 shadow-md rounded-full p-1.5 z-10 hover:scale-110 transition-transform duration-300"
+                onClick={(e) => handleWishlistToggle(e, product)}
+              >
+                <Heart
+                  className="w-4 h-4"
+                  fill={inWishlist ? "red" : "white"}
+                  stroke={inWishlist ? "red" : "black"}
+                  strokeWidth={1.5}
+                />
+              </button>
+              <img
+                className="w-full aspect-square object-contain transition-transform duration-300 group-hover:scale-105"
+                src={productImage}
+                alt={product.name || product.productTittle}
+                loading="lazy"
+                onError={(e) => {
+                  e.target.src = "/placeholder.png";
+                }}
               />
-            </button>
-            <img
-              className="w-full aspect-square object-contain transition-transform duration-300 group-hover:scale-110"
-              src={productImage}
-              alt={product.name || product.productTittle}
-              loading="lazy"
-              onError={(e) => {
-                e.target.src = "/placeholder.png";
-              }}
-            />
-          </div>
+            </div>
 
-          <div className="mt-3">
-            <h3 className="text-sm  text-gray-700  font-normal line-clamp-1 mb-2">
-              {product.name || product.productTittle || "Product Name"}
-            </h3>
-
-            <div className="flex items-center flex-wrap gap-2">
-              <span className="text-gray-900 font-medium">
+            {/* Floating price tag overlapping the bottom edge of the image — now unclipped */}
+            <div className="absolute -bottom-3 left-3 bg-white shadow-md rounded-full px-3 py-1 flex items-center gap-1.5 border border-[#F0EEFF] z-10">
+              <span className="text-gray-900 font-semibold text-sm">
                 ₹{sellingPrice || "--"}
               </span>
               {mrp > 0 && sellingPrice > 0 && mrp !== sellingPrice && (
-                <span className="text-[#747877] text-xs line-through font-light">
+                <span className="text-[#747877] text-[11px] line-through font-light">
                   ₹{mrp}
                 </span>
               )}
-              {discountPercent > 0 && (
-                <>
-                  <div className="border-l border-[#DBDBDB] h-3"></div>
-                  <span className="text-[#7A1F2B] text-xs">
-                    {Math.round(discountPercent)}% Off
-                  </span>
-                </>
-              )}
             </div>
+          </div>
+
+          <div className="mt-4 px-1">
+            <h3 className="text-sm text-gray-700 font-normal line-clamp-1">
+              {product.name || product.productTittle || "Product Name"}
+            </h3>
           </div>
         </Link>
 
         {/* Button placed OUTSIDE the Link */}
         <button
-          className={`w-full rounded-md flex justify-center items-center gap-4 p-2 mt-2 transition-all duration-300 cursor-pointer ${
+          className={`w-full rounded-full flex justify-center items-center gap-2 py-2.5 mt-3 text-[12px] font-medium transition-all duration-300 cursor-pointer ${
             inCart
-              ? "bg-white border border-[#52151d] text-[#7A1F2B]"
-              : "  bg-[#7A1F2B] border border-[#52151d] text-white hover:bg-[#7A1F2B]"
+              ? "bg-white border border-[#7A1F2B] text-[#7A1F2B] hover:bg-[#FBF2F3]"
+              : "bg-[#7A1F2B] border border-[#7A1F2B] text-white hover:bg-[#5f1621]"
           }`}
           onClick={inCart ? handleGoToCart : handleAddToCartClick}
         >
           {inCart ? (
             <>
               <ShoppingCart className="w-4 h-4" />
-              <span className="text-[12px]">Go to Cart</span>
+              <span>Go to Cart</span>
             </>
           ) : (
             <>
               <FaBagShopping className="w-3 h-3" />
-              <span className="text-[12px]">Add To Cart</span>
+              <span>Add To Cart</span>
             </>
           )}
         </button>
@@ -1173,7 +1176,7 @@ function LatestProducts() {
     return (
       <div className="lg:px-20 md:px-[60px] px-4 py-[23px]">
         <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#52151d] mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#7A1F2B] mx-auto"></div>
         </div>
       </div>
     );

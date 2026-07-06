@@ -302,7 +302,7 @@ const CoupenForm = () => {
             <div className="flex items-start gap-4">
               <div
                 onClick={() => navigate("/admin/ManageCoupons")}
-                className="size-12 rounded-xl bg-[#88D3D5]/50 text-[#7A1F2B] flex justify-center items-center cursor-pointer"
+                className="size-12 rounded-xl bg-[#f1d5d9] text-[#7A1F2B] flex justify-center items-center cursor-pointer"
               >
                 <ChevronLeft className="size-6" />
               </div>
@@ -333,7 +333,7 @@ const CoupenForm = () => {
                   disabled={loading}
                   className={`min-w-[140px] px-4 py-2 rounded-md flex items-center justify-center gap-2 transition-all duration-300 ${
                     loading
-                      ? "bg-[#88D3D5]/50 cursor-not-allowed"
+                      ? "bg-[#f1d5d9] cursor-not-allowed"
                       : "  bg-[#7A1F2B] hover:bg-[#fdd1c8] hover:text-gray-600"
                   } text-white`}
                 >
@@ -519,7 +519,7 @@ const CoupenForm = () => {
                       <label
                         className={`cursor-pointer rounded-lg p-3 flex flex-col gap-1 border-2 transition-all duration-200 ${
                           formData.appliesTo === "category"
-                            ? "bg-[#2b7fff]/5 border-[#0C0057]"
+                            ? "bg-[#f1d5d9] border-[#7A1F2B]"
                             : "border-zinc-200 bg-white"
                         }`}
                       >
@@ -537,7 +537,7 @@ const CoupenForm = () => {
                             Categories
                           </span>
                           {formData.appliesTo === "category" && (
-                            <Check className="size-4 text-[#0C0057]" />
+                            <Check className="size-4 text-[#7A1F2B]" />
                           )}
                         </div>
 
@@ -550,7 +550,7 @@ const CoupenForm = () => {
                       <label
                         className={`cursor-pointer rounded-lg p-3 flex flex-col gap-1 border-2 transition-all duration-200 ${
                           formData.appliesTo === "product"
-                            ? "bg-[#2b7fff]/5 border-[#0C0057]"
+                            ? "bg-[#f1d5d9] border-[#7A1F2B]"
                             : "border-zinc-200 bg-white"
                         }`}
                       >
@@ -568,7 +568,7 @@ const CoupenForm = () => {
                             Specific Products
                           </span>
                           {formData.appliesTo === "product" && (
-                            <Check className="size-4 text-[#0C0057]" />
+                            <Check className="size-4 text-[#7A1F2B]" />
                           )}
                         </div>
 
@@ -924,7 +924,7 @@ const CoupenForm = () => {
                   </p>
                 </div>
 
-                <div className="relative rounded-xl bg-[#88D3D5]/90 text-white p-5 overflow-hidden">
+                <div className="relative rounded-xl bg-[#7A1F2B] text-white p-5 overflow-hidden">
                   <div className="flex justify-between items-center">
                     <div>
                       <span className="uppercase opacity-80 text-xs tracking-wider">

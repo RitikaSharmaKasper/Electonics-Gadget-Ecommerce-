@@ -394,7 +394,7 @@ function ContactSection() {
           <div className="w-full lg:w-1/2 space-y-4">
             {/* EMAIL */}
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=happyartsupplies@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@divinexinfomatics.com"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-3 bg-white rounded-lg border hover:bg-gray-50 transition"
@@ -405,19 +405,19 @@ function ContactSection() {
               <div>
                 <p className="text-sm font-medium text-gray-700 font-stack-sans">Email</p>
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=happyartsupplies@gmail.com"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm block text-[#7A1F2B]"
                 >
-                  happyartsupplies@gmail.com
+ info@divinexinfomatics.com sales@divinexinfomatics.com
                 </a>
               </div>
             </a>
 
             {/* PHONE → WHATSAPP */}
             <a
-              href="https://wa.me/919886894723?text=Hi%2C%20I%20need%20help%20with%20my%20order"
+              href="https://wa.me/918383926143?text=Hi%2C%20I%20need%20help%20with%20my%20order"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-3 bg-white rounded-lg border hover:bg-gray-50 transition"
@@ -427,7 +427,7 @@ function ContactSection() {
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-700 font-stack-sans">Phone</p>
-                <p className="text-sm text-[#7A1F2B]">(+91) 98868 94723</p>
+                <p className="text-sm text-[#7A1F2B]">(+91) 8383926143 </p>
               </div>
             </a>
 
@@ -444,9 +444,9 @@ function ContactSection() {
               <div>
                 <p className="text-sm font-medium text-gray-700 font-stack-sans">Address</p>
                 <p className="text-sm text-gray-500">
-                  {/* B402, United Crossandra, */}
-                   Hormavu Agara Lake Road, Horamavu,
-                  Bengaluru 560043, Karnataka, India
+              Dwarka, New Delhi
+
+                
                 </p>
               </div>
             </a>

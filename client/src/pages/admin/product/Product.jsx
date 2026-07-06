@@ -702,7 +702,7 @@ const Products = () => {
 
             <div>
               <Link to={`/admin/add-product`}>
-                <button className="  bg-[#7A1F2B] text-white px-4 py-2 rounded-lg hover:bg-[#0f5a5c]">
+                <button className="  bg-[#7A1F2B] text-white px-4 py-2 rounded-lg hover:bg-[#7A1F2B]">
                   + Add Product
                 </button>
               </Link>

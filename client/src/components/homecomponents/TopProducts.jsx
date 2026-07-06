@@ -276,7 +276,7 @@ function TopProducts() {
     }
   };
 
-  // Spotlight cursor-follow effect (from design 2)
+  // Spotlight cursor-follow effect (kept, still used on hover)
   const handleCardPointerMove = (e) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -286,7 +286,8 @@ function TopProducts() {
     card.style.setProperty("--spot-y", `${y}px`);
   };
 
-  // Product Card Component — same logic, restyled with circular image + framer motion
+  // Product Card Component — same logic, redesigned visuals:
+  // clean rounded card, floating glass badges, pill-shaped CTA button
   const ProductCard = ({ product }) => {
     const defaultVariant = product.variants?.[0];
     const variantId = defaultVariant?._id;
@@ -343,31 +344,39 @@ function TopProducts() {
 
     return (
       <motion.div
-        whileHover={{ y: -8 }}
-        transition={{ type: "spring", stiffness: 220, damping: 18 }}
-        className="bg-white p-2 group block border  duration-300 "
+        whileHover={{ y: -6, boxShadow: "0 18px 34px -14px rgba(122,31,43,0.28)" }}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        className="bg-white rounded-2xl p-3 group block border border-[#F0EEFF] shadow-sm"
       >
         <Link
           to={`/product/${product.slug || product._id}`}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Circular / arch image container with spotlight effect */}
+          {/* Fully rounded image container with spotlight effect */}
           <div
-            className="relative w-full overflow-hidden rounded-t-[90px] rounded-b-lg aspect-[3/4] bg-white isolate"
+            className="relative w-full overflow-hidden rounded-xl aspect-[3/4] bg-[#FAF9FB] isolate"
             onMouseMove={handleCardPointerMove}
           >
             {/* Spotlight */}
             <div
-              className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-50 transition-opacity duration-500 z-[1]"
+              className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-60 transition-opacity duration-500 z-[1]"
               style={{
                 background:
-                  "radial-gradient(210px circle at var(--spot-x, 45%) var(--spot-y, 45%), rgba(18,107,109,0.18), transparent 65%)",
+                  "radial-gradient(220px circle at var(--spot-x, 45%) var(--spot-y, 45%), rgba(18,107,109,0.16), transparent 65%)",
               }}
             />
 
+            {/* Discount badge, top-left, only shown when applicable */}
+            {discountPercent > 0 && (
+              <span className="absolute top-2 left-2 z-10 bg-[#7A1F2B] text-white text-[10px] font-semibold tracking-wide px-2 py-1 rounded-full shadow-sm">
+                {discountPercent}% OFF
+              </span>
+            )}
+
+            {/* Wishlist button, glass-morphism style */}
             <button
               type="button"
-              className="absolute top-2 right-2 bg-white shadow-md rounded-full p-1.5 z-10 hover:scale-110 transition-transform"
+              className="absolute top-2 right-2 backdrop-blur-md bg-white/70 shadow-md rounded-full p-1.5 z-10 hover:scale-110 transition-transform duration-300"
               onClick={(e) => handleWishlistToggle(e, product)}
             >
               <Heart
@@ -377,8 +386,9 @@ function TopProducts() {
                 strokeWidth={1.5}
               />
             </button>
+
             <img
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               src={productImage}
               alt={product.productTittle}
               loading="lazy"
@@ -388,13 +398,13 @@ function TopProducts() {
             />
           </div>
 
-          <div className="mt-3">
-            <h3 className="text-sm font-merriweather text-[#55516e] font-normal line-clamp-1 mb-2">
+          <div className="mt-3 px-1">
+            <h3 className="text-sm font-merriweather text-[#55516e] font-normal line-clamp-1 mb-1.5">
               {product.productTittle}
             </h3>
 
             <div className="flex items-center flex-wrap gap-2">
-              <span className="text-gray-900 font-medium">
+              <span className="text-gray-900 font-semibold">
                 ₹{sellingPrice || mrp || "--"}
               </span>
               {mrp > 0 && sellingPrice > 0 && mrp !== sellingPrice && (
@@ -402,36 +412,28 @@ function TopProducts() {
                   ₹{mrp}
                 </span>
               )}
-              {discountPercent > 0 && (
-                <>
-                  <div className="border-l border-[#DBDBDB] h-3"></div>
-                  <span className="text-[#7A1F2B] text-xs">
-                    {discountPercent}% Off
-                  </span>
-                </>
-              )}
             </div>
           </div>
         </Link>
 
-        {/* Button placed OUTSIDE the Link to prevent navigation */}
+        {/* Button placed OUTSIDE the Link to prevent navigation — pill shape */}
         <button
-          className={`w-full rounded-md flex justify-center items-center gap-4 p-2 mt-2 transition-all duration-300 cursor-pointer ${
+          className={`w-full rounded-full flex justify-center items-center gap-2 py-2.5 mt-3 text-[12px] font-medium transition-all duration-300 cursor-pointer ${
             inCart
-              ? "bg-white border border-[#52151d] text-[#7A1F2B]"
-              : "  bg-[#7A1F2B] border border-[#52151d] text-white hover:bg-[#7A1F2B]"
+              ? "bg-white border border-[#7A1F2B] text-[#7A1F2B] hover:bg-[#FBF2F3]"
+              : "bg-[#7A1F2B] border border-[#7A1F2B] text-white hover:bg-[#5f1621]"
           }`}
           onClick={inCart ? handleGoToCart : handleAddToCartClick}
         >
           {inCart ? (
             <>
               <ShoppingCart className="w-4 h-4" />
-              <span className="text-[12px]">Go to Cart</span>
+              <span>Go to Cart</span>
             </>
           ) : (
             <>
               <FaBagShopping className="w-3 h-3" />
-              <span className="text-[12px]">Add To Cart</span>
+              <span>Add To Cart</span>
             </>
           )}
         </button>
@@ -444,7 +446,7 @@ function TopProducts() {
       <div className="lg:px-20 md:px-[60px] px-4 py-[23px] bg-white shadow-sm rounded-lg border border-[#F0EEFF]">
         <div className="flex justify-center items-center h-64">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#52151d] mx-auto"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#7A1F2B] mx-auto"></div>
             <p className="mt-4 text-gray-600">Loading products...</p>
           </div>
         </div>
@@ -452,17 +454,22 @@ function TopProducts() {
     );
   }
 
+  // Entrance animation restyled: gentle fade + scale-in instead of slide-up
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.08 },
+      transition: { staggerChildren: 0.06 },
     },
   };
 
   const cardVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+    hidden: { scale: 0.94, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+    },
   };
 
   return (

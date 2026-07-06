@@ -105,7 +105,7 @@ export default function Coupon() {
       <main className="px-8 py-6 bg-[#F6F8F9] min-h-screen">
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-4">
-            <div className="size-12 rounded-xl bg-[#88D3D5]/50 text-[#7A1F2B] font-stack-sans flex justify-center items-center">
+            <div className="size-12 rounded-xl bg-[#f1d5d9] text-[#7A1F2B] font-stack-sans flex justify-center items-center">
               <Ticket className="size-6" />
             </div>
 
@@ -250,7 +250,7 @@ export default function Coupon() {
                 key={index}
                 className="bg-white shadow-sm rounded-xl overflow-hidden border border-zinc-200 min-h-[330px] flex flex-col"
               >
-                <div className="relative white bg-gradient-to-r from-[#88D3D5]/50 to-[#6CB7B9]/20  text-[#7A1F2B] flex p-4 justify-between items-start">
+                <div className="relative white bg-[#7A1F2B]  text-[#7A1F2B] flex p-4 justify-between items-start">
                   {/* <div className="relative bg-[#2b7fff] bg-gradient-to-l text-white flex p-4 justify-between items-start"> */}
                   <div className="flex flex-col gap-1">
                     <span className="font-bold text-lg text-[#686868] tracking-wide">
@@ -332,7 +332,7 @@ export default function Coupon() {
 
                     <div className="flex flex-col gap-1">
                       <span className="text-[#71717b]">Applies To</span>
-                      <span className="bg-[#88D3D5]/50 text-[#7A1F2B] w-fit px-2 py-1 rounded-md text-xs">
+                      <span className="bg-[#f1d5d9] text-[#7A1F2B] w-fit px-2 py-1 rounded-md text-xs">
                         {coupon.appliesTo}
                       </span>
                     </div>
@@ -343,7 +343,7 @@ export default function Coupon() {
                     <span
                       className={`px-2 py-1 rounded-md text-xs ${
                         coupon.isPublic === true
-                          ? "bg-emerald-100 text-emerald-700"
+                          ? "bg-[#f1d5d9] text-[#7A1F2B]"
                           : "bg-zinc-100 text-zinc-600"
                       }`}
                     >

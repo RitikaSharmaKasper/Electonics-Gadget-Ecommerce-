@@ -981,7 +981,7 @@ function ProductDetails() {
                       className={`px-3 py-1 rounded-md border border-[#52151d] text-sm
                         ${
                           selectedVariant?.variantWeight === c
-                            ? "border-1 border-[#52151d]  text-[#eb755d]"
+                            ? "border-1 border-[#52151d]  text-[#192324]"
                             : "bg-white hover:  bg-[#7A1F2B] hover:text-white text-[#7A1F2B] border-[#52151d]"
                         }`}
                       onClick={() => onSelectWeight(c)}
@@ -1011,7 +1011,7 @@ function ProductDetails() {
                       className={`px-3 py-1 rounded-md border border-[#52151d] text-sm
                         ${
                           s === selectedVariant?.variantName
-                          ? "border-1 border-[#52151d]  text-[#eb755d]"
+                          ? "border-1 border-[#52151d]  text-[#192324]"
                             : "bg-white hover:  bg-[#7A1F2B] hover:text-white text-[#7A1F2B] border-[#52151d]"
                         }`}
                       onClick={() => onSelectStyle(s)}
@@ -1040,7 +1040,7 @@ function ProductDetails() {
                       className={`px-3 py-1 rounded-md border border-[#52151d] text-sm
             ${
               color === selectedVariant?.variantColor
-              ? "border-1 border-[#52151d]  text-[#eb755d]"
+              ? "border-1 border-[#52151d]  text-[#192324]"
                             : "bg-white hover:  bg-[#7A1F2B] hover:text-white text-[#7A1F2B] border-[#52151d]"
             }`}
                       onClick={() => onSelectColor(color)}
@@ -1070,7 +1070,7 @@ function ProductDetails() {
                   className={`px-6 py-2 border rounded-md ${
                     inCart
                       ? "  bg-[#7A1F2B] text-white border-[#52151d]"
-                      : "bg-[#F6F8F9] hover:  bg-[#7A1F2B] hover:text-white text-[#7A1F2B] border-[#52151d]"
+                      : "bg-[#F6F8F9] hover:bg-[#7A1F2B] hover:text-white text-[#7A1F2B] border-[#52151d]"
                   }`}
                 >
                   {cartUpdating

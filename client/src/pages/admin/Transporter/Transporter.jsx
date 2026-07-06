@@ -326,7 +326,7 @@ const Transporter = () => {
             <div>
               <button
                 onClick={() => setIsAddModalOpen(true)}
-                className="bg-[#1C3753] text-white px-4 py-2 rounded-lg hover:bg-[#344558]"
+                className="bg-[#7A1F2B] text-white px-4 py-2 rounded-lg hover:bg-[#7A1F2B]"
               >
                 + Add Transporter
               </button>
