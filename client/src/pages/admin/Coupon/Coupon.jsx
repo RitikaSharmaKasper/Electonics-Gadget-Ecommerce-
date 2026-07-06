@@ -250,7 +250,7 @@ export default function Coupon() {
                 key={index}
                 className="bg-white shadow-sm rounded-xl overflow-hidden border border-zinc-200 min-h-[330px] flex flex-col"
               >
-                <div className="relative white bg-[#7A1F2B]  text-[#7A1F2B] flex p-4 justify-between items-start">
+                <div className="relative white bg-[#d8b8bc]  text-[#7A1F2B] flex p-4 justify-between items-start">
                   {/* <div className="relative bg-[#2b7fff] bg-gradient-to-l text-white flex p-4 justify-between items-start"> */}
                   <div className="flex flex-col gap-1">
                     <span className="font-bold text-lg text-[#686868] tracking-wide">
