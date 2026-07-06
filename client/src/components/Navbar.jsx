@@ -1240,9 +1240,9 @@ useEffect(() => {
 
 
   const Announcement = [
-    { name: "Notebook, Pencil, Chalk & Classroom Essentials - Shop Now" },
-    { name: `Free Shipping on orders above ₹${shippingConfig?.freeDeliveryAbove || 0}` },
-    { name: "Buy more, Save more - Unlock exclusive school supplies discounts" },
+   { name: "Webcams, Hubs, Headsets & More - Shop Now" },
+{ name: "Upgrade Your Setup - New Arrivals Every Week" },
+{ name: "Extra 10% Off on Combo Packs - Limited Time" },
   ];
 
   // Fetch products for search
